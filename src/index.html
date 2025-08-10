@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Intelligence Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d'
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        },
+                        earth: {
+                            50: '#fefdf2',
+                            100: '#fefce8',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207'
+                        },
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0fdf4 0%, #f0f9ff 100%);
+        }
+        .chart-skeleton {
+            background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .opportunity-pulse {
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation Sidebar -->
+    <div class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg border-r border-gray-200 z-30">
+        <!-- Logo Area -->
+        <div class="flex items-center px-6 py-4 border-b border-gray-200">
+            <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center mr-3">
+                <i data-lucide="recycle" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+                <h1 class="text-lg font-semibold text-gray-900">WasteIQ</h1>
+                <p class="text-xs text-gray-500">Intelligence Platform</p>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="mt-6 px-3">
+            <div class="space-y-1">
+                <a href="#" class="bg-primary-50 text-primary-700 group flex items-center px-3 py-2 text-sm font-medium rounded-lg">
+                    <i data-lucide="pie-chart" class="w-5 h-5 mr-3"></i>
+                    Dashboard
+                </a>
+                <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg">
+                    <i data-lucide="building-2" class="w-5 h-5 mr-3"></i>
+                    Companies
+                </a>
+                <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg">
+                    <i data-lucide="target" class="w-5 h-5 mr-3"></i>
+                    Opportunities
+                </a>
+                <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg">
+                    <i data-lucide="trending-up" class="w-5 h-5 mr-3"></i>
+                    Market Intelligence
+                </a>
+                <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg">
+                    <i data-lucide="alert-triangle" class="w-5 h-5 mr-3"></i>
+                    Risk Alerts
+                </a>
+                <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg">
+                    <i data-lucide="map" class="w-5 h-5 mr-3"></i>
+                    Geographic Analysis
+                </a>
+                <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg">
+                    <i data-lucide="users" class="w-5 h-5 mr-3"></i>
+                    Contacts
+                </a>
+            </div>
+
+            <!-- Secondary Navigation -->
+            <div class="mt-8">
+                <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Tools</h3>
+                <div class="mt-2 space-y-1">
+                    <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg">
+                        <i data-lucide="download" class="w-5 h-5 mr-3"></i>
+                        Export Data
+                    </a>
+                    <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg">
+                        <i data-lucide="settings" class="w-5 h-5 mr-3"></i>
+                        Settings
+                    </a>
+                    <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-lg">
+                        <i data-lucide="help-circle" class="w-5 h-5 mr-3"></i>
+                        Support
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="ml-64 min-h-screen gradient-bg">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b border-gray-200">
+            <div class="px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Breadcrumb -->
+                    <nav class="flex" aria-label="Breadcrumb">
+                        <ol class="flex items-center space-x-4">
+                            <li>
+                                <div class="flex items-center">
+                                    <a href="#" class="text-sm font-medium text-gray-500 hover:text-gray-700">Dashboard</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex items-center">
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400 mx-2"></i>
+                                    <a href="#" class="text-sm font-medium text-gray-900">Market Overview</a>
+                                </div>
+                            </li>
+                        </ol>
+                    </nav>
+
+                    <!-- Header Actions -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Search -->
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>
+                            </div>
+                            <input type="text" placeholder="Search companies, opportunities..." 
+                                class="block w-80 pl-10 pr-3 py-2 border border-gray-300 rounded-lg bg-gray-50 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <button class="inline-flex items-center px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                            <i data-lucide="plus" class="w-4 h-4 mr-2"></i>
+                            New Lead
+                        </button>
+
+                        <!-- User Menu -->
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                                <i data-lucide="user" class="w-4 h-4 text-gray-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <main class="p-6">
+            <!-- Key Metrics Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Total Opportunities -->
+                <div class="glass-card rounded-xl p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Active Opportunities</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">1,247</p>
+                            <p class="text-sm text-green-600 mt-1">
+                                <i data-lucide="trending-up" class="w-4 h-4 inline mr-1"></i>
+                                +12% from last month
+                            </p>
+                        </div>
+                        <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
+                            <i data-lucide="target" class="w-6 h-6 text-primary-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Value -->
+                <div class="glass-card rounded-xl p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Total Market Value</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">$8.2M</p>
+                            <p class="text-sm text-green-600 mt-1">
+                                <i data-lucide="dollar-sign" class="w-4 h-4 inline mr-1"></i>
+                                Addressable market
+                            </p>
+                        </div>
+                        <div class="w-12 h-12 bg-earth-100 rounded-xl flex items-center justify-center">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-earth-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hot Leads -->
+                <div class="glass-card rounded-xl p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Hot Leads</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">34</p>
+                            <p class="text-sm text-red-600 mt-1">
+                                <i data-lucide="flame" class="w-4 h-4 inline mr-1"></i>
+                                Require immediate action
+                            </p>
+                        </div>
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center opportunity-pulse">
+                            <i data-lucide="flame" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Alerts -->
+                <div class="glass-card rounded-xl p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Risk Alerts</p>
+                            <p class="text-3xl font-bold text-gray-900 mt-2">7</p>
+                            <p class="text-sm text-amber-600 mt-1">
+                                <i data-lucide="alert-triangle" class="w-4 h-4 inline mr-1"></i>
+                                Compliance issues
+                            </p>
+                        </div>
+                        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+                            <i data-lucide="alert-triangle" class="w-6 h-6 text-amber-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Market Intelligence Panel -->
+                <div class="lg:col-span-2">
+                    <div class="glass-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-semibold text-gray-900">Market Intelligence</h2>
+                            <div class="flex items-center space-x-2">
+                                <button class="px-3 py-1 text-sm bg-primary-100 text-primary-700 rounded-lg hover:bg-primary-200">
+                                    Weekly
+                                </button>
+                                <button class="px-3 py-1 text-sm text-gray-500 hover:bg-gray-100 rounded-lg">
+                                    Monthly
+                                </button>
+                                <button class="px-3 py-1 text-sm text-gray-500 hover:bg-gray-100 rounded-lg">
+                                    Quarterly
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Chart Area -->
+                        <div class="h-80 bg-gray-50 rounded-lg flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="chart-skeleton w-full h-64 rounded-lg mb-4"></div>
+                                <p class="text-sm text-gray-500">Market Trend Analysis Loading...</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Chart Legend -->
+                        <div class="flex items-center justify-center space-x-6 mt-4">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-primary-500 rounded-full mr-2"></div>
+                                <span class="text-sm text-gray-600">Waste Generation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-ocean-500 rounded-full mr-2"></div>
+                                <span class="text-sm text-gray-600">Treatment Capacity</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-earth-500 rounded-full mr-2"></div>
+                                <span class="text-sm text-gray-600">Market Gap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opportunity Cards -->
+                <div class="space-y-6">
+                    <!-- High Priority Opportunities -->
+                    <div class="glass-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900">High Priority</h3>
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Urgent</span>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-primary-500 bg-primary-50 p-4 rounded-r-lg">
+                                <div class="flex items-start justify-between">
+                                    <div class="flex-1">
+                                        <h4 class="font-medium text-gray-900">Metro Waste Solutions</h4>
+                                        <p class="text-sm text-gray-600 mt-1">Industrial waste processing expansion</p>
+                                        <div class="flex items-center mt-2 space-x-4">
+                                            <span class="text-sm font-medium text-green-600">$450K potential</span>
+                                            <span class="text-xs text-gray-500">Downtown District</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2 mt-3">
+                                    <button class="flex-1 bg-primary-600 text-white text-xs font-medium py-2 px-3 rounded-lg hover:bg-primary-700">
+                                        Contact Now
+                                    </button>
+                                    <button class="bg-gray-100 text-gray-700 text-xs font-medium py-2 px-3 rounded-lg hover:bg-gray-200">
+                                        Details
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="border-l-4 border-ocean-500 bg-ocean-50 p-4 rounded-r-lg">
+                                <div class="flex items-start justify-between">
+                                    <div class="flex-1">
+                                        <h4 class="font-medium text-gray-900">EcoTech Industries</h4>
+                                        <p class="text-sm text-gray-600 mt-1">Recycling infrastructure upgrade</p>
+                                        <div class="flex items-center mt-2 space-x-4">
+                                            <span class="text-sm font-medium text-green-600">$320K potential</span>
+                                            <span class="text-xs text-gray-500">Industrial Zone</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2 mt-3">
+                                    <button class="flex-1 bg-ocean-600 text-white text-xs font-medium py-2 px-3 rounded-lg hover:bg-ocean-700">
+                                        Schedule Meeting
+                                    </button>
+                                    <button class="bg-gray-100 text-gray-700 text-xs font-medium py-2 px-3 rounded-lg hover:bg-gray-200">
+                                        View Profile
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full mt-4 text-sm text-gray-600 hover:text-gray-900 py-2 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            View All Opportunities (1,247)
+                        </button>
+                    </div>
+
+                    <!-- Risk Alerts -->
+                    <div class="glass-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900">Risk Alerts</h3>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded-full">7 Active</span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3 p-3 bg-red-50 border border-red-200 rounded-lg">
+                                <i data-lucide="alert-circle" class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0"></i>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-red-900">Compliance Violation</p>
+                                    <p class="text-xs text-red-700 mt-1">Apex Waste - EPA reporting deadline missed</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                                <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0"></i>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-amber-900">Market Shift</p>
+                                    <p class="text-xs text-amber-700 mt-1">15% price increase in hazardous waste processing</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                                <i data-lucide="info" class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-blue-900">New Regulation</p>
+                                    <p class="text-xs text-blue-700 mt-1">Updated landfill standards effective Q2</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full mt-4 text-sm text-gray-600 hover:text-gray-900 py-2 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            Manage All Alerts
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="mt-8">
+                <div class="glass-card rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-gray-900">Recent Activity</h2>
+                        <button class="text-sm text-primary-600 hover:text-primary-700 font-medium">
+                            View All Activity
+                        </button>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="user-plus" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">New lead added: GreenTech Solutions</p>
+                                <p class="text-xs text-gray-500 mt-1">2 hours ago • Industrial composting opportunity</p>
+                            </div>
+                            <button class="text-xs text-primary-600 hover:text-primary-700 font-medium px-3 py-1 border border-primary-200 rounded-lg">
+                                View
+                            </button>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="mail" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">Email sent to Metro Waste Solutions</p>
+                                <p class="text-xs text-gray-500 mt-1">4 hours ago • Follow-up on processing expansion proposal</p>
+                            </div>
+                            <span class="text-xs text-green-600 bg-green-100 px-2 py-1 rounded-full">Delivered</span>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="trending-up" class="w-5 h-5 text-amber-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">Market analysis updated</p>
+                                <p class="text-xs text-gray-500 mt-1">6 hours ago • Q1 waste generation trends report available</p>
+                            </div>
+                            <button class="text-xs text-primary-600 hover:text-primary-700 font-medium px-3 py-1 border border-primary-200 rounded-lg">
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+        
+        // Simulate loading completion
+        setTimeout(() => {
+            const skeletons = document.querySelectorAll('.chart-skeleton');
+            skeletons.forEach(skeleton => {
+                skeleton.classList.remove('chart-skeleton');
+                skeleton.innerHTML = '<div class="text-center text-gray-400 pt-20"><i data-lucide="bar-chart-3" class="w-16 h-16 mx-auto mb-4"></i><p>Interactive Chart Component</p></div>';
+                lucide.createIcons();
+            });
+        }, 3000);
+
+        // Add interactive functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Search functionality
+            const searchInput = document.querySelector('input[placeholder*="Search"]');
+            if (searchInput) {
+                searchInput.addEventListener('focus', function() {
+                    this.classList.add('ring-2', 'ring-primary-500', 'border-primary-500');
+                });
+                searchInput.addEventListener('blur', function() {
+                    this.classList.remove('ring-2', 'ring-primary-500', 'border-primary-500');
+                });
+            }
+
+            // Button hover effects
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('opportunity-pulse')) {
+                        this.style.transform = 'translateY(-1px)';
+                        this.style.transition = 'all 0.2s ease';
+                    }
+                });
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Opportunity card interactions
+            const opportunityCards = document.querySelectorAll('[class*="border-l-4"]');
+            opportunityCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.02)';
+                    this.style.transition = 'all 0.2s ease';
+                    this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
