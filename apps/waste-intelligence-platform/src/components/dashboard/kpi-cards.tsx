@@ -1,7 +1,7 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { mockMetrics } from '@/data/mock-data'
 import { formatNumber, formatCurrency, formatPercentage } from '@/lib/utils'
 import { 
   TrendingUp, 
@@ -11,49 +11,83 @@ import {
   Leaf,
   CheckCircle
 } from 'lucide-react'
+import { WasteCompany, WasteMetrics } from '@/types/waste'
 
 export function KPICards() {
+  const [metrics, setMetrics] = useState<WasteMetrics | null>(null)
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('/api/waste-data')
+        const companies: WasteCompany[] = await response.json()
+
+        const totalVolume = companies.reduce((sum, c) => sum + c.annualVolume, 0)
+        const recyclingRate = companies.reduce((sum, c) => sum + c.recyclingRate, 0) / companies.length
+        const complianceScore = companies.reduce((sum, c) => sum + c.complianceScore, 0) / companies.length
+        const activeCompanies = companies.length
+        const totalRevenue = companies.reduce((sum, c) => sum + (c.revenue || 0), 0)
+        const carbonFootprint = 850000 // Mock value
+
+        setMetrics({
+          totalVolume,
+          recyclingRate,
+          complianceScore,
+          activeCompanies,
+          totalRevenue,
+          carbonFootprint
+        })
+      } catch (error) {
+        console.error("Failed to fetch or process KPI data:", error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  if (!metrics) return <div>Loading KPIs...</div>
+
   const kpiData = [
     {
       title: 'Total Waste Volume',
-      value: formatNumber(mockMetrics.totalVolume) + ' tons',
+      value: formatNumber(metrics.totalVolume) + ' tons',
       icon: TrendingUp,
-      trend: '+12.5%',
+      trend: '+12.5%', // Mock trend
       trendColor: 'text-green-600'
     },
     {
       title: 'Recycling Rate',
-      value: formatPercentage(mockMetrics.recyclingRate),
+      value: formatPercentage(metrics.recyclingRate),
       icon: Recycle,
-      trend: '+3.2%',
+      trend: '+3.2%', // Mock trend
       trendColor: 'text-green-600'
     },
     {
       title: 'Active Companies',
-      value: formatNumber(mockMetrics.activeCompanies),
+      value: formatNumber(metrics.activeCompanies),
       icon: Building2,
-      trend: '+8.1%',
+      trend: '+8.1%', // Mock trend
       trendColor: 'text-green-600'
     },
     {
       title: 'Total Revenue',
-      value: formatCurrency(mockMetrics.totalRevenue),
+      value: formatCurrency(metrics.totalRevenue),
       icon: DollarSign,
-      trend: '+15.3%',
+      trend: '+15.3%', // Mock trend
       trendColor: 'text-green-600'
     },
     {
       title: 'Compliance Score',
-      value: `${mockMetrics.complianceScore}/100`,
+      value: `${metrics.complianceScore.toFixed(2)}/100`,
       icon: CheckCircle,
-      trend: '+2.1%',
+      trend: '+2.1%', // Mock trend
       trendColor: 'text-green-600'
     },
     {
       title: 'Carbon Footprint',
-      value: formatNumber(mockMetrics.carbonFootprint) + ' CO2e',
+      value: formatNumber(metrics.carbonFootprint) + ' CO2e',
       icon: Leaf,
-      trend: '-5.8%',
+      trend: '-5.8%', // Mock trend
       trendColor: 'text-green-600'
     }
   ]

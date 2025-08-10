@@ -1,11 +1,37 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { Badge } from '@/components/ui/badge'
-import { mockWasteCompanies } from '@/data/mock-data'
 import { formatNumber, formatPercentage, getComplianceColor } from '@/lib/utils'
 import { Building2, MapPin, Recycle, CheckCircle } from 'lucide-react'
+import { WasteCompany } from '@/types/waste'
 
 export function WasteDataTable() {
+  const [data, setData] = useState<WasteCompany[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('/api/waste-data')
+        if (!response.ok) {
+          throw new Error('Failed to fetch data')
+        }
+        const jsonData = await response.json()
+        setData(jsonData)
+      } catch (err) {
+        setError(err.message)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchData()
+  }, [])
+
+  if (loading) return <div>Loading...</div>
+  if (error) return <div>Error: {error}</div>
+
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full divide-y divide-gray-200">
@@ -35,7 +61,7 @@ export function WasteDataTable() {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          {mockWasteCompanies.map((company) => (
+          {data.map((company) => (
             <tr key={company.id} className="hover:bg-gray-50">
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="flex items-center">

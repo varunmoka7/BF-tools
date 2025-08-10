@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
-import { mockWasteCompanies } from '@/data/mock-data'
-import { MapMarkerData } from '@/types/waste'
+import { MapMarkerData, WasteCompany } from '@/types/waste'
 
 // Dynamic import for Leaflet to avoid SSR issues
 const DynamicMap = dynamic(
@@ -24,31 +23,48 @@ function MapPlaceholder() {
 
 export function GlobalWasteMap() {
   const [mapData, setMapData] = useState<MapMarkerData[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    // Transform company data to map markers
-    const markers = mockWasteCompanies.map(company => ({
-      id: company.id,
-      position: [company.coordinates?.lat || 0, company.coordinates?.lng || 0] as [number, number],
-      companyName: company.name,
-      wasteVolume: company.annualVolume,
-      wasteType: company.wasteType,
-      popupContent: `
-        <div class="p-2">
-          <h3 class="font-semibold text-lg">${company.name}</h3>
-          <p class="text-sm text-gray-600">${company.country}</p>
-          <div class="mt-2 space-y-1">
-            <p><span class="font-medium">Waste Type:</span> ${company.wasteType}</p>
-            <p><span class="font-medium">Annual Volume:</span> ${company.annualVolume.toLocaleString()} tons</p>
-            <p><span class="font-medium">Recycling Rate:</span> ${company.recyclingRate}%</p>
-            <p><span class="font-medium">Compliance Score:</span> ${company.complianceScore}/100</p>
-          </div>
-        </div>
-      `
-    }))
-
-    setMapData(markers)
+    async function fetchData() {
+      try {
+        const response = await fetch('/api/waste-data')
+        if (!response.ok) {
+          throw new Error('Failed to fetch map data')
+        }
+        const companies: WasteCompany[] = await response.json()
+        
+        const markers = companies.map(company => ({
+          id: company.id,
+          position: [company.coordinates?.lat || 0, company.coordinates?.lng || 0] as [number, number],
+          companyName: company.name,
+          wasteVolume: company.annualVolume,
+          wasteType: company.wasteType,
+          popupContent: `
+            <div class="p-2">
+              <h3 class="font-semibold text-lg">${company.name}</h3>
+              <p class="text-sm text-gray-600">${company.country}</p>
+              <div class="mt-2 space-y-1">
+                <p><span class="font-medium">Waste Type:</span> ${company.wasteType}</p>
+                <p><span class="font-medium">Annual Volume:</span> ${company.annualVolume.toLocaleString()} tons</p>
+                <p><span class="font-medium">Recycling Rate:</span> ${company.recyclingRate}%</p>
+                <p><span class="font-medium">Compliance Score:</span> ${company.complianceScore}/100</p>
+              </div>
+            </div>
+          `
+        }))
+        setMapData(markers)
+      } catch (err) {
+        setError(err.message)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchData()
   }, [])
+
+  if (error) return <div className="w-full h-96 bg-gray-100 rounded-lg flex items-center justify-center"><p className="text-red-500">Error: {error}</p></div>
 
   return (
     <div className="w-full h-96">
