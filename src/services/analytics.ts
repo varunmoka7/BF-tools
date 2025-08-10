@@ -606,7 +606,7 @@ export class AnalyticsService {
       averageRecoveryRate: result.averageRecoveryRate,
       totalWaste: result.totalWaste,
       companyCount: result.companyCount,
-      regulatoryStrength: this.getRegulatorySt
+      regulatoryStrength: this.getRegulatoryStrength(result.country),
       marketMaturity: this.getMarketMaturity(result.country)
     }));
   }
@@ -637,18 +637,18 @@ export class AnalyticsService {
     }
   }
 
-  private getRegulatoryStre
+  private getRegulatoryStrength(country: string): number {
     // Regulatory strength based on EU waste framework directive implementation
     const scores: { [key: string]: number } = {
-      'Germany': 95,
-      'France': 88,
-      'Switzerland': 92,
-      'Austria': 87,
-      'Belgium': 85,
-      'Italy': 78,
-      'Luxembourg': 90
+      Germany: 95,
+      France: 88,
+      Switzerland: 92,
+      Austria: 87,
+      Belgium: 85,
+      Italy: 78,
+      Luxembourg: 90
     };
-    return scores[country] || 70;
+    return scores[country] ?? 70;
   }
 
   private getMarketMaturity(country: string): number {
