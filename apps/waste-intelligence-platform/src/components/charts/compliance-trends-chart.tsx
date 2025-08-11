@@ -50,7 +50,7 @@ export function ComplianceTrendsChart() {
           tickFormatter={(value) => `${value}%`}
         />
         <Tooltip 
-          formatter={(value) => [`${value.toFixed(2)}%`, 'Compliance Score']}
+          formatter={(value) => [`${Number(value).toFixed(2)}%`, 'Compliance Score']}
         />
         <Line 
           type="monotone" 

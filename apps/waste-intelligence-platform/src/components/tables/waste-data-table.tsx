@@ -21,7 +21,7 @@ export function WasteDataTable() {
         const jsonData = await response.json()
         setData(jsonData)
       } catch (err) {
-        setError(err.message)
+        setError(err instanceof Error ? err.message : 'An error occurred')
       } finally {
         setLoading(false)
       }
