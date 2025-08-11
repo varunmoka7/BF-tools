@@ -28,8 +28,8 @@ export class CSVProcessor {
             reject(error)
           }
         },
-        error: (error) => {
-          reject(new Error(`CSV parsing failed: ${error.message}`))
+        error: (error: any) => {
+          reject(new Error(`CSV parsing failed: ${error.message || 'Unknown error'}`))
         }
       })
     })
@@ -53,8 +53,8 @@ export class CSVProcessor {
             reject(error)
           }
         },
-        error: (error) => {
-          reject(new Error(`CSV parsing failed: ${error.message}`))
+        error: (error: any) => {
+          reject(new Error(`CSV parsing failed: ${error.message || 'Unknown error'}`))
         }
       })
     })

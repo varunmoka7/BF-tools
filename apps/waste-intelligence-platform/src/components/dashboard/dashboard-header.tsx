@@ -15,7 +15,7 @@ export function DashboardHeader() {
       
       const csvContent = [
         Object.keys(data[0]).join(','), 
-        ...data.map(item => Object.values(item).join(','))
+        ...data.map((item: any) => Object.values(item).join(','))
       ].join('\n');
 
       const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
