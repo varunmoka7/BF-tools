@@ -1,7 +1,7 @@
 import { DashboardHeader } from '@/components/dashboard/dashboard-header'
 import { KPICards } from '@/components/dashboard/kpi-cards'
 import { GlobalWasteMap } from '@/components/maps/global-waste-map'
-import { WasteDataTable } from '@/components/tables/waste-data-table'
+import { EnhancedWasteDataTable } from '@/components/tables/enhanced-waste-data-table'
 import { ChartsSection } from '@/components/charts/charts-section'
 
 export default function Dashboard() {
@@ -21,10 +21,10 @@ export default function Dashboard() {
       {/* Charts Section */}
       <ChartsSection />
       
-      {/* Companies Data Table */}
+      {/* Enhanced Companies Data Table */}
       <div className="bg-white rounded-lg p-6 shadow-sm border">
         <h2 className="text-xl font-semibold mb-4">Waste Management Companies</h2>
-        <WasteDataTable />
+        <EnhancedWasteDataTable />
       </div>
     </div>
   )

@@ -55,7 +55,7 @@ export function GlobalWasteMap() {
           `
         }))
         setMapData(markers)
-      } catch (err) {
+      } catch (err: any) {
         setError(err.message)
       } finally {
         setLoading(false)
