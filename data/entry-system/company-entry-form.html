@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Data Entry Form - Waste Management Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .progress-display {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #45a049);
+            transition: width 0.3s ease;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .validation-errors {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .error {
+            margin-bottom: 5px;
+        }
+
+        .success-message {
+            background-color: #e8f5e8;
+            color: #2e7d32;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .form-actions {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .auto-save-indicator {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏢 Company Data Entry Form</h1>
+            <p>Waste Management Platform - Enhanced Company Profiles</p>
+        </div>
+
+        <div id="progress-display" class="progress-display">
+            <h3>Loading company data...</h3>
+        </div>
+
+        <div class="validation-errors" id="validation-errors"></div>
+        <div class="success-message" id="success-message"></div>
+
+        <form id="company-entry-form" class="form-container">
+            <!-- Section 1: Basic Company Information -->
+            <div class="form-section">
+                <h2 class="section-title">📋 Basic Company Information</h2>
+                
+                <div class="form-group">
+                    <label for="company_name">Company Name *</label>
+                    <input type="text" id="company_name" name="company_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country *</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sector">Sector *</label>
+                    <input type="text" id="sector" name="sector" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="industry">Industry</label>
+                    <input type="text" id="industry" name="industry">
+                </div>
+
+                <div class="form-group">
+                    <label for="website_url">Website URL</label>
+                    <input type="url" id="website_url" name="website_url" placeholder="https://www.company.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="founded_year">Founded Year</label>
+                    <input type="number" id="founded_year" name="founded_year" min="1800" max="2024">
+                </div>
+
+                <div class="form-group">
+                    <label for="headquarters">Headquarters</label>
+                    <input type="text" id="headquarters" name="headquarters">
+                </div>
+
+                <div class="form-group">
+                    <label for="revenue_usd">Revenue (USD)</label>
+                    <input type="number" id="revenue_usd" name="revenue_usd" step="0.01">
+                </div>
+
+                <div class="form-group">
+                    <label for="is_public">Public Company</label>
+                    <select id="is_public" name="is_public">
+                        <option value="">Select...</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="stock_exchange">Stock Exchange</label>
+                    <input type="text" id="stock_exchange" name="stock_exchange">
+                </div>
+
+                <div class="form-group">
+                    <label for="market_cap_usd">Market Cap (USD)</label>
+                    <input type="number" id="market_cap_usd" name="market_cap_usd" step="0.01">
+                </div>
+            </div>
+
+            <!-- Section 2: Business Description -->
+            <div class="form-section">
+                <h2 class="section-title">📝 Business Description</h2>
+                
+                <div class="form-group">
+                    <label for="description">Company Description *</label>
+                    <textarea id="description" name="description" placeholder="Provide a comprehensive description of what the company does, their main business areas, and their market position..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="business_overview">Business Overview</label>
+                    <textarea id="business_overview" name="business_overview" placeholder="Provide a business-focused overview including their main products/services, target markets, and key business segments..."></textarea>
+                </div>
+            </div>
+
+            <!-- Section 3: Contact Information -->
+            <div class="form-section">
+                <h2 class="section-title">📞 Contact Information</h2>
+                
+                <div class="form-group">
+                    <label for="primary_contact_email">Primary Contact Email</label>
+                    <input type="email" id="primary_contact_email" name="primary_contact_email">
+                </div>
+
+                <div class="form-group">
+                    <label for="primary_contact_phone">Primary Contact Phone</label>
+                    <input type="text" id="primary_contact_phone" name="primary_contact_phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="sustainability_contact_email">Sustainability Contact Email</label>
+                    <input type="email" id="sustainability_contact_email" name="sustainability_contact_email">
+                </div>
+
+                <div class="form-group">
+                    <label for="sustainability_contact_phone">Sustainability Contact Phone</label>
+                    <input type="text" id="sustainability_contact_phone" name="sustainability_contact_phone">
+                </div>
+            </div>
+
+            <!-- Section 4: Waste Management Profile -->
+            <div class="form-section">
+                <h2 class="section-title">🗑️ Waste Management Profile</h2>
+                
+                <div class="form-group">
+                    <label>Primary Waste Materials</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="waste_electronic" name="waste_materials" value="Electronic waste (e-waste)">
+                            <label for="waste_electronic">Electronic waste (e-waste)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="waste_plastic" name="waste_materials" value="Plastic waste">
+                            <label for="waste_plastic">Plastic waste</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="waste_metal" name="waste_materials" value="Metal scrap">
+                            <label for="waste_metal">Metal scrap</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="waste_paper" name="waste_materials" value="Paper and cardboard">
+                            <label for="waste_paper">Paper and cardboard</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="waste_organic" name="waste_materials" value="Organic waste">
+                            <label for="waste_organic">Organic waste</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="waste_hazardous" name="waste_materials" value="Hazardous waste">
+                            <label for="waste_hazardous">Hazardous waste</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="waste_construction" name="waste_materials" value="Construction waste">
+                            <label for="waste_construction">Construction waste</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="waste_textile" name="waste_materials" value="Textile waste">
+                            <label for="waste_textile">Textile waste</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="waste_management_strategy">Waste Management Strategy</label>
+                    <textarea id="waste_management_strategy" name="waste_management_strategy" placeholder="Describe the company's overall waste management approach, including their philosophy, key initiatives, and strategic priorities..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Waste Treatment Methods</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="treatment_mechanical" name="treatment_methods" value="Mechanical recycling">
+                            <label for="treatment_mechanical">Mechanical recycling</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="treatment_chemical" name="treatment_methods" value="Chemical recycling">
+                            <label for="treatment_chemical">Chemical recycling</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="treatment_energy" name="treatment_methods" value="Energy recovery (incineration)">
+                            <label for="treatment_energy">Energy recovery (incineration)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="treatment_composting" name="treatment_methods" value="Composting">
+                            <label for="treatment_composting">Composting</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="treatment_anaerobic" name="treatment_methods" value="Anaerobic digestion">
+                            <label for="treatment_anaerobic">Anaerobic digestion</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="treatment_landfill" name="treatment_methods" value="Landfill (minimal)">
+                            <label for="treatment_landfill">Landfill (minimal)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="recycling_facilities_count">Number of Recycling Facilities</label>
+                    <input type="number" id="recycling_facilities_count" name="recycling_facilities_count" min="0">
+                </div>
+            </div>
+
+            <!-- Section 5: Sustainability Goals -->
+            <div class="form-section">
+                <h2 class="section-title">🌱 Sustainability Goals & Initiatives</h2>
+                
+                <div class="form-group">
+                    <label for="sustainability_goals">Sustainability Goals</label>
+                    <textarea id="sustainability_goals" name="sustainability_goals" placeholder="Extract specific sustainability goals from company reports, focusing on waste reduction, recycling targets, and circular economy initiatives..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="circular_economy_initiatives">Circular Economy Initiatives</label>
+                    <textarea id="circular_economy_initiatives" name="circular_economy_initiatives" placeholder="Describe the company's circular economy programs, including product design for recyclability, closed-loop systems, and waste-to-resource initiatives..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="zero_waste_commitment">Zero Waste Commitment</label>
+                    <select id="zero_waste_commitment" name="zero_waste_commitment">
+                        <option value="">Select...</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="zero_waste_target_year">Zero Waste Target Year</label>
+                    <input type="number" id="zero_waste_target_year" name="zero_waste_target_year" min="2024" max="2050">
+                </div>
+
+                <div class="form-group">
+                    <label for="carbon_neutrality_commitment">Carbon Neutrality Commitment</label>
+                    <select id="carbon_neutrality_commitment" name="carbon_neutrality_commitment">
+                        <option value="">Select...</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="carbon_neutrality_target_year">Carbon Neutrality Target Year</label>
+                    <input type="number" id="carbon_neutrality_target_year" name="carbon_neutrality_target_year" min="2024" max="2050">
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" id="submit-button" class="btn">Save Company Data</button>
+                <div class="auto-save-indicator">Auto-save enabled (every 30 seconds)</div>
+            </div>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Saving data...</p>
+        </div>
+    </div>
+
+    <script src="entry-system.js"></script>
+</body>
+</html>

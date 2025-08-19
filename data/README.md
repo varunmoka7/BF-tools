@@ -456,3 +456,283 @@ npm run data:cleanup duplicates waste_data
 ---
 
 Comprehensive data management for sustainable waste intelligence
+
+## Enhanced Company Profile Schema
+
+### 1. **Database Schema Extension**
+
+```sql
+-- Enhanced companies table with profile information
+ALTER TABLE companies ADD COLUMN IF NOT EXISTS description TEXT;
+ALTER TABLE companies ADD COLUMN IF NOT EXISTS business_overview TEXT;
+ALTER TABLE companies ADD COLUMN IF NOT EXISTS website_url VARCHAR(500);
+ALTER TABLE companies ADD COLUMN IF NOT EXISTS founded_year INTEGER;
+ALTER TABLE companies ADD COLUMN IF NOT EXISTS employee_count INTEGER;
+ALTER TABLE companies ADD COLUMN IF NOT EXISTS revenue_usd DECIMAL(15,2);
+ALTER TABLE companies ADD COLUMN IF NOT EXISTS headquarters VARCHAR(200);
+ALTER TABLE companies ADD COLUMN IF NOT EXISTS stock_symbol VARCHAR(20);
+ALTER TABLE companies ADD COLUMN IF NOT EXISTS is_public BOOLEAN DEFAULT FALSE;
+
+-- Company waste profile table
+CREATE TABLE IF NOT EXISTS company_waste_profiles (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    company_id UUID REFERENCES companies(id) ON DELETE CASCADE,
+    primary_waste_materials TEXT[], -- Array of waste types
+    waste_management_strategy TEXT,
+    recycling_facilities_count INTEGER,
+    waste_treatment_methods TEXT[], -- Array of methods
+    sustainability_goals TEXT,
+    circular_economy_initiatives TEXT,
+    waste_reduction_targets JSONB, -- Structured targets
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
+);
+
+-- ESG reports and documents table
+CREATE TABLE IF NOT EXISTS company_esg_documents (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    company_id UUID REFERENCES companies(id) ON DELETE CASCADE,
+    document_type VARCHAR(100), -- 'sustainability_report', 'esg_report', 'annual_report'
+    document_title VARCHAR(500),
+    document_url VARCHAR(1000),
+    publication_date DATE,
+    reporting_year INTEGER,
+    file_size_mb DECIMAL(10,2),
+    language VARCHAR(10) DEFAULT 'en',
+    is_verified BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- Company sustainability metrics table
+CREATE TABLE IF NOT EXISTS company_sustainability_metrics (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    company_id UUID REFERENCES companies(id) ON DELETE CASCADE,
+    reporting_year INTEGER,
+    carbon_footprint_tonnes DECIMAL(12,2),
+    energy_consumption_gwh DECIMAL(10,2),
+    water_consumption_m3 DECIMAL(12,2),
+    renewable_energy_percentage DECIMAL(5,2),
+    waste_to_landfill_percentage DECIMAL(5,2),
+    recycling_rate_percentage DECIMAL(5,2),
+    esg_score DECIMAL(5,2),
+    sustainability_rating VARCHAR(20), -- 'AAA', 'AA', 'A', etc.
+    created_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+### 2. **Data Collection Process**
+
+#### **Phase 1: Basic Company Information**
+```javascript
+// Example data structure for each company
+const companyProfile = {
+  company_id: "uuid",
+  company_name: "Siemens AG",
+  description: "Siemens AG is a German multinational conglomerate and the largest industrial manufacturing company in Europe...",
+  business_overview: "Siemens operates in the fields of industry, infrastructure, transport, and healthcare...",
+  website_url: "https://www.siemens.com",
+  founded_year: 1847,
+  employee_count: 311000,
+  revenue_usd: 77800000000,
+  headquarters: "Munich, Germany",
+  stock_symbol: "SIE",
+  is_public: true,
+  country: "Germany",
+  sector: "Industrials",
+  industry: "Industrial Conglomerates"
+};
+```
+
+#### **Phase 2: Waste Management Profile**
+```javascript
+const wasteProfile = {
+  company_id: "uuid",
+  primary_waste_materials: [
+    "Electronic waste",
+    "Metal scrap", 
+    "Plastic waste",
+    "Paper and cardboard",
+    "Hazardous waste"
+  ],
+  waste_management_strategy: "Siemens implements a comprehensive circular economy approach...",
+  recycling_facilities_count: 15,
+  waste_treatment_methods: [
+    "Mechanical recycling",
+    "Chemical recycling", 
+    "Energy recovery",
+    "Landfill (minimal)"
+  ],
+  sustainability_goals: "Achieve carbon neutrality by 2030, zero waste to landfill by 2025...",
+  circular_economy_initiatives: "Product-as-a-Service models, closed-loop manufacturing...",
+  waste_reduction_targets: {
+    "2025": { "reduction_percentage": 30, "zero_landfill": true },
+    "2030": { "carbon_neutral": true, "circular_economy": "100%" }
+  }
+};
+```
+
+### 3. **Data Collection Workflow**
+
+#### **Step 1: Create a Data Collection Template**
+```markdown
+# Company Profile Data Collection Template
+
+## Company: [NAME]
+**Source**: [URL]
+**Last Updated**: [DATE]
+
+### Basic Information
+- **Company Name**: 
+- **Website**: 
+- **Founded**: 
+- **Employees**: 
+- **Revenue**: 
+- **Headquarters**: 
+- **Stock Symbol**: 
+- **Country**: 
+- **Sector**: 
+- **Industry**: 
+
+### Business Description
+[2-3 paragraph overview from company website]
+
+### Waste Management Profile
+- **Primary Waste Materials**: 
+- **Waste Management Strategy**: 
+- **Recycling Facilities**: 
+- **Treatment Methods**: 
+- **Sustainability Goals**: 
+- **Circular Economy Initiatives**: 
+
+### ESG Reports
+- **Latest Sustainability Report**: [URL] (Year: )
+- **ESG Rating**: 
+- **Carbon Footprint**: 
+- **Recycling Rate**: 
+```
+
+#### **Step 2: Systematic Data Collection Process**
+
+**For each of the 325 companies:**
+
+1. **Start with Wikipedia** for basic company overview
+2. **Visit company website** for official information
+3. **Search for sustainability reports** (Google: "[Company Name] sustainability report 2024")
+4. **Check ESG databases** for ratings and metrics
+5. **Look for waste management sections** in annual reports
+6. **Document all sources** for verification
+
+### 4. **Automated Data Collection Tools**
+
+#### **Web Scraping Script**
+```javascript
+// tools/scripts/collect-company-data.js
+const puppeteer = require('puppeteer');
+const fs = require('fs');
+
+async function collectCompanyData(companyName) {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  
+  // Search for company information
+  await page.goto(`https://www.google.com/search?q=${companyName}+sustainability+report+2024`);
+  
+  // Extract relevant links
+  const links = await page.evaluate(() => {
+    return Array.from(document.querySelectorAll('a')).map(a => a.href);
+  });
+  
+  // Visit company website
+  const companyWebsite = links.find(link => 
+    link.includes(companyName.toLowerCase().replace(/\s+/g, ''))
+  );
+  
+  if (companyWebsite) {
+    await page.goto(companyWebsite);
+    // Extract company information
+    const companyData = await page.evaluate(() => {
+      // Add extraction logic
+    });
+    
+    return companyData;
+  }
+  
+  await browser.close();
+}
+```
+
+### 5. **Data Quality Assurance**
+
+#### **Verification Checklist**
+- [ ] Information is from official company sources
+- [ ] Data is current (within last 2 years)
+- [ ] Multiple sources confirm key facts
+- [ ] ESG reports are publicly accessible
+- [ ] Waste management data is specific and measurable
+
+#### **Data Validation Rules**
+```javascript
+const validationRules = {
+  company_name: { required: true, minLength: 2, maxLength: 200 },
+  description: { required: true, minLength: 100, maxLength: 2000 },
+  website_url: { required: true, format: 'url' },
+  founded_year: { min: 1800, max: new Date().getFullYear() },
+  employee_count: { min: 1, max: 1000000 },
+  revenue_usd: { min: 0 },
+  primary_waste_materials: { minItems: 1, maxItems: 10 }
+};
+```
+
+### 6. **Implementation Plan**
+
+#### **Week 1-2: Setup & Pilot**
+1. Create database schema extensions
+2. Build data collection templates
+3. Pilot with 10 companies (mix of countries/sectors)
+4. Refine process and templates
+
+#### **Week 3-8: Systematic Collection**
+1. Assign companies to researchers (50-60 companies per week)
+2. Use standardized templates
+3. Daily quality reviews
+4. Weekly data imports to Supabase
+
+#### **Week 9-10: Integration & Testing**
+1. Import all data to Supabase
+2. Create company profile pages
+3. Test data display and search
+4. Validate data accuracy
+
+### 7. **Cost-Effective Approaches**
+
+#### **Option A: Manual Research (Recommended)**
+- **Time**: 6-8 weeks for 325 companies
+- **Cost**: $0 (your time)
+- **Quality**: High (verified sources)
+- **Control**: Full control over data quality
+
+#### **Option B: Freelance Researchers**
+- **Platforms**: Upwork, Fiverr, Freelancer
+- **Cost**: $5-15 per company profile
+- **Time**: 2-3 weeks
+- **Quality**: Variable (need good briefs)
+
+#### **Option C: Automated + Manual Review**
+- **Tools**: Web scraping + AI summarization
+- **Cost**: $100-500 for tools
+- **Time**: 3-4 weeks
+- **Quality**: Good with manual review
+
+### 8. **Next Steps**
+
+1. **Start with 10 pilot companies** to test the process
+2. **Create the database schema** extensions
+3. **Build a simple data entry form** for manual collection
+4. **Set up a tracking system** for progress
+5. **Begin systematic data collection**
+
+Would you like me to help you:
+1. **Create the database schema** for the enhanced company profiles?
+2. **Build a data collection template** for the 325 companies?
+3. **Set up a data entry system** to manage the collection process?
+4. **Start with a pilot** of 10 companies to test the approach?

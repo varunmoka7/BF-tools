@@ -1,0 +1,11 @@
+Company ID,Company Name,Country,Sector,Industry,Assigned To,Status,Start Date,Target Completion,Progress %,Quality Score,Notes
+1,Siemens AG,Germany,Industrials,Industrial Conglomerates,John Doe,In Progress,2024-01-15,2024-01-22,60,8,Good data available
+2,Volkswagen AG,Germany,Consumer Discretionary,Automobiles,Jane Smith,Completed,2024-01-10,2024-01-17,100,9,Excellent ESG reporting
+3,BASF SE,Germany,Materials,Chemicals,Mike Johnson,Not Started,2024-01-20,2024-01-27,0,0,Need to research
+4,Bayer AG,Germany,Healthcare,Pharmaceuticals,Sarah Wilson,Not Started,2024-01-20,2024-01-27,0,0,Pharma company
+5,BMW AG,Germany,Consumer Discretionary,Automobiles,John Doe,Not Started,2024-01-20,2024-01-27,0,0,Automotive focus
+6,Deutsche Bank AG,Germany,Financials,Banks,Jane Smith,Not Started,2024-01-20,2024-01-27,0,0,Financial services
+7,Allianz SE,Germany,Financials,Insurance,Mike Johnson,Not Started,2024-01-20,2024-01-27,0,0,Insurance company
+8,SAP SE,Germany,Technology,Software,Sarah Wilson,Not Started,2024-01-20,2024-01-27,0,0,Software company
+9,Mercedes-Benz Group AG,Germany,Consumer Discretionary,Automobiles,John Doe,Not Started,2024-01-20,2024-01-27,0,0,Automotive
+10,Deutsche Telekom AG,Germany,Communication Services,Telecommunications,Jane Smith,Not Started,2024-01-20,2024-01-27,0,0,Telecom

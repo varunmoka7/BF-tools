@@ -1,0 +1,11 @@
+Company ID,Company Name,Country,Sector,Industry,Assigned To,Status,Start Date,Target Completion,Progress %,Quality Score,Complexity Level,Notes
+1,Siemens AG,Germany,Industrials,Industrial Conglomerates,John Doe,Not Started,2024-01-22,2024-01-29,0,0,High,Complex multinational with extensive ESG reporting
+2,Volkswagen AG,Germany,Consumer Discretionary,Automobiles,Jane Smith,Not Started,2024-01-22,2024-01-29,0,0,High,Automotive leader with comprehensive sustainability data
+3,BASF SE,Germany,Materials,Chemicals,Mike Johnson,Not Started,2024-01-22,2024-01-29,0,0,Medium,Chemical industry with good ESG documentation
+4,Bayer AG,Germany,Healthcare,Pharmaceuticals,Sarah Wilson,Not Started,2024-01-22,2024-01-29,0,0,Medium,Pharma company with sustainability focus
+5,BMW AG,Germany,Consumer Discretionary,Automobiles,John Doe,Not Started,2024-01-22,2024-01-29,0,0,Medium,Premium automotive with ESG initiatives
+6,Deutsche Bank AG,Germany,Financials,Banks,Jane Smith,Not Started,2024-01-22,2024-01-29,0,0,Low,Financial services with basic ESG reporting
+7,Allianz SE,Germany,Financials,Insurance,Mike Johnson,Not Started,2024-01-22,2024-01-29,0,0,Low,Insurance company with sustainability programs
+8,SAP SE,Germany,Technology,Software,Sarah Wilson,Not Started,2024-01-22,2024-01-29,0,0,Medium,Software company with ESG focus
+9,Mercedes-Benz Group AG,Germany,Consumer Discretionary,Automobiles,John Doe,Not Started,2024-01-22,2024-01-29,0,0,Medium,Luxury automotive with sustainability goals
+10,Deutsche Telekom AG,Germany,Communication Services,Telecommunications,Jane Smith,Not Started,2024-01-22,2024-01-29,0,0,Low,Telecom with basic ESG reporting
