@@ -1,0 +1,9 @@
+
+> bf-tools@1.0.0 dev
+> vite --config frontend/config/vite.config.ts
+
+
+  VITE v7.1.1  ready in 573 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose

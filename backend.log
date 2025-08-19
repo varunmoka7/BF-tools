@@ -1,0 +1,18 @@
+
+> bf-tools@1.0.0 backend:dev
+> nodemon --config backend/config/nodemon.json backend/src/app.ts
+
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): src[39m
+[33m[nodemon] watching extensions: ts,js,json[39m
+[32m[nodemon] starting `cd /Users/apple/Downloads/BF-tools/backend && ts-node src/server.ts backend/src/app.ts`[39m
+TypeError: Unknown file extension ".ts" for /Users/apple/Downloads/BF-tools/backend/src/server.ts
+    at Object.getFileProtocolModuleFormat [as file:] (node:internal/modules/esm/get_format:219:9)
+    at defaultGetFormat (node:internal/modules/esm/get_format:245:36)
+    at defaultLoad (node:internal/modules/esm/load:120:22)
+    at async ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:580:32)
+    at async ModuleJob._link (node:internal/modules/esm/module_job:116:19) {
+  code: 'ERR_UNKNOWN_FILE_EXTENSION'
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
