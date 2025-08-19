@@ -7,19 +7,13 @@ import {
   BarChart3, 
   Globe, 
   Building2, 
-  Settings, 
-  Users, 
-  FileText,
-  Recycle
+  Settings
 } from 'lucide-react'
 
 const navigation = [
   { name: 'Dashboard', href: '/', icon: BarChart3 },
   { name: 'Global Map', href: '/map', icon: Globe },
   { name: 'Companies', href: '/companies', icon: Building2 },
-  { name: 'Reports', href: '/reports', icon: FileText },
-  { name: 'Recycling', href: '/recycling', icon: Recycle },
-  { name: 'Users', href: '/users', icon: Users },
   { name: 'Settings', href: '/settings', icon: Settings },
 ]
 
