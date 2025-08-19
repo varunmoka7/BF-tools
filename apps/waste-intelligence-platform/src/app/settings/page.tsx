@@ -472,7 +472,6 @@ export default function SettingsPage() {
                 onChange={(e) => setPreferences({ ...preferences, defaultDashboard: e.target.value })}
               >
                 <option value="overview">Overview</option>
-                <option value="analytics">Analytics</option>
                 <option value="companies">Companies</option>
                 <option value="map">Global Map</option>
               </select>
