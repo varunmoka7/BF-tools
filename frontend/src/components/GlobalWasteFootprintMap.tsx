@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react'
-import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { WasteData, WasteType } from '@/types/waste'
 import { formatNumber, formatPercentage, getWasteColorIntensity } from '@/lib/utils'
 import { Slider } from '@/components/ui/slider'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
+
 import 'leaflet/dist/leaflet.css'
 
 interface GlobalWasteFootprintMapProps {
@@ -219,7 +219,7 @@ export const GlobalWasteFootprintMap: React.FC<GlobalWasteFootprintMapProps> = (
                 key={`${wasteData.id}-${selectedWasteType}`}
                 center={wasteData.coordinates}
                 radius={getMarkerRadius(wasteData, selectedWasteType)}
-                fillColor={getWasteColorIntensity(wasteData.recoveryRate)}
+                fillColor={getWasteColorIntensity(wasteData.recoveryRate, 100)}
                 color="white"
                 weight={2}
                 opacity={0.8}

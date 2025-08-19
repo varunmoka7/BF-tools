@@ -321,7 +321,7 @@ export const CompanyProfileView: React.FC<CompanyProfileViewProps> = ({ company,
                 <div className="flex items-center text-sm">
                   <TrendingUp className="h-4 w-4 mr-1 text-green-500" />
                   <span className="text-green-600">
-                    +{formatPercentage(recoveryImprovement, 1)}pp improvement
+                    +{formatPercentage(recoveryImprovement)}pp improvement
                   </span>
                 </div>
               </div>

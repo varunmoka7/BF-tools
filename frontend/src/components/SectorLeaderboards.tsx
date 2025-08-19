@@ -272,7 +272,7 @@ const SectorLeaderboards: React.FC<SectorLeaderboardsProps> = ({ leaderboards, c
                         company.improvementTrend < 0 ? 'rotate-180' : ''
                       }`} />
                       <span className="font-medium">
-                        {company.improvementTrend > 0 ? '+' : ''}{formatPercentage(company.improvementTrend, 1)}
+                        {company.improvementTrend > 0 ? '+' : ''}{formatPercentage(company.improvementTrend)}
                       </span>
                     </div>
                   </td>

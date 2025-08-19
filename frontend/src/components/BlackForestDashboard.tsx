@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
@@ -16,11 +17,12 @@ import {
   Map,
   ArrowRight
 } from 'lucide-react'
-import { WasteData, CompanyData, SectorLeaderboard } from '@/types/waste'
+import { WasteData, Company, SectorLeaderboard } from '@/types/waste'
+import TopWasteCompanies from './TopWasteCompanies'
 
 interface BlackForestDashboardProps {
   wasteData: WasteData[]
-  companyData: CompanyData[]
+  companyData: Company[]
   sectorLeaderboards: SectorLeaderboard[]
   className?: string
 }
@@ -53,24 +55,27 @@ export const BlackForestDashboard: React.FC<BlackForestDashboardProps> = ({
   // Generate lead opportunities based on data analysis
   const leadOpportunities: LeadOpportunity[] = useMemo(() => {
     return companyData.map(company => {
-      const latestRecoveryRate = company.recoveryRates[company.recoveryRates.length - 1]
-      const recoveryRateGap = 85 - latestRecoveryRate // Target 85% recovery rate
+      // For now, use mock data since we don't have recovery rates in the Company type yet
+      const mockRecoveryRate = Math.random() * 40 + 30 // 30-70% range
+      const recoveryRateGap = 85 - mockRecoveryRate // Target 85% recovery rate
       
       let priority: LeadPriority = 'low'
-      if (recoveryRateGap > 30 || company.hazardousShare > 15) priority = 'high'
-      else if (recoveryRateGap > 15 || company.hazardousShare > 8) priority = 'medium'
+      if (recoveryRateGap > 30) priority = 'high'
+      else if (recoveryRateGap > 15) priority = 'medium'
       
       let complianceRisk: 'high' | 'medium' | 'low' = 'low'
-      if (company.hazardousShare > 20 || latestRecoveryRate < 50) complianceRisk = 'high'
-      else if (company.hazardousShare > 10 || latestRecoveryRate < 70) complianceRisk = 'medium'
+      if (mockRecoveryRate < 50) complianceRisk = 'high'
+      else if (mockRecoveryRate < 70) complianceRisk = 'medium'
       
+      // Mock waste data for opportunity calculation
+      const mockWasteGenerated = Math.random() * 20000 + 5000 // 5k-25k tonnes
       const opportunityValue = Math.round(
-        (recoveryRateGap * company.wasteGenerated[company.wasteGenerated.length - 1] * 0.15) / 1000
+        (recoveryRateGap * mockWasteGenerated * 0.15) / 1000
       ) // €150/tonne improvement potential
       
       return {
         companyId: company.id,
-        companyName: company.name,
+        companyName: company.company_name,
         country: company.country,
         sector: company.sector,
         priority,
@@ -183,7 +188,7 @@ export const BlackForestDashboard: React.FC<BlackForestDashboardProps> = ({
 
       {/* Main Content Tabs */}
       <Tabs value={selectedTab} onValueChange={setSelectedTab} className="space-y-4">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="leads" className="flex items-center gap-2">
             <Target className="h-4 w-4" />
             Lead Generation
@@ -195,6 +200,10 @@ export const BlackForestDashboard: React.FC<BlackForestDashboardProps> = ({
           <TabsTrigger value="geographic" className="flex items-center gap-2">
             <Map className="h-4 w-4" />
             Geographic Strategy
+          </TabsTrigger>
+          <TabsTrigger value="waste-ranking" className="flex items-center gap-2">
+            <AlertTriangle className="h-4 w-4" />
+            Top Waste Companies
           </TabsTrigger>
         </TabsList>
 
@@ -279,9 +288,11 @@ export const BlackForestDashboard: React.FC<BlackForestDashboardProps> = ({
                         {opportunity.nextAction}
                       </div>
                     </div>
-                    <Button variant="outline" size="sm" className="ml-4">
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
+                    <Link to={`/company/${opportunity.companyId}`}>
+                      <Button variant="outline" size="sm" className="ml-4">
+                        <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -360,6 +371,11 @@ export const BlackForestDashboard: React.FC<BlackForestDashboardProps> = ({
               </div>
             </CardContent>
           </Card>
+        </TabsContent>
+
+        {/* Top Waste Companies Tab */}
+        <TabsContent value="waste-ranking" className="space-y-4">
+          <TopWasteCompanies companyData={companyData} />
         </TabsContent>
       </Tabs>
     </div>

@@ -5,20 +5,23 @@
  * Exports all major components, hooks, and utilities.
  */
 
-// Components
-export * from './components/ui';
-export * from './components/charts';
-export * from './components/maps';
-export * from './components/dashboard';
+// Main Components
+export { BlackForestDashboard } from './components/BlackForestDashboard';
+export { CompanyDetailPage } from './components/CompanyDetailPage';
+export { default as TopWasteCompanies } from './components/TopWasteCompanies';
 
-// Hooks
-export * from './hooks';
+// UI Components (export individual components that exist)
+export { Button } from './components/ui/button';
+export { Card, CardContent, CardHeader, CardTitle } from './components/ui/card';
+export { Badge } from './components/ui/badge';
+export { Input } from './components/ui/input';
+export { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select';
 
 // Utilities
 export * from './lib/utils';
 
-// Types (re-export from shared)
-export type { WasteData, Company, Sector } from '../../shared/types/waste';
+// Types
+export type * from './types/waste';
 
 /**
  * Application Configuration
@@ -118,26 +121,9 @@ export const COMPONENTS = {
   Input: () => import('./components/ui/input'),
   Select: () => import('./components/ui/select'),
   Badge: () => import('./components/ui/badge'),
-  Tabs: () => import('./components/ui/tabs'),
-  Dialog: () => import('./components/ui/dialog'),
-  Progress: () => import('./components/ui/progress'),
-  Slider: () => import('./components/ui/slider'),
-  Toast: () => import('./components/ui/toast'),
   
-  // Chart Components
-  ChartsSection: () => import('./components/charts/charts-section'),
-  WasteTypeChart: () => import('./components/charts/waste-type-chart'),
-  RegionDistributionChart: () => import('./components/charts/region-distribution-chart'),
-  ComplianceTrendsChart: () => import('./components/charts/compliance-trends-chart'),
-  RecyclingProgressChart: () => import('./components/charts/recycling-progress-chart'),
-  
-  // Map Components
-  GlobalWasteMap: () => import('./components/maps/global-waste-map'),
-  LeafletMap: () => import('./components/maps/leaflet-map'),
-  
-  // Dashboard Components
-  DashboardHeader: () => import('./components/dashboard/dashboard-header'),
-  KPICards: () => import('./components/dashboard/kpi-cards'),
+  // Main Dashboard Components
   BlackForestDashboard: () => import('./components/BlackForestDashboard'),
-  WasteDashboard: () => import('./components/WasteDashboard'),
+  CompanyDetailPage: () => import('./components/CompanyDetailPage'),
+  TopWasteCompanies: () => import('./components/TopWasteCompanies'),
 } as const;

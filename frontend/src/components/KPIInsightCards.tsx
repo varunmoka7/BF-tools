@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 import { KPIMetric } from '@/types/waste'
-import { formatNumber, formatPercentage, getTrendIcon } from '@/lib/utils'
+import { formatNumber } from '@/lib/utils'
 import { TrendingUp, TrendingDown, Minus, Target, BarChart3 } from 'lucide-react'
 import { LineChart, Line, ResponsiveContainer, Tooltip } from 'recharts'
 
@@ -46,8 +46,7 @@ const TrendChart: React.FC<{ data: number[]; positive: boolean }> = ({ data, pos
 }
 
 const KPICard: React.FC<KPICardProps> = ({ metric }) => {
-  const isPositiveChange = metric.changeType === 'increase' && metric.change > 0
-  const isNegativeChange = metric.changeType === 'decrease' && metric.change < 0
+
   const isImproving = (metric.id === 'hazardous-share' && metric.change < 0) || 
                      (metric.id !== 'hazardous-share' && metric.change > 0)
 

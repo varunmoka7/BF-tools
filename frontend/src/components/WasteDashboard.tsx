@@ -2,16 +2,15 @@ import React, { useState } from 'react'
 import { GlobalWasteFootprintMap } from './GlobalWasteFootprintMap'
 import { KPIInsightCards } from './KPIInsightCards'
 import { SectorLeaderboards } from './SectorLeaderboards'
-import { CompanyProfileView } from './CompanyProfileView'
 import { Button } from './ui/button'
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card'
 import { Badge } from './ui/badge'
-import { WasteData, CompanyData, KPIMetric, SectorLeaderboard } from '@/types/waste'
+import { WasteData, Company, KPIMetric, SectorLeaderboard } from '@/types/waste'
 import { BarChart3, Globe, Building2, TrendingUp, ArrowLeft } from 'lucide-react'
 
 interface WasteDashboardProps {
   wasteData: WasteData[]
-  companyData: CompanyData[]
+  companyData: Company[]
   kpiMetrics: KPIMetric[]
   sectorLeaderboards: SectorLeaderboard[]
   className?: string
@@ -66,7 +65,14 @@ export const WasteDashboard: React.FC<WasteDashboardProps> = ({
           </CardContent>
         </Card>
         
-        <CompanyProfileView company={selectedCompany} />
+        <Card>
+          <CardContent className="pt-6">
+            <div className="text-center py-8">
+              <h3 className="text-xl font-semibold">{selectedCompany.company_name}</h3>
+              <p className="text-muted-foreground">Company profile coming soon...</p>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     )
   }
@@ -145,12 +151,12 @@ export const WasteDashboard: React.FC<WasteDashboardProps> = ({
                 onClick={() => handleCompanySelect(company.id)}
               >
                 <div className="text-left">
-                  <div className="font-medium">{company.name}</div>
+                  <div className="font-medium">{company.company_name}</div>
                   <div className="text-sm text-muted-foreground">
                     {company.country} • {company.sector}
                   </div>
                   <div className="text-sm text-primary mt-1">
-                    Recovery Rate: {company.recoveryRates[company.recoveryRates.length - 1].toFixed(1)}%
+                    Company Profile
                   </div>
                 </div>
               </Button>

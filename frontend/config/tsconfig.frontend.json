@@ -4,18 +4,12 @@
     "noEmit": true
   },
   "include": [
-    "src/App.tsx",
-    "src/main.tsx",
-    "src/components/BlackForestDashboard.tsx",
-    "src/components/ui/*.tsx",
-    "src/data/mockData.ts",
-    "src/types/waste.ts",
-    "src/lib/utils.ts"
+    "../src/**/*"
   ],
   "exclude": [
-    "src/api/**/*",
-    "src/services/**/*",
-    "src/database/**/*"
+    "../node_modules",
+    "../**/*.test.*",
+    "../**/*.spec.*"
   ]
 }
 
