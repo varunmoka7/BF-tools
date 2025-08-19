@@ -6,7 +6,6 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { WasteCompany } from '@/types/waste'
 import { formatNumber, formatCurrency, getComplianceColor } from '@/lib/utils'
-import { pilotCompanies, PilotCompany } from '@/data/pilot-companies'
 import { 
   Building2, 
   MapPin, 
@@ -21,15 +20,7 @@ import {
   Trash2,
   CheckCircle,
   AlertTriangle,
-  XCircle,
-  Globe,
-  Calendar,
-  Users,
-  Target,
-  Award,
-  FileText,
-  Factory,
-  Leaf
+  XCircle
 } from 'lucide-react'
 
 interface CompanyFilters {
@@ -41,11 +32,10 @@ interface CompanyFilters {
 }
 
 export default function CompaniesPage() {
-  const [companies, setCompanies] = useState<PilotCompany[]>([])
-  const [filteredCompanies, setFilteredCompanies] = useState<PilotCompany[]>([])
+  const [companies, setCompanies] = useState<WasteCompany[]>([])
+  const [filteredCompanies, setFilteredCompanies] = useState<WasteCompany[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [showPilotCompanies, setShowPilotCompanies] = useState(true)
   const [filters, setFilters] = useState<CompanyFilters>({
     search: '',
     country: '',
@@ -57,9 +47,13 @@ export default function CompaniesPage() {
   useEffect(() => {
     async function fetchCompanies() {
       try {
-        // Use pilot companies data for demonstration
-        setCompanies(pilotCompanies)
-        setFilteredCompanies(pilotCompanies)
+        const response = await fetch('/api/waste-data')
+        if (!response.ok) {
+          throw new Error('Failed to fetch company data')
+        }
+        const data: WasteCompany[] = await response.json()
+        setCompanies(data)
+        setFilteredCompanies(data)
       } catch (err: any) {
         setError(err.message)
       } finally {
@@ -75,8 +69,7 @@ export default function CompaniesPage() {
     if (filters.search) {
       filtered = filtered.filter(company =>
         company.name.toLowerCase().includes(filters.search.toLowerCase()) ||
-        company.country.toLowerCase().includes(filters.search.toLowerCase()) ||
-        company.sector.toLowerCase().includes(filters.search.toLowerCase())
+        company.country.toLowerCase().includes(filters.search.toLowerCase())
       )
     }
 
@@ -104,9 +97,9 @@ export default function CompaniesPage() {
       filtered = filtered.filter(company => {
         const volume = company.annualVolume
         switch (filters.volumeRange) {
-          case 'small': return volume < 10000
-          case 'medium': return volume >= 10000 && volume < 50000
-          case 'large': return volume >= 50000
+          case 'small': return volume < 1000
+          case 'medium': return volume >= 1000 && volume < 10000
+          case 'large': return volume >= 10000
           default: return true
         }
       })
@@ -164,17 +157,13 @@ export default function CompaniesPage() {
         <div className="flex items-center space-x-3">
           <Building2 className="h-8 w-8 text-green-600" />
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Enhanced Company Profiles</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Company Management</h1>
             <p className="text-gray-600">
-              Pilot Program: 10 companies with comprehensive waste management data
+              Manage waste management companies and track their performance
             </p>
           </div>
         </div>
         <div className="flex items-center space-x-2">
-          <Badge variant="secondary" className="bg-blue-100 text-blue-800">
-            <Target className="h-4 w-4 mr-1" />
-            Pilot Program
-          </Badge>
           <Button variant="outline" size="sm">
             <Download className="h-4 w-4 mr-2" />
             Export
@@ -190,12 +179,12 @@ export default function CompaniesPage() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Pilot Companies</CardTitle>
+            <CardTitle className="text-sm font-medium">Total Companies</CardTitle>
             <Building2 className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{companies.length}</div>
-            <p className="text-xs text-muted-foreground">Enhanced profiles</p>
+            <p className="text-xs text-muted-foreground">+12% from last month</p>
           </CardContent>
         </Card>
         
@@ -219,22 +208,22 @@ export default function CompaniesPage() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {formatCurrency(companies.reduce((sum, c) => sum + (c.revenue_usd || 0), 0))}
+              {formatCurrency(companies.reduce((sum, c) => sum + (c.revenue || 0), 0))}
             </div>
-            <p className="text-xs text-muted-foreground">Combined revenue</p>
+            <p className="text-xs text-muted-foreground">+8% from last month</p>
           </CardContent>
         </Card>
         
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Zero Waste Commitment</CardTitle>
-            <Leaf className="h-4 w-4 text-green-600" />
+            <CardTitle className="text-sm font-medium">Avg Recycling Rate</CardTitle>
+            <Recycle className="h-4 w-4 text-green-600" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {companies.filter(c => c.waste_profile.zero_waste_commitment).length}
+              {(companies.reduce((sum, c) => sum + c.recyclingRate, 0) / companies.length).toFixed(1)}%
             </div>
-            <p className="text-xs text-muted-foreground">Companies committed</p>
+            <p className="text-xs text-muted-foreground">+2.3% from last month</p>
           </CardContent>
         </Card>
       </div>
@@ -358,13 +347,13 @@ export default function CompaniesPage() {
                         </div>
                         
                         <div className="flex items-center space-x-2">
-                          <Building2 className="h-4 w-4" />
-                          <span>{company.sector}</span>
+                          <Recycle className="h-4 w-4" />
+                          <span>{formatNumber(company.annualVolume)} tons/year</span>
                         </div>
                         
                         <div className="flex items-center space-x-2">
-                          <Recycle className="h-4 w-4" />
-                          <span>{company.sustainability_metrics?.recycling_rate_percentage || 0}% recycling</span>
+                          <TrendingUp className="h-4 w-4" />
+                          <span>{company.recyclingRate}% recycling rate</span>
                         </div>
                         
                         <div className="flex items-center space-x-2">
@@ -373,29 +362,11 @@ export default function CompaniesPage() {
                         </div>
                       </div>
                       
-                      <div className="mt-2 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
-                        <div>
-                          <span className="text-gray-600">Revenue: </span>
-                          <span className="font-medium">{formatCurrency(company.revenue_usd || 0)}</span>
-                        </div>
-                        
-                        <div>
-                          <span className="text-gray-600">Founded: </span>
-                          <span className="font-medium">{company.founded_year}</span>
-                        </div>
-                        
-                        <div>
-                          <span className="text-gray-600">ESG Score: </span>
-                          <span className="font-medium">{company.sustainability_metrics?.esg_score || 'N/A'}</span>
-                        </div>
-                      </div>
-                      
-                      {company.waste_profile.zero_waste_commitment && (
+                      {company.revenue && (
                         <div className="mt-2">
-                          <Badge variant="secondary" className="bg-green-100 text-green-800">
-                            <Target className="h-3 w-3 mr-1" />
-                            Zero Waste Commitment
-                          </Badge>
+                          <span className="text-sm text-gray-600">
+                            Annual Revenue: <span className="font-medium">{formatCurrency(company.revenue)}</span>
+                          </span>
                         </div>
                       )}
                       
@@ -403,7 +374,7 @@ export default function CompaniesPage() {
                         <div className="mt-2 flex flex-wrap gap-1">
                           {company.certifications.slice(0, 3).map((cert, index) => (
                             <Badge key={index} variant="secondary" className="text-xs">
-                              {cert.certification_name}
+                              {cert}
                             </Badge>
                           ))}
                           {company.certifications.length > 3 && (
@@ -416,10 +387,8 @@ export default function CompaniesPage() {
                     </div>
                     
                     <div className="flex items-center space-x-2 ml-4">
-                      <Button variant="ghost" size="sm" asChild>
-                        <a href={`/company/${company.id}`}>
-                          <Eye className="h-4 w-4" />
-                        </a>
+                      <Button variant="ghost" size="sm">
+                        <Eye className="h-4 w-4" />
                       </Button>
                       <Button variant="ghost" size="sm">
                         <Edit className="h-4 w-4" />
