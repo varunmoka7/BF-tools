@@ -53,7 +53,7 @@ export class CSVProcessor {
             reject(error)
           }
         },
-        error: (error) => {
+        error: (error: any) => {
           reject(new Error(`CSV parsing failed: ${error.message}`))
         }
       })

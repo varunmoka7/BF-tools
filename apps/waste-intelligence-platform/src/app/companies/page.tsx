@@ -47,15 +47,16 @@ export default function CompaniesPage() {
   useEffect(() => {
     async function fetchCompanies() {
       try {
-        const response = await fetch('/api/waste-data')
+        const response = await fetch('/api/companies')
         if (!response.ok) {
           throw new Error('Failed to fetch company data')
         }
-        const data: WasteCompany[] = await response.json()
+        const result = await response.json()
+        const data: WasteCompany[] = result.data || result
         setCompanies(data)
         setFilteredCompanies(data)
       } catch (err: any) {
-        setError(err.message)
+        setError(err instanceof Error ? err.message : 'An error occurred')
       } finally {
         setLoading(false)
       }
