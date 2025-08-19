@@ -1,30 +1,19 @@
-import { DashboardHeader } from '@/components/dashboard/dashboard-header'
-import { KPICards } from '@/components/dashboard/kpi-cards'
-import { GlobalWasteMap } from '@/components/maps/global-waste-map'
-import { EnhancedWasteDataTable } from '@/components/tables/enhanced-waste-data-table'
-import { ChartsSection } from '@/components/charts/charts-section'
+import { CompanyDirectory } from '@/components/company-directory'
 
-export default function Dashboard() {
+export default function HomePage() {
   return (
-    <div className="p-6 space-y-6">
-      <DashboardHeader />
-      
-      {/* KPI Overview */}
-      <KPICards />
-      
-      {/* Global Waste Map */}
-      <div className="bg-white rounded-lg p-6 shadow-sm border">
-        <h2 className="text-xl font-semibold mb-4">Global Waste Distribution</h2>
-        <GlobalWasteMap />
-      </div>
-      
-      {/* Charts Section */}
-      <ChartsSection />
-      
-      {/* Enhanced Companies Data Table */}
-      <div className="bg-white rounded-lg p-6 shadow-sm border">
-        <h2 className="text-xl font-semibold mb-4">Waste Management Companies</h2>
-        <EnhancedWasteDataTable />
+    <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto px-4 py-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Waste Intelligence Platform
+          </h1>
+          <p className="text-lg text-gray-600">
+            Discover companies, analyze waste management metrics, and identify business opportunities.
+          </p>
+        </div>
+        
+        <CompanyDirectory />
       </div>
     </div>
   )
