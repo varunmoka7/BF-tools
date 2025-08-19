@@ -58,7 +58,7 @@ export function EnhancedWasteDataTable() {
         params.append('wasteType', filters.wasteType[0]) // For simplicity, using first waste type
       }
       
-      const response = await fetch(`/api/waste-data?${params}`)
+      const response = await fetch(`/api/companies-db?${params}`)
       if (!response.ok) {
         throw new Error('Failed to fetch data')
       }

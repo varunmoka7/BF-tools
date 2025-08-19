@@ -50,11 +50,12 @@ export default function MapPage() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('/api/waste-data')
+        const response = await fetch('/api/companies-db')
         if (!response.ok) {
           throw new Error('Failed to fetch map data')
         }
-        const data: WasteCompany[] = await response.json()
+        const result = await response.json()
+        const data: WasteCompany[] = result.data || []
         
         setCompanies(data)
         

@@ -29,11 +29,12 @@ export function GlobalWasteMap() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('/api/waste-data')
+        const response = await fetch('/api/companies-db')
         if (!response.ok) {
           throw new Error('Failed to fetch map data')
         }
-        const companies: WasteCompany[] = await response.json()
+        const result = await response.json()
+        const companies: WasteCompany[] = result.data || []
         
         const markers = companies.map(company => ({
           id: company.id,

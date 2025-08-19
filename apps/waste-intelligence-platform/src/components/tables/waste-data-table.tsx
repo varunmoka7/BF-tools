@@ -14,11 +14,12 @@ export function WasteDataTable() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('/api/waste-data')
+        const response = await fetch('/api/companies-db')
         if (!response.ok) {
           throw new Error('Failed to fetch data')
         }
-        const jsonData = await response.json()
+        const result = await response.json()
+        const jsonData = result.data || []
         setData(jsonData)
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred')
