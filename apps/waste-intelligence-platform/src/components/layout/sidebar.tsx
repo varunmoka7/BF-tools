@@ -7,7 +7,8 @@ import {
   BarChart3, 
   Globe, 
   Building2, 
-  Settings
+  Settings,
+  Recycle
 } from 'lucide-react'
 
 const navigation = [
