@@ -16,7 +16,9 @@
     "backend:build": "tsc -p backend/config/tsconfig.json",
     "backend:test": "jest --config backend/config/jest.config.js",
     "unified:dev": "ts-node src/unified-server.ts",
-    "unified:build": "npm run build && ts-node src/unified-server.ts"
+    "unified:build": "npm run build && ts-node src/unified-server.ts",
+    "migrate:supabase": "node scripts/migrate-to-supabase.js",
+    "setup:supabase": "node scripts/setup-supabase-schema.js"
   },
   "repository": {
     "type": "git",

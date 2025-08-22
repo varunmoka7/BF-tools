@@ -1,389 +1,392 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { formatNumber } from '@/lib/utils'
-import { useCompanies, type Company } from '@/contexts/companies-context'
-import { 
-  Building2, 
-  MapPin, 
-  Plus,
-  Filter,
-  Download,
-  Eye,
-  Users,
-  Globe,
-  TrendingUp
-} from 'lucide-react'
+import React, { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
+import { Search, Filter, SortAsc, SortDesc, Building2, MapPin, Users, Calendar, TrendingUp } from 'lucide-react'
 
-interface CompanyFilters {
-  search: string;
-  country: string;
-  sector: string;
-  industry: string;
-  employeeRange: string;
-  yearRange: string;
+interface Company {
+  id: string
+  name: string
+  country: string
+  sector: string
+  industry: string
+  employees: number
+  year_of_disclosure: number
+  ticker: string
+  exchange: string
+  coordinates: {
+    lat: number
+    lng: number
+    address: string
+  }
 }
 
-// Memoized company row component to prevent unnecessary re-renders
-const CompanyRow = React.memo(({ company }: { company: Company }) => (
-  <tr className="hover:bg-gray-50">
-    <td className="px-6 py-4 whitespace-nowrap">
-      <div className="flex items-center">
-        <div>
-          <div className="text-sm font-medium text-gray-900">
-            {company.name}
-          </div>
-          <div className="text-sm text-gray-500">
-            {company.ticker} • {company.exchange}
-          </div>
-        </div>
-      </div>
-    </td>
-    <td className="px-6 py-4 whitespace-nowrap">
-      <div className="flex items-center">
-        <MapPin className="h-4 w-4 text-gray-400 mr-1" />
-        <span className="text-sm text-gray-900">{company.country}</span>
-      </div>
-    </td>
-    <td className="px-6 py-4 whitespace-nowrap">
-      <Badge variant="secondary">
-        {company.sector}
-      </Badge>
-    </td>
-    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-      {company.industry}
-    </td>
-    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-      {formatNumber(company.employees)}
-    </td>
-    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-      {company.year_of_disclosure}
-    </td>
-    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-      <Link 
-        href={`/company/${company.id}`}
-        className="text-blue-600 hover:text-blue-900 flex items-center"
-      >
-        <Eye className="h-4 w-4 mr-1" />
-        View
-      </Link>
-    </td>
-  </tr>
-))
-
-CompanyRow.displayName = 'CompanyRow'
+type SortField = 'name' | 'country' | 'sector' | 'employees' | 'year_of_disclosure'
+type SortDirection = 'asc' | 'desc'
 
 export default function CompaniesPage() {
-  const { companies, loading, error } = useCompanies()
-  const [filters, setFilters] = useState<CompanyFilters>({
-    search: '',
-    country: '',
-    sector: '',
-    industry: '',
-    employeeRange: '',
-    yearRange: ''
-  })
+  const [companies, setCompanies] = useState<Company[]>([])
+  const [loading, setLoading] = useState(true)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedCountry, setSelectedCountry] = useState('')
+  const [selectedSector, setSelectedSector] = useState('')
+  const [selectedIndustry, setSelectedIndustry] = useState('')
+  const [sortField, setSortField] = useState<SortField>('name')
+  const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
+  const [showFilters, setShowFilters] = useState(false)
 
-  // Memoize filtered companies to prevent unnecessary recalculations
-  const filteredCompanies = useMemo(() => {
+  useEffect(() => {
+    fetchCompanies()
+  }, [])
+
+  const fetchCompanies = async () => {
+    try {
+      setLoading(true)
+      const response = await fetch('/api/companies-with-coordinates')
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch companies: ${response.status}`)
+      }
+      
+      const data = await response.json()
+      setCompanies(data)
+    } catch (error) {
+      console.error('Error fetching companies:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  // Get unique values for filters
+  const countries = useMemo(() => [...new Set(companies.map(c => c.country))].sort(), [companies])
+  const sectors = useMemo(() => [...new Set(companies.map(c => c.sector))].sort(), [companies])
+  const industries = useMemo(() => [...new Set(companies.map(c => c.industry))].sort(), [companies])
+
+  // Sort and filter companies
+  const filteredAndSortedCompanies = useMemo(() => {
     let filtered = companies
 
-    if (filters.search) {
-      const searchLower = filters.search.toLowerCase()
+    if (searchTerm) {
       filtered = filtered.filter(company =>
-        company.name.toLowerCase().includes(searchLower) ||
-        company.country.toLowerCase().includes(searchLower) ||
-        company.sector.toLowerCase().includes(searchLower) ||
-        company.industry.toLowerCase().includes(searchLower)
+        company.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        company.ticker.toLowerCase().includes(searchTerm.toLowerCase())
       )
     }
 
-    if (filters.country) {
-      filtered = filtered.filter(company => company.country === filters.country)
+    if (selectedCountry) {
+      filtered = filtered.filter(company => company.country === selectedCountry)
     }
 
-    if (filters.sector) {
-      filtered = filtered.filter(company => company.sector === filters.sector)
+    if (selectedSector) {
+      filtered = filtered.filter(company => company.sector === selectedSector)
     }
 
-    if (filters.industry) {
-      filtered = filtered.filter(company => company.industry === filters.industry)
+    if (selectedIndustry) {
+      filtered = filtered.filter(company => company.industry === selectedIndustry)
     }
 
-    if (filters.employeeRange) {
-      filtered = filtered.filter(company => {
-        const employees = company.employees
-        switch (filters.employeeRange) {
-          case 'small': return employees < 1000
-          case 'medium': return employees >= 1000 && employees < 10000
-          case 'large': return employees >= 10000 && employees < 50000
-          case 'enterprise': return employees >= 50000
-          default: return true
-        }
-      })
-    }
+    // Sort companies
+    filtered.sort((a, b) => {
+      let aValue: any = a[sortField]
+      let bValue: any = b[sortField]
 
-    if (filters.yearRange) {
-      filtered = filtered.filter(company => {
-        const year = company.year_of_disclosure
-        switch (filters.yearRange) {
-          case '2024': return year === 2024
-          case '2023': return year === 2023
-          case '2022': return year === 2022
-          case 'older': return year < 2022
-          default: return true
-        }
-      })
-    }
+      if (sortField === 'name') {
+        aValue = aValue.toLowerCase()
+        bValue = bValue.toLowerCase()
+      }
+
+      if (aValue < bValue) return sortDirection === 'asc' ? -1 : 1
+      if (aValue > bValue) return sortDirection === 'asc' ? 1 : -1
+      return 0
+    })
 
     return filtered
-  }, [companies, filters])
+  }, [companies, searchTerm, selectedCountry, selectedSector, selectedIndustry, sortField, sortDirection])
 
-  // Memoize unique values for filters
-  const { uniqueCountries, uniqueSectors, uniqueIndustries } = useMemo(() => {
-    return {
-      uniqueCountries: [...new Set(companies.map(c => c.country))].sort(),
-      uniqueSectors: [...new Set(companies.map(c => c.sector))].sort(),
-      uniqueIndustries: [...new Set(companies.map(c => c.industry))].sort()
+  const clearFilters = () => {
+    setSearchTerm('')
+    setSelectedCountry('')
+    setSelectedSector('')
+    setSelectedIndustry('')
+  }
+
+  const handleSort = (field: SortField) => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')
+    } else {
+      setSortField(field)
+      setSortDirection('asc')
     }
-  }, [companies])
+  }
 
-  const clearFilters = React.useCallback(() => {
-    setFilters({
-      search: '',
-      country: '',
-      sector: '',
-      industry: '',
-      employeeRange: '',
-      yearRange: ''
-    })
-  }, [])
+  const getSortIcon = (field: SortField) => {
+    if (sortField !== field) return null
+    return sortDirection === 'asc' ? <SortAsc className="h-4 w-4" /> : <SortDesc className="h-4 w-4" />
+  }
+
+  const formatNumber = (value: number) => {
+    if (value >= 1e6) return `${(value / 1e6).toFixed(1)}M`
+    if (value >= 1e3) return `${(value / 1e3).toFixed(1)}K`
+    return value.toLocaleString()
+  }
 
   if (loading) {
     return (
-      <div className="p-6">
-        <div className="animate-pulse space-y-6">
-          <div className="h-8 bg-gray-200 rounded w-1/3"></div>
-          <div className="h-64 bg-gray-200 rounded"></div>
-          <div className="space-y-3">
-            {[...Array(5)].map((_, i) => (
-              <div key={i} className="h-20 bg-gray-200 rounded"></div>
-            ))}
+      <div className="min-h-screen bg-gray-50">
+        <div className="container mx-auto p-6">
+          <div className="flex items-center justify-center min-h-[400px]">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading companies...</p>
+            </div>
           </div>
-        </div>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className="p-6">
-        <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-          <h2 className="text-lg font-semibold text-red-800 mb-2">Error Loading Companies</h2>
-          <p className="text-red-600">{error}</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="p-6 space-y-6">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <Building2 className="h-8 w-8 text-green-600" />
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">Company Directory</h1>
-            <p className="text-gray-600">
-              Explore {companies.length} companies across {uniqueCountries.length} countries and {uniqueSectors.length} sectors
-            </p>
+    <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto p-6">
+        {/* Header */}
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">Companies</h1>
+              <p className="text-gray-600 mt-1">Explore {companies.length} companies and their waste management profiles</p>
+            </div>
+            <div className="flex items-center space-x-3">
+              <button
+                onClick={() => setShowFilters(!showFilters)}
+                className="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <Filter className="h-4 w-4" />
+                <span>Filters</span>
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="flex items-center space-x-2">
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
-            Export
-          </Button>
-          <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" />
-            Add Company
-          </Button>
-        </div>
-      </div>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center">
-              <Building2 className="h-8 w-8 text-blue-600" />
-              <div className="ml-4">
-                <div className="text-2xl font-bold">{filteredCompanies.length}</div>
-                <p className="text-xs text-muted-foreground">Total Companies</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center">
-              <Globe className="h-8 w-8 text-green-600" />
-              <div className="ml-4">
-                <div className="text-2xl font-bold">{uniqueCountries.length}</div>
-                <p className="text-xs text-muted-foreground">Countries</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center">
-              <TrendingUp className="h-8 w-8 text-purple-600" />
-              <div className="ml-4">
-                <div className="text-2xl font-bold">{uniqueSectors.length}</div>
-                <p className="text-xs text-muted-foreground">Sectors</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center">
-              <Users className="h-8 w-8 text-orange-600" />
-              <div className="ml-4">
-                <div className="text-2xl font-bold">
-                  {formatNumber(filteredCompanies.reduce((sum, c) => sum + c.employees, 0))}
-                </div>
-                <p className="text-xs text-muted-foreground">Total Employees</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Filters */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center">
-            <Filter className="h-5 w-5 mr-2" />
-            Filters
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            <Input
-              placeholder="Search companies..."
-              value={filters.search}
-              onChange={(e) => setFilters(prev => ({ ...prev, search: e.target.value }))}
+          {/* Search Bar */}
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <input
+              type="text"
+              placeholder="Search companies by name or ticker..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
-            
-            <Select value={filters.country} onValueChange={(value) => setFilters(prev => ({ ...prev, country: value }))}>
-              <SelectTrigger>
-                <SelectValue placeholder="Country" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="">All Countries</SelectItem>
-                {uniqueCountries.map(country => (
-                  <SelectItem key={country} value={country}>{country}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            
-            <Select value={filters.sector} onValueChange={(value) => setFilters(prev => ({ ...prev, sector: value }))}>
-              <SelectTrigger>
-                <SelectValue placeholder="Sector" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="">All Sectors</SelectItem>
-                {uniqueSectors.map(sector => (
-                  <SelectItem key={sector} value={sector}>{sector}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            
-            <Select value={filters.industry} onValueChange={(value) => setFilters(prev => ({ ...prev, industry: value }))}>
-              <SelectTrigger>
-                <SelectValue placeholder="Industry" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="">All Industries</SelectItem>
-                {uniqueIndustries.map(industry => (
-                  <SelectItem key={industry} value={industry}>{industry}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            
-            <Select value={filters.employeeRange} onValueChange={(value) => setFilters(prev => ({ ...prev, employeeRange: value }))}>
-              <SelectTrigger>
-                <SelectValue placeholder="Employee Range" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="">All Sizes</SelectItem>
-                <SelectItem value="small">Small (&lt; 1K)</SelectItem>
-                <SelectItem value="medium">Medium (1K - 10K)</SelectItem>
-                <SelectItem value="large">Large (10K - 50K)</SelectItem>
-                <SelectItem value="enterprise">Enterprise (50K+)</SelectItem>
-              </SelectContent>
-            </Select>
-            
-            <Button variant="outline" onClick={clearFilters}>
-              Clear Filters
-            </Button>
           </div>
-        </CardContent>
-      </Card>
+        </div>
 
-      {/* Companies Table */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Companies ({filteredCompanies.length})</CardTitle>
-        </CardHeader>
-        <CardContent>
+        {/* Filters */}
+        {showFilters && (
+          <div className="bg-white rounded-lg shadow-sm border p-6 mb-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Advanced Filters</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {/* Country Filter */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Country</label>
+                <select
+                  value={selectedCountry}
+                  onChange={(e) => setSelectedCountry(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+                  <option value="">All Countries</option>
+                  {countries.map(country => (
+                    <option key={country} value={country}>{country}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Sector Filter */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Sector</label>
+                <select
+                  value={selectedSector}
+                  onChange={(e) => setSelectedSector(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+                  <option value="">All Sectors</option>
+                  {sectors.map(sector => (
+                    <option key={sector} value={sector}>{sector}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Industry Filter */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Industry</label>
+                <select
+                  value={selectedIndustry}
+                  onChange={(e) => setSelectedIndustry(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+                  <option value="">All Industries</option>
+                  {industries.map(industry => (
+                    <option key={industry} value={industry}>{industry}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Clear Filters */}
+              <div className="flex items-end">
+                <button
+                  onClick={clearFilters}
+                  className="w-full px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors"
+                >
+                  Clear Filters
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Results Summary */}
+        <div className="mb-6">
+          <div className="flex items-center justify-between">
+            <p className="text-gray-600">
+              Showing <span className="font-semibold">{filteredAndSortedCompanies.length}</span> of <span className="font-semibold">{companies.length}</span> companies
+            </p>
+            <div className="flex items-center space-x-2 text-sm text-gray-500">
+              <TrendingUp className="h-4 w-4" />
+              <span>Click column headers to sort</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Companies Table */}
+        <div className="bg-white rounded-lg shadow-sm border overflow-hidden">
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Company
+                  <th 
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                    onClick={() => handleSort('name')}
+                  >
+                    <div className="flex items-center space-x-1">
+                      <span>Company</span>
+                      {getSortIcon('name')}
+                    </div>
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Country
+                    Ticker
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Sector
+                  <th 
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                    onClick={() => handleSort('country')}
+                  >
+                    <div className="flex items-center space-x-1">
+                      <span>Country</span>
+                      {getSortIcon('country')}
+                    </div>
+                  </th>
+                  <th 
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                    onClick={() => handleSort('sector')}
+                  >
+                    <div className="flex items-center space-x-1">
+                      <span>Sector</span>
+                      {getSortIcon('sector')}
+                    </div>
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Industry
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Employees
+                  <th 
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                    onClick={() => handleSort('employees')}
+                  >
+                    <div className="flex items-center space-x-1">
+                      <span>Employees</span>
+                      {getSortIcon('employees')}
+                    </div>
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Year
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Actions
+                  <th 
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                    onClick={() => handleSort('year_of_disclosure')}
+                  >
+                    <div className="flex items-center space-x-1">
+                      <span>Year</span>
+                      {getSortIcon('year_of_disclosure')}
+                    </div>
                   </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {filteredCompanies.map((company) => (
-                  <CompanyRow key={company.id} company={company} />
+                {filteredAndSortedCompanies.map((company) => (
+                  <tr key={company.id} className="hover:bg-gray-50 transition-colors">
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <Link 
+                        href={`/companies/${company.id}`}
+                        className="flex items-center space-x-3 group"
+                      >
+                        <div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
+                          <Building2 className="h-4 w-4 text-blue-600" />
+                        </div>
+                        <div>
+                          <div className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
+                            {company.name}
+                          </div>
+                          <div className="text-xs text-gray-500">{company.exchange}</div>
+                        </div>
+                      </Link>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="text-sm font-medium text-gray-900">{company.ticker}</div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="flex items-center space-x-1">
+                        <MapPin className="h-3 w-3 text-gray-400" />
+                        <span className="text-sm text-gray-900">{company.country}</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="text-sm text-gray-900">{company.sector}</div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="text-sm text-gray-900">{company.industry}</div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="flex items-center space-x-1">
+                        <Users className="h-3 w-3 text-gray-400" />
+                        <span className="text-sm text-gray-900">{formatNumber(company.employees)}</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="flex items-center space-x-1">
+                        <Calendar className="h-3 w-3 text-gray-400" />
+                        <span className="text-sm text-gray-900">{company.year_of_disclosure}</span>
+                      </div>
+                    </td>
+                  </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+
+        {/* No Results */}
+        {filteredAndSortedCompanies.length === 0 && !loading && (
+          <div className="text-center py-12">
+            <div className="max-w-md mx-auto">
+              <div className="p-4 bg-gray-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <Search className="h-8 w-8 text-gray-400" />
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">No companies found</h3>
+              <p className="text-gray-500 mb-4">Try adjusting your search terms or filters to find what you're looking for.</p>
+              <button
+                onClick={clearFilters}
+                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              >
+                Clear All Filters
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   )
 }

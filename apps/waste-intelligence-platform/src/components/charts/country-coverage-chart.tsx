@@ -1,9 +1,8 @@
 'use client'
 
-import React, { useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
-import { useCompanies } from '@/contexts/companies-context'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
@@ -23,59 +22,39 @@ const FALLBACK_CHART_DATA = {
 }
 
 export const CountryCoverageChart = React.memo(() => {
-  const { companies, loading, error } = useCompanies()
+  const [chartData, setChartData] = useState(FALLBACK_CHART_DATA)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
-  const chartData = useMemo(() => {
-    if (!companies || companies.length === 0) {
-      return FALLBACK_CHART_DATA
-    }
-
-    // Calculate country distribution
-    const countryCounts = companies.reduce((acc, company) => {
-      acc[company.country] = (acc[company.country] || 0) + 1
-      return acc
-    }, {} as Record<string, number>)
-    
-    // Sort countries by company count
-    const sortedCountries = Object.entries(countryCounts)
-      .sort(([,a], [,b]) => b - a)
-    
-    const labels = sortedCountries.map(([country]) => country)
-    const data = sortedCountries.map(([, count]) => count)
-    
-    return {
-      labels,
-      datasets: [
-        {
-          label: 'Number of Companies',
-          data,
-          backgroundColor: 'rgba(59, 130, 246, 0.8)',
-          borderColor: 'rgba(59, 130, 246, 1)',
-          borderWidth: 1,
-          yAxisID: 'y',
+  useEffect(() => {
+    const fetchChartData = async () => {
+      try {
+        setLoading(true)
+        setError(null)
+        
+        const response = await fetch('/api/charts/country-coverage')
+        const result = await response.json()
+        
+        if (result.success) {
+          setChartData(result.data)
+          console.log('Country coverage chart data loaded:', result.data)
+        } else {
+          console.error('Failed to fetch country coverage data:', result.error)
+          setError(result.error || 'Failed to load chart data')
         }
-      ]
+      } catch (error) {
+        console.error('Error fetching country coverage data:', error)
+        setError('Network error while loading chart data')
+      } finally {
+        setLoading(false)
+      }
     }
-  }, [companies])
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className="flex items-center justify-center h-64 text-gray-500">
-        Error loading chart data
-      </div>
-    )
-  }
+    fetchChartData()
+  }, [])
 
   // Memoize chart options to prevent unnecessary re-renders
-  const options = useMemo(() => ({
+  const options = React.useMemo(() => ({
     responsive: true,
     maintainAspectRatio: false,
     interaction: {
@@ -115,6 +94,25 @@ export const CountryCoverageChart = React.memo(() => {
       }
     }
   }), [])
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-64 text-gray-500">
+        <div className="text-center">
+          <p className="text-sm text-gray-400 mb-2">Error loading chart data</p>
+          <p className="text-xs text-gray-300">{error}</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="h-64">

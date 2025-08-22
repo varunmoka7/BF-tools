@@ -12,6 +12,10 @@ export interface Company {
   year_of_disclosure: number;
   ticker: string;
   exchange: string;
+  isin?: string;
+  lei?: string;
+  figi?: string;
+  permid?: string;
   coordinates: {
     lat: number;
     lng: number;
@@ -116,8 +120,16 @@ export function CompaniesProvider({ children }: { children: ReactNode }) {
       
       const companiesData: Company[] = await response.json()
       
+      console.log('Companies data loaded:', {
+        count: companiesData.length,
+        firstCompany: companiesData[0],
+        sample: companiesData.slice(0, 3)
+      })
+      
       setCompanies(companiesData)
-      setMetrics(calculateMetrics(companiesData))
+      const calculatedMetrics = calculateMetrics(companiesData)
+      console.log('Calculated metrics:', calculatedMetrics)
+      setMetrics(calculatedMetrics)
     } catch (err: any) {
       const errorMessage = err instanceof Error ? err.message : 'An error occurred'
       setError(errorMessage)
@@ -132,7 +144,7 @@ export function CompaniesProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     fetchCompanies()
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const value: CompaniesContextType = {
     companies,

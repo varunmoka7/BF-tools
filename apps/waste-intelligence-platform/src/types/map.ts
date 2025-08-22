@@ -8,10 +8,10 @@ export interface Company {
   year_of_disclosure: number;
   ticker: string;
   exchange: string;
-  isin: string;
-  lei: string;
-  figi: string;
-  permid: string;
+  isin?: string;
+  lei?: string;
+  figi?: string;
+  permid?: string;
   coordinates: {
     lat: number;
     lng: number;

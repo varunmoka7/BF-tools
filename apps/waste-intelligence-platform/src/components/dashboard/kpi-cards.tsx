@@ -3,13 +3,14 @@
 import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { formatNumber } from '@/lib/utils'
-import { useCompanies } from '@/contexts/companies-context'
+import { useKPI } from '@/contexts/kpi-context'
 import { 
   TrendingUp, 
   Building2, 
   Globe,
   CheckCircle,
-  Users
+  Users,
+  Trash2
 } from 'lucide-react'
 
 const KPICard = React.memo(({ title, value, icon: Icon, trend, trendColor, index }: {
@@ -41,7 +42,14 @@ const KPICard = React.memo(({ title, value, icon: Icon, trend, trendColor, index
 KPICard.displayName = 'KPICard'
 
 export function KPICards() {
-  const { metrics, loading, error } = useCompanies()
+  const { kpiData, loading, error } = useKPI()
+  
+  console.log('KPICards render state:', {
+    hasKpiData: !!kpiData,
+    loading,
+    error,
+    kpiData
+  })
 
   if (loading) {
     return (
@@ -71,56 +79,56 @@ export function KPICards() {
     )
   }
 
-  if (!metrics) return <div>No metrics available...</div>
+  if (!kpiData) return <div>No KPI data available...</div>
 
-  const kpiData = [
+  const kpiCards = [
     {
       title: 'Total Companies',
-      value: formatNumber(metrics.totalCompanies),
+      value: formatNumber(kpiData.totalCompanies),
       icon: Building2,
-      trend: `Covering ${metrics.countriesCovered} countries`,
+      trend: `Covering ${kpiData.countriesCovered} countries`,
       trendColor: 'text-blue-600'
     },
     {
-      title: 'Total Employees',
-      value: formatNumber(metrics.totalEmployees),
-      icon: Users,
-      trend: `Avg: ${formatNumber(metrics.averageEmployees)} per company`,
+      title: 'Total Waste Generated',
+      value: `${formatNumber(kpiData.totalWasteGenerated)} MT`,
+      icon: Trash2,
+      trend: 'Annual waste volume',
+      trendColor: 'text-red-600'
+    },
+    {
+      title: 'Total Waste Recovered',
+      value: `${formatNumber(kpiData.totalWasteRecovered)} MT`,
+      icon: CheckCircle,
+      trend: 'Recovery volume',
+      trendColor: 'text-green-600'
+    },
+    {
+      title: 'Average Recovery Rate',
+      value: `${kpiData.avgRecoveryRate.toFixed(1)}%`,
+      icon: TrendingUp,
+      trend: 'Industry average',
       trendColor: 'text-green-600'
     },
     {
       title: 'Countries Covered',
-      value: metrics.countriesCovered.toString(),
+      value: kpiData.countriesCovered.toString(),
       icon: Globe,
-      trend: `Top: ${metrics.topCountry}`,
+      trend: 'Global coverage',
       trendColor: 'text-purple-600'
     },
     {
-      title: 'Sectors Represented',
-      value: metrics.sectorsRepresented.toString(),
-      icon: TrendingUp,
-      trend: `Top: ${metrics.topSector}`,
-      trendColor: 'text-orange-600'
-    },
-    {
-      title: 'Latest Data Year',
-      value: metrics.latestYear.toString(),
+      title: 'Data Freshness',
+      value: 'Real-time',
       icon: CheckCircle,
-      trend: 'Most recent reporting period',
-      trendColor: 'text-green-600'
-    },
-    {
-      title: 'Data Coverage',
-      value: '100%',
-      icon: CheckCircle,
-      trend: 'Complete company profiles',
-      trendColor: 'text-green-600'
+      trend: `Updated: ${new Date(kpiData.lastUpdated).toLocaleDateString()}`,
+      trendColor: 'text-blue-600'
     }
   ]
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {kpiData.map((kpi, index) => (
+      {kpiCards.map((kpi, index) => (
         <KPICard
           key={kpi.title}
           title={kpi.title}

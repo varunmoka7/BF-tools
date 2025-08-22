@@ -1,76 +1,70 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { mockWasteCompanies } from '@/data/mock-data'
-import { FilterOptions } from '@/types/waste'
+import { supabase } from '@/lib/supabase'
 
 export async function GET(request: NextRequest) {
-  const searchParams = request.nextUrl.searchParams
-  
-  // Extract filter parameters
-  const filters: FilterOptions = {
-    country: searchParams.get('country')?.split(',') || undefined,
-    wasteType: searchParams.get('wasteType')?.split(',') || undefined,
-    volumeRange: searchParams.get('volumeRange') ? 
-      JSON.parse(searchParams.get('volumeRange')!) : undefined,
-    recyclingRateRange: searchParams.get('recyclingRateRange') ? 
-      JSON.parse(searchParams.get('recyclingRateRange')!) : undefined,
-    complianceRange: searchParams.get('complianceRange') ? 
-      JSON.parse(searchParams.get('complianceRange')!) : undefined,
+  try {
+    const searchParams = request.nextUrl.searchParams
+    
+    // Extract query parameters
+    const page = parseInt(searchParams.get('page') || '1')
+    const limit = parseInt(searchParams.get('limit') || '20')
+    const search = searchParams.get('search') || ''
+    const country = searchParams.get('country') || ''
+    const sector = searchParams.get('sector') || ''
+    const sortBy = searchParams.get('sortBy') || 'company_name'
+    const sortOrder = searchParams.get('sortOrder') || 'asc'
+
+    // Build query
+    let query = supabase
+      .from('companies')
+      .select('*', { count: 'exact' })
+
+    // Apply filters
+    if (search) {
+      query = query.ilike('company_name', `%${search}%`)
+    }
+    if (country) {
+      query = query.eq('country', country)
+    }
+    if (sector) {
+      query = query.eq('sector', sector)
+    }
+
+    // Apply sorting and pagination
+    const from = (page - 1) * limit
+    const to = from + limit - 1
+
+    const { data: companies, error, count } = await query
+      .order(sortBy, { ascending: sortOrder === 'asc' })
+      .range(from, to)
+
+    if (error) {
+      console.error('Companies API error:', error)
+      return NextResponse.json({
+        success: false,
+        error: 'Failed to fetch companies'
+      }, { status: 500 })
+    }
+
+    return NextResponse.json({
+      success: true,
+      data: {
+        companies,
+        pagination: {
+          page,
+          limit,
+          total: count || 0,
+          totalPages: Math.ceil((count || 0) / limit)
+        }
+      }
+    })
+  } catch (error) {
+    console.error('Companies API error:', error)
+    return NextResponse.json({
+      success: false,
+      error: 'Internal server error'
+    }, { status: 500 })
   }
-
-  let filteredCompanies = mockWasteCompanies
-
-  // Apply filters
-  if (filters.country) {
-    filteredCompanies = filteredCompanies.filter(company => 
-      filters.country!.includes(company.country)
-    )
-  }
-
-  if (filters.wasteType) {
-    filteredCompanies = filteredCompanies.filter(company => 
-      filters.wasteType!.includes(company.wasteType)
-    )
-  }
-
-  if (filters.volumeRange) {
-    const [min, max] = filters.volumeRange
-    filteredCompanies = filteredCompanies.filter(company => 
-      company.annualVolume >= min && company.annualVolume <= max
-    )
-  }
-
-  if (filters.recyclingRateRange) {
-    const [min, max] = filters.recyclingRateRange
-    filteredCompanies = filteredCompanies.filter(company => 
-      company.recyclingRate >= min && company.recyclingRate <= max
-    )
-  }
-
-  if (filters.complianceRange) {
-    const [min, max] = filters.complianceRange
-    filteredCompanies = filteredCompanies.filter(company => 
-      company.complianceScore >= min && company.complianceScore <= max
-    )
-  }
-
-  // Pagination
-  const page = parseInt(searchParams.get('page') || '1')
-  const limit = parseInt(searchParams.get('limit') || '10')
-  const startIndex = (page - 1) * limit
-  const endIndex = startIndex + limit
-
-  const paginatedCompanies = filteredCompanies.slice(startIndex, endIndex)
-
-  return NextResponse.json({
-    data: paginatedCompanies,
-    pagination: {
-      page,
-      limit,
-      total: filteredCompanies.length,
-      totalPages: Math.ceil(filteredCompanies.length / limit)
-    },
-    filters: filters
-  })
 }
 
 export async function POST(request: NextRequest) {
