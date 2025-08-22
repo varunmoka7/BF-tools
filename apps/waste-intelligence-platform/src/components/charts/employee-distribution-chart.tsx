@@ -42,6 +42,7 @@ const FALLBACK_CHART_DATA = {
 export const EmployeeDistributionChart = React.memo(() => {
   const { companies, loading, error } = useCompanies()
 
+  // Memoize chart data - ALWAYS call hooks at top level
   const chartData = useMemo(() => {
     if (!companies || companies.length === 0) {
       return FALLBACK_CHART_DATA
@@ -49,34 +50,25 @@ export const EmployeeDistributionChart = React.memo(() => {
 
     // Count companies in each category
     const categoryCounts = SIZE_CATEGORIES.map(category => {
-      const count = companies.filter(company => 
+      return companies.filter(company => 
         company.employees >= category.min && company.employees <= category.max
       ).length
-      return { ...category, count }
     })
-    
-    // Filter out categories with 0 companies for cleaner chart
-    const nonZeroCategories = categoryCounts.filter(cat => cat.count > 0)
-    
-    const labels = nonZeroCategories.map(cat => cat.name)
-    const data = nonZeroCategories.map(cat => cat.count)
-    
-    // Calculate total employees in each category
-    const categoryEmployees = nonZeroCategories.map(category => {
-      const total = companies
-        .filter(company => 
-          company.employees >= category.min && company.employees <= category.max
-        )
+
+    // Calculate total employees per category
+    const categoryEmployees = SIZE_CATEGORIES.map(category => {
+      const totalEmployees = companies
+        .filter(company => company.employees >= category.min && company.employees <= category.max)
         .reduce((sum, company) => sum + company.employees, 0)
-      return Math.round(total / 1000) // Convert to thousands
+      return Math.round(totalEmployees / 1000) // Convert to thousands
     })
     
     return {
-      labels,
+      labels: SIZE_CATEGORIES.map(cat => cat.name),
       datasets: [
         {
           label: 'Number of Companies',
-          data,
+          data: categoryCounts,
           backgroundColor: 'rgba(99, 102, 241, 0.8)',
           borderColor: 'rgba(99, 102, 241, 1)',
           borderWidth: 1,
@@ -94,23 +86,7 @@ export const EmployeeDistributionChart = React.memo(() => {
     }
   }, [companies])
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className="flex items-center justify-center h-64 text-gray-500">
-        Error loading chart data
-      </div>
-    )
-  }
-
-  // Memoize chart options to prevent unnecessary re-renders
+  // Memoize chart options - ALWAYS call hooks at top level  
   const options = useMemo(() => ({
     responsive: true,
     maintainAspectRatio: false,
@@ -166,6 +142,22 @@ export const EmployeeDistributionChart = React.memo(() => {
       }
     }
   }), [])
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-64 text-gray-500">
+        Error loading chart data
+      </div>
+    )
+  }
 
   return (
     <div className="h-64">

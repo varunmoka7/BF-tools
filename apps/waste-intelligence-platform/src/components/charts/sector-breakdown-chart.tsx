@@ -28,6 +28,7 @@ const FALLBACK_CHART_DATA = {
 export const SectorBreakdownChart = React.memo(() => {
   const { companies, loading, error } = useCompanies()
 
+  // Memoize chart data - ALWAYS call hooks at top level
   const chartData = useMemo(() => {
     if (!companies || companies.length === 0) {
       return FALLBACK_CHART_DATA
@@ -57,23 +58,7 @@ export const SectorBreakdownChart = React.memo(() => {
     }
   }, [companies])
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className="flex items-center justify-center h-64 text-gray-500">
-        Error loading chart data
-      </div>
-    )
-  }
-
-  // Memoize chart options to prevent unnecessary re-renders
+  // Memoize chart options - ALWAYS call hooks at top level
   const options = useMemo(() => ({
     responsive: true,
     maintainAspectRatio: false,
@@ -101,6 +86,22 @@ export const SectorBreakdownChart = React.memo(() => {
       }
     }
   }), [])
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-64 text-gray-500">
+        Error loading chart data
+      </div>
+    )
+  }
 
   return (
     <div className="h-64">

@@ -18,14 +18,6 @@ const FALLBACK_CHART_DATA = {
       borderColor: 'rgba(59, 130, 246, 1)',
       borderWidth: 1,
       yAxisID: 'y',
-    },
-    {
-      label: 'Total Employees (K)',
-      data: [3200, 2800, 2400, 2100, 800, 600, 500],
-      backgroundColor: 'rgba(16, 185, 129, 0.8)',
-      borderColor: 'rgba(16, 185, 129, 1)',
-      borderWidth: 1,
-      yAxisID: 'y1',
     }
   ]
 }
@@ -51,14 +43,6 @@ export const CountryCoverageChart = React.memo(() => {
     const labels = sortedCountries.map(([country]) => country)
     const data = sortedCountries.map(([, count]) => count)
     
-    // Calculate total employees per country
-    const countryEmployees = companies.reduce((acc, company) => {
-      acc[company.country] = (acc[company.country] || 0) + company.employees
-      return acc
-    }, {} as Record<string, number>)
-    
-    const employeeData = labels.map(country => countryEmployees[country])
-    
     return {
       labels,
       datasets: [
@@ -69,14 +53,6 @@ export const CountryCoverageChart = React.memo(() => {
           borderColor: 'rgba(59, 130, 246, 1)',
           borderWidth: 1,
           yAxisID: 'y',
-        },
-        {
-          label: 'Total Employees (K)',
-          data: employeeData.map(emp => Math.round(emp / 1000)),
-          backgroundColor: 'rgba(16, 185, 129, 0.8)',
-          borderColor: 'rgba(16, 185, 129, 1)',
-          borderWidth: 1,
-          yAxisID: 'y1',
         }
       ]
     }
@@ -122,19 +98,7 @@ export const CountryCoverageChart = React.memo(() => {
           display: true,
           text: 'Number of Companies'
         }
-      },
-      y1: {
-        type: 'linear' as const,
-        display: true,
-        position: 'right' as const,
-        title: {
-          display: true,
-          text: 'Total Employees (K)'
-        },
-        grid: {
-          drawOnChartArea: false,
-        },
-      },
+      }
     },
     plugins: {
       legend: {
@@ -145,9 +109,6 @@ export const CountryCoverageChart = React.memo(() => {
           label: function(context: any) {
             const label = context.dataset.label || ''
             const value = context.parsed.y
-            if (label.includes('Employees')) {
-              return `${label}: ${value}K employees`
-            }
             return `${label}: ${value} companies`
           }
         }

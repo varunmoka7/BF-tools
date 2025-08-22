@@ -21,7 +21,6 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 
-
 interface CompanyFilters {
   search: string;
   country: string;
@@ -48,33 +47,32 @@ const CompanyRow = React.memo(({ company }: { company: Company }) => (
     </td>
     <td className="px-6 py-4 whitespace-nowrap">
       <div className="flex items-center">
-        <MapPin className="h-4 w-4 text-gray-400 mr-2" />
+        <MapPin className="h-4 w-4 text-gray-400 mr-1" />
         <span className="text-sm text-gray-900">{company.country}</span>
       </div>
     </td>
     <td className="px-6 py-4 whitespace-nowrap">
-      <Badge variant="secondary">{company.sector}</Badge>
+      <Badge variant="secondary">
+        {company.sector}
+      </Badge>
     </td>
-    <td className="px-6 py-4 whitespace-nowrap">
-      <span className="text-sm text-gray-900">{company.industry}</span>
+    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+      {company.industry}
     </td>
-    <td className="px-6 py-4 whitespace-nowrap">
-      <div className="text-sm text-gray-900">
-        {formatNumber(company.employees)}
-      </div>
+    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+      {formatNumber(company.employees)}
     </td>
-    <td className="px-6 py-4 whitespace-nowrap">
-      <span className="text-sm text-gray-900">{company.year_of_disclosure}</span>
+    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+      {company.year_of_disclosure}
     </td>
-    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-      <div className="flex space-x-2">
-        <Link href={`/company/${company.id}`}>
-          <Button variant="outline" size="sm">
-            <Eye className="h-4 w-4 mr-1" />
-            View
-          </Button>
-        </Link>
-      </div>
+    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+      <Link 
+        href={`/company/${company.id}`}
+        className="text-blue-600 hover:text-blue-900 flex items-center"
+      >
+        <Eye className="h-4 w-4 mr-1" />
+        View
+      </Link>
     </td>
   </tr>
 ))
@@ -194,7 +192,6 @@ export default function CompaniesPage() {
     )
   }
 
-
   return (
     <div className="p-6 space-y-6">
       {/* Header */}
@@ -220,51 +217,55 @@ export default function CompaniesPage() {
         </div>
       </div>
 
-      {/* Stats Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      {/* Stats Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Companies</CardTitle>
-            <Building2 className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{companies.length}</div>
-            <p className="text-xs text-muted-foreground">European companies</p>
+          <CardContent className="p-6">
+            <div className="flex items-center">
+              <Building2 className="h-8 w-8 text-blue-600" />
+              <div className="ml-4">
+                <div className="text-2xl font-bold">{filteredCompanies.length}</div>
+                <p className="text-xs text-muted-foreground">Total Companies</p>
+              </div>
+            </div>
           </CardContent>
         </Card>
         
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Countries Covered</CardTitle>
-            <Globe className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{uniqueCountries.length}</div>
-            <p className="text-xs text-muted-foreground">European nations</p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Sectors Represented</CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{uniqueSectors.length}</div>
-            <p className="text-xs text-muted-foreground">Business sectors</p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Employees</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">
-              {formatNumber(companies.reduce((sum, c) => sum + c.employees, 0))}
+          <CardContent className="p-6">
+            <div className="flex items-center">
+              <Globe className="h-8 w-8 text-green-600" />
+              <div className="ml-4">
+                <div className="text-2xl font-bold">{uniqueCountries.length}</div>
+                <p className="text-xs text-muted-foreground">Countries</p>
+              </div>
             </div>
-            <p className="text-xs text-muted-foreground">Combined workforce</p>
+          </CardContent>
+        </Card>
+        
+        <Card>
+          <CardContent className="p-6">
+            <div className="flex items-center">
+              <TrendingUp className="h-8 w-8 text-purple-600" />
+              <div className="ml-4">
+                <div className="text-2xl font-bold">{uniqueSectors.length}</div>
+                <p className="text-xs text-muted-foreground">Sectors</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+        
+        <Card>
+          <CardContent className="p-6">
+            <div className="flex items-center">
+              <Users className="h-8 w-8 text-orange-600" />
+              <div className="ml-4">
+                <div className="text-2xl font-bold">
+                  {formatNumber(filteredCompanies.reduce((sum, c) => sum + c.employees, 0))}
+                </div>
+                <p className="text-xs text-muted-foreground">Total Employees</p>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -272,125 +273,87 @@ export default function CompaniesPage() {
       {/* Filters */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Filter className="h-5 w-5" />
+          <CardTitle className="flex items-center">
+            <Filter className="h-5 w-5 mr-2" />
             Filters
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Search</label>
-              <Input
-                placeholder="Search companies..."
-                value={filters.search}
-                onChange={(e) => setFilters({ ...filters, search: e.target.value })}
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Country</label>
-              <Select value={filters.country} onValueChange={(value) => setFilters({ ...filters, country: value })}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Countries" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="">All Countries</SelectItem>
-                  {uniqueCountries.map(country => (
-                    <SelectItem key={country} value={country}>{country}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Sector</label>
-              <Select value={filters.sector} onValueChange={(value) => setFilters({ ...filters, sector: value })}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Sectors" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="">All Sectors</SelectItem>
-                  {uniqueSectors.map(sector => (
-                    <SelectItem key={sector} value={sector}>{sector}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Industry</label>
-              <Select value={filters.industry} onValueChange={(value) => setFilters({ ...filters, industry: value })}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Industries" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="">All Industries</SelectItem>
-                  {uniqueIndustries.map(industry => (
-                    <SelectItem key={industry} value={industry}>{industry}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Company Size</label>
-              <Select value={filters.employeeRange} onValueChange={(value) => setFilters({ ...filters, employeeRange: value })}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Sizes" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="">All Sizes</SelectItem>
-                  <SelectItem value="small">Small (< 1K)</SelectItem>
-                  <SelectItem value="medium">Medium (1K-10K)</SelectItem>
-                  <SelectItem value="large">Large (10K-50K)</SelectItem>
-                  <SelectItem value="enterprise">Enterprise (50K+)</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Reporting Year</label>
-              <Select value={filters.yearRange} onValueChange={(value) => setFilters({ ...filters, yearRange: value })}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Years" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="">All Years</SelectItem>
-                  <SelectItem value="2024">2024</SelectItem>
-                  <SelectItem value="2023">2023</SelectItem>
-                  <SelectItem value="2022">2022</SelectItem>
-                  <SelectItem value="older">Older</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <Input
+              placeholder="Search companies..."
+              value={filters.search}
+              onChange={(e) => setFilters(prev => ({ ...prev, search: e.target.value }))}
+            />
+            
+            <Select value={filters.country} onValueChange={(value) => setFilters(prev => ({ ...prev, country: value }))}>
+              <SelectTrigger>
+                <SelectValue placeholder="Country" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="">All Countries</SelectItem>
+                {uniqueCountries.map(country => (
+                  <SelectItem key={country} value={country}>{country}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            
+            <Select value={filters.sector} onValueChange={(value) => setFilters(prev => ({ ...prev, sector: value }))}>
+              <SelectTrigger>
+                <SelectValue placeholder="Sector" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="">All Sectors</SelectItem>
+                {uniqueSectors.map(sector => (
+                  <SelectItem key={sector} value={sector}>{sector}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            
+            <Select value={filters.industry} onValueChange={(value) => setFilters(prev => ({ ...prev, industry: value }))}>
+              <SelectTrigger>
+                <SelectValue placeholder="Industry" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="">All Industries</SelectItem>
+                {uniqueIndustries.map(industry => (
+                  <SelectItem key={industry} value={industry}>{industry}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            
+            <Select value={filters.employeeRange} onValueChange={(value) => setFilters(prev => ({ ...prev, employeeRange: value }))}>
+              <SelectTrigger>
+                <SelectValue placeholder="Employee Range" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="">All Sizes</SelectItem>
+                <SelectItem value="small">Small (&lt; 1K)</SelectItem>
+                <SelectItem value="medium">Medium (1K - 10K)</SelectItem>
+                <SelectItem value="large">Large (10K - 50K)</SelectItem>
+                <SelectItem value="enterprise">Enterprise (50K+)</SelectItem>
+              </SelectContent>
+            </Select>
+            
+            <Button variant="outline" onClick={clearFilters}>
+              Clear Filters
+            </Button>
           </div>
         </CardContent>
       </Card>
 
-      {/* Results Summary */}
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-gray-600">
-          Showing {filteredCompanies.length} of {companies.length} companies
-        </p>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={clearFilters}
-        >
-          Clear Filters
-        </Button>
-      </div>
-
       {/* Companies Table */}
       <Card>
-        <CardContent className="p-0">
+        <CardHeader>
+          <CardTitle>Companies ({filteredCompanies.length})</CardTitle>
+        </CardHeader>
+        <CardContent>
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Company Name
+                    Company
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Country
