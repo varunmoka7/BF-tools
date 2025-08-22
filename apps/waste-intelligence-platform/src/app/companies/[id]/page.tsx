@@ -11,6 +11,7 @@ import CompanyMetricsCard from '@/components/companies/CompanyMetricsCard';
 import FloatingBackButton from '@/components/companies/FloatingBackButton';
 import { NavigationProvider, BackNavigation, BreadcrumbNavigation } from '@/components/companies/NavigationContext';
 import CompanyNavigation from '@/components/companies/CompanyNavigation';
+import CompanyDataTable from '@/components/companies/CompanyDataTable';
 
 interface CompanyProfilePageProps {
   params: { id: string };
@@ -77,46 +78,59 @@ export default async function CompanyProfilePage({ params }: CompanyProfilePageP
           performance={performance}
         />
         
-        {/* Main Content */}
-        <div className="container mx-auto px-6 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            
-            {/* Left Column - Company Info */}
-            <div className="lg:col-span-1">
-              <div className="space-y-6">
-                <CompanyInfoCard company={company} />
-                <CompanyMetricsCard 
-                  wasteGenerated={waste_management?.total_waste_generated}
-                  wasteRecovered={waste_management?.total_waste_recovered}
-                  recoveryRate={waste_management?.recovery_rate}
-                  performanceScore={performance?.performance_score}
-                />
-              </div>
-            </div>
-            
-            {/* Right Column - Enhanced Charts and Data */}
-            <div className="lg:col-span-3">
-              <div className="space-y-8">
-                {/* Waste Trends Charts */}
-                <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-6">Waste Management Analytics</h2>
-                  <WasteTrendsChart 
-                    trends={performance?.trends || []}
-                    wasteData={waste_management}
-                  />
-                </div>
+                 {/* Main Content */}
+         <div className="container mx-auto px-6 py-8">
+           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+             
+             {/* Left Column - Company Info */}
+             <div className="lg:col-span-1">
+               <div className="space-y-6">
+                 <CompanyInfoCard company={company} />
+                 <CompanyMetricsCard 
+                   wasteGenerated={waste_management?.total_waste_generated}
+                   wasteRecovered={waste_management?.total_waste_recovered}
+                   recoveryRate={waste_management?.recovery_rate}
+                   performanceScore={performance?.performance_score}
+                 />
+               </div>
+             </div>
+             
+             {/* Right Column - Enhanced Charts and Data */}
+             <div className="lg:col-span-3">
+               <div className="space-y-8">
+                 {/* Waste Trends Charts */}
+                 <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                   <h2 className="text-xl font-semibold text-gray-900 mb-6">Waste Management Analytics</h2>
+                   <WasteTrendsChart 
+                     trends={performance?.trends || []}
+                     wasteData={waste_management}
+                   />
+                 </div>
 
-                {/* Performance Metrics Charts */}
-                <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-6">Performance Analytics</h2>
-                  <PerformanceMetricsChart 
-                    performance={performance}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                 {/* Performance Metrics Charts */}
+                 <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                   <h2 className="text-xl font-semibold text-gray-900 mb-6">Performance Analytics</h2>
+                   <PerformanceMetricsChart 
+                     performance={performance}
+                   />
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+
+         {/* Comprehensive Data Table */}
+         <div className="container mx-auto px-6 py-8">
+           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+             <h2 className="text-2xl font-bold text-gray-900 mb-6">Complete Company Data</h2>
+             <CompanyDataTable 
+               company={company}
+               profile={profile}
+               waste_management={waste_management}
+               performance={performance}
+             />
+           </div>
+         </div>
         
         {/* Company Navigation */}
         <CompanyNavigation 
