@@ -1,51 +1,51 @@
 'use client'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { WasteTypeChart } from './waste-type-chart'
-import { RegionDistributionChart } from './region-distribution-chart'
-import { ComplianceTrendsChart } from './compliance-trends-chart'
-import { RecyclingProgressChart } from './recycling-progress-chart'
+import { CompanyDistributionChart } from './company-distribution-chart'
+import { SectorBreakdownChart } from './sector-breakdown-chart'
+import { EmployeeDistributionChart } from './employee-distribution-chart'
+import { CountryCoverageChart } from './country-coverage-chart'
 
 export function ChartsSection() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      {/* Waste Type Distribution */}
+      {/* Company Distribution by Sector */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">Waste Type Distribution</CardTitle>
+          <CardTitle className="text-lg">Company Distribution by Sector</CardTitle>
         </CardHeader>
         <CardContent>
-          <WasteTypeChart />
+          <SectorBreakdownChart />
         </CardContent>
       </Card>
 
-      {/* Regional Distribution */}
+      {/* Company Distribution by Country */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">Regional Distribution</CardTitle>
+          <CardTitle className="text-lg">Company Distribution by Country</CardTitle>
         </CardHeader>
         <CardContent>
-          <RegionDistributionChart />
+          <CountryCoverageChart />
         </CardContent>
       </Card>
 
-      {/* Compliance Trends */}
+      {/* Employee Distribution */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">Compliance Trends</CardTitle>
+          <CardTitle className="text-lg">Employee Distribution</CardTitle>
         </CardHeader>
         <CardContent>
-          <ComplianceTrendsChart />
+          <EmployeeDistributionChart />
         </CardContent>
       </Card>
 
-      {/* Recycling Progress */}
+      {/* Company Size Analysis */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">Recycling Progress</CardTitle>
+          <CardTitle className="text-lg">Company Size Analysis</CardTitle>
         </CardHeader>
         <CardContent>
-          <RecyclingProgressChart />
+          <CompanyDistributionChart />
         </CardContent>
       </Card>
     </div>

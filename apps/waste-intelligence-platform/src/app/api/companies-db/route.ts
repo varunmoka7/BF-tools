@@ -30,8 +30,8 @@ export async function GET(request: NextRequest) {
         industry,
         employees,
         year_of_disclosure,
-        latitude,
-        longitude
+        ticker,
+        exchange
       `, { count: 'exact' })
       .limit(limit)
     
@@ -68,9 +68,11 @@ export async function GET(request: NextRequest) {
       industry: company.industry,
       employees: company.employees,
       yearOfDisclosure: company.year_of_disclosure,
+      ticker: company.ticker,
+      exchange: company.exchange,
       coordinates: {
-        lat: company.latitude || 0,
-        lng: company.longitude || 0
+        lat: 0,
+        lng: 0
       },
       // Mock values for fields not in database yet
       region: company.country, // Use country as region for now

@@ -1,0 +1,3909 @@
+{
+  "timestamp": "2025-08-22T00:34:05.270Z",
+  "totalCompanies": 325,
+  "successful": 172,
+  "fallback": 153,
+  "errors": 0,
+  "details": [
+    {
+      "company": "Alstom SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.1370275,
+        "lng": -1.1191049,
+        "accuracy": 0.10673681620508123,
+        "address": "Alstom, Aytré, La Rochelle, Charente-Maritime, Nouvelle-Aquitaine, France métropolitaine, 17440, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:05.665Z"
+    },
+    {
+      "company": "Nexans SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 47.1489452,
+        "lng": 2.2012348,
+        "accuracy": 0.10672685816739144,
+        "address": "Nexans, Mehun-sur-Yèvre, Vierzon, Cher, Centre-Val de Loire, France métropolitaine, 18500, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:06.928Z"
+    },
+    {
+      "company": "CPI Property Group SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:08.270Z"
+    },
+    {
+      "company": "Siemens Healthineers AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.702345,
+        "lng": 11.0553672,
+        "accuracy": 0.00005729533836876505,
+        "address": "Siemens Healthineers AG, 3, Siemensstraße, Gewerbegebiet An der Lände, Forchheim, Landkreis Forchheim, Bayern, 91301, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:09.462Z"
+    },
+    {
+      "company": "Carrefour SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.1868786,
+        "lng": 3.3033746,
+        "accuracy": 0.14170341258693808,
+        "address": "Carrefour, Rue René Binet, Les Maillots, Sens, Yonne, Bourgogne-Franche-Comté, France métropolitaine, 89100, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:13.373Z"
+    },
+    {
+      "company": "Brunello Cucinelli SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:14.606Z"
+    },
+    {
+      "company": "Rheinmetall AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.2515202,
+        "lng": 6.7820623,
+        "accuracy": 0.32890059760589674,
+        "address": "IT.NRW, 1, Derendorfer Allee, Derendorf, Stadtbezirk 1, Düsseldorf, Nordrhein-Westfalen, 40476, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:15.772Z"
+    },
+    {
+      "company": "Bilfinger SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.4700982,
+        "lng": 8.4848813,
+        "accuracy": 0.00006682459754325196,
+        "address": "Bilfinger SE Konzernzentrale, 1, Oskar-Meixner-Straße, Almenhof, Neckarau, Mannheim, Baden-Württemberg, 68163, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:16.974Z"
+    },
+    {
+      "company": "Colruyt Group NV",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.8503,
+        "lng": 4.3517,
+        "accuracy": 0.1,
+        "address": "Brussels, Belgium",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:18.163Z"
+    },
+    {
+      "company": "BayWa AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 50.5570151,
+        "lng": 10.3718939,
+        "accuracy": 0.10672875791561759,
+        "address": "BayWa AG, Dreißigacker, Meiningen, Landkreis Schmalkalden-Meiningen, Thüringen, 98617, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:19.357Z"
+    },
+    {
+      "company": "Lonza Group AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.5460009,
+        "lng": 7.5979985,
+        "accuracy": 0.4443235387921593,
+        "address": "Lonza Group AG, Nauenstrasse, St. Alban, Grossbasel, Basel, Basel-Stadt, 4053, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:20.535Z"
+    },
+    {
+      "company": "Pernod Ricard SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 43.4404656,
+        "lng": 5.2461726,
+        "accuracy": 0.000056709391927931904,
+        "address": "Pernod Ricard, D 113, Vitrolles, Istres, Bouches-du-Rhône, Provence-Alpes-Côte d'Azur, France métropolitaine, 13127, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:21.821Z"
+    },
+    {
+      "company": "Dermapharm Holding SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:22.959Z"
+    },
+    {
+      "company": "DiaSorin SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:24.159Z"
+    },
+    {
+      "company": "Poste Italiane SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 40.639231,
+        "lng": 15.785671,
+        "accuracy": 0.00006459067673757561,
+        "address": "Poste Italiane SPA, Viale della Regione Basilicata, Quartiere Europa, Potenza, Basilicata, 85100, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:25.373Z"
+    },
+    {
+      "company": "Suedzucker AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.4772311,
+        "lng": 8.5022935,
+        "accuracy": 0.00006682459754325196,
+        "address": "Südzucker AG, 12, Theodor-Heuss-Anlage, Oststadt, Schwetzingerstadt/Oststadt, Mannheim, Baden-Württemberg, 68165, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:26.553Z"
+    },
+    {
+      "company": "AT & S Austria Technologie & Systemtechnik AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 47.5162,
+        "lng": 14.5501,
+        "accuracy": 0.1,
+        "address": "Vienna, Austria",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:27.797Z"
+    },
+    {
+      "company": "Accor SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.8387085,
+        "lng": 2.3787666,
+        "accuracy": 0.528728935436386,
+        "address": "Accor Arena, 8, Boulevard de Bercy, Quartier de Bercy, Paris 12e Arrondissement, Paris, Île-de-France, France métropolitaine, 75012, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:29.022Z"
+    },
+    {
+      "company": "Corporacion America Airports SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:30.470Z"
+    },
+    {
+      "company": "Elis SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 45.1791666,
+        "lng": 5.749752,
+        "accuracy": 0.10674084916456852,
+        "address": "Elis, Secteur 5, Grenoble, Isère, Auvergne-Rhône-Alpes, France métropolitaine, 38100, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:31.775Z"
+    },
+    {
+      "company": "LEG Immobilien SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.2458091,
+        "lng": 6.773888,
+        "accuracy": 0.00007726176852059232,
+        "address": "LEG Immobilien AG, 38, Hans-Böckler-Straße, Golzheim, Stadtbezirk 1, Düsseldorf, Nordrhein-Westfalen, 40476, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:32.995Z"
+    },
+    {
+      "company": "Ardagh Metal Packaging SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:34.277Z"
+    },
+    {
+      "company": "Swatch Group AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.1437288,
+        "lng": 7.2606585,
+        "accuracy": 0.10672986877241167,
+        "address": "The Swatch Group AG, 2, Champagne, Biel/Bienne, Verwaltungskreis Biel/Bienne, Verwaltungsregion Seeland, Bern/Berne, 2502, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:36.558Z"
+    },
+    {
+      "company": "ERG SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:37.764Z"
+    },
+    {
+      "company": "Soitec SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 45.2619521,
+        "lng": 5.8784579,
+        "accuracy": 0.10673100404364078,
+        "address": "Soitec, Bernin, Grenoble, Isère, Auvergne-Rhône-Alpes, France métropolitaine, 38190, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:38.994Z"
+    },
+    {
+      "company": "Vallourec SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 50.3429505,
+        "lng": 3.5144139,
+        "accuracy": 0.00006947508964670813,
+        "address": "Vallourec, Avenue de l'Europe, Faubourg de Cambrai, Valenciennes, Nord, Hauts-de-France, France métropolitaine, 59300, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:40.245Z"
+    },
+    {
+      "company": "Avolta AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:41.576Z"
+    },
+    {
+      "company": "SGL Carbon SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:42.796Z"
+    },
+    {
+      "company": "Aramis Group SAS",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:44.042Z"
+    },
+    {
+      "company": "Dormakaba Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:45.294Z"
+    },
+    {
+      "company": "E.ON SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.424729,
+        "lng": 6.9936031,
+        "accuracy": 0.5306860361054607,
+        "address": "E.ON SE, 1, Brüsseler Platz, Rüttenscheid, Stadtbezirk II, Essen, Nordrhein-Westfalen, 45131, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:46.526Z"
+    },
+    {
+      "company": "Dr Ing hc F Porsche AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:47.833Z"
+    },
+    {
+      "company": "Verbund AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 47.2445482,
+        "lng": 10.8744589,
+        "accuracy": 0.04004724269474326,
+        "address": "AB Verbund Austrian Power Grid, APG Umspannwerk Westtirol, Ötztal-Bahnhof, Haiming, Bezirk Imst, Tirol, 6430, Österreich",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:49.098Z"
+    },
+    {
+      "company": "L'Air Liquide Societe Anonyme pour l'Etude et l'Exploitation des Procedes Georges Claude SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:50.410Z"
+    },
+    {
+      "company": "Nordex SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:51.593Z"
+    },
+    {
+      "company": "Vivendi SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:52.811Z"
+    },
+    {
+      "company": "Stroeer SE & Co KgaA",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:54.109Z"
+    },
+    {
+      "company": "AXA SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 45.7665635,
+        "lng": 4.856362,
+        "accuracy": 0.1898927655395688,
+        "address": "Axa Lyon 6e, Rue Juliette Récamier, Les Brotteaux, Lyon 6e Arrondissement, Lyon, Métropole de Lyon, Rhône, Auvergne-Rhône-Alpes, France métropolitaine, 69006, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:55.726Z"
+    },
+    {
+      "company": "Renault SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 44.8439588,
+        "lng": 4.9632877,
+        "accuracy": 0.6625317353006646,
+        "address": "Garage Terrail, Les Coteaux, Montmeyran, Valence, Drôme, Auvergne-Rhône-Alpes, France métropolitaine, 26120, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:34:57.709Z"
+    },
+    {
+      "company": "OC Oerlikon Corporation AG Pfaeffikon",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:34:59.013Z"
+    },
+    {
+      "company": "Fresenius SE & Co KGaA",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:00.268Z"
+    },
+    {
+      "company": "Safran SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.8092197,
+        "lng": 4.42273,
+        "accuracy": 0.10673169985503926,
+        "address": "Safran, Cité Ouvrière de la Combe des Mineurs, Le Creusot, Autun, Saône-et-Loire, Bourgogne-Franche-Comté, France métropolitaine, 71200, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:01.582Z"
+    },
+    {
+      "company": "Siemens AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.0897345,
+        "lng": 11.6491072,
+        "accuracy": 0.10675128938735025,
+        "address": "Siemens AG, 6, Neuperlach, Ramersdorf-Perlach, München, Bayern, 81739, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:02.854Z"
+    },
+    {
+      "company": "SOL SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:04.466Z"
+    },
+    {
+      "company": "Deutsche Bank AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.1165511,
+        "lng": 11.5968917,
+        "accuracy": 0.00008462272068355866,
+        "address": "Deutsche Bank AG, Sankt-Ingbert-Straße, Balanstraße-West, Ramersdorf-Perlach, München, Bayern, 81541, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:05.961Z"
+    },
+    {
+      "company": "Tecan Group AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:07.175Z"
+    },
+    {
+      "company": "Moncler SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:08.345Z"
+    },
+    {
+      "company": "Edison SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:09.794Z"
+    },
+    {
+      "company": "Banco BPM SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 45.1383914,
+        "lng": 7.7709694,
+        "accuracy": 0.00006392385748068997,
+        "address": "Banco BPM Spa, 6, Via Roma, Settimo Torinese, Torino, Piemonte, 10036, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:11.017Z"
+    },
+    {
+      "company": "STRABAG SE",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 47.5162,
+        "lng": 14.5501,
+        "accuracy": 0.1,
+        "address": "Vienna, Austria",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:12.196Z"
+    },
+    {
+      "company": "Bayerische Motoren Werke AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.1930686,
+        "lng": 11.6060127,
+        "accuracy": 0.10675128938735025,
+        "address": "Bayerische Motoren Werke, Freimann, Schwabing-Freimann, München, Bayern, 80939, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:13.437Z"
+    },
+    {
+      "company": "Geberit AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.2246963,
+        "lng": 8.8431598,
+        "accuracy": 0.10672143663691155,
+        "address": "Geberit AG, Jona, Rapperswil-Jona, Wahlkreis See-Gaster, St. Gallen, 8645, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:14.603Z"
+    },
+    {
+      "company": "JCDecaux SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:15.780Z"
+    },
+    {
+      "company": "Huber+Suhner AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:17.046Z"
+    },
+    {
+      "company": "Schaeffler AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.480181,
+        "lng": 11.12834,
+        "accuracy": 0.10674280842298006,
+        "address": "Schaeffler AG, 19, Erlenstegen, Nürnberg, Bayern, 90411, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:18.251Z"
+    },
+    {
+      "company": "ArcelorMittal SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.7847093,
+        "lng": 6.056135,
+        "accuracy": 0.106717972838941,
+        "address": "ArcelorMittal, Bissen, Canton Mersch, Lëtzebuerg",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:19.530Z"
+    },
+    {
+      "company": "Verallia SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 45.6830138,
+        "lng": -0.3219986,
+        "accuracy": 0.10672841916533148,
+        "address": "Verallia, Les Quillettes, Châteaubernard, Cognac, Charente, Nouvelle-Aquitaine, France métropolitaine, 16100, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:20.778Z"
+    },
+    {
+      "company": "Italian Sea Group SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:22.285Z"
+    },
+    {
+      "company": "Mundys SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:23.453Z"
+    },
+    {
+      "company": "Societe Generale SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.8630005,
+        "lng": 2.5765761,
+        "accuracy": 0.5586511328612577,
+        "address": "Société Générale, Avenue Paul Doumer, Gournay-sur-Marne, Le Raincy, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93460, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:25.252Z"
+    },
+    {
+      "company": "HELLA GmbH & Co KGaA",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.6738865,
+        "lng": 8.3567223,
+        "accuracy": 0.106725977721828,
+        "address": "HELLA GmbH & Co. KGaA, Werk 1, Lippstadt, Kreis Soest, Nordrhein-Westfalen, 59557, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:26.479Z"
+    },
+    {
+      "company": "Andritz AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 47.109523,
+        "lng": 15.420561,
+        "accuracy": 0.00007381322957193893,
+        "address": "Andritz AG, Andritzer Schleppbahn, Andritz, Graz, Steiermark, 8045, Österreich",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:27.697Z"
+    },
+    {
+      "company": "Arkema SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 45.8436061,
+        "lng": 5.0970802,
+        "accuracy": 0.26511848687494144,
+        "address": "Usine Arkema Kem One, Balan, Bourg-en-Bresse, Ain, Auvergne-Rhône-Alpes, France métropolitaine, 01360, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:28.919Z"
+    },
+    {
+      "company": "Aedifica NV",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.8503,
+        "lng": 4.3517,
+        "accuracy": 0.1,
+        "address": "Brussels, Belgium",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:30.054Z"
+    },
+    {
+      "company": "Daetwyler Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8784864,
+        "lng": 8.6492689,
+        "accuracy": 0.10672311970702675,
+        "address": "Dätwyler Holding AG, Vogelsang, Altdorf (UR), Uri, 6460, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:31.219Z"
+    },
+    {
+      "company": "Getlink SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:32.353Z"
+    },
+    {
+      "company": "Biontech SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.9877842,
+        "lng": 8.2713763,
+        "accuracy": 0.47417364865455486,
+        "address": "BioNTech SE, 12, An der Goldgrube, Oberstadt, Mainz, Rheinland-Pfalz, 55131, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:33.512Z"
+    },
+    {
+      "company": "Iveco Group NV",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:34.731Z"
+    },
+    {
+      "company": "Also Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:36.007Z"
+    },
+    {
+      "company": "BNP Paribas SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.8683364,
+        "lng": 2.3324349,
+        "accuracy": 0.19320077280132728,
+        "address": "BNP Paribas, Rue Louis Le Grand, Quartier Gaillon, Paris 2e Arrondissement, Paris, France métropolitaine, 75002, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:37.635Z"
+    },
+    {
+      "company": "Gecina SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2509937,
+        "lng": 6.0717087,
+        "accuracy": 0.0000790165560387124,
+        "address": "Gecina, Mail du Neutrino, Prévessin-Moëns, Prévessin, Gex, Ain, Auvergne-Rhône-Alpes, France métropolitaine, 01280, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:38.930Z"
+    },
+    {
+      "company": "Talanx AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 52.4101707,
+        "lng": 9.8132654,
+        "accuracy": 0.10674305714503698,
+        "address": "Talanx AG (HDI-Gerling), Bothfeld, Bothfeld-Vahrenheide, Hannover, Region Hannover, Niedersachsen, 30659, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:40.119Z"
+    },
+    {
+      "company": "Terna Rete Elettrica Nazionale SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:41.320Z"
+    },
+    {
+      "company": "Ipsen SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.8260749,
+        "lng": 2.2336082,
+        "accuracy": 0.00006642175936517918,
+        "address": "Ipsen, Quai Georges Gorse, Rives de Seine, Boulogne-Billancourt, Hauts-de-Seine, France métropolitaine, 92100, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:42.557Z"
+    },
+    {
+      "company": "Garofalo Health Care SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:43.765Z"
+    },
+    {
+      "company": "Salzgitter AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 52.1446935,
+        "lng": 10.4684549,
+        "accuracy": 0.10672911345082778,
+        "address": "Salzgitter AG, Adersheim, Wolfenbüttel, Landkreis Wolfenbüttel, Niedersachsen, 38304, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:44.949Z"
+    },
+    {
+      "company": "Recordati Industria Chimica e Farmaceutica SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:46.263Z"
+    },
+    {
+      "company": "Valeo SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:47.463Z"
+    },
+    {
+      "company": "Capgemini SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 43.485298,
+        "lng": 5.3587728,
+        "accuracy": 0.00006910887312118743,
+        "address": "Capgemini, 350, D 9, La Duranne, Aix-en-Provence, Bouches-du-Rhône, Provence-Alpes-Côte d'Azur, France métropolitaine, 13794, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:48.657Z"
+    },
+    {
+      "company": "SIG Group AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:50.931Z"
+    },
+    {
+      "company": "Enel SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 45.6524617,
+        "lng": 12.1800285,
+        "accuracy": 0.00006829404135190383,
+        "address": "Enel Distribuzione spa - Zona Treviso, 7, Via Antonio Gramsci, Quinto di Treviso, Treviso, Veneto, 31055, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:52.201Z"
+    },
+    {
+      "company": "Kuehne und Nagel International AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:53.483Z"
+    },
+    {
+      "company": "Tenaris SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:54.688Z"
+    },
+    {
+      "company": "Titan Cement International SA",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.8503,
+        "lng": 4.3517,
+        "accuracy": 0.1,
+        "address": "Brussels, Belgium",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:56.076Z"
+    },
+    {
+      "company": "Acea SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:57.267Z"
+    },
+    {
+      "company": "Hapag-Lloyd AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 53.5541662,
+        "lng": 9.9997285,
+        "accuracy": 0.00008255359731436664,
+        "address": "Hapag-Lloyd AG, 28-30, Ferdinandstraße, Altstadt, Hamburg-Mitte, Hamburg, 20095, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:35:58.436Z"
+    },
+    {
+      "company": "Brembo NV",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:35:59.618Z"
+    },
+    {
+      "company": "Television Francaise 1 SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:00.982Z"
+    },
+    {
+      "company": "Aroundtown SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:02.147Z"
+    },
+    {
+      "company": "Syensqo NV",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.8503,
+        "lng": 4.3517,
+        "accuracy": 0.1,
+        "address": "Brussels, Belgium",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:03.439Z"
+    },
+    {
+      "company": "Banca Popolare Di Sondrio SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:04.836Z"
+    },
+    {
+      "company": "Daimler Truck Holding AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:06.141Z"
+    },
+    {
+      "company": "EVN AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 48.5995207,
+        "lng": 15.1788934,
+        "accuracy": 0.00005214694438081968,
+        "address": "EVN AG, Galgenbergstraße, Raiffeisen-Lagerhaus Zwettl, Schleifgraben, Zwettl, Zwettl-Niederösterreich, Bezirk Zwettl, Niederösterreich, 3910, Österreich",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:07.299Z"
+    },
+    {
+      "company": "Roche Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:09.490Z"
+    },
+    {
+      "company": "Prosiebensat 1 Media SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:10.750Z"
+    },
+    {
+      "company": "Hugo Boss AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.5461357,
+        "lng": 9.2712611,
+        "accuracy": 0.5173492177277335,
+        "address": "HUGO BOSS AG, Hexham-Allee, Im Wasser, Metzingen, Gemeindeverwaltungsverband Metzingen, Landkreis Reutlingen, Baden-Württemberg, 72555, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:11.989Z"
+    },
+    {
+      "company": "GEA Group AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:13.267Z"
+    },
+    {
+      "company": "Helvetia Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:14.666Z"
+    },
+    {
+      "company": "Fuchs Se",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.5143102,
+        "lng": 8.4553533,
+        "accuracy": 0.10673349126420995,
+        "address": "Fuchs Petrolub SE, Neckarstadt-West, Mannheim, Baden-Württemberg, 68169, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:15.972Z"
+    },
+    {
+      "company": "Deutsche Lufthansa AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:17.314Z"
+    },
+    {
+      "company": "Buzzi SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:18.492Z"
+    },
+    {
+      "company": "Rational AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.0595469,
+        "lng": 10.8540231,
+        "accuracy": 0.10672732661936367,
+        "address": "RATIONAL AG Werk 1, Landsberg am Lech, Landkreis Landsberg am Lech, Bayern, 86899, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:19.716Z"
+    },
+    {
+      "company": "Bayer AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.6270754,
+        "lng": 7.6346578,
+        "accuracy": 0.10672118181124587,
+        "address": "Bayer AG, 14, Bergkamen, Kreis Unna, Nordrhein-Westfalen, 59192, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:20.928Z"
+    },
+    {
+      "company": "ams-OSRAM AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 46.9771906,
+        "lng": 15.3944216,
+        "accuracy": 0.10671229495689324,
+        "address": "ams OSRAM AG, Oberpremstätten, Premstätten, Bezirk Graz-Umgebung, Steiermark, 8141, Österreich",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:22.094Z"
+    },
+    {
+      "company": "Sartorius AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.5482681,
+        "lng": 9.9328014,
+        "accuracy": 0.10673861066605628,
+        "address": "Sartorius-Quartier, Nordstadt, Göttingen, Landkreis Göttingen, Niedersachsen, 37075, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:23.419Z"
+    },
+    {
+      "company": "Givaudan SA",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.2064192,
+        "lng": 6.0784269,
+        "accuracy": 0.0000790165560387124,
+        "address": "Givaudan SA, Chemin de la Greube, Vernier, Genève, 1214, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:24.618Z"
+    },
+    {
+      "company": "InPost SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:26.288Z"
+    },
+    {
+      "company": "Danone SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 49.2460023,
+        "lng": -0.893348,
+        "accuracy": 0.1067322842755779,
+        "address": "Danone, La Sablonnière, Le Molay-Littry, Bayeux, Calvados, Normandie, France métropolitaine, 14330, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:28.336Z"
+    },
+    {
+      "company": "voestalpine AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 48.2831262,
+        "lng": 14.326431,
+        "accuracy": 0.10673883802548254,
+        "address": "voestalpine Kokerei, Industriegebiet-Hafen, Linz, Oberösterreich, 4020, Österreich",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:29.558Z"
+    },
+    {
+      "company": "Schindler Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:30.810Z"
+    },
+    {
+      "company": "Georg Fischer AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.1588047,
+        "lng": 7.2799573,
+        "accuracy": 0.00006320210574497623,
+        "address": "Georg Fischer AG, 7, Allée Roger-Federer / Roger-Federer-Allee, Boujean/Bözingen, Biel/Bienne, Verwaltungskreis Biel/Bienne, Verwaltungsregion Seeland, Bern/Berne, 2504, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:32.077Z"
+    },
+    {
+      "company": "Symrise AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 52.3129408,
+        "lng": 10.4977594,
+        "accuracy": 0.0000718844892041965,
+        "address": "Symrise AG, 33, Hansestraße, Gewerbegebiet Hansestraße Ost, Veltenhof, Nördliche Schunter-/Okeraue, Braunschweig, Niedersachsen, 38112, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:33.288Z"
+    },
+    {
+      "company": "Knorr Bremse AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.1878069,
+        "lng": 11.5484615,
+        "accuracy": 0.00008462272068355866,
+        "address": "Knorr Bremse AG, 80, Moosacher Straße, Am Oberwiesenfeld, Am Riesenfeld, Milbertshofen-Am Hart, München, Bayern, 80809, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:34.462Z"
+    },
+    {
+      "company": "Flughafen Zuerich AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.4458012,
+        "lng": 8.5697996,
+        "accuracy": 0.000050575265125459946,
+        "address": "Flughafen Zürich AG, 91, Flughafenstrasse, Kloten, Bezirk Bülach, Zürich, 8302, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:35.703Z"
+    },
+    {
+      "company": "Unipol Assicurazioni SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:36.937Z"
+    },
+    {
+      "company": "Rexel SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 45.8697664,
+        "lng": 4.9258033,
+        "accuracy": 0.106729847409781,
+        "address": "Rexel Miribel Les Échets, Miribel, Bourg-en-Bresse, Ain, Auvergne-Rhône-Alpes, France métropolitaine, 01700, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:38.220Z"
+    },
+    {
+      "company": "Edenred SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:39.401Z"
+    },
+    {
+      "company": "Amplifon SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:40.621Z"
+    },
+    {
+      "company": "DSM-Firmenich AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.5482445,
+        "lng": 7.9807942,
+        "accuracy": 0.10671204318303194,
+        "address": "DSM-Firmenich, Sisseln, Bezirk Laufenburg, Aargau, 4334, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:41.825Z"
+    },
+    {
+      "company": "St Galler Kantonalbank AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.0474542,
+        "lng": 9.4398736,
+        "accuracy": 0.00005143434805824395,
+        "address": "St.Galler Kantonalbank AG, 1, Zürcherstrasse, Sargans, Wahlkreis Sarganserland, St. Gallen, 7320, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:43.004Z"
+    },
+    {
+      "company": "Bper Banca SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.615664,
+        "lng": 13.5190022,
+        "accuracy": 0.0000698184176393838,
+        "address": "Lavoropiu, 18, Via Antonio Giannelli, Borgo Rodi, Ancona, 60123, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:44.308Z"
+    },
+    {
+      "company": "Kering SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:45.543Z"
+    },
+    {
+      "company": "Ageas SA",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.8503,
+        "lng": 4.3517,
+        "accuracy": 0.1,
+        "address": "Brussels, Belgium",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:46.789Z"
+    },
+    {
+      "company": "R Stahl AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:48.104Z"
+    },
+    {
+      "company": "Christian Dior SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 43.6193316,
+        "lng": 6.7636568,
+        "accuracy": 0.04005730144197756,
+        "address": "Montée Christian Dior, Le Château, Montauroux, Draguignan, Var, Provence-Alpes-Côte d'Azur, France métropolitaine, 83440, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:49.292Z"
+    },
+    {
+      "company": "EssilorLuxottica SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:50.521Z"
+    },
+    {
+      "company": "Allegro.eu SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:52.608Z"
+    },
+    {
+      "company": "SCHOTT Pharma AG & Co KgaA",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 47.8322798,
+        "lng": 7.6187247,
+        "accuracy": 0.10672230487525747,
+        "address": "SCHOTT Pharma AG & Co.KGaA, Hügelheim, Müllheim im Markgräflerland, GVV Müllheim-Badenweiler, Landkreis Breisgau-Hochschwarzwald, Baden-Württemberg, 79379, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:53.813Z"
+    },
+    {
+      "company": "Galenica AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:55.005Z"
+    },
+    {
+      "company": "Orange SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 44.1371311,
+        "lng": 4.8078783,
+        "accuracy": 0.5716323282788265,
+        "address": "Orange, Carpentras, Vaucluse, Provence-Alpes-Côte d'Azur, France métropolitaine, 84100, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:36:57.339Z"
+    },
+    {
+      "company": "ID Logistics Group SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:36:58.846Z"
+    },
+    {
+      "company": "Aptiv PLC",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:00.040Z"
+    },
+    {
+      "company": "Biomerieux SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 45.841404,
+        "lng": 5.2835959,
+        "accuracy": 0.10673008850232697,
+        "address": "BioMérieux, Saint-Vulbas, Belley, Ain, Auvergne-Rhône-Alpes, France métropolitaine, 01150, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:01.263Z"
+    },
+    {
+      "company": "Sulzer AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.3981794,
+        "lng": 8.3077758,
+        "accuracy": 0.053379713893339405,
+        "address": "Sulzerstrasse, Stetten, Bezirk Baden, Aargau, 5608, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:02.507Z"
+    },
+    {
+      "company": "Straumann Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:03.753Z"
+    },
+    {
+      "company": "Swiss Prime Site AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.4794642,
+        "lng": 8.3063864,
+        "accuracy": 0.00004691157396806313,
+        "address": "Swiss Prime Site Solutions AG / Akara Property, 4, Brown Boveri Platz, Baden, Bezirk Baden, Aargau, 5400, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:05.195Z"
+    },
+    {
+      "company": "Interparfums SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.8599228,
+        "lng": 2.3230339,
+        "accuracy": 0.00009317235065227768,
+        "address": "Interparfums, Rue de Solférino, Quartier des Invalides, Paris 7e Arrondissement, Faubourg Saint-Germain, Paris, France métropolitaine, 75007, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:06.409Z"
+    },
+    {
+      "company": "UBS Group AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:07.859Z"
+    },
+    {
+      "company": "Banca Mediolanum SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:09.225Z"
+    },
+    {
+      "company": "Virbac SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 43.7828618,
+        "lng": 7.2131219,
+        "accuracy": 0.000058032349126375483,
+        "address": "Virbac, 1re Avenue, Carros, Grasse, Alpes-Maritimes, Provence-Alpes-Côte d'Azur, France métropolitaine, 06510, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:10.423Z"
+    },
+    {
+      "company": "Bollore SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 43.9343815,
+        "lng": 4.7836772,
+        "accuracy": 0.0000722110322727858,
+        "address": "Bolloré energy, Rue du Petit Mas, Zone industrielle de Courtine, Quartier Ouest, Avignon, Vaucluse, Provence-Alpes-Côte d'Azur, France métropolitaine, 84000, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:11.616Z"
+    },
+    {
+      "company": "Henkel AG & Co KGaA",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.8601766,
+        "lng": 10.354477,
+        "accuracy": 0.10672270771343555,
+        "address": "Henkel AG & Co. KGaA, Bopfingen, Verwaltungsgemeinschaft Bopfingen, Ostalbkreis, Baden-Württemberg, 73441, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:12.815Z"
+    },
+    {
+      "company": "Orion SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:14.208Z"
+    },
+    {
+      "company": "Azelis Group NV",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.8503,
+        "lng": 4.3517,
+        "accuracy": 0.1,
+        "address": "Brussels, Belgium",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:15.392Z"
+    },
+    {
+      "company": "BASF SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.5004949,
+        "lng": 8.4989269,
+        "accuracy": 0.00006682459754325196,
+        "address": "BASF SE, Käfertaler Straße, Wohlgelegen, Neckarstadt-Ost, Neckarstadt-Ost/Wohlgelegen, Mannheim, Baden-Württemberg, 68167, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:16.583Z"
+    },
+    {
+      "company": "Lanxess AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.6892577,
+        "lng": 7.0833252,
+        "accuracy": 0.10672425803006025,
+        "address": "Lanxess Buna, Chemiezone, Marl, Kreis Recklinghausen, Nordrhein-Westfalen, 45772, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:17.798Z"
+    },
+    {
+      "company": "RWE AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.466195,
+        "lng": 7.0133952,
+        "accuracy": 0.00007236362249175276,
+        "address": "RWE AG, 35, Altenessener Straße, Eltingviertel, Nordviertel, Stadtbezirk I, Essen, Nordrhein-Westfalen, 45141, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:18.980Z"
+    },
+    {
+      "company": "SAP SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.2938655,
+        "lng": 8.6405547,
+        "accuracy": 0.55872917661119,
+        "address": "SAP SE, 7, Hasso-Plattner-Ring, Walldorf, Rhein-Neckar-Kreis, Baden-Württemberg, 69190, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:20.191Z"
+    },
+    {
+      "company": "Dottikon Es Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:21.582Z"
+    },
+    {
+      "company": "Ferrari NV",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:22.857Z"
+    },
+    {
+      "company": "Prada SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:24.089Z"
+    },
+    {
+      "company": "Telecom Italia SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 44.4090955,
+        "lng": 8.9665572,
+        "accuracy": 0.00007821850919351518,
+        "address": "Telecom Italia Spa, Via Aldo Manuzio, San Fruttuoso, Bassa Val Bisagno, Genova, Liguria, 16143, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:25.358Z"
+    },
+    {
+      "company": "TE Connectivity Ltd",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:26.532Z"
+    },
+    {
+      "company": "Rubis SCA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:27.712Z"
+    },
+    {
+      "company": "Banca Generali SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:28.989Z"
+    },
+    {
+      "company": "Hensoldt AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.7806167,
+        "lng": 10.1008094,
+        "accuracy": 0.00005477912565799981,
+        "address": "Hensoldt Optronics GmbH (Empfang), 22, Carl-Zeiss-Straße, Carl Zeiss AG, Oberkochen, Ostalbkreis, Baden-Württemberg, 73447, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:30.212Z"
+    },
+    {
+      "company": "Imerys SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.0786055,
+        "lng": 4.0420495,
+        "accuracy": 0.10672669794766153,
+        "address": "Imerys, Mably, Roanne, Loire, Auvergne-Rhône-Alpes, France métropolitaine, 42300, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:31.460Z"
+    },
+    {
+      "company": "Volkswagen AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 52.2932355,
+        "lng": 10.5238367,
+        "accuracy": 0.10673855115587089,
+        "address": "Volkswagen AG, Nordstadt-Schunteraue, Braunschweig, Niedersachsen, 38112, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:32.739Z"
+    },
+    {
+      "company": "Emmi AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.0957739,
+        "lng": 8.3147467,
+        "accuracy": 0.000051463340199847675,
+        "address": "Emmi Frischproduckte AG, Seetalstrasse, Waltwil, Emmen, Luzern, 6032, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:33.947Z"
+    },
+    {
+      "company": "A2A SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 45.6266671,
+        "lng": 8.9765689,
+        "accuracy": 0.00005917524986643805,
+        "address": "A2A Ambiente SpA, Via Barbara Melzi, Vigna, Cascina Inglesina, Gerenzano, Varese, Lombardia, 21040, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:35.185Z"
+    },
+    {
+      "company": "Compagnie Financiere Richemont SA",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:36.510Z"
+    },
+    {
+      "company": "Vetropack Holding SA",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:37.799Z"
+    },
+    {
+      "company": "UniCredit SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 38.0836166,
+        "lng": 14.8484929,
+        "accuracy": 0.00005751812008845682,
+        "address": "UniCredit SPA, SP146/a, Sinagra, Messina, Sicilia, 98069, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:39.009Z"
+    },
+    {
+      "company": "Gaztransport et Technigaz SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:40.165Z"
+    },
+    {
+      "company": "Wienerberger AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 47.2604398,
+        "lng": 16.261786,
+        "accuracy": 0.10671572213321123,
+        "address": "Wienerberger AG, Siget in der Wart/Őrisziget, Rotenturm an der Pinka, Bezirk Oberwart, Burgenland, 7501, Österreich",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:41.332Z"
+    },
+    {
+      "company": "Julius Baer Gruppe AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:42.775Z"
+    },
+    {
+      "company": "Leoni AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 47.954786,
+        "lng": 11.3442466,
+        "accuracy": 0.24256732666913378,
+        "address": "Leoni, Berg, Landkreis Starnberg, Bayern, 82335, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:44.019Z"
+    },
+    {
+      "company": "Bechtle AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.9970826,
+        "lng": 9.776915,
+        "accuracy": 0.000054657053482826236,
+        "address": "Bechtle AG, 1, Bechtle-Allee, Münster Mühle, Münster, Gaildorf, Verwaltungsverband Limpurger Land, Landkreis Schwäbisch Hall, Baden-Württemberg, 74405, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:45.218Z"
+    },
+    {
+      "company": "Carl Zeiss Meditec AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 50.8857374,
+        "lng": 11.5950277,
+        "accuracy": 0.4235884960436373,
+        "address": "Carl Zeiss Meditec AG, 52, Göschwitzer Straße, Gewerbegebiet Göschwitz, Göschwitz, Jena, Thüringen, 07745, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:46.407Z"
+    },
+    {
+      "company": "Colas SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 44.5707209,
+        "lng": -0.3415096,
+        "accuracy": 0.13339734111543447,
+        "address": "Colas, Pujols-sur-Ciron, Langon, Gironde, Nouvelle-Aquitaine, France métropolitaine, 33210, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:47.896Z"
+    },
+    {
+      "company": "Vonovia SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.4628549,
+        "lng": 7.2346256,
+        "accuracy": 0.00006923857480730934,
+        "address": "Vonovia SE, 133, Universitätsstraße, Wiemelhausen, Bochum-Süd, Bochum, Nordrhein-Westfalen, 44803, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:49.075Z"
+    },
+    {
+      "company": "Gurit Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:50.365Z"
+    },
+    {
+      "company": "Swiss Re AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.3596431,
+        "lng": 8.5349069,
+        "accuracy": 0.106745181200885,
+        "address": "Swiss Re Campus Mythenquai, Kreis 2, Zürich, Bezirk Zürich, Zürich, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:51.892Z"
+    },
+    {
+      "company": "Hera SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:53.146Z"
+    },
+    {
+      "company": "Glencore PLC",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.1813888,
+        "lng": 8.5272599,
+        "accuracy": 0.5188140568733318,
+        "address": "Glencore Xstrata plc, 3, Baarermattstrasse, Inwil, Baar, Zug, 6341, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:54.346Z"
+    },
+    {
+      "company": "Prysmian SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 45.2905753,
+        "lng": 8.0685168,
+        "accuracy": 0.10672456778820476,
+        "address": "ex Prysmian group spa, Livorno Ferraris, Vercelli, Piemonte, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:55.544Z"
+    },
+    {
+      "company": "Duerr AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.94153,
+        "lng": 9.1273681,
+        "accuracy": 0.000056959639887037726,
+        "address": "Dürr Systems AG, 2, Daimlerstraße, Laiern, Bietigheim-Bissingen, Vereinbarte Verwaltungsgemeinschaft der Stadt Bietigheim-Bissingen, Landkreis Ludwigsburg, Baden-Württemberg, 74321, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:37:56.784Z"
+    },
+    {
+      "company": "DKSH Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:58.287Z"
+    },
+    {
+      "company": "Teleperformance SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:37:59.451Z"
+    },
+    {
+      "company": "Pirelli & C SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:00.750Z"
+    },
+    {
+      "company": "Snam SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:02.003Z"
+    },
+    {
+      "company": "Gerresheimer AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1891738,
+        "lng": 6.9206102,
+        "accuracy": 0.05341059510185393,
+        "address": "Gerresheimer Straße, Meide, Hilden, Kreis Mettmann, Nordrhein-Westfalen, 40724, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:03.335Z"
+    },
+    {
+      "company": "Zalando SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 52.5042876,
+        "lng": 13.4443051,
+        "accuracy": 0.4691010442439081,
+        "address": "Zalando SE, 1, Tamara-Danz-Straße, Friedrichshain, Friedrichshain-Kreuzberg, Berlin, 10243, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:04.519Z"
+    },
+    {
+      "company": "Merck KGaA",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.8990929,
+        "lng": 8.6485494,
+        "accuracy": 0.10673815594720376,
+        "address": "Merck KGaA, Darmstadt-Nord, Darmstadt, Hessen, 64293, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:05.735Z"
+    },
+    {
+      "company": "Landis+Gyr Group AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:07.013Z"
+    },
+    {
+      "company": "Beiersdorf AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.4174521,
+        "lng": 12.385077,
+        "accuracy": 0.10671560158693826,
+        "address": "Beiersdorf AG, 2, Wiederitzsch, Nord, Leipzig, Sachsen, 04356, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:08.206Z"
+    },
+    {
+      "company": "EnBW Energie Baden Wuerttemberg AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 52.5224947,
+        "lng": 13.3874261,
+        "accuracy": 0.00008875486381318407,
+        "address": "EnBW Energie Baden-Württemberg AG, 1, Schiffbauerdamm, Dorotheenstadt, Mitte, Berlin, 10117, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:09.386Z"
+    },
+    {
+      "company": "Millicom International Cellular SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:10.669Z"
+    },
+    {
+      "company": "Evonik Industries AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.8769979,
+        "lng": 8.6361952,
+        "accuracy": 0.00007148928053707205,
+        "address": "Evonik Industries AG, Kirschenallee, Mornewegviertel, Darmstadt-Nord, Darmstadt, Hessen, 64293, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:11.845Z"
+    },
+    {
+      "company": "Vinci SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 45.0112123,
+        "lng": -0.4351936,
+        "accuracy": 0.10672041580834667,
+        "address": "Vinci, ÉcoParc d'Aquitaine, Saint-André-de-Cubzac, Blaye, Gironde, Nouvelle-Aquitaine, France métropolitaine, 33240, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:13.904Z"
+    },
+    {
+      "company": "Iren SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 44.4354618,
+        "lng": 8.9602818,
+        "accuracy": 0.1067448851758602,
+        "address": "IREN SPA, Media Val Bisagno, Genova, Liguria, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:15.076Z"
+    },
+    {
+      "company": "Swiss Steel Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:16.370Z"
+    },
+    {
+      "company": "Interpump Group SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:17.571Z"
+    },
+    {
+      "company": "Lenzing AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 47.9761348,
+        "lng": 13.6174651,
+        "accuracy": 0.3755398895276615,
+        "address": "Lenzing AG, Thal, Arnbruck, Lenzing an der Ager, Bezirk Vöcklabruck, Oberösterreich, 4860, Österreich",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:18.750Z"
+    },
+    {
+      "company": "Hermes International SCA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:19.946Z"
+    },
+    {
+      "company": "Biesse SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:21.122Z"
+    },
+    {
+      "company": "Solvay SA",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.902715,
+        "lng": 4.4012086,
+        "accuracy": 0.10674442130159455,
+        "address": "Solvay Campus Bruxelles - Solvay Campus Brussel, Neder-Over-Heembeek, Bruxelles - Brussel, Brussel-Hoofdstad - Bruxelles-Capitale, Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest, 1120, België / Belgique / Belgien",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:22.413Z"
+    },
+    {
+      "company": "Muenchener Rueckversicherungs-Gesellschaft in Muenchen AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:23.549Z"
+    },
+    {
+      "company": "D'Ieteren Group SA",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.8503,
+        "lng": 4.3517,
+        "accuracy": 0.1,
+        "address": "Brussels, Belgium",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:24.835Z"
+    },
+    {
+      "company": "Siemens Energy AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.5766732,
+        "lng": 11.0048753,
+        "accuracy": 0.44543044535855825,
+        "address": "Siemens Energy AG, 9, Siemenspromenade, Siemens Campus, Bruck, Erlangen, Bayern, 91058, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:26.112Z"
+    },
+    {
+      "company": "Umicore SA",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.6104561,
+        "lng": 5.6106787,
+        "accuracy": 0.10674032730601966,
+        "address": "Umicore, Chênée, Liège, Wallonie, 4031, België / Belgique / Belgien",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:27.336Z"
+    },
+    {
+      "company": "Bouygues SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 45.0139654,
+        "lng": 2.5559539,
+        "accuracy": 0.13339369420920116,
+        "address": "Bouygues, Lascelle, Aurillac, Cantal, Auvergne-Rhône-Alpes, France métropolitaine, 15590, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:28.737Z"
+    },
+    {
+      "company": "Globant SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:29.990Z"
+    },
+    {
+      "company": "Societe Fonciere Lyonnaise SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:31.252Z"
+    },
+    {
+      "company": "FDJ United",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:32.432Z"
+    },
+    {
+      "company": "Ucb SA",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.6918016,
+        "lng": 4.3405796,
+        "accuracy": 0.10672148851758599,
+        "address": "UCB Pharma S.A., Sart-Moulin, Braine-l'Alleud, Nivelles, Brabant wallon, Wallonie, 1420, België / Belgique / Belgien",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:33.702Z"
+    },
+    {
+      "company": "Elia Group SA",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.8503,
+        "lng": 4.3517,
+        "accuracy": 0.1,
+        "address": "Brussels, Belgium",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:35.104Z"
+    },
+    {
+      "company": "Holcim AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.52091,
+        "lng": 8.2391318,
+        "accuracy": 0.000047625696192828524,
+        "address": "Holcim (Schweiz) AG, 1, Zementweg, Siggenthal Station, Würenlingen, Bezirk Baden, Aargau, 5303, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:36.329Z"
+    },
+    {
+      "company": "Swiss Life Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:37.632Z"
+    },
+    {
+      "company": "Intesa Sanpaolo SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 44.4676085,
+        "lng": 7.3599215,
+        "accuracy": 0.00006469443808647315,
+        "address": "Intesa Sanpaolo SPA, Via Roma, Dronero, Cuneo, Piemonte, 12025, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:38.814Z"
+    },
+    {
+      "company": "Nexi SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:40.003Z"
+    },
+    {
+      "company": "Clariant AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:41.247Z"
+    },
+    {
+      "company": "Remy Cointreau SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:42.513Z"
+    },
+    {
+      "company": "Alten SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.8344469,
+        "lng": 2.2488894,
+        "accuracy": 0.00009317235065227768,
+        "address": "ALTEN, 65, Avenue Édouard Vaillant, Point du Jour, Boulogne-Billancourt, Hauts-de-Seine, France métropolitaine, 92100, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:44.421Z"
+    },
+    {
+      "company": "TotalEnergies SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 43.2952805,
+        "lng": 5.4002894,
+        "accuracy": 0.00007813916227965237,
+        "address": "TotalEnergies, 103, Boulevard Sakakini, Le Camas, Marseille 5e Arrondissement, Marseille, Bouches-du-Rhône, Provence-Alpes-Côte d'Azur, France métropolitaine, 13005, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:45.735Z"
+    },
+    {
+      "company": "Italgas SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 45.0853803,
+        "lng": 7.414219,
+        "accuracy": 0.00006418326085293381,
+        "address": "Italgas Reti SpA, 23, Viale Mahatma Gandhi, Grangia, Avigliana, Torino, Piemonte, 10051, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:46.919Z"
+    },
+    {
+      "company": "Warehouses de Pauw NV",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.8503,
+        "lng": 4.3517,
+        "accuracy": 0.1,
+        "address": "Brussels, Belgium",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:48.164Z"
+    },
+    {
+      "company": "Robert Bosch GmbH",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.1314018,
+        "lng": 11.6459553,
+        "accuracy": 0.10675128938735025,
+        "address": "Robert Bosch GmbH, Berg am Laim, München, Bayern, 81673, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:49.437Z"
+    },
+    {
+      "company": "BKW AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.9554011,
+        "lng": 7.4506225,
+        "accuracy": 0.00007734264133664481,
+        "address": "Verwaltungsgebäude BKW, 2, Viktoriaplatz, Spitalacker, Stadtteil V, Bern, Verwaltungskreis Bern-Mittelland, Verwaltungsregion Bern-Mittelland, Bern/Berne, 3013, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:50.680Z"
+    },
+    {
+      "company": "Banca Monte dei Paschi di Siena SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.770064,
+        "lng": 11.1116657,
+        "accuracy": 0.000057434195468024985,
+        "address": "Monte dei Paschi di Siena SpA (MPS), Via Livornese, Ponte a Signa, Lastra a Signa, Firenze, Toscana, 50055, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:51.893Z"
+    },
+    {
+      "company": "Unibail-Rodamco-Westfield SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:53.026Z"
+    },
+    {
+      "company": "Rai Way SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:54.283Z"
+    },
+    {
+      "company": "Covivio Hotels SCA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:38:55.506Z"
+    },
+    {
+      "company": "Krones AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.9843141,
+        "lng": 12.1907195,
+        "accuracy": 0.37648692566918407,
+        "address": "Krones AG, Gärtnersiedlung, Neutraubling, Landkreis Regensburg, Bayern, 93073, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:56.692Z"
+    },
+    {
+      "company": "Schneider Electric SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 43.4873247,
+        "lng": 5.3404773,
+        "accuracy": 0.00006910887312118743,
+        "address": "schneider electric, 450, Avenue Galilée, La Duranne, Aix-en-Provence, Bouches-du-Rhône, Provence-Alpes-Côte d'Azur, France métropolitaine, 13290, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:58.142Z"
+    },
+    {
+      "company": "Allianz SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.5390429,
+        "lng": 13.2187643,
+        "accuracy": 0.000052549782558892464,
+        "address": "Allianz Christian Aigner, 51, Griesbacher Straße, Steinkirchen, Dorfbach, Ortenburg, Landkreis Passau, Bayern, 94496, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:38:59.379Z"
+    },
+    {
+      "company": "Technoprobe SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:00.569Z"
+    },
+    {
+      "company": "Dassault Aviation SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 43.5005644,
+        "lng": -1.5011096,
+        "accuracy": 0.106732389562829,
+        "address": "Dassault Aviation, Blancpignon, Anglet, Bayonne, Pyrénées-Atlantiques, Nouvelle-Aquitaine, France métropolitaine, 64600, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:01.860Z"
+    },
+    {
+      "company": "Samsonite Group SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:03.142Z"
+    },
+    {
+      "company": "Fresenius Medical Care AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.4639779,
+        "lng": 7.1481501,
+        "accuracy": 0.10672131456473638,
+        "address": "Fresenius Medical Care Deutschland GmbH, Sankt Wendel, Landkreis St. Wendel, Saarland, 66606, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:04.446Z"
+    },
+    {
+      "company": "Mayr-Melnhof Karton AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 47.709465,
+        "lng": 15.8082475,
+        "accuracy": 0.10671917982757302,
+        "address": "MM Neupack, Katastralgemeinde Hirschwang, Hirschwang an der Rax, Reichenau an der Rax, Bezirk Neunkirchen, Niederösterreich, 2651, Österreich",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:05.722Z"
+    },
+    {
+      "company": "DO & CO AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 47.5162,
+        "lng": 14.5501,
+        "accuracy": 0.1,
+        "address": "Vienna, Austria",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:08.486Z"
+    },
+    {
+      "company": "Sandoz Group AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:09.750Z"
+    },
+    {
+      "company": "Siegfried Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:11.147Z"
+    },
+    {
+      "company": "Adidas AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 49.5796789,
+        "lng": 10.916726,
+        "accuracy": 0.00005645914396882609,
+        "address": "adidas AG, 1, Adi-Dassler-Straße, World of Sports, Herzo Base, Haundorf, Herzogenaurach, Landkreis Erlangen-Höchstadt, Bayern, 91074, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:12.338Z"
+    },
+    {
+      "company": "Alcon AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.6995105,
+        "lng": 8.6580727,
+        "accuracy": 0.00006351796749823785,
+        "address": "Alcon Grieshaber AG, 52, Winkelriedstrasse, Innerwiidle, Buchthalen, Schaffhausen, 8203, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:13.595Z"
+    },
+    {
+      "company": "Uniper SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.2129363,
+        "lng": 6.747918,
+        "accuracy": 0.00007726176852059232,
+        "address": "Uniper SE, 6, Holzstraße, Hafen, Stadtbezirk 3, Düsseldorf, Nordrhein-Westfalen, 40221, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:14.769Z"
+    },
+    {
+      "company": "Sonova Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:16.009Z"
+    },
+    {
+      "company": "Fraport Frankfurt Airport Services Worldwide AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:17.296Z"
+    },
+    {
+      "company": "Inficon Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:18.541Z"
+    },
+    {
+      "company": "SGS SA",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:19.814Z"
+    },
+    {
+      "company": "Hochtief AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 50.8169724,
+        "lng": 6.9927088,
+        "accuracy": 0.10672063096055541,
+        "address": "HOCHTIEF Infrastructure GmbH, Wesseling-Mitte, Wesseling, Rhein-Erft-Kreis, Nordrhein-Westfalen, 50389, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:21.073Z"
+    },
+    {
+      "company": "Technip Energies NV",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:22.246Z"
+    },
+    {
+      "company": "Galderma Group AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:23.532Z"
+    },
+    {
+      "company": "MTU Aero Engines AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.2130449,
+        "lng": 11.4777861,
+        "accuracy": 0.4784907099279942,
+        "address": "MTU Aero Engines, Industriebezirk, Allach-Untermenzing, München, Bayern, 80995, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:24.822Z"
+    },
+    {
+      "company": "Belimo Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:26.132Z"
+    },
+    {
+      "company": "Baloise Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:27.388Z"
+    },
+    {
+      "company": "Zuger Kantonalbank",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.1683025,
+        "lng": 8.5154246,
+        "accuracy": 0.00006095140001521351,
+        "address": "Zuger Kantonalbank, 1, Bahnhofstrasse, Zurlaubenhof, Altstadt, Zug, 6300, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:28.565Z"
+    },
+    {
+      "company": "Siltronic AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 50.9000797,
+        "lng": 13.3546147,
+        "accuracy": 0.00006230029755088147,
+        "address": "Siltronic AG Werk Freiberg, 113, Berthelsdorfer Straße, Niederzug, Zug, Langenrinne, Freiberg, Mittelsachsen, Sachsen, 09599, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:29.782Z"
+    },
+    {
+      "company": "De' Longhi SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:31.028Z"
+    },
+    {
+      "company": "Spie SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.6145875,
+        "lng": 0.3098018,
+        "accuracy": 0.10673675364309146,
+        "address": "Spie, 1, Migné-Auxances, Poitiers, Vienne, Nouvelle-Aquitaine, France métropolitaine, 86440, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:32.273Z"
+    },
+    {
+      "company": "Flughafen Wien AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 48.1225943,
+        "lng": 16.5642412,
+        "accuracy": 0.00005717631799797082,
+        "address": "Flughafen Wien AG, Mittelstraße, Katastralgemeinde Mannswörth, Schwechat, Bezirk Bruck an der Leitha, Niederösterreich, 1300, Österreich",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:33.532Z"
+    },
+    {
+      "company": "Scor SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:34.732Z"
+    },
+    {
+      "company": "Aeroports de Paris SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 49.0068908,
+        "lng": 2.571082,
+        "accuracy": 0.5858296274036138,
+        "address": "Aéroport de Paris-Charles-de-Gaulle, Tremblay-en-France, Le Raincy, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93290, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:39.409Z"
+    },
+    {
+      "company": "Mediobanca Banca di Credito Finanziario SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:40.688Z"
+    },
+    {
+      "company": "Unifiedpost Group SA",
+      "country": "Belgium",
+      "coordinates": {
+        "lat": 50.8503,
+        "lng": 4.3517,
+        "accuracy": 0.1,
+        "address": "Brussels, Belgium",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:42.687Z"
+    },
+    {
+      "company": "Garmin Ltd",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:43.869Z"
+    },
+    {
+      "company": "Swissquote Group Holding SA",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:45.128Z"
+    },
+    {
+      "company": "Jungheinrich AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.4703163,
+        "lng": 11.9689976,
+        "accuracy": 0.10672261310749978,
+        "address": "Jungheinrich AG, Moosburg, Landkreis Freising, Bayern, 85368, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:46.290Z"
+    },
+    {
+      "company": "Covestro AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.0142476,
+        "lng": 6.9854743,
+        "accuracy": 0.00006651178759436969,
+        "address": "Covestro AG, 60, Kaiser-Wilhelm-Allee, Chempark Leverkusen, Wiesdorf, Stadtbezirk I, Leverkusen, Nordrhein-Westfalen, 51373, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:47.451Z"
+    },
+    {
+      "company": "L'Oreal SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.7794801,
+        "lng": 0.8262357,
+        "accuracy": 0.10672676813916225,
+        "address": "L'Oréal, La Roche-Posay, Châtellerault, Vienne, Nouvelle-Aquitaine, France métropolitaine, 86270, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:48.768Z"
+    },
+    {
+      "company": "Coca Cola HBC AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.421101,
+        "lng": 8.6234793,
+        "accuracy": 0.10671724193179215,
+        "address": "Coca-Cola HBC Schweiz, Dietlikon, Bezirk Bülach, Zürich, 8305, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:50.078Z"
+    },
+    {
+      "company": "Eiffage SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.5605875,
+        "lng": 3.0329782,
+        "accuracy": 0.10673064545662621,
+        "address": "Eiffage, Nangis, Provins, Seine-et-Marne, France métropolitaine, 77370, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:51.313Z"
+    },
+    {
+      "company": "Ypsomed Holding AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:52.548Z"
+    },
+    {
+      "company": "Eramet SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.8535518,
+        "lng": 2.2893418,
+        "accuracy": 0.00009317235065227768,
+        "address": "ERAMET 10G, 10, Boulevard de Grenelle, Quartier de Grenelle, Paris 15e Arrondissement, Paris, Île-de-France, France métropolitaine, 75015, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:53.769Z"
+    },
+    {
+      "company": "Compagnie Generale des Etablissements Michelin SCA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:54.998Z"
+    },
+    {
+      "company": "Stevanato Group SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:56.256Z"
+    },
+    {
+      "company": "Temenos AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:39:57.496Z"
+    },
+    {
+      "company": "Electricite De France SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 47.3685233,
+        "lng": 0.7045783,
+        "accuracy": 0.106737795834287,
+        "address": "Electricité de France, Les Fontaines, Tours, Indre-et-Loire, Centre-Val de Loire, France métropolitaine, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:39:59.480Z"
+    },
+    {
+      "company": "Veolia Environnement SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 47.2091235,
+        "lng": -1.5405816,
+        "accuracy": 0.00007430914778358157,
+        "address": "Veolia environnement, Rue Françoise Giroud, Beaulieu, Île Beaulieu, Île de Nantes, Nantes, Loire-Atlantique, Pays de la Loire, France métropolitaine, 44021, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:00.804Z"
+    },
+    {
+      "company": "L'Occitane International SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:02.352Z"
+    },
+    {
+      "company": "Sanofi SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 47.4296449,
+        "lng": 0.6951806,
+        "accuracy": 0.106737795834287,
+        "address": "Sanofi, Douets Milletière, Tours, Indre-et-Loire, Centre-Val de Loire, France métropolitaine, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:03.614Z"
+    },
+    {
+      "company": "Zurich Insurance Group AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:05.112Z"
+    },
+    {
+      "company": "Klepierre SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 49.038184,
+        "lng": 2.0766112,
+        "accuracy": 0.00006280842298004147,
+        "address": "Résidence Klepierre, Avenue des Trois Fontaines, Le Chemin Dupuis Brun, Grand Centre, Cergy, Pontoise, Val-d'Oise, France métropolitaine, 95000, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:06.345Z"
+    },
+    {
+      "company": "Webuild SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 44.5009369,
+        "lng": 11.3276019,
+        "accuracy": 0.00007805828946359988,
+        "address": "NBI SpA - Webuild Group, Via dello Scalo, Saffi, Porto-Saragozza, Bologna, Emilia-Romagna, 40122, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:07.559Z"
+    },
+    {
+      "company": "Infrastrutture Wireless Italiane SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:08.765Z"
+    },
+    {
+      "company": "Eni SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.3722497,
+        "lng": 13.5805866,
+        "accuracy": 0.00005503242542148497,
+        "address": "Goldengas SpA Eni PV Montelupone, Contrada Aneto, Becerica, Montelupone, Macerata, 62010, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:10.055Z"
+    },
+    {
+      "company": "Heidelberg Materials AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 52.367588,
+        "lng": 9.8806772,
+        "accuracy": 0.13340972381170366,
+        "address": "Steinbruchsee Steinbruch Süd Heidelberg Materials AG, Anderten, Misburg-Anderten, Hannover, Region Hannover, Niedersachsen, 30559, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:11.461Z"
+    },
+    {
+      "company": "IONOS Group SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:12.689Z"
+    },
+    {
+      "company": "Infineon Technologies AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1011858,
+        "lng": 13.731307,
+        "accuracy": 0.00007848859388108671,
+        "address": "Infineon Technologies AG, Hellerhofstraße, Hellerberge, Klotzsche, Dresden, Sachsen, 01129, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:13.884Z"
+    },
+    {
+      "company": "Ayvens SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.1705668,
+        "lng": -1.71993,
+        "accuracy": 0.00006136339360642432,
+        "address": "Ayvens Rennes, REV Montgermont - La Chapelle-des-Fougeretz, Zone d'activités de la Brosse, Le Jardin de Devant, La Chapelle-des-Fougeretz, Rennes, Ille-et-Vilaine, Bretagne, France métropolitaine, 35520, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:15.112Z"
+    },
+    {
+      "company": "Dassault Systemes SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:16.317Z"
+    },
+    {
+      "company": "Deutsche Telekom AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 53.5530785,
+        "lng": 9.9672301,
+        "accuracy": 0.10674922026398105,
+        "address": "Deutsche Telekom AG, St. Pauli, Hamburg-Mitte, Hamburg, 20359, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:17.577Z"
+    },
+    {
+      "company": "Davide Campari Milano NV",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:18.763Z"
+    },
+    {
+      "company": "Novartis AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.5511132,
+        "lng": 7.958069,
+        "accuracy": 0.000044772259098146297,
+        "address": "Novartis, Schaffhauserstrasse, Stein, Bezirk Rheinfelden, Aargau, 4332, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:19.981Z"
+    },
+    {
+      "company": "Leonardo SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 44.4145374,
+        "lng": 8.8805851,
+        "accuracy": 0.00007821850919351518,
+        "address": "Leonardo SpA, 80, Via Raffaele Pieragostini, Sampierdarena, Centro Ovest, Genova, Liguria, 16151, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:21.394Z"
+    },
+    {
+      "company": "Ariston Holding NV",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:22.593Z"
+    },
+    {
+      "company": "Ternium SA",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:23.846Z"
+    },
+    {
+      "company": "Thales SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 47.319113,
+        "lng": 0.7146712,
+        "accuracy": 0.000060125886930602236,
+        "address": "Thalès Digital Identity & Security - Gemalto SA, Route du Saint-Laurent, Zone industrielle Les Renardières, L'Arche de la Madelaine, Chambray-lès-Tours, Tours, Indre-et-Loire, Centre-Val de Loire, France métropolitaine, 37170, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:25.168Z"
+    },
+    {
+      "company": "Atos SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 43.4853935,
+        "lng": 5.3430393,
+        "accuracy": 0.00006910887312118743,
+        "address": "Atos, 655, Avenue Galilée, La Duranne, Aix-en-Provence, Bouches-du-Rhône, Provence-Alpes-Côte d'Azur, France métropolitaine, 13794, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:26.359Z"
+    },
+    {
+      "company": "Mercedes-Benz Group AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.7247637,
+        "lng": 9.1196852,
+        "accuracy": 0.000078644235904433,
+        "address": "sternchen - Kindertagesstätte im Auftrag der Mercedes-Benz Group AG, 29, Industriestraße, Synergiepark, Wallgraben-West, Vaihingen, Stuttgart, Baden-Württemberg, 70565, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:27.947Z"
+    },
+    {
+      "company": "Raiffeisen Bank International AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 47.5162,
+        "lng": 14.5501,
+        "accuracy": 0.1,
+        "address": "Vienna, Austria",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:29.715Z"
+    },
+    {
+      "company": "Nestle SA",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.550847,
+        "lng": 6.6884555,
+        "accuracy": 0.10674096513313494,
+        "address": "Nestec SA Centre de recherches Nestlé, Vers-chez-les-Blanc, Montblesson, Lausanne, District de Lausanne, Vaud, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:30.958Z"
+    },
+    {
+      "company": "Credit Agricole SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 44.7963522,
+        "lng": -0.6673614,
+        "accuracy": 0.10672163347829401,
+        "address": "Crédit Agricole, France Alouette, Pessac, Bordeaux, Gironde, Nouvelle-Aquitaine, France métropolitaine, 33600, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:33.173Z"
+    },
+    {
+      "company": "Abb Ltd",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.1504079,
+        "lng": 8.9111141,
+        "accuracy": 0.00005000152590214416,
+        "address": "ABB Switzerland Ltd., 9, Via Luserte Sud, Quartino, Gambarogno, Circolo del Gambarogno, Distretto di Locarno, Ticino, 6572, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:34.359Z"
+    },
+    {
+      "company": "Compagnie De l'odet SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:35.729Z"
+    },
+    {
+      "company": "Sika AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8551822,
+        "lng": 7.1946457,
+        "accuracy": 0.00004944762340729408,
+        "address": "Sika Manufacturing AG, 13, Murtenstrasse, Brugera, Düdingen, Sensebezirk, Fribourg/Freiburg, 3186, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:36.966Z"
+    },
+    {
+      "company": "Covivio SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:38.193Z"
+    },
+    {
+      "company": "Wacker Chemie AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.1845241,
+        "lng": 12.846597,
+        "accuracy": 0.3922544762110891,
+        "address": "Wacker Chemie AG, Burghausen, Landkreis Altötting, Bayern, 84489, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:39.389Z"
+    },
+    {
+      "company": "VAT Group AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.18283,
+        "lng": 9.45698,
+        "accuracy": 0.00004944762340729408,
+        "address": "VAT Group AG, Werdenstrasse, Grabs, Wahlkreis Werdenberg, St. Gallen, 9472, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:40.609Z"
+    },
+    {
+      "company": "Aurubis AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.603995,
+        "lng": 7.5086918,
+        "accuracy": 0.00005858319981684623,
+        "address": "Aurubis AG, 23, Kupferstraße, Osterfeld, Lünen, Kreis Unna, Nordrhein-Westfalen, 44532, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:41.789Z"
+    },
+    {
+      "company": "LVMH Moet Hennessy Louis Vuitton SE",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:42.977Z"
+    },
+    {
+      "company": "Kion Group AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 50.0558033,
+        "lng": 8.5885175,
+        "accuracy": 0.00007941481651021618,
+        "address": "Kion Group AG, 8, Thea-Rasche-Straße, Gateway Gardens, Flughafen, Süd, Frankfurt am Main, Hessen, 60549, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:44.181Z"
+    },
+    {
+      "company": "Societe BIC SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.9021561,
+        "lng": 2.2969617,
+        "accuracy": 0.00006126726176847514,
+        "address": "Société BIC, Rue Valiton, Clichy, Nanterre, Hauts-de-Seine, France métropolitaine, 92110, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:47.095Z"
+    },
+    {
+      "company": "Ermenegildo Zegna NV",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:48.277Z"
+    },
+    {
+      "company": "Sopra Steria Group SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 43.6122438,
+        "lng": 1.3080785,
+        "accuracy": 0.0000651995117112538,
+        "address": "Sopra Steria Group, 1, Avenue André Marie Ampère, Le Perget, Colomiers, Toulouse, Haute-Garonne, Occitanie, France métropolitaine, 31770, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:49.568Z"
+    },
+    {
+      "company": "FinecoBank Banca Fineco SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:50.826Z"
+    },
+    {
+      "company": "Legrand SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 45.6617719,
+        "lng": 0.9926922,
+        "accuracy": 0.10672663538567176,
+        "address": "Legrand, Chez Fontanille, Châlus, Limoges, Haute-Vienne, Nouvelle-Aquitaine, France métropolitaine, 87230, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:52.318Z"
+    },
+    {
+      "company": "Publicis Groupe SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:53.599Z"
+    },
+    {
+      "company": "Sartorius Stedim Biotech SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:54.887Z"
+    },
+    {
+      "company": "Credito Emiliano SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.7461918,
+        "lng": 11.0692953,
+        "accuracy": 0.000057434195468024985,
+        "address": "Credito Emiliano SpA (Credem), Via Vecchia Pisana, Malmantile, Lastra a Signa, Firenze, Toscana, 50055, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:56.100Z"
+    },
+    {
+      "company": "Banque Cantonale Vaudoise",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.5477593,
+        "lng": 6.6706776,
+        "accuracy": 0.00007429846646825387,
+        "address": "Banque Cantonale Vaudoise, Route de la Croix-Blanche, Épalinges, District de Lausanne, Vaud, 1066, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:40:57.286Z"
+    },
+    {
+      "company": "Puma SE",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:58.559Z"
+    },
+    {
+      "company": "Compagnie de Saint Gobain SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 46.2276,
+        "lng": 2.2137,
+        "accuracy": 0.1,
+        "address": "Paris, France",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:40:59.998Z"
+    },
+    {
+      "company": "Continental AG",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 48.3976566,
+        "lng": 10.0391514,
+        "accuracy": 0.18640586217879376,
+        "address": "Continental AG, 4, Ernst-Abbe-Straße, Starkfeld, Neu-Ulm, Landkreis Neu-Ulm, Bayern, 89231, Deutschland",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:41:01.269Z"
+    },
+    {
+      "company": "Stratec Se",
+      "country": "Germany",
+      "coordinates": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "accuracy": 0.1,
+        "address": "Berlin, Germany",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:41:02.449Z"
+    },
+    {
+      "company": "OMV AG",
+      "country": "Austria",
+      "coordinates": {
+        "lat": 48.2807763,
+        "lng": 16.5607837,
+        "accuracy": 0.10671939955748834,
+        "address": "OMV, Katastralgemeinde Deutsch Wagram, Deutsch-Wagram, Bezirk Gänserndorf, Niederösterreich, 2232, Österreich",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:41:03.889Z"
+    },
+    {
+      "company": "Engie SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 43.6039246,
+        "lng": 3.8850609,
+        "accuracy": 0.10674078812848094,
+        "address": "Engie, Centre, Montpellier, Hérault, Occitanie, France métropolitaine, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:41:05.161Z"
+    },
+    {
+      "company": "Saipem SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.8032397,
+        "lng": 13.0179814,
+        "accuracy": 0.00006230182345307115,
+        "address": "Saipem Spa, 1, Via Giuseppe Toniolo, Bellocchi, Fano, Pesaro e Urbino, 61032, Italia",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:41:06.350Z"
+    },
+    {
+      "company": "Reply SpA",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.8719,
+        "lng": 12.5674,
+        "accuracy": 0.1,
+        "address": "Rome, Italy",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:41:07.531Z"
+    },
+    {
+      "company": "Swisscom AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 47.3914099,
+        "lng": 8.5108073,
+        "accuracy": 0.0000785145342183111,
+        "address": "Swisscom AG, 181, Förrlibuckstrasse, Escher Wyss, Industriequartier, Zürich, Bezirk Zürich, Zürich, 8010, Schweiz/Suisse/Svizzera/Svizra",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:41:08.707Z"
+    },
+    {
+      "company": "Eurofins Scientific SE",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.8153,
+        "lng": 6.1296,
+        "accuracy": 0.1,
+        "address": "Luxembourg City, Luxembourg",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:41:09.901Z"
+    },
+    {
+      "company": "Cembra Money Bank AG",
+      "country": "Switzerland",
+      "coordinates": {
+        "lat": 46.8182,
+        "lng": 8.2275,
+        "accuracy": 0.1,
+        "address": "Bern, Switzerland",
+        "source": "fallback"
+      },
+      "timestamp": "2025-08-22T00:41:11.219Z"
+    },
+    {
+      "company": "European Investment Bank",
+      "country": "Luxembourg",
+      "coordinates": {
+        "lat": 49.6202667,
+        "lng": 6.137705,
+        "accuracy": 0.00007156710154874522,
+        "address": "European Investment Bank (WKI), Boulevard Konrad Adenauer, Quartier Européen Sud, Kirchberg, Luxembourg, Canton Luxembourg, 1873, Lëtzebuerg",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:41:12.461Z"
+    },
+    {
+      "company": "Eutelsat Communications SA",
+      "country": "France",
+      "coordinates": {
+        "lat": 48.5495057,
+        "lng": 1.7825611,
+        "accuracy": 0.000058548104066483826,
+        "address": "Eutelsat communications. Téléport de Rambouillet, Allée des Peupliers, Saint-Symphorien-le-Château, Bleury-Saint-Symphorien, Auneau-Bleury-Saint-Symphorien, Chartres, Eure-et-Loir, Centre-Val de Loire, France métropolitaine, 28700, France",
+        "source": "nominatim"
+      },
+      "timestamp": "2025-08-22T00:41:13.777Z"
+    }
+  ]
+}

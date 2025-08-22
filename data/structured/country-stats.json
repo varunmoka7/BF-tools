@@ -1,0 +1,125 @@
+[
+  {
+    "country": "France",
+    "total_companies": 1286,
+    "total_employees": 86447417,
+    "sectors_represented": [
+      "Industrials",
+      "Consumer Defensive",
+      "Consumer Cyclical",
+      "Technology",
+      "Basic Materials",
+      "Communication Services",
+      "Financial Services",
+      "Real Estate",
+      "Healthcare",
+      "Energy",
+      "Utilities"
+    ],
+    "waste_management_score": 72
+  },
+  {
+    "country": "Luxembourg",
+    "total_companies": 271,
+    "total_employees": 6849318,
+    "sectors_represented": [
+      "Real Estate",
+      "Industrials",
+      "Consumer Cyclical",
+      "Basic Materials",
+      "Energy",
+      "Communication Services",
+      "Technology",
+      "Consumer Defensive",
+      "Healthcare"
+    ],
+    "waste_management_score": 95
+  },
+  {
+    "country": "Germany",
+    "total_companies": 1447,
+    "total_employees": 76868129,
+    "sectors_represented": [
+      "Healthcare",
+      "Industrials",
+      "Consumer Defensive",
+      "Real Estate",
+      "Basic Materials",
+      "Utilities",
+      "Consumer Cyclical",
+      "Communication Services",
+      "Financial Services",
+      "Technology"
+    ],
+    "waste_management_score": 89
+  },
+  {
+    "country": "Italy",
+    "total_companies": 1084,
+    "total_employees": 20484483,
+    "sectors_represented": [
+      "Consumer Cyclical",
+      "Healthcare",
+      "Industrials",
+      "Utilities",
+      "Basic Materials",
+      "Energy",
+      "Financial Services",
+      "Communication Services",
+      "Technology",
+      "Real Estate",
+      "Consumer Defensive"
+    ],
+    "waste_management_score": 73
+  },
+  {
+    "country": "Belgium",
+    "total_companies": 217,
+    "total_employees": 1761547,
+    "sectors_represented": [
+      "Consumer Defensive",
+      "Real Estate",
+      "Basic Materials",
+      "Financial Services",
+      "Consumer Cyclical",
+      "Industrials",
+      "Healthcare",
+      "Utilities",
+      "Technology"
+    ],
+    "waste_management_score": 60
+  },
+  {
+    "country": "Switzerland",
+    "total_companies": 1196,
+    "total_employees": 34598972,
+    "sectors_represented": [
+      "Healthcare",
+      "Consumer Cyclical",
+      "Industrials",
+      "Technology",
+      "Financial Services",
+      "Basic Materials",
+      "Real Estate",
+      "Consumer Defensive",
+      "Utilities",
+      "Communication Services"
+    ],
+    "waste_management_score": 71
+  },
+  {
+    "country": "Austria",
+    "total_companies": 231,
+    "total_employees": 5479636,
+    "sectors_represented": [
+      "Technology",
+      "Utilities",
+      "Industrials",
+      "Basic Materials",
+      "Consumer Cyclical",
+      "Financial Services",
+      "Energy"
+    ],
+    "waste_management_score": 84
+  }
+]

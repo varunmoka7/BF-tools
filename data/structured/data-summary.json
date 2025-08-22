@@ -1,0 +1,105 @@
+{
+  "generated_at": "2025-08-22T00:18:22.300Z",
+  "overview": {
+    "total_companies": 325,
+    "total_employees": 13446170,
+    "average_employees": 41372,
+    "total_waste_records": 5732,
+    "unique_metrics": 11
+  },
+  "sector_breakdown": {
+    "Industrials": 71,
+    "Real Estate": 14,
+    "Healthcare": 37,
+    "Consumer Defensive": 16,
+    "Consumer Cyclical": 42,
+    "Technology": 26,
+    "Utilities": 19,
+    "Basic Materials": 35,
+    "Communication Services": 13,
+    "Financial Services": 36,
+    "Energy": 9,
+    "Unknown": 7
+  },
+  "country_breakdown": {
+    "France": 82,
+    "Luxembourg": 16,
+    "Germany": 78,
+    "Italy": 56,
+    "Belgium": 13,
+    "Switzerland": 66,
+    "Austria": 14
+  },
+  "top_sectors": [
+    {
+      "sector": "Industrials",
+      "count": 71
+    },
+    {
+      "sector": "Consumer Cyclical",
+      "count": 42
+    },
+    {
+      "sector": "Healthcare",
+      "count": 37
+    },
+    {
+      "sector": "Financial Services",
+      "count": 36
+    },
+    {
+      "sector": "Basic Materials",
+      "count": 35
+    },
+    {
+      "sector": "Technology",
+      "count": 26
+    },
+    {
+      "sector": "Utilities",
+      "count": 19
+    },
+    {
+      "sector": "Consumer Defensive",
+      "count": 16
+    },
+    {
+      "sector": "Real Estate",
+      "count": 14
+    },
+    {
+      "sector": "Communication Services",
+      "count": 13
+    }
+  ],
+  "top_countries": [
+    {
+      "country": "France",
+      "count": 82
+    },
+    {
+      "country": "Germany",
+      "count": 78
+    },
+    {
+      "country": "Switzerland",
+      "count": 66
+    },
+    {
+      "country": "Italy",
+      "count": 56
+    },
+    {
+      "country": "Luxembourg",
+      "count": 16
+    },
+    {
+      "country": "Austria",
+      "count": 14
+    },
+    {
+      "country": "Belgium",
+      "count": 13
+    }
+  ]
+}

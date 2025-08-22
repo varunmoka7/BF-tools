@@ -1,0 +1,51 @@
+
+> waste-intelligence-platform@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.16
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 7.5s
+ ○ Compiling / ...
+ ✓ Compiled / in 15.7s (701 modules)
+ ⨯ Error: Cannot find module '/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/.next/server/middleware-manifest.json'
+Require stack:
+- /Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/next-server.js
+- /Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/next.js
+- /Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/lib/start-server.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
+    at /Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+    at mod.require (/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at DevServer.getMiddlewareManifest (/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/next-server.js:932:26)
+    at DevServer.getEdgeFunctionsPages (/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/next-server.js:948:31)
+    at NextNodeServer.handleCatchallRenderRequest (/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/next-server.js:238:49)
+    at async DevServer.handleRequestImpl (/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/base-server.js:817:17)
+    at async /Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/lib/router-server.js:350:24)
+    at async requestHandlerImpl (/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/next-server.js',
+    '/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/dev/next-dev-server.js',
+    '/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/next.js',
+    '/Users/apple/Downloads/BF-tools/apps/waste-intelligence-platform/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 11.5s (887 modules)
+ GET / 500 in 27647ms
+[?25h

@@ -5,8 +5,8 @@ A comprehensive waste management and GHG emissions integration platform built wi
 
 ## 🏗️ Project Structure
 
-### Frontend (`/frontend`)
-- **Framework**: React + Vite + TypeScript
+### Dashboard (`/apps/waste-intelligence-platform`)
+- **Framework**: Next.js 14 + React 18 + TypeScript
 - **Styling**: Tailwind CSS
 - **Components**: Modular UI components
 - **Charts**: Recharts for data visualization
@@ -24,19 +24,30 @@ A comprehensive waste management and GHG emissions integration platform built wi
 
 ### Data (`/data`)
 - **Datasets**: Raw data files
-- **Migrations**: Database schema changes
-- **Backups**: Data backup files
+- **Tasks**: Task documentation and analysis
+- **Entry System**: Data entry workflows
+- **Pilot Program**: Pilot program data and results
+- **Workflows**: Process templates and guides
+
+### Documentation (`/docs`)
+- **Implementation**: Implementation guides and roadmaps
+- **Status**: Project status and progress reports
+- **Development**: Development guides and tools
+- **Architecture**: System architecture documentation
+- **PRD**: Product requirements and specifications
+
+### Tools (`/tools`)
+- **Scripts**: Utility and automation scripts
+- **AI Tools**: Claude, Roo, Cursor, and other AI development tools
+- **SM-MDC**: Specialized tools and utilities
 
 ### Infrastructure (`/infrastructure`)
 - **Docker**: Containerization configs
 - **CI/CD**: Deployment pipelines
 - **Scripts**: Infrastructure automation
 
-### Claude Flow (`/.claude-flow`)
-- **Agents**: AI agent definitions
-- **Workflows**: Automated workflows
-- **Memory**: Persistent memory storage
-- **Metrics**: Performance tracking
+### Configuration (`/config`)
+- **Vercel**: Vercel deployment configuration
 
 ## 🚀 Quick Start
 
@@ -44,7 +55,7 @@ A comprehensive waste management and GHG emissions integration platform built wi
 # Install dependencies
 npm install
 
-# Start frontend development server
+# Start dashboard development server
 npm run dev
 
 # Start backend development server
@@ -61,8 +72,8 @@ npm run build
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Start frontend dev server |
-| `npm run build` | Build frontend for production |
+| `npm run dev` | Start dashboard dev server |
+| `npm run build` | Build dashboard for production |
 | `npm run backend:dev` | Start backend with nodemon |
 | `npm run backend:build` | Build backend TypeScript |
 | `npm run test` | Run all tests |
@@ -80,7 +91,7 @@ npm run build
 
 ## 🔧 Technology Stack
 
-- **Frontend**: React 19, Vite, TypeScript, Tailwind CSS
+- **Dashboard**: Next.js 14, React 18, TypeScript, Tailwind CSS
 - **Backend**: Node.js, Express, TypeScript
 - **Database**: PostgreSQL, Supabase
 - **Maps**: Leaflet, React-Leaflet
@@ -91,10 +102,13 @@ npm run build
 ## 📁 Directory Guidelines
 
 - Keep files organized in appropriate subdirectories
-- Frontend code goes in `/frontend/src`
+- Dashboard code goes in `/apps/waste-intelligence-platform/src`
 - Backend code goes in `/backend/src`
 - Shared code goes in `/shared`
-- Documentation goes in `/docs`
+- Documentation goes in `/docs/` (organized by category)
+- Data and analysis goes in `/data/`
+- Development tools go in `/tools/`
+- Configuration files go in `/config/`
 - Never save working files to root
 
 ## 🤝 Contributing

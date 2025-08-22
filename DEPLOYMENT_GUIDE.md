@@ -22,7 +22,7 @@ Your Waste Intelligence Platform is **100% READY FOR DEPLOYMENT!**
 
 2. **Deploy:**
    ```bash
-   cd frontend
+   cd apps/waste-intelligence-platform
    vercel --prod
    ```
 

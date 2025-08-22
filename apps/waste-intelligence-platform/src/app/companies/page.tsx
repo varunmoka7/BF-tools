@@ -1,76 +1,108 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { WasteCompany } from '@/types/waste'
-import { formatNumber, formatCurrency, getComplianceColor } from '@/lib/utils'
+import { Input } from '@/components/ui/input'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { formatNumber } from '@/lib/utils'
+import { useCompanies, type Company } from '@/contexts/companies-context'
 import { 
   Building2, 
   MapPin, 
-  Recycle, 
-  TrendingUp, 
-  Search, 
   Plus,
   Filter,
   Download,
   Eye,
-  Edit,
-  Trash2,
-  CheckCircle,
-  AlertTriangle,
-  XCircle
+  Users,
+  Globe,
+  TrendingUp
 } from 'lucide-react'
+import Link from 'next/link'
+
 
 interface CompanyFilters {
-  search: string
-  country: string
-  wasteType: string
-  complianceLevel: string
-  volumeRange: string
+  search: string;
+  country: string;
+  sector: string;
+  industry: string;
+  employeeRange: string;
+  yearRange: string;
 }
 
+// Memoized company row component to prevent unnecessary re-renders
+const CompanyRow = React.memo(({ company }: { company: Company }) => (
+  <tr className="hover:bg-gray-50">
+    <td className="px-6 py-4 whitespace-nowrap">
+      <div className="flex items-center">
+        <div>
+          <div className="text-sm font-medium text-gray-900">
+            {company.name}
+          </div>
+          <div className="text-sm text-gray-500">
+            {company.ticker} • {company.exchange}
+          </div>
+        </div>
+      </div>
+    </td>
+    <td className="px-6 py-4 whitespace-nowrap">
+      <div className="flex items-center">
+        <MapPin className="h-4 w-4 text-gray-400 mr-2" />
+        <span className="text-sm text-gray-900">{company.country}</span>
+      </div>
+    </td>
+    <td className="px-6 py-4 whitespace-nowrap">
+      <Badge variant="secondary">{company.sector}</Badge>
+    </td>
+    <td className="px-6 py-4 whitespace-nowrap">
+      <span className="text-sm text-gray-900">{company.industry}</span>
+    </td>
+    <td className="px-6 py-4 whitespace-nowrap">
+      <div className="text-sm text-gray-900">
+        {formatNumber(company.employees)}
+      </div>
+    </td>
+    <td className="px-6 py-4 whitespace-nowrap">
+      <span className="text-sm text-gray-900">{company.year_of_disclosure}</span>
+    </td>
+    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+      <div className="flex space-x-2">
+        <Link href={`/company/${company.id}`}>
+          <Button variant="outline" size="sm">
+            <Eye className="h-4 w-4 mr-1" />
+            View
+          </Button>
+        </Link>
+      </div>
+    </td>
+  </tr>
+))
+
+CompanyRow.displayName = 'CompanyRow'
+
 export default function CompaniesPage() {
-  const [companies, setCompanies] = useState<WasteCompany[]>([])
-  const [filteredCompanies, setFilteredCompanies] = useState<WasteCompany[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const { companies, loading, error } = useCompanies()
   const [filters, setFilters] = useState<CompanyFilters>({
     search: '',
     country: '',
-    wasteType: '',
-    complianceLevel: '',
-    volumeRange: ''
+    sector: '',
+    industry: '',
+    employeeRange: '',
+    yearRange: ''
   })
 
-  useEffect(() => {
-    async function fetchCompanies() {
-      try {
-        const response = await fetch('/api/companies-db')
-        if (!response.ok) {
-          throw new Error('Failed to fetch company data')
-        }
-        const result = await response.json()
-        const data: WasteCompany[] = result.data || []
-        setCompanies(data)
-        setFilteredCompanies(data)
-      } catch (err: any) {
-        setError(err instanceof Error ? err.message : 'An error occurred')
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchCompanies()
-  }, [])
-
-  useEffect(() => {
+  // Memoize filtered companies to prevent unnecessary recalculations
+  const filteredCompanies = useMemo(() => {
     let filtered = companies
 
     if (filters.search) {
+      const searchLower = filters.search.toLowerCase()
       filtered = filtered.filter(company =>
-        company.name.toLowerCase().includes(filters.search.toLowerCase()) ||
-        company.country.toLowerCase().includes(filters.search.toLowerCase())
+        company.name.toLowerCase().includes(searchLower) ||
+        company.country.toLowerCase().includes(searchLower) ||
+        company.sector.toLowerCase().includes(searchLower) ||
+        company.industry.toLowerCase().includes(searchLower)
       )
     }
 
@@ -78,48 +110,62 @@ export default function CompaniesPage() {
       filtered = filtered.filter(company => company.country === filters.country)
     }
 
-    if (filters.wasteType) {
-      filtered = filtered.filter(company => company.wasteType === filters.wasteType)
+    if (filters.sector) {
+      filtered = filtered.filter(company => company.sector === filters.sector)
     }
 
-    if (filters.complianceLevel) {
+    if (filters.industry) {
+      filtered = filtered.filter(company => company.industry === filters.industry)
+    }
+
+    if (filters.employeeRange) {
       filtered = filtered.filter(company => {
-        const score = company.complianceScore
-        switch (filters.complianceLevel) {
-          case 'high': return score >= 90
-          case 'medium': return score >= 70 && score < 90
-          case 'low': return score < 70
+        const employees = company.employees
+        switch (filters.employeeRange) {
+          case 'small': return employees < 1000
+          case 'medium': return employees >= 1000 && employees < 10000
+          case 'large': return employees >= 10000 && employees < 50000
+          case 'enterprise': return employees >= 50000
           default: return true
         }
       })
     }
 
-    if (filters.volumeRange) {
+    if (filters.yearRange) {
       filtered = filtered.filter(company => {
-        const volume = company.annualVolume
-        switch (filters.volumeRange) {
-          case 'small': return volume < 1000
-          case 'medium': return volume >= 1000 && volume < 10000
-          case 'large': return volume >= 10000
+        const year = company.year_of_disclosure
+        switch (filters.yearRange) {
+          case '2024': return year === 2024
+          case '2023': return year === 2023
+          case '2022': return year === 2022
+          case 'older': return year < 2022
           default: return true
         }
       })
     }
 
-    setFilteredCompanies(filtered)
+    return filtered
   }, [companies, filters])
 
-  const getComplianceIcon = (score: number) => {
-    if (score >= 90) return <CheckCircle className="h-4 w-4 text-green-600" />
-    if (score >= 70) return <AlertTriangle className="h-4 w-4 text-yellow-600" />
-    return <XCircle className="h-4 w-4 text-red-600" />
-  }
+  // Memoize unique values for filters
+  const { uniqueCountries, uniqueSectors, uniqueIndustries } = useMemo(() => {
+    return {
+      uniqueCountries: [...new Set(companies.map(c => c.country))].sort(),
+      uniqueSectors: [...new Set(companies.map(c => c.sector))].sort(),
+      uniqueIndustries: [...new Set(companies.map(c => c.industry))].sort()
+    }
+  }, [companies])
 
-  const getComplianceLevel = (score: number) => {
-    if (score >= 90) return { level: 'High', color: 'bg-green-100 text-green-800' }
-    if (score >= 70) return { level: 'Medium', color: 'bg-yellow-100 text-yellow-800' }
-    return { level: 'Low', color: 'bg-red-100 text-red-800' }
-  }
+  const clearFilters = React.useCallback(() => {
+    setFilters({
+      search: '',
+      country: '',
+      sector: '',
+      industry: '',
+      employeeRange: '',
+      yearRange: ''
+    })
+  }, [])
 
   if (loading) {
     return (
@@ -148,8 +194,6 @@ export default function CompaniesPage() {
     )
   }
 
-  const uniqueCountries = [...new Set(companies.map(c => c.country))].sort()
-  const uniqueWasteTypes = [...new Set(companies.map(c => c.wasteType))].sort()
 
   return (
     <div className="p-6 space-y-6">
@@ -158,9 +202,9 @@ export default function CompaniesPage() {
         <div className="flex items-center space-x-3">
           <Building2 className="h-8 w-8 text-green-600" />
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Company Management</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Company Directory</h1>
             <p className="text-gray-600">
-              Manage waste management companies and track their performance
+              Explore {companies.length} companies across {uniqueCountries.length} countries and {uniqueSectors.length} sectors
             </p>
           </div>
         </div>
@@ -185,46 +229,42 @@ export default function CompaniesPage() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{companies.length}</div>
-            <p className="text-xs text-muted-foreground">+12% from last month</p>
+            <p className="text-xs text-muted-foreground">European companies</p>
           </CardContent>
         </Card>
         
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">High Compliance</CardTitle>
-            <CheckCircle className="h-4 w-4 text-green-600" />
+            <CardTitle className="text-sm font-medium">Countries Covered</CardTitle>
+            <Globe className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
-              {companies.filter(c => c.complianceScore >= 90).length}
-            </div>
-            <p className="text-xs text-muted-foreground">Score 90+</p>
+            <div className="text-2xl font-bold">{uniqueCountries.length}</div>
+            <p className="text-xs text-muted-foreground">European nations</p>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
+            <CardTitle className="text-sm font-medium">Sectors Represented</CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
-              {formatCurrency(companies.reduce((sum, c) => sum + (c.revenue || 0), 0))}
-            </div>
-            <p className="text-xs text-muted-foreground">+8% from last month</p>
+            <div className="text-2xl font-bold">{uniqueSectors.length}</div>
+            <p className="text-xs text-muted-foreground">Business sectors</p>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Avg Recycling Rate</CardTitle>
-            <Recycle className="h-4 w-4 text-green-600" />
+            <CardTitle className="text-sm font-medium">Total Employees</CardTitle>
+            <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {(companies.reduce((sum, c) => sum + c.recyclingRate, 0) / companies.length).toFixed(1)}%
+              {formatNumber(companies.reduce((sum, c) => sum + c.employees, 0))}
             </div>
-            <p className="text-xs text-muted-foreground">+2.3% from last month</p>
+            <p className="text-xs text-muted-foreground">Combined workforce</p>
           </CardContent>
         </Card>
       </div>
@@ -232,192 +272,152 @@ export default function CompaniesPage() {
       {/* Filters */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center space-x-2">
+          <CardTitle className="flex items-center gap-2">
             <Filter className="h-5 w-5" />
-            <span>Filters</span>
+            Filters
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Search</label>
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search companies..."
-                  className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  value={filters.search}
-                  onChange={(e) => setFilters({ ...filters, search: e.target.value })}
-                />
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Search</label>
+              <Input
+                placeholder="Search companies..."
+                value={filters.search}
+                onChange={(e) => setFilters({ ...filters, search: e.target.value })}
+              />
             </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Country</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={filters.country}
-                onChange={(e) => setFilters({ ...filters, country: e.target.value })}
-              >
-                <option value="">All Countries</option>
-                {uniqueCountries.map(country => (
-                  <option key={country} value={country}>{country}</option>
-                ))}
-              </select>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Country</label>
+              <Select value={filters.country} onValueChange={(value) => setFilters({ ...filters, country: value })}>
+                <SelectTrigger>
+                  <SelectValue placeholder="All Countries" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="">All Countries</SelectItem>
+                  {uniqueCountries.map(country => (
+                    <SelectItem key={country} value={country}>{country}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Waste Type</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={filters.wasteType}
-                onChange={(e) => setFilters({ ...filters, wasteType: e.target.value })}
-              >
-                <option value="">All Types</option>
-                {uniqueWasteTypes.map(type => (
-                  <option key={type} value={type}>{type}</option>
-                ))}
-              </select>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Sector</label>
+              <Select value={filters.sector} onValueChange={(value) => setFilters({ ...filters, sector: value })}>
+                <SelectTrigger>
+                  <SelectValue placeholder="All Sectors" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="">All Sectors</SelectItem>
+                  {uniqueSectors.map(sector => (
+                    <SelectItem key={sector} value={sector}>{sector}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Compliance</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={filters.complianceLevel}
-                onChange={(e) => setFilters({ ...filters, complianceLevel: e.target.value })}
-              >
-                <option value="">All Levels</option>
-                <option value="high">High (90+)</option>
-                <option value="medium">Medium (70-89)</option>
-                <option value="low">Low (&lt;70)</option>
-              </select>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Industry</label>
+              <Select value={filters.industry} onValueChange={(value) => setFilters({ ...filters, industry: value })}>
+                <SelectTrigger>
+                  <SelectValue placeholder="All Industries" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="">All Industries</SelectItem>
+                  {uniqueIndustries.map(industry => (
+                    <SelectItem key={industry} value={industry}>{industry}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Volume</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={filters.volumeRange}
-                onChange={(e) => setFilters({ ...filters, volumeRange: e.target.value })}
-              >
-                <option value="">All Volumes</option>
-                <option value="small">Small (&lt;1K tons)</option>
-                <option value="medium">Medium (1K-10K tons)</option>
-                <option value="large">Large (10K+ tons)</option>
-              </select>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Company Size</label>
+              <Select value={filters.employeeRange} onValueChange={(value) => setFilters({ ...filters, employeeRange: value })}>
+                <SelectTrigger>
+                  <SelectValue placeholder="All Sizes" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="">All Sizes</SelectItem>
+                  <SelectItem value="small">Small (< 1K)</SelectItem>
+                  <SelectItem value="medium">Medium (1K-10K)</SelectItem>
+                  <SelectItem value="large">Large (10K-50K)</SelectItem>
+                  <SelectItem value="enterprise">Enterprise (50K+)</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Reporting Year</label>
+              <Select value={filters.yearRange} onValueChange={(value) => setFilters({ ...filters, yearRange: value })}>
+                <SelectTrigger>
+                  <SelectValue placeholder="All Years" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="">All Years</SelectItem>
+                  <SelectItem value="2024">2024</SelectItem>
+                  <SelectItem value="2023">2023</SelectItem>
+                  <SelectItem value="2022">2022</SelectItem>
+                  <SelectItem value="older">Older</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {/* Companies List */}
+      {/* Results Summary */}
+      <div className="flex items-center justify-between">
+        <p className="text-sm text-gray-600">
+          Showing {filteredCompanies.length} of {companies.length} companies
+        </p>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={clearFilters}
+        >
+          Clear Filters
+        </Button>
+      </div>
+
+      {/* Companies Table */}
       <Card>
-        <CardHeader>
-          <CardTitle>Companies ({filteredCompanies.length})</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {filteredCompanies.map((company) => {
-              const compliance = getComplianceLevel(company.complianceScore)
-              
-              return (
-                <div
-                  key={company.id}
-                  className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center space-x-3 mb-2">
-                        <h3 className="text-lg font-semibold text-gray-900 truncate">
-                          {company.name}
-                        </h3>
-                        <Badge className={compliance.color}>
-                          {compliance.level} Compliance
-                        </Badge>
-                        <Badge variant="outline">
-                          {company.wasteType}
-                        </Badge>
-                      </div>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm text-gray-600">
-                        <div className="flex items-center space-x-2">
-                          <MapPin className="h-4 w-4" />
-                          <span>{company.country}</span>
-                        </div>
-                        
-                        <div className="flex items-center space-x-2">
-                          <Recycle className="h-4 w-4" />
-                          <span>{formatNumber(company.annualVolume)} tons/year</span>
-                        </div>
-                        
-                        <div className="flex items-center space-x-2">
-                          <TrendingUp className="h-4 w-4" />
-                          <span>{company.recyclingRate}% recycling rate</span>
-                        </div>
-                        
-                        <div className="flex items-center space-x-2">
-                          {getComplianceIcon(company.complianceScore)}
-                          <span>{company.complianceScore}/100 compliance</span>
-                        </div>
-                      </div>
-                      
-                      {company.revenue && (
-                        <div className="mt-2">
-                          <span className="text-sm text-gray-600">
-                            Annual Revenue: <span className="font-medium">{formatCurrency(company.revenue)}</span>
-                          </span>
-                        </div>
-                      )}
-                      
-                      {company.certifications.length > 0 && (
-                        <div className="mt-2 flex flex-wrap gap-1">
-                          {company.certifications.slice(0, 3).map((cert, index) => (
-                            <Badge key={index} variant="secondary" className="text-xs">
-                              {cert}
-                            </Badge>
-                          ))}
-                          {company.certifications.length > 3 && (
-                            <Badge variant="secondary" className="text-xs">
-                              +{company.certifications.length - 3} more
-                            </Badge>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                    
-                    <div className="flex items-center space-x-2 ml-4">
-                      <Button variant="ghost" size="sm">
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Edit className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-800">
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-            
-            {filteredCompanies.length === 0 && (
-              <div className="text-center py-12">
-                <Building2 className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500">No companies found matching your filters</p>
-                <Button variant="outline" className="mt-4" onClick={() => setFilters({
-                  search: '',
-                  country: '',
-                  wasteType: '',
-                  complianceLevel: '',
-                  volumeRange: ''
-                })}>
-                  Clear Filters
-                </Button>
-              </div>
-            )}
+        <CardContent className="p-0">
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Company Name
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Country
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Sector
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Industry
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Employees
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Year
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                {filteredCompanies.map((company) => (
+                  <CompanyRow key={company.id} company={company} />
+                ))}
+              </tbody>
+            </table>
           </div>
         </CardContent>
       </Card>

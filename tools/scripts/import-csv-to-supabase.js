@@ -18,7 +18,7 @@ async function importCSVData() {
     process.env.SUPABASE_SERVICE_ROLE_KEY
   );
 
-  const csvPath = path.join(__dirname, '../DATA/waste management sample data for Varun.csv');
+  const csvPath = path.join(__dirname, '../../data/waste management sample data for Varun.csv');
   
   if (!fs.existsSync(csvPath)) {
     console.error('❌ CSV file not found at:', csvPath);

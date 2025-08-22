@@ -1,6 +1,6 @@
 # Shared Resources
 
-Common types, utilities, and constants shared between frontend and backend applications.
+Common types, utilities, and constants shared between dashboard and backend applications.
 
 ## 📁 Directory Structure
 
@@ -313,7 +313,7 @@ export const companySchema = Joi.object({
 
 ## 🔄 Usage Examples
 
-### Frontend Usage
+### Dashboard Usage
 ```typescript
 import { WasteData, formatWasteQuantity, WASTE_TYPES } from '../../shared';
 

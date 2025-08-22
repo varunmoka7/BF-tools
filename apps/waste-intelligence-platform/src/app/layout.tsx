@@ -4,6 +4,7 @@ import './globals.css'
 import 'leaflet/dist/leaflet.css'
 import { Sidebar } from '@/components/layout/sidebar'
 import { Toaster } from '@/components/ui/toaster'
+import { CompaniesProvider } from '@/contexts/companies-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,13 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="min-h-screen flex bg-gray-50">
-          <Sidebar />
-          <main className="flex-1 lg:ml-64">
-            {children}
-          </main>
-        </div>
-        <Toaster />
+        <CompaniesProvider>
+          <div className="min-h-screen flex bg-gray-50">
+            <Sidebar />
+            <main className="flex-1 lg:ml-64">
+              {children}
+            </main>
+          </div>
+          <Toaster />
+        </CompaniesProvider>
       </body>
     </html>
   )

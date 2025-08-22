@@ -1,0 +1,3252 @@
+[
+  {
+    "company_id": "01133fe5-4172-44d0-8d1b-4af3388d95d7",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1979,
+    "headquarters": "France",
+    "revenue": 779599645,
+    "market_cap": 2522402798,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "012f8a95-4bec-4b13-b50c-5e5a78a10269",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1986,
+    "headquarters": "France",
+    "revenue": 290788928,
+    "market_cap": 4305049099,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "016687e0-d9b6-4b57-83c1-01f3def3a488",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 2005,
+    "headquarters": "Luxembourg",
+    "revenue": 729046082,
+    "market_cap": 1254492566,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "01ac972a-0cb7-421d-bff6-faec98f07897",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1982,
+    "headquarters": "Germany",
+    "revenue": 463269682,
+    "market_cap": 1515513112,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "020eb713-3e7f-4a63-8b0a-b73a309b4984",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 1977,
+    "headquarters": "France",
+    "revenue": 809887100,
+    "market_cap": 4574484313,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "022409dd-daa4-4228-86b1-4f0fd1df27e7",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1977,
+    "headquarters": "Italy",
+    "revenue": 278197018,
+    "market_cap": 192958983,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "032222b1-4841-4e1b-9ea2-2b9c61b0665b",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1999,
+    "headquarters": "Germany",
+    "revenue": 284077120,
+    "market_cap": 1086038341,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "034da4e8-bd6e-498c-bd09-13992aa9685a",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2015,
+    "headquarters": "Germany",
+    "revenue": 65207392,
+    "market_cap": 4046409272,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "03bf460e-be5d-49f4-8486-96d2f85bf785",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 2002,
+    "headquarters": "Belgium",
+    "revenue": 205816707,
+    "market_cap": 1013365818,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "04f30607-36f4-45eb-89c7-dd6c109adce9",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2009,
+    "headquarters": "Germany",
+    "revenue": 903187305,
+    "market_cap": 203180462,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "05cf1dff-4e85-48a5-b0b3-b37731fef4b3",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Switzerland",
+    "revenue": 46802172,
+    "market_cap": 1309792829,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "065f29fa-eb7b-4960-85bd-5a65f7dbbe11",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 2005,
+    "headquarters": "France",
+    "revenue": 888565802,
+    "market_cap": 4070915378,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "06ae11c6-48fd-4840-954c-2401084ff1ba",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2019,
+    "headquarters": "Germany",
+    "revenue": 148695315,
+    "market_cap": 1339440759,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "06f85183-17b0-4064-a677-ce757c31020c",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1982,
+    "headquarters": "Italy",
+    "revenue": 234710293,
+    "market_cap": 4604758031,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "07c238e7-8870-40a4-b7cb-21ad90eb2472",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1996,
+    "headquarters": "Italy",
+    "revenue": 391955366,
+    "market_cap": 1612593599,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "07ed0b5e-3b82-4195-9caa-4bfc56273089",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 1982,
+    "headquarters": "Germany",
+    "revenue": 266190602,
+    "market_cap": 322307066,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "081d6973-165f-4aa4-8c73-bced373acdc5",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1991,
+    "headquarters": "Austria",
+    "revenue": 488883092,
+    "market_cap": 453757099,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "082ede72-cf58-4746-bce1-645d4d22f28d",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2011,
+    "headquarters": "France",
+    "revenue": 99397471,
+    "market_cap": 4113350606,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "087440b8-6ce5-4ddb-92de-4d8c1a7c26e4",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1988,
+    "headquarters": "Luxembourg",
+    "revenue": 242108693,
+    "market_cap": 1376975317,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "09bcefff-d0a5-40da-9178-a38056166a6c",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1989,
+    "headquarters": "France",
+    "revenue": 814005171,
+    "market_cap": 3719990940,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "0a0e8adc-2157-4c57-865a-d34fdcbb6732",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 1972,
+    "headquarters": "Germany",
+    "revenue": 370380118,
+    "market_cap": 1725775057,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "0a435b30-abae-4cb0-8fd5-6334eb9a330a",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2010,
+    "headquarters": "Luxembourg",
+    "revenue": 455521762,
+    "market_cap": 1257785907,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "0a85f0ea-c3bc-40cf-b4ad-5a03a1716397",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1978,
+    "headquarters": "Switzerland",
+    "revenue": 721923984,
+    "market_cap": 2989882901,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "0aca1407-8b30-419c-87a2-49c327ee4541",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 2013,
+    "headquarters": "Italy",
+    "revenue": 574995799,
+    "market_cap": 2970001683,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "0ad51db0-6e96-4f05-9ca7-7465f906943f",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1999,
+    "headquarters": "France",
+    "revenue": 650957510,
+    "market_cap": 3385613363,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "0b5351a9-ac55-4654-ab89-6e9cb5fa7b07",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1971,
+    "headquarters": "France",
+    "revenue": 595250605,
+    "market_cap": 2381961344,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "0b827d49-56be-450f-b12e-a891dbb700d5",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1975,
+    "headquarters": "Switzerland",
+    "revenue": 794525486,
+    "market_cap": 2228943005,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "0bb87a53-5d41-4d33-abd6-68ff3e930d4a",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1975,
+    "headquarters": "Germany",
+    "revenue": 604797682,
+    "market_cap": 3185136448,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "0cc13619-cc7b-4c84-add8-9cf29ae8cbb3",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "France",
+    "revenue": 228389156,
+    "market_cap": 3675681625,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "0dab51ff-4410-4441-9f72-f00e8bb5514b",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2003,
+    "headquarters": "Switzerland",
+    "revenue": 512989966,
+    "market_cap": 3527648865,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "1049604a-505c-4906-8bc7-abbb6f195490",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 1986,
+    "headquarters": "Germany",
+    "revenue": 21113554,
+    "market_cap": 4470735659,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "10c9e6ea-0edc-42bf-9bd0-56cfdf9240a9",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2008,
+    "headquarters": "Germany",
+    "revenue": 989421222,
+    "market_cap": 845096199,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "11a9602f-3efa-4047-ba1c-7a2c5f7d2259",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 1991,
+    "headquarters": "Austria",
+    "revenue": 931292296,
+    "market_cap": 3635054993,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "11c2e25b-7284-4344-81c6-9b9a45f9ab97",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1972,
+    "headquarters": "France",
+    "revenue": 465026175,
+    "market_cap": 2591975369,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "1303a3c0-91a3-4f41-b8da-39b2d6be68a2",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1977,
+    "headquarters": "Germany",
+    "revenue": 653544097,
+    "market_cap": 2190575604,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "135558f6-5774-4a3c-9574-1acac154d7f3",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 2006,
+    "headquarters": "France",
+    "revenue": 819285756,
+    "market_cap": 1717019212,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "144c0d09-5e63-4cb0-8ba9-ad5270ca9be6",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 1986,
+    "headquarters": "Germany",
+    "revenue": 748671352,
+    "market_cap": 69617032,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "157736f9-20c4-4613-a942-d12af1de14d1",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1990,
+    "headquarters": "France",
+    "revenue": 371210771,
+    "market_cap": 2282532671,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "15f8bd4a-9f24-414e-ad6e-73a3f42a65c2",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2012,
+    "headquarters": "France",
+    "revenue": 572398434,
+    "market_cap": 4228697796,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "165fe776-a0c0-4db9-bacb-1181ff29ed1c",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2002,
+    "headquarters": "Switzerland",
+    "revenue": 993727942,
+    "market_cap": 4220105175,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "1689e089-c02b-4d50-8072-eb1065dcdefc",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2017,
+    "headquarters": "Germany",
+    "revenue": 224439909,
+    "market_cap": 3965461925,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "17289878-c39d-4b94-952b-44146f4b3f6f",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1975,
+    "headquarters": "France",
+    "revenue": 568365219,
+    "market_cap": 831308258,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "17a90809-f671-4ccc-b4e9-7345a2cad785",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1988,
+    "headquarters": "Germany",
+    "revenue": 475810255,
+    "market_cap": 3857418247,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "1809a71b-d829-4f45-9aa2-11bccd28e631",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Italy",
+    "revenue": 188981219,
+    "market_cap": 451068234,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "18c305ec-5d32-4f4f-bb42-02413218de6a",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1988,
+    "headquarters": "Germany",
+    "revenue": 538434712,
+    "market_cap": 3587242667,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "1986a42c-b764-4bf4-bbe1-1076d6a102bc",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2013,
+    "headquarters": "Switzerland",
+    "revenue": 662099640,
+    "market_cap": 1212334834,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "19cbc61c-d063-492a-9db6-c0cec25de4b4",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1981,
+    "headquarters": "Italy",
+    "revenue": 670955787,
+    "market_cap": 3527816795,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "1a76fb4e-7a64-4901-86df-5a054ff9fe6a",
+    "description": "Leading company in Energy sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Italy",
+    "revenue": 365141940,
+    "market_cap": 2321343928,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "1ae33489-ce91-4a83-88f9-91c4bb8124db",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 2017,
+    "headquarters": "Italy",
+    "revenue": 1004874050,
+    "market_cap": 299398950,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "1d4329b9-7aa4-42b0-ba7c-a23d880a4b27",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1997,
+    "headquarters": "Austria",
+    "revenue": 859048663,
+    "market_cap": 2338209274,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "1e13e8d4-b71e-4092-9459-272095354423",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1989,
+    "headquarters": "Germany",
+    "revenue": 967859547,
+    "market_cap": 59739138,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "201761a1-61b9-4744-a3c1-92822eaf8c21",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1972,
+    "headquarters": "Switzerland",
+    "revenue": 81302912,
+    "market_cap": 578126972,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "204c7ee2-f7af-408a-99e4-9dc953a6c504",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 2009,
+    "headquarters": "France",
+    "revenue": 912580617,
+    "market_cap": 851928654,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "205c74b6-e089-4396-8b3f-c2f417d39545",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 2007,
+    "headquarters": "Switzerland",
+    "revenue": 495003447,
+    "market_cap": 475355340,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "208fb558-1ba3-452b-a77a-5f9e6f3157d4",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1988,
+    "headquarters": "Germany",
+    "revenue": 916527490,
+    "market_cap": 4566375324,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "212cc48b-0ee4-4719-b09c-984635a858a5",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1999,
+    "headquarters": "Luxembourg",
+    "revenue": 270947518,
+    "market_cap": 2472973308,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "222029cb-c88a-43f1-b1aa-96b5d633dda3",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1994,
+    "headquarters": "France",
+    "revenue": 127091783,
+    "market_cap": 1906830849,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "2326fad7-30fa-4cbd-bf09-1ab631dc8b26",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "Italy",
+    "revenue": 452230559,
+    "market_cap": 4002388620,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "240aef74-19c1-45d2-ad3c-31977beaa966",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1973,
+    "headquarters": "Italy",
+    "revenue": 208810197,
+    "market_cap": 1457994901,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "26c1e838-a90a-426f-805a-d530a1d9f64a",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 2010,
+    "headquarters": "France",
+    "revenue": 351839540,
+    "market_cap": 591066893,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "26e1f4e3-d455-4b69-8453-505e6507e332",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1998,
+    "headquarters": "Germany",
+    "revenue": 111325403,
+    "market_cap": 1020853399,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "27302833-5c7c-420a-b846-e8e685cebf44",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1973,
+    "headquarters": "Austria",
+    "revenue": 847991753,
+    "market_cap": 2132673119,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "2780324b-cc6c-43eb-97ce-3ca835d2c2eb",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1986,
+    "headquarters": "France",
+    "revenue": 425226821,
+    "market_cap": 1944064402,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "28294a90-4916-49d3-b107-02b75de591c4",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 1991,
+    "headquarters": "Belgium",
+    "revenue": 219331980,
+    "market_cap": 1967090556,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "28e3f6a7-ae4f-448e-b99d-eff95bb6063b",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2010,
+    "headquarters": "Switzerland",
+    "revenue": 493299693,
+    "market_cap": 3958860912,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "29042a95-5e5f-4aa3-9fc0-94f13804b369",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1976,
+    "headquarters": "France",
+    "revenue": 604045346,
+    "market_cap": 2115820588,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "291e1ec0-d8ad-4872-bf90-4e343443b1a5",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1987,
+    "headquarters": "Germany",
+    "revenue": 389288439,
+    "market_cap": 2193645474,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "298bfad9-40d2-4665-acee-a1e0c5d86d83",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2014,
+    "headquarters": "Italy",
+    "revenue": 57402471,
+    "market_cap": 3780683519,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "2a6c6e64-7011-416b-86c1-3f126e8cc585",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1988,
+    "headquarters": "Switzerland",
+    "revenue": 43921094,
+    "market_cap": 1741672947,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "2b1b91b7-aeaa-4c44-b213-f57619106504",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1987,
+    "headquarters": "France",
+    "revenue": 235540994,
+    "market_cap": 3414140248,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "2c6bf7b8-eded-4e4c-97e3-60c06e0345f3",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 1995,
+    "headquarters": "France",
+    "revenue": 798885830,
+    "market_cap": 2709202669,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "2e0a88db-bd21-4526-a173-f4ed7caf34f5",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "Germany",
+    "revenue": 350456479,
+    "market_cap": 1790356368,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "2e4148f0-1a56-4e56-9d7d-96be508dc089",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 2013,
+    "headquarters": "Italy",
+    "revenue": 764706342,
+    "market_cap": 4042605699,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "2eea1627-9de6-485d-af1a-0b98f6306312",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2019,
+    "headquarters": "France",
+    "revenue": 276223459,
+    "market_cap": 4248432224,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "2f21f0e6-4aba-4cfd-8ce8-977ec381c6ef",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1971,
+    "headquarters": "Italy",
+    "revenue": 295187005,
+    "market_cap": 4288282204,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "2f6acb20-342a-47b9-9330-4dbe1bd21c05",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1992,
+    "headquarters": "Germany",
+    "revenue": 862515119,
+    "market_cap": 4314132647,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "2f6ea11c-6714-4fd6-8bbd-e6ac8c2ebc6b",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2018,
+    "headquarters": "Italy",
+    "revenue": 745658409,
+    "market_cap": 675254745,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "2ffb6eca-3450-463a-9f5a-e354a9d30818",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1977,
+    "headquarters": "France",
+    "revenue": 558451349,
+    "market_cap": 3026513618,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "3066fa93-5f26-47e9-a980-f469dd2606a1",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1982,
+    "headquarters": "France",
+    "revenue": 647735236,
+    "market_cap": 1591977023,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "306c728d-c4fd-4e67-8364-0f3544cbad77",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1977,
+    "headquarters": "Switzerland",
+    "revenue": 573298011,
+    "market_cap": 431059435,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "3180986c-bcb9-423d-8b55-78a4ffacf2a7",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "Italy",
+    "revenue": 772066418,
+    "market_cap": 2507197169,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "31d4f8fa-d519-4dc3-8e27-962de5c33afb",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2006,
+    "headquarters": "Switzerland",
+    "revenue": 478794305,
+    "market_cap": 4525922063,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "33b5b9b9-8cb4-4839-ae0c-166e63e83edf",
+    "description": "Leading company in Energy sector",
+    "website": "",
+    "founded_year": 1996,
+    "headquarters": "Luxembourg",
+    "revenue": 303884207,
+    "market_cap": 4966752113,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "35f3252e-dd84-4fac-bc41-e45d5ed157c8",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1985,
+    "headquarters": "Belgium",
+    "revenue": 518130807,
+    "market_cap": 1255054487,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "3618e3c4-f4b0-403c-aab8-98c6135aeb0d",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 2008,
+    "headquarters": "Italy",
+    "revenue": 707330248,
+    "market_cap": 825517427,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "36ab972f-70d4-49f6-8149-215e5ed3728b",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1988,
+    "headquarters": "Germany",
+    "revenue": 367400249,
+    "market_cap": 2610465168,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "38cc849d-4aa9-4748-b2c5-80dab73a542b",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1992,
+    "headquarters": "Italy",
+    "revenue": 795761694,
+    "market_cap": 2516606950,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "38de0592-7b1b-414e-a65c-f79bfed9ff76",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 2017,
+    "headquarters": "France",
+    "revenue": 847664156,
+    "market_cap": 1952169748,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "3de31152-c724-4b04-900b-0e64318857f3",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 1986,
+    "headquarters": "Luxembourg",
+    "revenue": 927102712,
+    "market_cap": 553428963,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "3ef5040d-9b53-48bf-b24e-957dbf00ff60",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1999,
+    "headquarters": "Belgium",
+    "revenue": 180109296,
+    "market_cap": 5046421487,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "3ef8586d-7a18-45f1-8542-ad4bab78dbfd",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1987,
+    "headquarters": "Italy",
+    "revenue": 644771204,
+    "market_cap": 1237907914,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "3f1e6228-63e4-47d1-8e88-0d3a60a5b656",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2003,
+    "headquarters": "Germany",
+    "revenue": 896934935,
+    "market_cap": 1267308319,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "3f271f12-9932-42db-ae1c-5f6094b174f9",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 1976,
+    "headquarters": "Austria",
+    "revenue": 715249630,
+    "market_cap": 2095317882,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "408b3550-5889-428f-8668-a1f595aa2bd3",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2005,
+    "headquarters": "Switzerland",
+    "revenue": 493379131,
+    "market_cap": 1253433247,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "40986751-6c40-4a55-b628-e0a75347977a",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 2009,
+    "headquarters": "Germany",
+    "revenue": 652639706,
+    "market_cap": 4206287749,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "41dececd-42cd-4286-a9b9-af64ab395f28",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2005,
+    "headquarters": "Germany",
+    "revenue": 817357792,
+    "market_cap": 4289477898,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "42338ca8-27ff-4a4f-ad87-bd72a42b0a45",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Germany",
+    "revenue": 128959162,
+    "market_cap": 1171119727,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "42a5b2c9-6017-4d68-8a97-b15413156726",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1975,
+    "headquarters": "Switzerland",
+    "revenue": 452346399,
+    "market_cap": 2769345618,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "42a854ca-89d2-4f26-a8fb-3f3e671ed372",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1987,
+    "headquarters": "Germany",
+    "revenue": 581226750,
+    "market_cap": 406157337,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "43b55ab7-6641-4cf2-b6b0-83ee29d6fce4",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1985,
+    "headquarters": "Germany",
+    "revenue": 216939295,
+    "market_cap": 79352592,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "43ff4277-2f66-4c85-823b-4e29feb56793",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1971,
+    "headquarters": "Italy",
+    "revenue": 26459939,
+    "market_cap": 338920408,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "4580ae0b-efcd-41a8-b9db-14dd1eb98261",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2001,
+    "headquarters": "Germany",
+    "revenue": 608171202,
+    "market_cap": 2588184363,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "45b120f0-8bff-4e2b-b74a-f32503937ece",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "Germany",
+    "revenue": 879021185,
+    "market_cap": 1188024674,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "49053b92-5ecb-4f46-ab5c-cf9b62c0d7fd",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 2013,
+    "headquarters": "Austria",
+    "revenue": 958187986,
+    "market_cap": 1733676402,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "4948789a-3bcf-473d-a19b-fb1e0f705d89",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1982,
+    "headquarters": "Germany",
+    "revenue": 193618848,
+    "market_cap": 896604865,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "49bed3d6-e45f-4569-809e-4f1bd256ed81",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Switzerland",
+    "revenue": 360111760,
+    "market_cap": 2948153146,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "49c9b2c1-3b21-4ccb-800f-bc6cb67f426d",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2013,
+    "headquarters": "Luxembourg",
+    "revenue": 639346787,
+    "market_cap": 3438847666,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "4abcd2a6-43a9-462d-947a-6aaa4fe098f2",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 1992,
+    "headquarters": "France",
+    "revenue": 410097947,
+    "market_cap": 3471920380,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "4b54ce23-9442-4963-a0e4-6a8e0c981e62",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 2003,
+    "headquarters": "Austria",
+    "revenue": 405983957,
+    "market_cap": 710026614,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "4c714335-6ca7-42c7-a0fe-9a18c671c57d",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1987,
+    "headquarters": "Switzerland",
+    "revenue": 598726433,
+    "market_cap": 4759068088,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "4f0987eb-3dcc-483f-bb7c-6c4744eca7f2",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2008,
+    "headquarters": "Switzerland",
+    "revenue": 817549244,
+    "market_cap": 2145261109,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "4fb3cb8e-7ff2-4361-a215-27d0d7d8c0d1",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 2015,
+    "headquarters": "Germany",
+    "revenue": 467118000,
+    "market_cap": 1851556798,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "4fc198aa-d153-4afb-9465-8cd6b59e2115",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2014,
+    "headquarters": "Germany",
+    "revenue": 66368270,
+    "market_cap": 4876850955,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "50c7b291-83f2-40b6-be44-32b19390090d",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2000,
+    "headquarters": "Switzerland",
+    "revenue": 338520835,
+    "market_cap": 4850435445,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "514dbaf6-dd56-4d35-b8e6-a5dc586da343",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1975,
+    "headquarters": "Italy",
+    "revenue": 367297793,
+    "market_cap": 5009618292,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "51751f8b-5015-41a7-9fba-d5d1be509d32",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1996,
+    "headquarters": "France",
+    "revenue": 758669779,
+    "market_cap": 325482667,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "51a8c212-4798-4411-bb92-236fbe9ae015",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1988,
+    "headquarters": "France",
+    "revenue": 163080573,
+    "market_cap": 1800113444,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "549dcf59-2cdd-4ee7-9f73-0e3ebd90e5e9",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1976,
+    "headquarters": "Italy",
+    "revenue": 620616467,
+    "market_cap": 226634514,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "562cd299-8132-4ce2-9562-84a29b47d875",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1979,
+    "headquarters": "Switzerland",
+    "revenue": 558358649,
+    "market_cap": 1168077402,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "56815230-f9a9-43f3-a9c9-806bd509d025",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1970,
+    "headquarters": "Switzerland",
+    "revenue": 520019179,
+    "market_cap": 4594172545,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "571e2b11-5b33-4eaa-b514-b67cab372cf9",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1971,
+    "headquarters": "Italy",
+    "revenue": 39110974,
+    "market_cap": 2707211738,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "5789fd98-e249-48ca-b140-11172ec71e3f",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1990,
+    "headquarters": "France",
+    "revenue": 822809141,
+    "market_cap": 1039743795,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "57fdd78c-ca3d-43cb-b36d-4d5bb8669619",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1981,
+    "headquarters": "Belgium",
+    "revenue": 509957535,
+    "market_cap": 2639629150,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "58438df4-18e7-4f06-8312-b024e4dde3b4",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1976,
+    "headquarters": "Germany",
+    "revenue": 190494106,
+    "market_cap": 690851365,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "588fa927-137c-40bd-a779-fa0d13df4d09",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2007,
+    "headquarters": "France",
+    "revenue": 254353718,
+    "market_cap": 4831297719,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "5abb3dcd-d9ff-4f2f-bfdc-05165341cf7a",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1983,
+    "headquarters": "France",
+    "revenue": 470679307,
+    "market_cap": 2830759775,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "5bc2d89a-48c9-46bf-b730-27112e3912f7",
+    "description": "Leading company in various sector",
+    "website": "",
+    "founded_year": 2009,
+    "headquarters": "Luxembourg",
+    "revenue": 258329901,
+    "market_cap": 1403662826,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "5c6d0543-fe7d-4ad4-957a-dc7571bfa265",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1980,
+    "headquarters": "Germany",
+    "revenue": 382455253,
+    "market_cap": 2853799451,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "5c76853e-a9fd-4644-a7cf-2a43ecf933b0",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1989,
+    "headquarters": "Switzerland",
+    "revenue": 742389381,
+    "market_cap": 4430565416,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "5cc2057c-7f6f-4374-a748-9c2cd2d833c1",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 1996,
+    "headquarters": "France",
+    "revenue": 384135371,
+    "market_cap": 1617543469,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "5d31c9a6-5471-4778-a0b0-6381fc3e6107",
+    "description": "Leading company in various sector",
+    "website": "",
+    "founded_year": 1974,
+    "headquarters": "France",
+    "revenue": 336024262,
+    "market_cap": 1874379627,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "5ec560cb-5380-4160-9d46-f358af1ee320",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1999,
+    "headquarters": "Switzerland",
+    "revenue": 541265311,
+    "market_cap": 2548683592,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "603366ed-d968-48e1-9abd-0e0f4ea1263c",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1996,
+    "headquarters": "France",
+    "revenue": 337175840,
+    "market_cap": 244986379,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "60f6f823-3747-46a6-a917-6f798b866a12",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1997,
+    "headquarters": "Switzerland",
+    "revenue": 980975086,
+    "market_cap": 4806505790,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "6161b305-e4ee-4d6e-829f-59b6fad55553",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1989,
+    "headquarters": "Switzerland",
+    "revenue": 418321818,
+    "market_cap": 3299909093,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "6223b4bb-87d0-4d9d-8908-99a3911b5896",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 1981,
+    "headquarters": "Switzerland",
+    "revenue": 207068643,
+    "market_cap": 1731385245,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "63593639-20dc-4014-91b7-70dde7636170",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 2009,
+    "headquarters": "France",
+    "revenue": 916505630,
+    "market_cap": 2077288244,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "64130171-4b15-46a9-b7b9-b3a0fbc4dae7",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1988,
+    "headquarters": "Switzerland",
+    "revenue": 131536298,
+    "market_cap": 294419157,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "64679b13-22fe-4da9-a01b-bae2c11d3e74",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1986,
+    "headquarters": "Italy",
+    "revenue": 76848690,
+    "market_cap": 2324026991,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "64c323e6-bdb0-46fa-b398-5cfea2876e4e",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2006,
+    "headquarters": "France",
+    "revenue": 372061422,
+    "market_cap": 3135510418,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "65cac45b-de11-46d3-9d79-c130a298eaa1",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 2002,
+    "headquarters": "France",
+    "revenue": 486474486,
+    "market_cap": 2157559267,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "66b70057-54a3-41b9-bacd-3fb7c87f3f8a",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 1985,
+    "headquarters": "Germany",
+    "revenue": 142704155,
+    "market_cap": 2551363717,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "677588f3-855d-4d25-8baa-479541a90912",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "Luxembourg",
+    "revenue": 32093527,
+    "market_cap": 3890877135,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "67d3d788-cb2e-4b0a-a007-02409a8b1949",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1990,
+    "headquarters": "Belgium",
+    "revenue": 142513269,
+    "market_cap": 1380932979,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "68d3e46d-8a15-45d3-8423-630d8594efd3",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1999,
+    "headquarters": "Germany",
+    "revenue": 885243052,
+    "market_cap": 3964877021,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "6bf0e683-d1f0-4e02-816f-d30e5958f345",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1973,
+    "headquarters": "Germany",
+    "revenue": 88065599,
+    "market_cap": 2971566714,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "6cb189f4-191c-40b6-bd5f-ec9fb1f780f8",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 2001,
+    "headquarters": "Germany",
+    "revenue": 861203444,
+    "market_cap": 2823870203,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "70054040-7e7e-4146-9b48-3f66eb2cebd9",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1996,
+    "headquarters": "Germany",
+    "revenue": 419338627,
+    "market_cap": 2724963710,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "7060ec29-cd05-476e-97b8-32aefd2b7fbb",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1972,
+    "headquarters": "Switzerland",
+    "revenue": 475108285,
+    "market_cap": 4657366077,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "725b3284-898e-4b72-9aca-d8cc7e0f8031",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2015,
+    "headquarters": "Italy",
+    "revenue": 619891868,
+    "market_cap": 1020500284,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "72981bb3-1d70-4f5b-b5e7-5ec9e3277f7b",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2015,
+    "headquarters": "Italy",
+    "revenue": 263171905,
+    "market_cap": 3027018471,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "72c5bd29-017b-4fbe-bb12-92c29cf81925",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 1977,
+    "headquarters": "Italy",
+    "revenue": 881787769,
+    "market_cap": 3852380103,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "738b77ae-2939-4408-903b-fc5478ef2f0d",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 2010,
+    "headquarters": "Switzerland",
+    "revenue": 235222588,
+    "market_cap": 2030907659,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "76000c5e-062d-4f65-b38d-b74ecc8adb22",
+    "description": "Leading company in Energy sector",
+    "website": "",
+    "founded_year": 2003,
+    "headquarters": "France",
+    "revenue": 161320122,
+    "market_cap": 1608946228,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "768dffd9-09f5-4350-8e83-c00b6645cfd0",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "Italy",
+    "revenue": 510864660,
+    "market_cap": 2109511317,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "770c4933-1358-4189-97ca-ee647c0f5dd9",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1972,
+    "headquarters": "Germany",
+    "revenue": 666027793,
+    "market_cap": 3422007025,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "7964ba46-8707-49d3-8de1-9d186df05450",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1980,
+    "headquarters": "France",
+    "revenue": 698796373,
+    "market_cap": 637725998,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "798f922d-81c7-40bc-9400-47075e5c91cd",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1997,
+    "headquarters": "Germany",
+    "revenue": 751422636,
+    "market_cap": 4484255260,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "7a1533de-9c98-48ac-9855-2fd9fa5cd3bc",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 1977,
+    "headquarters": "Switzerland",
+    "revenue": 443686204,
+    "market_cap": 3772293729,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "7aff31e9-3d74-40d1-8479-0d47cfb780ff",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 1977,
+    "headquarters": "Italy",
+    "revenue": 976193322,
+    "market_cap": 3189229082,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "7c391795-03a1-4b56-aefa-63be3b5533b9",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Switzerland",
+    "revenue": 604257599,
+    "market_cap": 1527348935,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "7f1a648a-c27f-4fb8-bbe8-5f310879f881",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1981,
+    "headquarters": "Switzerland",
+    "revenue": 141207718,
+    "market_cap": 1625705583,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "80208db5-97b7-42d3-88c4-da4d345cf734",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Italy",
+    "revenue": 278526833,
+    "market_cap": 2914058106,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "8042ad84-7b00-44b9-b4ef-4a0234f2204b",
+    "description": "Leading company in Energy sector",
+    "website": "",
+    "founded_year": 1972,
+    "headquarters": "France",
+    "revenue": 804014822,
+    "market_cap": 464838090,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "80a09406-f443-47ab-8be2-13051d0955ec",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1975,
+    "headquarters": "Austria",
+    "revenue": 668370439,
+    "market_cap": 1800628309,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "82606ae0-96ce-4bf9-9d1c-46e4bf56beb8",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 2008,
+    "headquarters": "Switzerland",
+    "revenue": 644066791,
+    "market_cap": 3941081005,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "842e3076-7161-4aac-8601-e855cc26905e",
+    "description": "Leading company in various sector",
+    "website": "",
+    "founded_year": 1974,
+    "headquarters": "Germany",
+    "revenue": 173040936,
+    "market_cap": 4993845726,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "84b5ed73-708c-4299-a6af-26b9f6829d42",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 2017,
+    "headquarters": "Germany",
+    "revenue": 202017799,
+    "market_cap": 222653075,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "84e8f996-83c3-46c7-ad09-eaf9cc873d6c",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1997,
+    "headquarters": "Germany",
+    "revenue": 377868270,
+    "market_cap": 2787345911,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "84f08aa2-e220-4e30-8018-70d7cdc5be42",
+    "description": "Leading company in various sector",
+    "website": "",
+    "founded_year": 2017,
+    "headquarters": "France",
+    "revenue": 866892563,
+    "market_cap": 1170088742,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "868574bb-874c-4580-9c89-15bcd83fc7fc",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 1985,
+    "headquarters": "Germany",
+    "revenue": 268812098,
+    "market_cap": 527634716,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "87255c36-69ed-4538-b60b-f2dc0dd9cf15",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1982,
+    "headquarters": "Switzerland",
+    "revenue": 952180591,
+    "market_cap": 3070755849,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "88f68b32-06f7-457d-b4a6-93826df0e968",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1974,
+    "headquarters": "Switzerland",
+    "revenue": 523478807,
+    "market_cap": 1079663461,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "8ada320e-0ba3-4849-9c4d-18e054c01054",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 1988,
+    "headquarters": "Italy",
+    "revenue": 367225818,
+    "market_cap": 696437497,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "8b2cf838-96ea-47cf-9863-2b31bc304441",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1984,
+    "headquarters": "Switzerland",
+    "revenue": 888515284,
+    "market_cap": 4191485470,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "8b4f605d-274e-4307-864a-d6fbacd343f0",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2003,
+    "headquarters": "Italy",
+    "revenue": 251966666,
+    "market_cap": 3557065859,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "8c1ed472-dd3d-4ca5-88ba-616c0006413b",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1996,
+    "headquarters": "Germany",
+    "revenue": 792560595,
+    "market_cap": 243920304,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "8cc86e9e-888f-40fe-81ca-67d3b854f35d",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1992,
+    "headquarters": "Switzerland",
+    "revenue": 776173057,
+    "market_cap": 3158738760,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "8e36e664-bf8d-451e-a714-da98369f10bb",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1974,
+    "headquarters": "France",
+    "revenue": 92698767,
+    "market_cap": 2403056939,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "90a7da0f-c17a-433f-997d-9d977034794c",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Italy",
+    "revenue": 307080711,
+    "market_cap": 4939773294,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "916c9185-fb76-4018-ae34-5abc011653cd",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 2014,
+    "headquarters": "Italy",
+    "revenue": 111539839,
+    "market_cap": 2350148328,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "917e1a28-9216-4285-b8c4-2607c702c2ed",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1999,
+    "headquarters": "Germany",
+    "revenue": 623422409,
+    "market_cap": 3546123388,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "94557ea4-4dba-41f2-90f2-c4f8cfa1fc87",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1991,
+    "headquarters": "Germany",
+    "revenue": 255885990,
+    "market_cap": 681395848,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "947a4af9-7e3e-4aa0-9eab-924909cd901f",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "Germany",
+    "revenue": 259743401,
+    "market_cap": 1311736166,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "96813eeb-08c3-4cb5-86d6-1c25c9456983",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1989,
+    "headquarters": "Switzerland",
+    "revenue": 335720695,
+    "market_cap": 1933128489,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "96c88982-aa41-4188-8843-58fc04454168",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 2013,
+    "headquarters": "Germany",
+    "revenue": 50279807,
+    "market_cap": 325669010,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "9706f93f-8050-40b5-8b4f-5824fc9788aa",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 1971,
+    "headquarters": "Germany",
+    "revenue": 273345609,
+    "market_cap": 4730099871,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "97df73bc-691a-47a5-adbe-292e35d1a139",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 1978,
+    "headquarters": "Luxembourg",
+    "revenue": 952397965,
+    "market_cap": 3653369833,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "9843a48a-1896-4c83-ba88-47ecc89380f1",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1989,
+    "headquarters": "Germany",
+    "revenue": 751366586,
+    "market_cap": 4511089521,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "98f7210f-5a24-42f7-a8c2-0bfa67caeef5",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2007,
+    "headquarters": "France",
+    "revenue": 150980134,
+    "market_cap": 1812989023,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "98f7c81a-6c4e-4157-b2c9-928ee40e7b5d",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 1983,
+    "headquarters": "Italy",
+    "revenue": 635323782,
+    "market_cap": 3075412935,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "99b68da4-7602-4d70-acd7-b6c17e190797",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 2011,
+    "headquarters": "Switzerland",
+    "revenue": 221190180,
+    "market_cap": 2256000438,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "99cbf089-a518-4031-bfa8-11264109120b",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1983,
+    "headquarters": "Italy",
+    "revenue": 652016181,
+    "market_cap": 4094541823,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "99ed3a95-41c6-4ebf-b172-a011bf373507",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1975,
+    "headquarters": "Austria",
+    "revenue": 69716790,
+    "market_cap": 1296399985,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "9a0059bb-b486-4ab6-be92-87fb6edb73f0",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "France",
+    "revenue": 929328898,
+    "market_cap": 2990865185,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "9a4a82c4-30b4-48fc-867f-0f228ed68b73",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1983,
+    "headquarters": "Italy",
+    "revenue": 231200169,
+    "market_cap": 4904840950,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "9a8eee0f-5fa5-4647-a57e-aca850d9651a",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1981,
+    "headquarters": "Belgium",
+    "revenue": 75650205,
+    "market_cap": 303424733,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "9d42d587-0bef-453f-83c5-035f304c93ac",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 2015,
+    "headquarters": "Germany",
+    "revenue": 692517846,
+    "market_cap": 4182973904,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "9e7469ca-09d2-484b-a095-ea2c232a02a5",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1998,
+    "headquarters": "Belgium",
+    "revenue": 133617347,
+    "market_cap": 1245152817,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "9eb600ec-6b0a-4d50-939d-ba1e718649d6",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2004,
+    "headquarters": "Germany",
+    "revenue": 689705709,
+    "market_cap": 1542945747,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "9f6ed156-6ddc-4130-82c6-74a61ba703d0",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1974,
+    "headquarters": "Belgium",
+    "revenue": 582522434,
+    "market_cap": 1551056419,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "9f95231c-9ddc-46a6-beb2-6c9b6c232794",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2019,
+    "headquarters": "France",
+    "revenue": 37380441,
+    "market_cap": 1073922450,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "a006117b-a394-49e9-8605-f776c44c5cbc",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "Luxembourg",
+    "revenue": 237007516,
+    "market_cap": 4803932803,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "a1072f04-f8a0-4172-b5ce-bb1e1505d112",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 1970,
+    "headquarters": "France",
+    "revenue": 931256257,
+    "market_cap": 3490709933,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "a1cbe83e-6868-40b7-9d57-57afe635b768",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2013,
+    "headquarters": "France",
+    "revenue": 482306331,
+    "market_cap": 4751499540,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "a394f6c0-b102-4cec-88a7-ce991b6f4211",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1992,
+    "headquarters": "Belgium",
+    "revenue": 463909154,
+    "market_cap": 1043541005,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "a47075ab-447e-45bb-a193-348d5e5508c3",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 1999,
+    "headquarters": "Belgium",
+    "revenue": 543046835,
+    "market_cap": 1059773559,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "a563ec0d-2745-4368-9bf3-b375b8c411e5",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1979,
+    "headquarters": "Switzerland",
+    "revenue": 855206378,
+    "market_cap": 2057918693,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "a6387b8a-6023-417d-b929-8ab9cdfe0d01",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1972,
+    "headquarters": "Switzerland",
+    "revenue": 1005303049,
+    "market_cap": 2909720230,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "a9999510-7f92-4753-9913-8ad5c23532b5",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 2019,
+    "headquarters": "Italy",
+    "revenue": 857565799,
+    "market_cap": 2706741542,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "ad0bd5c9-6c0d-4ae6-bd76-d98bf585c7ec",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1987,
+    "headquarters": "Italy",
+    "revenue": 176585318,
+    "market_cap": 3647607487,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "ae24f019-198b-4f13-8bb1-ead7784e2b10",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 2004,
+    "headquarters": "Switzerland",
+    "revenue": 252395329,
+    "market_cap": 2481933253,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "ae59c0d0-acdd-4355-8f93-d199e5c3e72d",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 1972,
+    "headquarters": "France",
+    "revenue": 237537533,
+    "market_cap": 3268912830,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "af3de7db-466c-484d-9f21-429327c2c7db",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1985,
+    "headquarters": "France",
+    "revenue": 61567123,
+    "market_cap": 1834955873,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "af82320a-3530-479b-919f-1775cc40200f",
+    "description": "Leading company in Energy sector",
+    "website": "",
+    "founded_year": 1981,
+    "headquarters": "France",
+    "revenue": 861160263,
+    "market_cap": 208119748,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "b0937701-0c89-47dc-aa63-04273f342a9f",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 1982,
+    "headquarters": "Italy",
+    "revenue": 32602771,
+    "market_cap": 3916911525,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "b1639a77-8138-4a1e-b414-d68a27ac5044",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 2005,
+    "headquarters": "Belgium",
+    "revenue": 670019908,
+    "market_cap": 387650801,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "b2b5da7b-a966-474f-9960-3182f12aa5b7",
+    "description": "Leading company in various sector",
+    "website": "",
+    "founded_year": 1995,
+    "headquarters": "Germany",
+    "revenue": 280478996,
+    "market_cap": 4371962663,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "b3174d58-c2cb-453c-9555-078819cdfbb7",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 2015,
+    "headquarters": "Switzerland",
+    "revenue": 341017566,
+    "market_cap": 2481621410,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "b604cf4e-2f93-484d-bf6b-2a91a83b62fa",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Italy",
+    "revenue": 129376404,
+    "market_cap": 3889491137,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "b66aa745-87c5-4dc2-ba7b-b7ae203a3ca2",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 1991,
+    "headquarters": "France",
+    "revenue": 317074797,
+    "market_cap": 50566320,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "b7c2b921-eecb-4400-ac18-b0a58eb84810",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1998,
+    "headquarters": "Italy",
+    "revenue": 23149060,
+    "market_cap": 3430962745,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "b7cbc668-7dd2-475c-83f1-44133301abf0",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 2000,
+    "headquarters": "France",
+    "revenue": 808074982,
+    "market_cap": 4394093542,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "b85b8029-b9c9-47c3-9b91-15c3f88c245d",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2015,
+    "headquarters": "Germany",
+    "revenue": 282898507,
+    "market_cap": 4852434056,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "b860f6d8-ca80-44b6-a8a5-31894b3a4c79",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2006,
+    "headquarters": "France",
+    "revenue": 372787342,
+    "market_cap": 4550807527,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "bad58fdd-64d4-4698-aced-43b9dbc9f3c4",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1985,
+    "headquarters": "Germany",
+    "revenue": 765523727,
+    "market_cap": 4550623000,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "bb2bd9ac-3cfa-45de-8a3a-1ede92b83744",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1996,
+    "headquarters": "Italy",
+    "revenue": 454543316,
+    "market_cap": 1608638652,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "bc864345-890b-44b8-82cb-eadcca6116cb",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2012,
+    "headquarters": "France",
+    "revenue": 207807472,
+    "market_cap": 3077473951,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "bcb4b549-29b0-431d-ab3f-fdecd04c29a8",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1997,
+    "headquarters": "Luxembourg",
+    "revenue": 61820547,
+    "market_cap": 1037738189,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "bd0f593b-111d-4f6c-9f89-fdaedd2dd80f",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2008,
+    "headquarters": "Germany",
+    "revenue": 969727819,
+    "market_cap": 2941956361,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "bd23dfb2-a6d5-4e0f-81c0-38791a1ead8f",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Austria",
+    "revenue": 332109496,
+    "market_cap": 714851435,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "be1625c8-d3ad-4f56-9be9-e4e6dc65dbf0",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2002,
+    "headquarters": "Austria",
+    "revenue": 459265241,
+    "market_cap": 5033926500,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "be22b1aa-c594-4158-b2c2-63f9119bdaf8",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1975,
+    "headquarters": "Switzerland",
+    "revenue": 354031377,
+    "market_cap": 2211873088,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "be92c798-d263-4f45-a740-a026671b7a68",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1998,
+    "headquarters": "Switzerland",
+    "revenue": 183632230,
+    "market_cap": 4337194849,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "bf3a5461-01c7-4167-b30c-52a9835406f5",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1995,
+    "headquarters": "Germany",
+    "revenue": 41839361,
+    "market_cap": 219866983,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "bff44278-35df-40ec-ada2-997b964abc79",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2004,
+    "headquarters": "Switzerland",
+    "revenue": 169668838,
+    "market_cap": 1002181019,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "c038e45a-4b65-4582-ba1e-2f895bd5cd2a",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 2014,
+    "headquarters": "Germany",
+    "revenue": 897741775,
+    "market_cap": 4822799590,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "c1032bf1-8baa-40fa-80d6-daa1ba75b841",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2014,
+    "headquarters": "Switzerland",
+    "revenue": 569718676,
+    "market_cap": 4190711862,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "c11422bf-d455-462c-9913-1b7c6ddb720b",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1986,
+    "headquarters": "Germany",
+    "revenue": 960686825,
+    "market_cap": 2334643397,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "c12f87ee-1fac-4ee0-b06c-d40604dc6cee",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1999,
+    "headquarters": "Switzerland",
+    "revenue": 176974733,
+    "market_cap": 826508209,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "c1969a99-5dfd-4ba8-bc92-171a148967b9",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1983,
+    "headquarters": "Switzerland",
+    "revenue": 37506974,
+    "market_cap": 3966216815,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "c3be2903-8ede-496e-9b2c-6b4f8d0ffb49",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1973,
+    "headquarters": "Germany",
+    "revenue": 249335573,
+    "market_cap": 3947606084,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "c3e2a8c8-a6f3-464d-bb36-2719bc7bfd5e",
+    "description": "Leading company in Energy sector",
+    "website": "",
+    "founded_year": 2005,
+    "headquarters": "France",
+    "revenue": 1001377586,
+    "market_cap": 4877628577,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "c859be88-58dd-469f-9296-cde738e7cde6",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Switzerland",
+    "revenue": 147454111,
+    "market_cap": 1865567357,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "c9aa8f64-a415-41c7-94d3-784b4fb49f5b",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2003,
+    "headquarters": "Germany",
+    "revenue": 99152778,
+    "market_cap": 4480346695,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "ca95e5d1-7674-44de-a225-b2440d1602f8",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1973,
+    "headquarters": "Switzerland",
+    "revenue": 133677769,
+    "market_cap": 3873931693,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "cb406400-5415-4cd7-973c-1827cdca02ec",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1977,
+    "headquarters": "Switzerland",
+    "revenue": 352499945,
+    "market_cap": 3633136660,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "cb975665-3484-48f6-bc27-ad87defbce56",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 2013,
+    "headquarters": "Switzerland",
+    "revenue": 663487089,
+    "market_cap": 1976904975,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "cc329952-b7f6-40c7-bd42-8cc4a24f612d",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1987,
+    "headquarters": "Germany",
+    "revenue": 65384808,
+    "market_cap": 1651857560,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "cc98ade3-5448-4963-9bb8-fa4f6b875032",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1972,
+    "headquarters": "Italy",
+    "revenue": 765523512,
+    "market_cap": 2300441757,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "cd32764b-ffa9-455b-bdde-cf97bb470e4b",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1995,
+    "headquarters": "France",
+    "revenue": 152214510,
+    "market_cap": 1558507084,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "ce82c729-faae-46da-a0bb-b57983b39aaf",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1974,
+    "headquarters": "Austria",
+    "revenue": 321983083,
+    "market_cap": 2882516305,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "ceb6e7cb-097c-4ffd-b461-d29eed6fe4e1",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "France",
+    "revenue": 642759996,
+    "market_cap": 3879076335,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "cebc77f9-d944-4e95-be7c-1f2f78be64ee",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2017,
+    "headquarters": "France",
+    "revenue": 661955077,
+    "market_cap": 568591586,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "d014acbe-0e65-46ae-999c-852c3d145236",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1995,
+    "headquarters": "Italy",
+    "revenue": 34323228,
+    "market_cap": 4635018263,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "d0c07c89-bf25-43d4-a6db-257be5018f12",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 2006,
+    "headquarters": "Belgium",
+    "revenue": 314596546,
+    "market_cap": 2349631536,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "d0eec049-5f0c-4bfb-819e-28bce6d93fa7",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1982,
+    "headquarters": "Switzerland",
+    "revenue": 982553960,
+    "market_cap": 3891727070,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "d21ce417-5864-4fc8-aaf8-b91a6fb19660",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1997,
+    "headquarters": "Switzerland",
+    "revenue": 1004717341,
+    "market_cap": 4647931865,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "d2e1f545-59b7-413f-b721-69c08cfba3e4",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1992,
+    "headquarters": "Germany",
+    "revenue": 524203567,
+    "market_cap": 2853835553,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "d4bc5690-b568-4241-be5d-138930f94951",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1974,
+    "headquarters": "Germany",
+    "revenue": 892315791,
+    "market_cap": 1943824096,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "d4c35e2f-22fe-4a04-b473-47108cb22af4",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 2013,
+    "headquarters": "France",
+    "revenue": 305317523,
+    "market_cap": 782565259,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "d4c606b3-cfd7-4319-bc8b-948a11635575",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 2001,
+    "headquarters": "Switzerland",
+    "revenue": 591567511,
+    "market_cap": 3295168133,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "d5c2c897-d309-49ac-81d6-776bd723094e",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2005,
+    "headquarters": "France",
+    "revenue": 19139505,
+    "market_cap": 335533504,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "d70b1d0e-7d4b-41ad-a19f-925314428bfa",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1987,
+    "headquarters": "Switzerland",
+    "revenue": 147310938,
+    "market_cap": 481380523,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "d9066e9c-2b14-441a-979e-a7cdd7539000",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1999,
+    "headquarters": "France",
+    "revenue": 365154186,
+    "market_cap": 1122931263,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "d92af7a5-a78c-4803-9193-dee6f36e1d67",
+    "description": "Leading company in various sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "France",
+    "revenue": 184856284,
+    "market_cap": 3533492080,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "dae9d635-df7e-4b76-bff9-a988df462700",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2019,
+    "headquarters": "Italy",
+    "revenue": 766240933,
+    "market_cap": 4559290374,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "db8630ab-b047-4bda-aee0-e321850e2108",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 2003,
+    "headquarters": "Switzerland",
+    "revenue": 836885818,
+    "market_cap": 2876057027,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "dc20cc19-9767-41e7-9d14-5ea3273afbbf",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 2003,
+    "headquarters": "France",
+    "revenue": 82676874,
+    "market_cap": 2652805036,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "dca7ba08-2d4f-4c9b-a0be-59e8dc272bde",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1986,
+    "headquarters": "France",
+    "revenue": 790811016,
+    "market_cap": 4325060479,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "dd31ca5f-00f8-4ee5-8f03-c5aa5afe692f",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 1973,
+    "headquarters": "Luxembourg",
+    "revenue": 957456441,
+    "market_cap": 1423094149,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "dd650098-9ad4-4ebb-8fe4-0ffc948e7714",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1988,
+    "headquarters": "France",
+    "revenue": 857258594,
+    "market_cap": 2094075086,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "de00d3fc-5166-49b0-a44d-8dc750ab06e6",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1991,
+    "headquarters": "Switzerland",
+    "revenue": 867554931,
+    "market_cap": 2686498922,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "de737b4e-593c-4785-8db8-8feb74a4bd5e",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "France",
+    "revenue": 155327105,
+    "market_cap": 896599269,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "ded4291b-0546-4afd-b264-ee69ddecceb6",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2012,
+    "headquarters": "Italy",
+    "revenue": 847374050,
+    "market_cap": 1940748966,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "e0abfaa7-c28e-44e6-a9b0-252a557c34b2",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 1997,
+    "headquarters": "Italy",
+    "revenue": 550909707,
+    "market_cap": 3306221802,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "e0c57e18-3a06-4fd6-bd71-bbc43288ea50",
+    "description": "Leading company in Energy sector",
+    "website": "",
+    "founded_year": 1982,
+    "headquarters": "Italy",
+    "revenue": 50822425,
+    "market_cap": 4603801338,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "e21872ef-68f4-4399-bba2-9fdfb6ea4f78",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 2007,
+    "headquarters": "Germany",
+    "revenue": 936749934,
+    "market_cap": 3470072196,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "e228e31c-c73b-42c0-8121-87954c0f38cf",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1980,
+    "headquarters": "Germany",
+    "revenue": 23863079,
+    "market_cap": 4963014656,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "e2316cd3-ace2-4a68-b94d-0b8dbe647ae1",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 2015,
+    "headquarters": "Germany",
+    "revenue": 325485518,
+    "market_cap": 2096037241,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "e275c0e2-b836-4c52-8742-54be2cb54553",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1979,
+    "headquarters": "France",
+    "revenue": 109353580,
+    "market_cap": 876180586,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "e2ead517-d1b7-407b-ab57-206c2fe966db",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 2010,
+    "headquarters": "France",
+    "revenue": 171803254,
+    "market_cap": 388744467,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "e2faf33b-5d9c-4b61-b297-129a829e15cd",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 1972,
+    "headquarters": "Germany",
+    "revenue": 664526449,
+    "market_cap": 988255546,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "e4760b73-d6e0-4ece-8040-1af6bd23c581",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 1986,
+    "headquarters": "Italy",
+    "revenue": 957615762,
+    "market_cap": 3947035943,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "e6869b28-6dc5-49b4-8b96-444badfffe33",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1993,
+    "headquarters": "Switzerland",
+    "revenue": 557353087,
+    "market_cap": 4328910241,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "e6d167d7-4946-4bcc-9c13-ac8a6ff435a4",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1991,
+    "headquarters": "Italy",
+    "revenue": 896874073,
+    "market_cap": 3921679474,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "e72431eb-3b86-4d7f-8704-1db78f41ca34",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2007,
+    "headquarters": "Italy",
+    "revenue": 81726154,
+    "market_cap": 3638682791,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "e727fa6f-5734-49bd-84c0-c40aa74f9100",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1994,
+    "headquarters": "Luxembourg",
+    "revenue": 993224681,
+    "market_cap": 1434951934,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "e73f5ad1-2ff9-4ac0-b2ab-ebc68dafdad6",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1995,
+    "headquarters": "France",
+    "revenue": 560462247,
+    "market_cap": 1030581193,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "e7594a72-0cc1-4be8-95ca-0fffe3b7c49f",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1975,
+    "headquarters": "France",
+    "revenue": 816672983,
+    "market_cap": 1704291460,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "e7f328d8-73ac-4d5f-b7b9-c214bbe5be5d",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1992,
+    "headquarters": "Germany",
+    "revenue": 932929748,
+    "market_cap": 4418442462,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "e860bf2d-6d4b-4102-bacd-2ca6a0aa12d1",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 2001,
+    "headquarters": "Austria",
+    "revenue": 577510241,
+    "market_cap": 4954432866,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "e9f4dd24-433e-4247-ae35-070d09b90db4",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 1991,
+    "headquarters": "Switzerland",
+    "revenue": 659402547,
+    "market_cap": 1324214739,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "eb16eef3-a0ea-4469-a96b-d43981250088",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1995,
+    "headquarters": "France",
+    "revenue": 661631648,
+    "market_cap": 4833499132,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "eb83f0c2-e89c-4207-b3f5-6644c238f52f",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2002,
+    "headquarters": "Switzerland",
+    "revenue": 419688012,
+    "market_cap": 1317385781,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "ec1a1e44-1541-4d62-8b62-39fe7a93905d",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 1995,
+    "headquarters": "France",
+    "revenue": 796412462,
+    "market_cap": 1686599365,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "ee5d9b6b-9493-46f2-965e-de0260118ae4",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 1985,
+    "headquarters": "Switzerland",
+    "revenue": 196759512,
+    "market_cap": 2689853301,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "eee3a665-b9b2-4572-8a23-9c39d799e1c5",
+    "description": "Leading company in Real Estate sector",
+    "website": "",
+    "founded_year": 1970,
+    "headquarters": "France",
+    "revenue": 52808563,
+    "market_cap": 3986766244,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "f25259a1-9784-4a59-9eef-c06daec70926",
+    "description": "Leading company in Basic Materials sector",
+    "website": "",
+    "founded_year": 2013,
+    "headquarters": "Germany",
+    "revenue": 654676606,
+    "market_cap": 2393832261,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "f3371912-7d76-477c-83e1-51fdab0cb2c9",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 2019,
+    "headquarters": "Switzerland",
+    "revenue": 154006694,
+    "market_cap": 2488857339,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "f4104d3e-0794-4ad6-b58b-a8d1a4e862c0",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1976,
+    "headquarters": "Germany",
+    "revenue": 861345319,
+    "market_cap": 1743542937,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "f42b2471-bfc3-4245-b213-4d0b6f58b3c0",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1977,
+    "headquarters": "France",
+    "revenue": 94125932,
+    "market_cap": 2004546182,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "f4dbe4bc-2dc1-4296-90d2-440b0a91286b",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1970,
+    "headquarters": "Germany",
+    "revenue": 389597680,
+    "market_cap": 1404292983,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "f5363197-c6d5-49ec-9478-a8b015d72538",
+    "description": "Leading company in Consumer Defensive sector",
+    "website": "",
+    "founded_year": 1987,
+    "headquarters": "France",
+    "revenue": 737892692,
+    "market_cap": 2602941071,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "f54c5d5b-e241-419d-84bc-55822b4f4ae7",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2016,
+    "headquarters": "Italy",
+    "revenue": 110252830,
+    "market_cap": 4582395670,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "f5edf2c6-9ccb-4eea-931f-946780e7a3de",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1981,
+    "headquarters": "France",
+    "revenue": 921018696,
+    "market_cap": 4476450843,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "f5f1e077-69e0-49a6-889d-61b52ca77c7f",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1972,
+    "headquarters": "Italy",
+    "revenue": 30958137,
+    "market_cap": 2402334530,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "f66ebd77-1a9c-4a94-a6ca-b11af911d9a9",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1992,
+    "headquarters": "France",
+    "revenue": 697900058,
+    "market_cap": 339505004,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "f70f59d8-65a5-4e8e-9f8d-0cce25aa985f",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 1990,
+    "headquarters": "France",
+    "revenue": 543298562,
+    "market_cap": 953179496,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "f716b65c-2761-4edf-8491-5d0e54e0ec1f",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 1996,
+    "headquarters": "France",
+    "revenue": 287148445,
+    "market_cap": 839230409,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "f7f3e5e4-6640-4a74-a832-75db488dbfba",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 2005,
+    "headquarters": "Italy",
+    "revenue": 289333419,
+    "market_cap": 4142352473,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "fa15bffb-5f42-424d-a215-e423abd5dd56",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 2008,
+    "headquarters": "Switzerland",
+    "revenue": 515474934,
+    "market_cap": 280500284,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "fa3601d8-5888-4225-af72-0778d3075cad",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 1984,
+    "headquarters": "Germany",
+    "revenue": 667530097,
+    "market_cap": 1120499920,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "fa7d77b1-df55-4750-ad6c-098b9b56be80",
+    "description": "Leading company in Industrials sector",
+    "website": "",
+    "founded_year": 1982,
+    "headquarters": "France",
+    "revenue": 14829846,
+    "market_cap": 97186759,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "faf49564-ff30-4f60-9305-8165ee208fb6",
+    "description": "Leading company in Consumer Cyclical sector",
+    "website": "",
+    "founded_year": 2008,
+    "headquarters": "Germany",
+    "revenue": 518986397,
+    "market_cap": 668334633,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "faf760a7-38b5-4717-9038-241f0e1780ca",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2013,
+    "headquarters": "Germany",
+    "revenue": 561047095,
+    "market_cap": 1688857730,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "fbecfb30-693d-4f4f-a12c-b7e744bbfe28",
+    "description": "Leading company in Energy sector",
+    "website": "",
+    "founded_year": 1980,
+    "headquarters": "Austria",
+    "revenue": 189883528,
+    "market_cap": 3370295029,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "fc76c8d2-fab8-4707-a2fb-f62273d7d237",
+    "description": "Leading company in Utilities sector",
+    "website": "",
+    "founded_year": 2009,
+    "headquarters": "France",
+    "revenue": 484971269,
+    "market_cap": 4105482446,
+    "sustainability_rating": 3
+  },
+  {
+    "company_id": "fcfba1d8-78b8-4bc2-89c4-3f589099bc96",
+    "description": "Leading company in Energy sector",
+    "website": "",
+    "founded_year": 1971,
+    "headquarters": "Italy",
+    "revenue": 810540224,
+    "market_cap": 2105993480,
+    "sustainability_rating": 4
+  },
+  {
+    "company_id": "fe946363-3e7b-4828-ab97-16394f4b46b3",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1990,
+    "headquarters": "Italy",
+    "revenue": 1002237134,
+    "market_cap": 4851491724,
+    "sustainability_rating": 1
+  },
+  {
+    "company_id": "fe9b37b7-ac28-4062-a36e-cf325122717a",
+    "description": "Leading company in Communication Services sector",
+    "website": "",
+    "founded_year": 2015,
+    "headquarters": "Switzerland",
+    "revenue": 680542389,
+    "market_cap": 583005210,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "fee16446-014f-47fa-b7ca-2970114760a5",
+    "description": "Leading company in Healthcare sector",
+    "website": "",
+    "founded_year": 2009,
+    "headquarters": "Luxembourg",
+    "revenue": 46602086,
+    "market_cap": 2150230852,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "ff0cb5fb-e72c-4d4a-a47e-35012fd37a60",
+    "description": "Leading company in Financial Services sector",
+    "website": "",
+    "founded_year": 1977,
+    "headquarters": "Switzerland",
+    "revenue": 603038060,
+    "market_cap": 1079789757,
+    "sustainability_rating": 5
+  },
+  {
+    "company_id": "ffb865fa-5e72-48a8-9d71-97cbcc66ff79",
+    "description": "Leading company in various sector",
+    "website": "",
+    "founded_year": 1985,
+    "headquarters": "Luxembourg",
+    "revenue": 997567716,
+    "market_cap": 4537605862,
+    "sustainability_rating": 2
+  },
+  {
+    "company_id": "ffd10a7a-6999-4bde-a463-32a205b0fff3",
+    "description": "Leading company in Technology sector",
+    "website": "",
+    "founded_year": 1989,
+    "headquarters": "France",
+    "revenue": 282240528,
+    "market_cap": 2658689450,
+    "sustainability_rating": 1
+  }
+]

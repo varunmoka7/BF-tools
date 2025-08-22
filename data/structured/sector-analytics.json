@@ -1,0 +1,157 @@
+[
+  {
+    "sector": "Industrials",
+    "total_companies": 1340,
+    "avg_employees": 35036,
+    "countries_covered": [
+      "France",
+      "Germany",
+      "Italy",
+      "Luxembourg",
+      "Switzerland",
+      "Austria",
+      "Belgium"
+    ],
+    "waste_generation_trends": []
+  },
+  {
+    "sector": "Real Estate",
+    "total_companies": 133,
+    "avg_employees": 10910,
+    "countries_covered": [
+      "Luxembourg",
+      "Germany",
+      "Belgium",
+      "France",
+      "Switzerland",
+      "Italy"
+    ],
+    "waste_generation_trends": []
+  },
+  {
+    "sector": "Healthcare",
+    "total_companies": 780,
+    "avg_employees": 19200,
+    "countries_covered": [
+      "Germany",
+      "Switzerland",
+      "Italy",
+      "France",
+      "Belgium",
+      "Luxembourg"
+    ],
+    "waste_generation_trends": []
+  },
+  {
+    "sector": "Consumer Defensive",
+    "total_companies": 290,
+    "avg_employees": 12677,
+    "countries_covered": [
+      "France",
+      "Belgium",
+      "Germany",
+      "Switzerland",
+      "Luxembourg",
+      "Italy"
+    ],
+    "waste_generation_trends": []
+  },
+  {
+    "sector": "Consumer Cyclical",
+    "total_companies": 715,
+    "avg_employees": 40802,
+    "countries_covered": [
+      "Italy",
+      "France",
+      "Luxembourg",
+      "Switzerland",
+      "Germany",
+      "Austria",
+      "Belgium"
+    ],
+    "waste_generation_trends": []
+  },
+  {
+    "sector": "Technology",
+    "total_companies": 491,
+    "avg_employees": 11863,
+    "countries_covered": [
+      "Austria",
+      "France",
+      "Switzerland",
+      "Germany",
+      "Luxembourg",
+      "Italy",
+      "Belgium"
+    ],
+    "waste_generation_trends": []
+  },
+  {
+    "sector": "Utilities",
+    "total_companies": 391,
+    "avg_employees": 17954,
+    "countries_covered": [
+      "Italy",
+      "Germany",
+      "Austria",
+      "Belgium",
+      "Switzerland",
+      "France"
+    ],
+    "waste_generation_trends": []
+  },
+  {
+    "sector": "Basic Materials",
+    "total_companies": 708,
+    "avg_employees": 26036,
+    "countries_covered": [
+      "France",
+      "Germany",
+      "Italy",
+      "Luxembourg",
+      "Belgium",
+      "Switzerland",
+      "Austria"
+    ],
+    "waste_generation_trends": []
+  },
+  {
+    "sector": "Communication Services",
+    "total_companies": 176,
+    "avg_employees": 46981,
+    "countries_covered": [
+      "France",
+      "Germany",
+      "Italy",
+      "Luxembourg",
+      "Switzerland"
+    ],
+    "waste_generation_trends": []
+  },
+  {
+    "sector": "Financial Services",
+    "total_companies": 415,
+    "avg_employees": 22274,
+    "countries_covered": [
+      "France",
+      "Germany",
+      "Italy",
+      "Switzerland",
+      "Belgium",
+      "Austria"
+    ],
+    "waste_generation_trends": []
+  },
+  {
+    "sector": "Energy",
+    "total_companies": 192,
+    "avg_employees": 36031,
+    "countries_covered": [
+      "Italy",
+      "Luxembourg",
+      "France",
+      "Austria"
+    ],
+    "waste_generation_trends": []
+  }
+]
