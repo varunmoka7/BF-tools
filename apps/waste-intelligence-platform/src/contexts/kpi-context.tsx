@@ -4,9 +4,9 @@ import React, { createContext, useContext, useEffect, useState, ReactNode } from
 
 export interface KPIData {
   totalCompanies: number;
-  totalWasteGenerated: number;
-  totalWasteRecovered: number;
-  avgRecoveryRate: number;
+  totalWasteGenerated: number | null;
+  totalWasteRecovered: number | null;
+  avgRecoveryRate: number | null;
   countriesCovered: number;
   lastUpdated: string;
 }

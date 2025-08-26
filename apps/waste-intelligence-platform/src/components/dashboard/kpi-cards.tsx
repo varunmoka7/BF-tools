@@ -90,41 +90,20 @@ export function KPICards() {
       trendColor: 'text-blue-600'
     },
     {
-      title: 'Total Waste Generated',
-      value: `${formatNumber(kpiData.totalWasteGenerated)} MT`,
-      icon: Trash2,
-      trend: 'Annual waste volume',
-      trendColor: 'text-red-600'
-    },
-    {
-      title: 'Total Waste Recovered',
-      value: `${formatNumber(kpiData.totalWasteRecovered)} MT`,
-      icon: CheckCircle,
-      trend: 'Recovery volume',
-      trendColor: 'text-green-600'
-    },
-    {
-      title: 'Average Recovery Rate',
-      value: `${kpiData.avgRecoveryRate.toFixed(1)}%`,
-      icon: TrendingUp,
-      trend: 'Industry average',
-      trendColor: 'text-green-600'
-    },
-    {
       title: 'Countries Covered',
       value: kpiData.countriesCovered.toString(),
       icon: Globe,
-      trend: 'Global coverage',
+      trend: 'European coverage',
       trendColor: 'text-purple-600'
     },
     {
-      title: 'Data Freshness',
-      value: 'Real-time',
+      title: 'Data Status',
+      value: 'Live Data',
       icon: CheckCircle,
       trend: `Updated: ${new Date(kpiData.lastUpdated).toLocaleDateString()}`,
-      trendColor: 'text-blue-600'
+      trendColor: 'text-green-600'
     }
-  ]
+  ].filter(Boolean)
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

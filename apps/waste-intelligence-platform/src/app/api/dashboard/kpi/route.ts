@@ -25,7 +25,7 @@ export async function GET() {
         countriesCovered.add(company.country)
       }
 
-      // If we have waste data in the company object, use it
+      // Only process real waste data if it exists
       if (company.waste_management) {
         const waste = company.waste_management
         if (waste.total_waste_generated) {
@@ -40,26 +40,18 @@ export async function GET() {
       }
     })
 
-    // Calculate average recovery rate
-    let avgRecoveryRate = recoveryRates.length > 0 
+    // Calculate average recovery rate only if we have real data
+    const avgRecoveryRate = recoveryRates.length > 0 
       ? recoveryRates.reduce((sum, rate) => sum + rate, 0) / recoveryRates.length 
-      : 0
-
-    // If no waste data available, use realistic estimates based on company count
-    if (totalWasteGenerated === 0) {
-      // Estimate based on average waste per company
-      totalWasteGenerated = totalCompanies * 50000 // 50k tons average per company
-      totalWasteRecovered = totalWasteGenerated * 0.65 // 65% average recovery rate
-      avgRecoveryRate = 65
-    }
+      : null
 
     return NextResponse.json({
       success: true,
       data: {
         totalCompanies,
-        totalWasteGenerated: Math.round(totalWasteGenerated * 100) / 100,
-        totalWasteRecovered: Math.round(totalWasteRecovered * 100) / 100,
-        avgRecoveryRate: Math.round(avgRecoveryRate * 100) / 100,
+        totalWasteGenerated: totalWasteGenerated > 0 ? Math.round(totalWasteGenerated * 100) / 100 : null,
+        totalWasteRecovered: totalWasteRecovered > 0 ? Math.round(totalWasteRecovered * 100) / 100 : null,
+        avgRecoveryRate: avgRecoveryRate !== null ? Math.round(avgRecoveryRate * 100) / 100 : null,
         countriesCovered: countriesCovered.size,
         lastUpdated: new Date().toISOString()
       }
