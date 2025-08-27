@@ -23,6 +23,7 @@ import {
   Activity
 } from 'lucide-react'
 import Link from 'next/link'
+import { CompanyOverviewCard } from '@/components/companies/CompanyOverviewCard'
 
 interface Company {
   id: string;
@@ -78,6 +79,7 @@ export default function CompanyDetailPage() {
   const [company, setCompany] = useState<Company | null>(null)
   const [wasteMetrics, setWasteMetrics] = useState<WasteMetrics | null>(null)
   const [wasteStreams, setWasteStreams] = useState<WasteStream[]>([])
+  const [companyOverview, setCompanyOverview] = useState<{enhanced_overview?: string, business_overview?: string, source?: string} | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -108,6 +110,20 @@ export default function CompanyDetailPage() {
         // Generate mock waste streams
         const mockWasteStreams = generateMockWasteStreams(foundCompany)
         setWasteStreams(mockWasteStreams)
+        
+        // Load company overview data
+        try {
+          const overviewResponse = await fetch('/company-overviews-final.json')
+          if (overviewResponse.ok) {
+            const overviews = await overviewResponse.json()
+            const companyOverviewData = overviews.find((o: any) => o.company_id === foundCompany.id)
+            if (companyOverviewData) {
+              setCompanyOverview(companyOverviewData)
+            }
+          }
+        } catch (overviewError) {
+          console.log('Overview data not available, using basic company info')
+        }
         
       } catch (err: any) {
         setError(err instanceof Error ? err.message : 'An error occurred')
@@ -292,6 +308,18 @@ export default function CompanyDetailPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Company Overview */}
+      <CompanyOverviewCard 
+        company={{
+          company_name: company.name,
+          sector: company.sector,
+          industry: company.industry,
+          country: company.country,
+          employees: company.employees
+        }}
+        overview={companyOverview}
+      />
 
       {/* Waste Management Metrics */}
       {wasteMetrics && (

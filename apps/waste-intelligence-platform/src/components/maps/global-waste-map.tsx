@@ -131,22 +131,6 @@ export default function GlobalWasteMap({ companies, onCompanySelect }: GlobalWas
         </div>
       </div>
 
-      {/* Legend */}
-      <div className="absolute top-4 right-4 z-10 bg-white rounded-lg shadow-lg p-4">
-        <h3 className="font-semibold text-gray-800 mb-3">Sector Legend</h3>
-        <div className="grid grid-cols-2 gap-2 text-xs">
-          {Object.entries(SECTOR_COLORS).slice(0, 8).map(([sector, color]) => (
-            <div key={sector} className="flex items-center gap-2">
-              <div 
-                className="w-3 h-3 rounded-full" 
-                style={{ backgroundColor: color }}
-              />
-              <span className="text-gray-600">{sector}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Map Container */}
       <MapContainer
         center={[48.8566, 2.3522]} // Center of Europe

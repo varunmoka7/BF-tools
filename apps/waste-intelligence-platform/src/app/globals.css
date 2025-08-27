@@ -63,3 +63,116 @@
   height: 400px;
   width: 100%;
 }
+
+/* Comprehensive fix for sidebar overlay fragments */
+@layer utilities {
+  /* Hide any potential sidebar overlay fragments on smaller screens */
+  .sidebar-overlay-fix {
+    @apply hidden lg:block;
+  }
+  
+  /* Ensure sidebar is completely hidden on mobile and tablet */
+  @media (max-width: 1023px) {
+    .sidebar-overlay-fix {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      transform: translateX(-100%) !important;
+      pointer-events: none !important;
+    }
+    
+    /* Hide any potential text fragments */
+    .sidebar-overlay-fix * {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  
+  /* Hide any clipped text fragments */
+  .text-fragment-fix {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Additional safety measures for sidebar */
+  @media (max-width: 1023px) {
+    /* Ensure no sidebar content is visible */
+    [class*="sidebar"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      transform: translateX(-100%) !important;
+      pointer-events: none !important;
+    }
+    
+    /* Hide any fixed positioned elements that might be sidebar fragments */
+    .fixed.left-0 {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  
+  /* Specific fix for the "ies" text fragment */
+  @media (max-width: 1023px) {
+    /* Target any text that might contain "ies" from "Companies" */
+    *:contains("ies") {
+      display: none !important;
+      visibility: hidden !important;
+    }
+    
+    /* Hide any white cards or overlays in the top left */
+    .fixed.top-0.left-0,
+    .absolute.top-0.left-0 {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+}
+
+/* Specific fix for the "ies" text fragment overlay */
+@layer components {
+  /* Target any element that might be the problematic overlay */
+  .sidebar-overlay-fragment {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transform: translateX(-100%) !important;
+    pointer-events: none !important;
+  }
+  
+  /* Hide any white card fragments in the top left corner */
+  .overlay-fragment {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: -1 !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Ensure no text fragments are visible on mobile */
+  @media (max-width: 1023px) {
+    /* Hide any potential overlay fragments */
+    .overlay-fragment,
+    .sidebar-overlay-fragment,
+    [class*="overlay"],
+    [class*="fragment"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      transform: translateX(-100%) !important;
+      pointer-events: none !important;
+    }
+    
+    /* Hide any elements that might contain navigation text */
+    [class*="nav"] [class*="text"],
+    [class*="navigation"] [class*="text"] {
+      overflow: hidden !important;
+      text-overflow: clip !important;
+      white-space: nowrap !important;
+    }
+  }
+}

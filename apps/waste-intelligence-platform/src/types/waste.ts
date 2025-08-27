@@ -5,6 +5,7 @@ export interface Company {
   country: string
   sector: string
   industry: string
+  employees?: number
   latest_year?: number
   total_waste_latest?: number
   recovery_rate_latest?: number

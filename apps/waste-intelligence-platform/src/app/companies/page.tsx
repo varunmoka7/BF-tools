@@ -376,7 +376,7 @@ export default function CompaniesPage() {
                 <Search className="h-8 w-8 text-gray-400" />
               </div>
               <h3 className="text-lg font-medium text-gray-900 mb-2">No companies found</h3>
-              <p className="text-gray-500 mb-4">Try adjusting your search terms or filters to find what you're looking for.</p>
+              <p className="text-gray-500 mb-4">Try adjusting your search terms or filters to find what you&apos;re looking for.</p>
               <button
                 onClick={clearFilters}
                 className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"

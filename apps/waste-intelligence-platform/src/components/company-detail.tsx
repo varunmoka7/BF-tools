@@ -15,6 +15,8 @@ import {
   TrendingUp
 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import { CompanyOverviewCard } from '@/components/companies/CompanyOverviewCard'
+import { useEffect, useState } from 'react'
 
 interface CompanyDetailProps {
   company: Company
@@ -23,6 +25,27 @@ interface CompanyDetailProps {
 
 export function CompanyDetail({ company, metrics }: CompanyDetailProps) {
   const router = useRouter()
+  const [companyOverview, setCompanyOverview] = useState<{enhanced_overview?: string, business_overview?: string, source?: string} | null>(null)
+
+  useEffect(() => {
+    // Load company overview data
+    async function loadOverview() {
+      try {
+        const response = await fetch('/company-overviews-final.json')
+        if (response.ok) {
+          const overviews = await response.json()
+          const overview = overviews.find((o: any) => o.company_id === company.company_id)
+          if (overview) {
+            setCompanyOverview(overview)
+          }
+        }
+      } catch (error) {
+        console.log('Overview data not available')
+      }
+    }
+    
+    loadOverview()
+  }, [company.company_id])
 
   const formatNumber = (num: number | null | undefined) => {
     if (num == null) return 'N/A'
@@ -83,6 +106,29 @@ export function CompanyDetail({ company, metrics }: CompanyDetailProps) {
               )}
             </div>
           </div>
+        </div>
+
+        {/* Company Overview */}
+        <div className="mb-8">
+          <CompanyOverviewCard 
+            company={{
+              company_name: company.company_name,
+              description: company.description,
+              business_overview: company.business_overview,
+              website_url: company.website_url,
+              founded_year: company.founded_year,
+              headquarters: company.headquarters,
+              revenue_usd: company.revenue_usd,
+              employees: company.employees,
+              sector: company.sector,
+              industry: company.industry,
+              country: company.country,
+              is_public: company.is_public,
+              stock_exchange: company.stock_exchange,
+              market_cap_usd: company.market_cap_usd
+            }}
+            overview={companyOverview}
+          />
         </div>
 
         {/* KPI Cards */}
