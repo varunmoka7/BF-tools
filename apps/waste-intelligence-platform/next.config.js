@@ -4,8 +4,6 @@ const nextConfig = {
   swcMinify: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
-    // Remove unused CSS in production
-    removeUnusedCSS: process.env.NODE_ENV === 'production',
   },
   
   // Prevent multiple dev instances
@@ -13,8 +11,8 @@ const nextConfig = {
     turbo: {
       loaders: {},
     },
-    // Enable modern optimizations
-    optimizeCss: true,
+    // Temporarily disable optimizeCss due to critters dependency issues
+    // optimizeCss: true,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
   
@@ -33,8 +31,6 @@ const nextConfig = {
     pagesBufferLength: 2,
   },
   
-  // Disable telemetry to reduce overhead
-  telemetry: false,
   
   // Production optimizations
   ...(process.env.NODE_ENV === 'production' && {
