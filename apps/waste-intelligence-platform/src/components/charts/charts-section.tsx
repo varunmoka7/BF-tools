@@ -3,12 +3,26 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CompanyDistributionChart } from './company-distribution-chart'
 import { SectorBreakdownChart } from './sector-breakdown-chart'
-import { EmployeeDistributionChart } from './employee-distribution-chart'
 import { CountryCoverageChart } from './country-coverage-chart'
+import { WasteRecoveryDistributionChart } from './waste-recovery-distribution-chart'
+import { HazardousWasteBreakdownChart } from './hazardous-waste-breakdown-chart'
 
 export function ChartsSection() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* Waste Recovery Performance Distribution - Real Data from 325 Companies */}
+      <WasteRecoveryDistributionChart />
+
+      {/* Hazardous vs Non-Hazardous Breakdown */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-lg">Hazardous vs Non-Hazardous Breakdown</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <HazardousWasteBreakdownChart />
+        </CardContent>
+      </Card>
+
       {/* Company Distribution by Sector */}
       <Card>
         <CardHeader>
@@ -26,16 +40,6 @@ export function ChartsSection() {
         </CardHeader>
         <CardContent>
           <CountryCoverageChart />
-        </CardContent>
-      </Card>
-
-      {/* Employee Distribution */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-lg">Employee Distribution</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <EmployeeDistributionChart />
         </CardContent>
       </Card>
 

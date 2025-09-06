@@ -132,100 +132,140 @@ export default function CompaniesPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <div className="container mx-auto p-6">
-          <div className="flex items-center justify-center min-h-[400px]">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading companies...</p>
-            </div>
-          </div>
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-4 border-muted border-t-primary mx-auto mb-6"></div>
+          <p className="text-foreground text-xl">Loading companies...</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto p-6">
-        {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Companies</h1>
-              <p className="text-gray-600 mt-1">Explore {companies.length} companies and their waste management profiles</p>
+        {/* Hero Header */}
+        <div className="mb-8 text-center">
+          <div className="glass-card p-8 bg-card border border-border rounded-2xl mb-8">
+            <h1 className="text-5xl font-bold text-foreground mb-4 gradient-animated bg-clip-text text-transparent">
+              Company Directory
+            </h1>
+            <p className="text-xl text-foreground max-w-3xl mx-auto mb-6">
+              Explore {companies.length} companies and discover their comprehensive waste management profiles, sustainability initiatives, and environmental impact data
+            </p>
+            <div className="flex items-center justify-center space-x-6">
+              <div className="glass p-4 rounded-xl bg-card/50 border border-border hover-lift transition-all duration-300">
+                <div className="flex items-center space-x-3">
+                  <Building2 className="h-6 w-6 text-foreground" />
+                  <div className="text-left">
+                    <p className="text-2xl font-bold text-foreground">{companies.length}</p>
+                    <p className="text-muted-foreground text-sm">Total Companies</p>
+                  </div>
+                </div>
+              </div>
+              <div className="glass p-4 rounded-xl bg-card/50 border border-border hover-lift transition-all duration-300">
+                <div className="flex items-center space-x-3">
+                  <MapPin className="h-6 w-6 text-foreground" />
+                  <div className="text-left">
+                    <p className="text-2xl font-bold text-foreground">{countries.length}</p>
+                    <p className="text-muted-foreground text-sm">Countries</p>
+                  </div>
+                </div>
+              </div>
+              <div className="glass p-4 rounded-xl bg-card/50 border border-border hover-lift transition-all duration-300">
+                <div className="flex items-center space-x-3">
+                  <Filter className="h-6 w-6 text-foreground" />
+                  <div className="text-left">
+                    <p className="text-2xl font-bold text-foreground">{sectors.length}</p>
+                    <p className="text-muted-foreground text-sm">Sectors</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center space-x-3">
-              <button
-                onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-              >
-                <Filter className="h-4 w-4" />
-                <span>Filters</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Search Bar */}
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-            <input
-              type="text"
-              placeholder="Search companies by name or ticker..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
           </div>
         </div>
 
-        {/* Filters */}
+        {/* Search and Filter Controls */}
+        <div className="glass-card p-6 bg-card border border-border rounded-2xl mb-6">
+          <div className="flex flex-col lg:flex-row gap-4 items-center">
+            <div className="flex-1 w-full">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <input
+                  type="text"
+                  placeholder="Search companies by name or ticker..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-12 pr-4 py-3 bg-background border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-ring focus:border-border transition-all duration-300"
+                />
+              </div>
+            </div>
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className={`glass hover-lift px-6 py-3 rounded-xl border transition-all duration-300 flex items-center space-x-2 ${
+                showFilters 
+                ? 'bg-secondary border-border text-foreground' 
+                : 'bg-card border-border text-foreground hover:bg-secondary/50'
+              }`}
+            >
+              <Filter className="h-5 w-5" />
+              <span>Advanced Filters</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Advanced Filters */}
         {showFilters && (
-          <div className="bg-white rounded-lg shadow-sm border p-6 mb-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Advanced Filters</h2>
+          <div className="glass-card p-6 bg-card border border-border rounded-2xl mb-6">
+            <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-gradient-primary">
+                <Filter className="h-5 w-5 text-white" />
+              </div>
+              Advanced Filters
+            </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Country Filter */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Country</label>
+                <label className="block text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">Country</label>
                 <select
                   value={selectedCountry}
                   onChange={(e) => setSelectedCountry(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-xl text-foreground focus:ring-2 focus:ring-ring focus:border-border transition-all duration-300"
                 >
-                  <option value="">All Countries</option>
+                  <option value="" className="bg-background text-foreground">All Countries</option>
                   {countries.map(country => (
-                    <option key={country} value={country}>{country}</option>
+                    <option key={country} value={country} className="bg-background text-foreground">{country}</option>
                   ))}
                 </select>
               </div>
 
               {/* Sector Filter */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Sector</label>
+                <label className="block text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">Sector</label>
                 <select
                   value={selectedSector}
                   onChange={(e) => setSelectedSector(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-xl text-foreground focus:ring-2 focus:ring-ring focus:border-border transition-all duration-300"
                 >
-                  <option value="">All Sectors</option>
+                  <option value="" className="bg-background text-foreground">All Sectors</option>
                   {sectors.map(sector => (
-                    <option key={sector} value={sector}>{sector}</option>
+                    <option key={sector} value={sector} className="bg-background text-foreground">{sector}</option>
                   ))}
                 </select>
               </div>
 
               {/* Industry Filter */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Industry</label>
+                <label className="block text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">Industry</label>
                 <select
                   value={selectedIndustry}
                   onChange={(e) => setSelectedIndustry(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-xl text-foreground focus:ring-2 focus:ring-ring focus:border-border transition-all duration-300"
                 >
-                  <option value="">All Industries</option>
+                  <option value="" className="bg-background text-foreground">All Industries</option>
                   {industries.map(industry => (
-                    <option key={industry} value={industry}>{industry}</option>
+                    <option key={industry} value={industry} className="bg-background text-foreground">{industry}</option>
                   ))}
                 </select>
               </div>
@@ -234,9 +274,9 @@ export default function CompaniesPage() {
               <div className="flex items-end">
                 <button
                   onClick={clearFilters}
-                  className="w-full px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors"
+                  className="w-full px-4 py-3 bg-gradient-accent hover:bg-gradient-secondary text-white rounded-xl hover-lift transition-all duration-300 font-medium"
                 >
-                  Clear Filters
+                  Clear All Filters
                 </button>
               </div>
             </div>
@@ -244,142 +284,143 @@ export default function CompaniesPage() {
         )}
 
         {/* Results Summary */}
-        <div className="mb-6">
+        <div className="glass-card p-4 bg-card border border-border rounded-2xl mb-6">
           <div className="flex items-center justify-between">
-            <p className="text-gray-600">
-              Showing <span className="font-semibold">{filteredAndSortedCompanies.length}</span> of <span className="font-semibold">{companies.length}</span> companies
+            <p className="text-foreground">
+              Showing <span className="font-bold text-foreground">{filteredAndSortedCompanies.length}</span> of <span className="font-bold text-foreground">{companies.length}</span> companies
             </p>
-            <div className="flex items-center space-x-2 text-sm text-gray-500">
+            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <TrendingUp className="h-4 w-4" />
-              <span>Click column headers to sort</span>
+              <span>Click cards to view details</span>
             </div>
           </div>
         </div>
 
-        {/* Companies Table */}
-        <div className="bg-white rounded-lg shadow-sm border overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th 
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                    onClick={() => handleSort('name')}
-                  >
-                    <div className="flex items-center space-x-1">
-                      <span>Company</span>
-                      {getSortIcon('name')}
-                    </div>
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Ticker
-                  </th>
-                  <th 
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                    onClick={() => handleSort('country')}
-                  >
-                    <div className="flex items-center space-x-1">
-                      <span>Country</span>
-                      {getSortIcon('country')}
-                    </div>
-                  </th>
-                  <th 
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                    onClick={() => handleSort('sector')}
-                  >
-                    <div className="flex items-center space-x-1">
-                      <span>Sector</span>
-                      {getSortIcon('sector')}
-                    </div>
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Industry
-                  </th>
-                  <th 
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                    onClick={() => handleSort('employees')}
-                  >
-                    <div className="flex items-center space-x-1">
-                      <span>Employees</span>
-                      {getSortIcon('employees')}
-                    </div>
-                  </th>
-                  <th 
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                    onClick={() => handleSort('year_of_disclosure')}
-                  >
-                    <div className="flex items-center space-x-1">
-                      <span>Year</span>
-                      {getSortIcon('year_of_disclosure')}
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {filteredAndSortedCompanies.map((company) => (
-                  <tr key={company.id} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <Link 
-                        href={`/companies/${company.id}`}
-                        className="flex items-center space-x-3 group"
-                      >
-                        <div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-                          <Building2 className="h-4 w-4 text-blue-600" />
-                        </div>
-                        <div>
-                          <div className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
-                            {company.name}
-                          </div>
-                          <div className="text-xs text-gray-500">{company.exchange}</div>
-                        </div>
-                      </Link>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-gray-900">{company.ticker}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="flex items-center space-x-1">
-                        <MapPin className="h-3 w-3 text-gray-400" />
-                        <span className="text-sm text-gray-900">{company.country}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{company.sector}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{company.industry}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="flex items-center space-x-1">
-                        <Users className="h-3 w-3 text-gray-400" />
-                        <span className="text-sm text-gray-900">{formatNumber(company.employees)}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="flex items-center space-x-1">
-                        <Calendar className="h-3 w-3 text-gray-400" />
-                        <span className="text-sm text-gray-900">{company.year_of_disclosure}</span>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        {/* Sort Controls */}
+        <div className="glass-card p-4 bg-card border border-border rounded-2xl mb-6">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-foreground font-medium">Sort by:</span>
+            {[
+              { field: 'name', label: 'Company Name' },
+              { field: 'country', label: 'Country' },
+              { field: 'sector', label: 'Sector' },
+              { field: 'employees', label: 'Employees' },
+              { field: 'year_of_disclosure', label: 'Disclosure Year' }
+            ].map(({ field, label }) => (
+              <button
+                key={field}
+                onClick={() => handleSort(field as SortField)}
+                className={`px-4 py-2 rounded-xl flex items-center space-x-2 transition-all duration-300 hover-lift ${
+                  sortField === field
+                    ? 'bg-secondary border border-border text-foreground'
+                    : 'bg-card border border-border text-muted-foreground hover:bg-secondary/50'
+                }`}
+              >
+                <span className="text-sm font-medium">{label}</span>
+                {getSortIcon(field as SortField)}
+              </button>
+            ))}
           </div>
+        </div>
+
+        {/* Companies Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+          {filteredAndSortedCompanies.map((company) => (
+            <Link
+              key={company.id}
+              href={`/companies/${company.id}`}
+              className="glass-card p-6 bg-card border border-border rounded-2xl hover-lift transition-all duration-300 group cursor-pointer"
+            >
+              {/* Company Header */}
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <div className="p-3 bg-gradient-primary rounded-xl group-hover:shadow-lg transition-all duration-300">
+                    <Building2 className="h-6 w-6 text-foreground" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-foreground text-lg group-hover:text-foreground/90 transition-colors leading-tight overflow-hidden" style={{display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical'}}>
+                      {company.name}
+                    </h3>
+                    <div className="flex items-center space-x-2 mt-1">
+                      <span className="px-2 py-1 bg-secondary/50 rounded-lg text-xs font-mono text-foreground">
+                        {company.ticker}
+                      </span>
+                      <span className="text-xs text-muted-foreground">{company.exchange}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Company Details */}
+              <div className="space-y-3">
+                {/* Location */}
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 bg-secondary/20 rounded-lg">
+                    <MapPin className="h-4 w-4 text-muted-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-foreground">{company.country}</p>
+                    <p className="text-xs text-muted-foreground">Location</p>
+                  </div>
+                </div>
+
+                {/* Sector & Industry */}
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 bg-secondary/20 rounded-lg">
+                    <Filter className="h-4 w-4 text-muted-foreground" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-foreground overflow-hidden whitespace-nowrap text-ellipsis">{company.sector}</p>
+                    <p className="text-xs text-muted-foreground overflow-hidden whitespace-nowrap text-ellipsis">{company.industry}</p>
+                  </div>
+                </div>
+
+                {/* Employees */}
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 bg-secondary/20 rounded-lg">
+                    <Users className="h-4 w-4 text-muted-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-foreground">{formatNumber(company.employees)}</p>
+                    <p className="text-xs text-muted-foreground">Employees</p>
+                  </div>
+                </div>
+
+                {/* Disclosure Year */}
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 bg-secondary/20 rounded-lg">
+                    <Calendar className="h-4 w-4 text-muted-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-foreground">{company.year_of_disclosure}</p>
+                    <p className="text-xs text-muted-foreground">Disclosure Year</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* View Details Arrow */}
+              <div className="flex items-center justify-end mt-6 pt-4 border-t border-border">
+                <div className="flex items-center space-x-2 text-muted-foreground group-hover:text-foreground transition-colors">
+                  <span className="text-sm font-medium">View Details</span>
+                  <TrendingUp className="h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
 
         {/* No Results */}
         {filteredAndSortedCompanies.length === 0 && !loading && (
-          <div className="text-center py-12">
+          <div className="glass-card p-12 bg-card border border-border rounded-2xl text-center">
             <div className="max-w-md mx-auto">
-              <div className="p-4 bg-gray-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Search className="h-8 w-8 text-gray-400" />
+              <div className="p-6 bg-gradient-secondary rounded-2xl w-20 h-20 mx-auto mb-6 flex items-center justify-center hover-lift">
+                <Search className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">No companies found</h3>
-              <p className="text-gray-500 mb-4">Try adjusting your search terms or filters to find what you&apos;re looking for.</p>
+              <h3 className="text-2xl font-bold text-foreground mb-4">No companies found</h3>
+              <p className="text-muted-foreground mb-6 text-lg">Try adjusting your search terms or filters to find what you&apos;re looking for.</p>
               <button
                 onClick={clearFilters}
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                className="px-8 py-4 bg-gradient-accent hover:bg-gradient-secondary text-white rounded-xl hover-lift transition-all duration-300 font-semibold text-lg"
               >
                 Clear All Filters
               </button>

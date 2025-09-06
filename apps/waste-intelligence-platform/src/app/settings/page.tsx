@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { 
   Settings, 
   User, 
@@ -29,7 +29,12 @@ import {
   Plus,
   Edit,
   Lock,
-  Unlock
+  Unlock,
+  Monitor,
+  Sun,
+  Moon,
+  Languages,
+  Clock
 } from 'lucide-react'
 
 interface UserProfile {
@@ -69,10 +74,8 @@ interface SystemPreferences {
 }
 
 export default function SettingsPage() {
-  const [activeTab, setActiveTab] = useState<'profile' | 'notifications' | 'security' | 'preferences' | 'system'>('profile')
   const [loading, setLoading] = useState(false)
   const [saved, setSaved] = useState(false)
-  const [showPassword, setShowPassword] = useState(false)
 
   const [profile, setProfile] = useState<UserProfile>({
     name: 'John Doe',
@@ -119,576 +122,660 @@ export default function SettingsPage() {
     setTimeout(() => setSaved(false), 3000)
   }
 
-  const tabs = [
-    { id: 'profile', name: 'Profile', icon: User },
-    { id: 'notifications', name: 'Notifications', icon: Bell },
-    { id: 'security', name: 'Security', icon: Shield },
-    { id: 'preferences', name: 'Preferences', icon: Palette },
-    { id: 'system', name: 'System', icon: Database }
-  ]
-
-  const renderProfileSettings = () => (
-    <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Personal Information</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-              <input
-                type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={profile.name}
-                onChange={(e) => setProfile({ ...profile, name: e.target.value })}
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-              <input
-                type="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={profile.email}
-                onChange={(e) => setProfile({ ...profile, email: e.target.value })}
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-              <input
-                type="tel"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={profile.phone}
-                onChange={(e) => setProfile({ ...profile, phone: e.target.value })}
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Company</label>
-              <input
-                type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={profile.company}
-                onChange={(e) => setProfile({ ...profile, company: e.target.value })}
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Department</label>
-              <input
-                type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={profile.department}
-                onChange={(e) => setProfile({ ...profile, department: e.target.value })}
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Role</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={profile.role}
-                onChange={(e) => setProfile({ ...profile, role: e.target.value })}
-              >
-                <option value="Admin">Admin</option>
-                <option value="Manager">Manager</option>
-                <option value="Analyst">Analyst</option>
-                <option value="Viewer">Viewer</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Timezone</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={profile.timezone}
-                onChange={(e) => setProfile({ ...profile, timezone: e.target.value })}
-              >
-                <option value="America/New_York">Eastern Time (UTC-5)</option>
-                <option value="America/Chicago">Central Time (UTC-6)</option>
-                <option value="America/Denver">Mountain Time (UTC-7)</option>
-                <option value="America/Los_Angeles">Pacific Time (UTC-8)</option>
-                <option value="Europe/London">London (UTC+0)</option>
-                <option value="Europe/Paris">Paris (UTC+1)</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Language</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={profile.language}
-                onChange={(e) => setProfile({ ...profile, language: e.target.value })}
-              >
-                <option value="en-US">English (US)</option>
-                <option value="en-GB">English (UK)</option>
-                <option value="es-ES">Spanish</option>
-                <option value="fr-FR">French</option>
-                <option value="de-DE">German</option>
-              </select>
-            </div>
-          </div>
-          
-          <div className="flex justify-end">
-            <Button 
-              onClick={() => handleSave('profile')} 
-              disabled={loading}
-              className="flex items-center space-x-2"
-            >
-              {loading ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-              <span>Save Changes</span>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+  const GlassToggle = ({ 
+    enabled, 
+    onToggle, 
+    label, 
+    description 
+  }: { 
+    enabled: boolean
+    onToggle: () => void
+    label: string
+    description: string 
+  }) => (
+    <div className="bg-muted/20 p-6 border border-border rounded-lg hover:shadow-md transition-all duration-200">
+      <div className="flex items-center justify-between">
+        <div className="flex-1">
+          <h4 className="text-foreground font-semibold mb-1">{label}</h4>
+          <p className="text-muted-foreground text-sm">{description}</p>
+        </div>
+        <button
+          onClick={onToggle}
+          className={`relative inline-flex h-7 w-12 items-center rounded-full transition-all duration-300 ${
+            enabled 
+              ? 'bg-primary shadow-lg' 
+              : 'bg-muted border border-border'
+          }`}
+        >
+          <span className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform duration-300 shadow-md ${
+            enabled ? 'translate-x-6' : 'translate-x-1'
+          }`} />
+        </button>
+      </div>
     </div>
   )
 
-  const renderNotificationSettings = () => (
-    <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Email Notifications</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {[
-            { key: 'emailReports', label: 'Email Reports', description: 'Receive scheduled reports via email' },
-            { key: 'systemAlerts', label: 'System Alerts', description: 'Get notified about system issues and updates' },
-            { key: 'complianceAlerts', label: 'Compliance Alerts', description: 'Alerts when compliance thresholds are exceeded' },
-            { key: 'weeklyDigest', label: 'Weekly Digest', description: 'Summary of weekly activities and metrics' }
-          ].map((item) => (
-            <div key={item.key} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <div>
-                <h4 className="font-medium">{item.label}</h4>
-                <p className="text-sm text-gray-600">{item.description}</p>
-              </div>
-              <button
-                onClick={() => setNotifications({ ...notifications, [item.key]: !notifications[item.key as keyof NotificationSettings] })}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                  notifications[item.key as keyof NotificationSettings] ? 'bg-green-600' : 'bg-gray-200'
-                }`}
-              >
-                <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                  notifications[item.key as keyof NotificationSettings] ? 'translate-x-6' : 'translate-x-1'
-                }`} />
-              </button>
-            </div>
-          ))}
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Mobile & Push Notifications</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {[
-            { key: 'smsNotifications', label: 'SMS Notifications', description: 'Receive critical alerts via SMS' },
-            { key: 'pushNotifications', label: 'Push Notifications', description: 'Browser push notifications for real-time updates' }
-          ].map((item) => (
-            <div key={item.key} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <div>
-                <h4 className="font-medium">{item.label}</h4>
-                <p className="text-sm text-gray-600">{item.description}</p>
-              </div>
-              <button
-                onClick={() => setNotifications({ ...notifications, [item.key]: !notifications[item.key as keyof NotificationSettings] })}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                  notifications[item.key as keyof NotificationSettings] ? 'bg-green-600' : 'bg-gray-200'
-                }`}
-              >
-                <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                  notifications[item.key as keyof NotificationSettings] ? 'translate-x-6' : 'translate-x-1'
-                }`} />
-              </button>
-            </div>
-          ))}
-          
-          <div className="flex justify-end">
-            <Button 
-              onClick={() => handleSave('notifications')} 
-              disabled={loading}
-              className="flex items-center space-x-2"
-            >
-              {loading ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-              <span>Save Changes</span>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+  const GlassInput = ({ 
+    label, 
+    type = 'text', 
+    value, 
+    onChange, 
+    icon: Icon,
+    ...props 
+  }: { 
+    label: string
+    type?: string
+    value: string
+    onChange: (value: string) => void
+    icon?: any
+    [key: string]: any 
+  }) => (
+    <div className="space-y-2">
+      <label className="text-foreground text-sm font-medium flex items-center space-x-2">
+        {Icon && <Icon className="h-4 w-4" />}
+        <span>{label}</span>
+      </label>
+      <input
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
+        {...props}
+      />
     </div>
   )
 
-  const renderSecuritySettings = () => (
-    <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Account Security</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-            <div>
-              <h4 className="font-medium">Two-Factor Authentication</h4>
-              <p className="text-sm text-gray-600">Add an extra layer of security to your account</p>
-            </div>
-            <div className="flex items-center space-x-2">
-              {security.twoFactorEnabled ? (
-                <Badge className="bg-green-100 text-green-800">Enabled</Badge>
-              ) : (
-                <Badge className="bg-red-100 text-red-800">Disabled</Badge>
-              )}
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setSecurity({ ...security, twoFactorEnabled: !security.twoFactorEnabled })}
-              >
-                {security.twoFactorEnabled ? 'Disable' : 'Enable'}
-              </Button>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Session Timeout (minutes)</label>
-              <input
-                type="number"
-                min="5"
-                max="120"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={security.sessionTimeout}
-                onChange={(e) => setSecurity({ ...security, sessionTimeout: parseInt(e.target.value) })}
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Password Last Changed</label>
-              <div className="flex items-center space-x-2">
-                <input
-                  type="text"
-                  readOnly
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md bg-gray-50"
-                  value={security.passwordLastChanged.toLocaleDateString()}
-                />
-                <Button variant="outline" size="sm">
-                  Change
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            {[
-              { key: 'loginHistory', label: 'Login History Tracking', description: 'Keep track of login attempts and locations' },
-              { key: 'apiAccess', label: 'API Access', description: 'Allow third-party applications to access your data' }
-            ].map((item) => (
-              <div key={item.key} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                <div>
-                  <h4 className="font-medium">{item.label}</h4>
-                  <p className="text-sm text-gray-600">{item.description}</p>
-                </div>
-                <button
-                  onClick={() => setSecurity({ ...security, [item.key]: !security[item.key as keyof SecuritySettings] })}
-                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                    security[item.key as keyof SecuritySettings] ? 'bg-green-600' : 'bg-gray-200'
-                  }`}
-                >
-                  <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                    security[item.key as keyof SecuritySettings] ? 'translate-x-6' : 'translate-x-1'
-                  }`} />
-                </button>
-              </div>
-            ))}
-          </div>
-          
-          <div className="flex justify-end">
-            <Button 
-              onClick={() => handleSave('security')} 
-              disabled={loading}
-              className="flex items-center space-x-2"
-            >
-              {loading ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-              <span>Save Changes</span>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  )
-
-  const renderPreferences = () => (
-    <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Display Preferences</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Theme</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={preferences.theme}
-                onChange={(e) => setPreferences({ ...preferences, theme: e.target.value as 'light' | 'dark' | 'system' })}
-              >
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-                <option value="system">System</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Date Format</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={preferences.dateFormat}
-                onChange={(e) => setPreferences({ ...preferences, dateFormat: e.target.value })}
-              >
-                <option value="MM/DD/YYYY">MM/DD/YYYY</option>
-                <option value="DD/MM/YYYY">DD/MM/YYYY</option>
-                <option value="YYYY-MM-DD">YYYY-MM-DD</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Number Format</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={preferences.numberFormat}
-                onChange={(e) => setPreferences({ ...preferences, numberFormat: e.target.value })}
-              >
-                <option value="US">US (1,234.56)</option>
-                <option value="EU">EU (1.234,56)</option>
-                <option value="IN">IN (1,23,456.78)</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Default Dashboard</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={preferences.defaultDashboard}
-                onChange={(e) => setPreferences({ ...preferences, defaultDashboard: e.target.value })}
-              >
-                <option value="overview">Overview</option>
-                <option value="companies">Companies</option>
-                <option value="map">Global Map</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Items Per Page</label>
-              <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                value={preferences.itemsPerPage}
-                onChange={(e) => setPreferences({ ...preferences, itemsPerPage: parseInt(e.target.value) })}
-              >
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-              </select>
-            </div>
-          </div>
-          
-          <div className="flex justify-end">
-            <Button 
-              onClick={() => handleSave('preferences')} 
-              disabled={loading}
-              className="flex items-center space-x-2"
-            >
-              {loading ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-              <span>Save Changes</span>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  )
-
-  const renderSystemSettings = () => (
-    <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Data Management</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 border border-gray-200 rounded-lg">
-              <h3 className="font-medium mb-2 flex items-center space-x-2">
-                <Download className="h-5 w-5 text-blue-600" />
-                <span>Export Data</span>
-              </h3>
-              <p className="text-sm text-gray-600 mb-3">Download your data in various formats</p>
-              <div className="space-y-2">
-                <Button variant="outline" size="sm" className="w-full">
-                  Export as CSV
-                </Button>
-                <Button variant="outline" size="sm" className="w-full">
-                  Export as JSON
-                </Button>
-                <Button variant="outline" size="sm" className="w-full">
-                  Export as PDF
-                </Button>
-              </div>
-            </div>
-            
-            <div className="p-4 border border-gray-200 rounded-lg">
-              <h3 className="font-medium mb-2 flex items-center space-x-2">
-                <Upload className="h-5 w-5 text-green-600" />
-                <span>Import Data</span>
-              </h3>
-              <p className="text-sm text-gray-600 mb-3">Import data from external sources</p>
-              <div className="space-y-2">
-                <Button variant="outline" size="sm" className="w-full">
-                  Import CSV
-                </Button>
-                <Button variant="outline" size="sm" className="w-full">
-                  Import JSON
-                </Button>
-                <Button variant="outline" size="sm" className="w-full">
-                  Bulk Import
-                </Button>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>System Information</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-3">
-              <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Platform Version:</span>
-                <span className="text-sm font-medium">v1.2.3</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Last Updated:</span>
-                <span className="text-sm font-medium">Jan 15, 2024</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Database Version:</span>
-                <span className="text-sm font-medium">PostgreSQL 14.2</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-sm text-gray-600">API Status:</span>
-                <Badge className="bg-green-100 text-green-800">Online</Badge>
-              </div>
-            </div>
-            
-            <div className="space-y-3">
-              <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Storage Used:</span>
-                <span className="text-sm font-medium">2.4 GB / 10 GB</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Active Users:</span>
-                <span className="text-sm font-medium">127</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Uptime:</span>
-                <span className="text-sm font-medium">99.9%</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Support:</span>
-                <Button variant="link" size="sm" className="h-auto p-0">
-                  Contact Support
-                </Button>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-red-600">Danger Zone</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div className="p-4 border border-red-200 bg-red-50 rounded-lg">
-              <h3 className="font-medium text-red-800 mb-2">Delete Account</h3>
-              <p className="text-sm text-red-700 mb-3">
-                Permanently delete your account and all associated data. This action cannot be undone.
-              </p>
-              <Button variant="outline" className="text-red-600 border-red-300 hover:bg-red-50">
-                Delete Account
-              </Button>
-            </div>
-            
-            <div className="p-4 border border-orange-200 bg-orange-50 rounded-lg">
-              <h3 className="font-medium text-orange-800 mb-2">Clear All Data</h3>
-              <p className="text-sm text-orange-700 mb-3">
-                Remove all data from your account while keeping the account active.
-              </p>
-              <Button variant="outline" className="text-orange-600 border-orange-300 hover:bg-orange-50">
-                Clear Data
-              </Button>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+  const GlassSelect = ({ 
+    label, 
+    value, 
+    onChange, 
+    options, 
+    icon: Icon 
+  }: { 
+    label: string
+    value: string
+    onChange: (value: string) => void
+    options: { value: string; label: string }[]
+    icon?: any 
+  }) => (
+    <div className="space-y-2">
+      <label className="text-foreground text-sm font-medium flex items-center space-x-2">
+        {Icon && <Icon className="h-4 w-4" />}
+        <span>{label}</span>
+      </label>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all appearance-none"
+      >
+        {options.map((option) => (
+          <option key={option.value} value={option.value} className="bg-background text-foreground">
+            {option.label}
+          </option>
+        ))}
+      </select>
     </div>
   )
 
   return (
-    <div className="p-6 space-y-6">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <Settings className="h-8 w-8 text-green-600" />
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
-            <p className="text-gray-600">
-              Manage your account preferences and system configuration
-            </p>
+    <div className="min-h-screen bg-background relative">
+
+      {/* Hero Section */}
+      <div className="relative">
+        <div className="container mx-auto px-4 py-12">
+          <div className="text-center mb-12">
+            <div className="bg-card p-8 mb-8 border border-border max-w-4xl mx-auto rounded-lg">
+              <div className="flex items-center justify-center space-x-4 mb-6">
+                <Settings className="h-12 w-12 text-foreground" />
+                <h1 className="text-5xl font-bold text-foreground">
+                  Settings
+                </h1>
+              </div>
+              <p className="text-xl text-foreground mb-6 max-w-3xl mx-auto">
+                Customize your workspace, manage preferences, and configure system settings for optimal performance
+              </p>
+              <div className="flex items-center justify-center space-x-4 text-muted-foreground">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                  <span>Auto Save</span>
+                </div>
+                <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                  <span>Secure</span>
+                </div>
+                <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
+                  <span>Personalized</span>
+                </div>
+              </div>
+            </div>
+
+            {saved && (
+              <div className="bg-emerald-500/20 p-4 max-w-md mx-auto mb-8 border border-emerald-400/30 rounded-lg">
+                <div className="flex items-center justify-center space-x-2 text-emerald-600 dark:text-emerald-400">
+                  <CheckCircle className="h-5 w-5" />
+                  <span className="font-medium">Changes saved successfully!</span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
-        {saved && (
-          <div className="flex items-center space-x-2 text-green-600">
-            <CheckCircle className="h-5 w-5" />
-            <span className="text-sm font-medium">Changes saved successfully</span>
-          </div>
-        )}
       </div>
 
-      {/* Navigation Tabs */}
-      <Card>
-        <CardContent className="p-0">
-          <div className="flex overflow-x-auto">
-            {tabs.map((tab) => {
-              const Icon = tab.icon
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id as any)}
-                  className={`flex items-center space-x-2 px-6 py-4 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
-                    activeTab === tab.id
-                      ? 'border-green-600 text-green-600 bg-green-50'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'
-                  }`}
-                >
-                  <Icon className="h-4 w-4" />
-                  <span>{tab.name}</span>
-                </button>
-              )
-            })}
-          </div>
-        </CardContent>
-      </Card>
+      {/* Main Content */}
+      <div className="relative">
+        <div className="container mx-auto px-4 pb-12">
+          <Tabs defaultValue="general" className="space-y-8">
+            <TabsList className="bg-card p-2 w-full max-w-2xl mx-auto border border-border h-auto">
+              <TabsTrigger 
+                value="general" 
+                className="flex-1 py-4 px-6 text-muted-foreground data-[state=active]:text-foreground data-[state=active]:bg-muted/50 rounded-xl"
+              >
+                <div className="flex items-center space-x-2">
+                  <User className="h-5 w-5" />
+                  <span className="hidden sm:inline">General</span>
+                </div>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="privacy" 
+                className="flex-1 py-4 px-6 text-muted-foreground data-[state=active]:text-foreground data-[state=active]:bg-muted/50 rounded-xl"
+              >
+                <div className="flex items-center space-x-2">
+                  <Shield className="h-5 w-5" />
+                  <span className="hidden sm:inline">Data & Privacy</span>
+                </div>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="display" 
+                className="flex-1 py-4 px-6 text-muted-foreground data-[state=active]:text-foreground data-[state=active]:bg-muted/50 rounded-xl"
+              >
+                <div className="flex items-center space-x-2">
+                  <Palette className="h-5 w-5" />
+                  <span className="hidden sm:inline">Display</span>
+                </div>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="advanced" 
+                className="flex-1 py-4 px-6 text-muted-foreground data-[state=active]:text-foreground data-[state=active]:bg-muted/50 rounded-xl"
+              >
+                <div className="flex items-center space-x-2">
+                  <Database className="h-5 w-5" />
+                  <span className="hidden sm:inline">Advanced</span>
+                </div>
+              </TabsTrigger>
+            </TabsList>
 
-      {/* Settings Content */}
-      <div>
-        {activeTab === 'profile' && renderProfileSettings()}
-        {activeTab === 'notifications' && renderNotificationSettings()}
-        {activeTab === 'security' && renderSecuritySettings()}
-        {activeTab === 'preferences' && renderPreferences()}
-        {activeTab === 'system' && renderSystemSettings()}
+            {/* General Settings */}
+            <TabsContent value="general" className="space-y-8">
+              {/* Profile Section */}
+              <div className="bg-card p-8 border border-border rounded-lg hover:shadow-lg transition-all duration-200">
+                <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center space-x-3">
+                  <User className="h-6 w-6" />
+                  <span>Profile Information</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <GlassInput
+                    label="Full Name"
+                    value={profile.name}
+                    onChange={(value) => setProfile({ ...profile, name: value })}
+                    icon={User}
+                    placeholder="Enter your full name"
+                  />
+                  <GlassInput
+                    label="Email Address"
+                    type="email"
+                    value={profile.email}
+                    onChange={(value) => setProfile({ ...profile, email: value })}
+                    icon={Mail}
+                    placeholder="Enter your email"
+                  />
+                  <GlassInput
+                    label="Phone Number"
+                    type="tel"
+                    value={profile.phone}
+                    onChange={(value) => setProfile({ ...profile, phone: value })}
+                    icon={Phone}
+                    placeholder="Enter your phone number"
+                  />
+                  <GlassInput
+                    label="Company"
+                    value={profile.company}
+                    onChange={(value) => setProfile({ ...profile, company: value })}
+                    icon={Building}
+                    placeholder="Enter your company name"
+                  />
+                  <GlassSelect
+                    label="Role"
+                    value={profile.role}
+                    onChange={(value) => setProfile({ ...profile, role: value })}
+                    icon={Key}
+                    options={[
+                      { value: 'Admin', label: 'Administrator' },
+                      { value: 'Manager', label: 'Manager' },
+                      { value: 'Analyst', label: 'Analyst' },
+                      { value: 'Viewer', label: 'Viewer' }
+                    ]}
+                  />
+                  <GlassSelect
+                    label="Timezone"
+                    value={profile.timezone}
+                    onChange={(value) => setProfile({ ...profile, timezone: value })}
+                    icon={Clock}
+                    options={[
+                      { value: 'America/New_York', label: 'Eastern Time (UTC-5)' },
+                      { value: 'America/Chicago', label: 'Central Time (UTC-6)' },
+                      { value: 'America/Denver', label: 'Mountain Time (UTC-7)' },
+                      { value: 'America/Los_Angeles', label: 'Pacific Time (UTC-8)' },
+                      { value: 'Europe/London', label: 'London (UTC+0)' },
+                      { value: 'Europe/Paris', label: 'Paris (UTC+1)' }
+                    ]}
+                  />
+                </div>
+                <div className="flex justify-end mt-8">
+                  <Button 
+                    onClick={() => handleSave('profile')} 
+                    disabled={loading}
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
+                  >
+                    {loading ? (
+                      <>
+                        <RefreshCw className="h-5 w-5 mr-2 animate-spin" />
+                        Saving...
+                      </>
+                    ) : (
+                      <>
+                        <Save className="h-5 w-5 mr-2" />
+                        Save Changes
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </div>
+
+              {/* Notifications Section */}
+              <div className="bg-card p-8 border border-border rounded-lg hover:shadow-lg transition-all duration-200">
+                <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center space-x-3">
+                  <Bell className="h-6 w-6" />
+                  <span>Notifications</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <GlassToggle
+                    enabled={notifications.emailReports}
+                    onToggle={() => setNotifications({ ...notifications, emailReports: !notifications.emailReports })}
+                    label="Email Reports"
+                    description="Receive scheduled reports via email"
+                  />
+                  <GlassToggle
+                    enabled={notifications.systemAlerts}
+                    onToggle={() => setNotifications({ ...notifications, systemAlerts: !notifications.systemAlerts })}
+                    label="System Alerts"
+                    description="Get notified about system issues"
+                  />
+                  <GlassToggle
+                    enabled={notifications.complianceAlerts}
+                    onToggle={() => setNotifications({ ...notifications, complianceAlerts: !notifications.complianceAlerts })}
+                    label="Compliance Alerts"
+                    description="Alerts when thresholds are exceeded"
+                  />
+                  <GlassToggle
+                    enabled={notifications.weeklyDigest}
+                    onToggle={() => setNotifications({ ...notifications, weeklyDigest: !notifications.weeklyDigest })}
+                    label="Weekly Digest"
+                    description="Summary of weekly activities"
+                  />
+                  <GlassToggle
+                    enabled={notifications.smsNotifications}
+                    onToggle={() => setNotifications({ ...notifications, smsNotifications: !notifications.smsNotifications })}
+                    label="SMS Notifications"
+                    description="Receive critical alerts via SMS"
+                  />
+                  <GlassToggle
+                    enabled={notifications.pushNotifications}
+                    onToggle={() => setNotifications({ ...notifications, pushNotifications: !notifications.pushNotifications })}
+                    label="Push Notifications"
+                    description="Browser push notifications"
+                  />
+                </div>
+                <div className="flex justify-end mt-8">
+                  <Button 
+                    onClick={() => handleSave('notifications')} 
+                    disabled={loading}
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
+                  >
+                    {loading ? (
+                      <>
+                        <RefreshCw className="h-5 w-5 mr-2 animate-spin" />
+                        Saving...
+                      </>
+                    ) : (
+                      <>
+                        <Save className="h-5 w-5 mr-2" />
+                        Save Changes
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </div>
+            </TabsContent>
+
+            {/* Data & Privacy Settings */}
+            <TabsContent value="privacy" className="space-y-8">
+              {/* Security Section */}
+              <div className="bg-card p-8 border border-border rounded-lg hover:shadow-lg transition-all duration-200">
+                <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center space-x-3">
+                  <Shield className="h-6 w-6" />
+                  <span>Account Security</span>
+                </h2>
+                
+                <div className="bg-muted/20 p-6 mb-6 border border-border rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="text-foreground font-semibold mb-1">Two-Factor Authentication</h4>
+                      <p className="text-muted-foreground text-sm">Add an extra layer of security to your account</p>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <Badge className={security.twoFactorEnabled ? "bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 border border-emerald-400/30" : "bg-red-500/20 text-red-600 dark:text-red-300 border border-red-400/30"}>
+                        {security.twoFactorEnabled ? 'Enabled' : 'Disabled'}
+                      </Badge>
+                      <Button
+                        variant="outline"
+                        onClick={() => setSecurity({ ...security, twoFactorEnabled: !security.twoFactorEnabled })}
+                        className="border-border text-foreground hover:bg-muted"
+                      >
+                        {security.twoFactorEnabled ? 'Disable' : 'Enable'}
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <GlassToggle
+                    enabled={security.loginHistory}
+                    onToggle={() => setSecurity({ ...security, loginHistory: !security.loginHistory })}
+                    label="Login History Tracking"
+                    description="Keep track of login attempts and locations"
+                  />
+                  <GlassToggle
+                    enabled={security.apiAccess}
+                    onToggle={() => setSecurity({ ...security, apiAccess: !security.apiAccess })}
+                    label="API Access"
+                    description="Allow third-party applications access"
+                  />
+                </div>
+
+                <div className="mt-6">
+                  <GlassInput
+                    label="Session Timeout (minutes)"
+                    type="number"
+                    value={security.sessionTimeout.toString()}
+                    onChange={(value) => setSecurity({ ...security, sessionTimeout: parseInt(value) || 30 })}
+                    icon={Clock}
+                  />
+                </div>
+
+                <div className="flex justify-end mt-8">
+                  <Button 
+                    onClick={() => handleSave('security')} 
+                    disabled={loading}
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
+                  >
+                    {loading ? (
+                      <>
+                        <RefreshCw className="h-5 w-5 mr-2 animate-spin" />
+                        Saving...
+                      </>
+                    ) : (
+                      <>
+                        <Save className="h-5 w-5 mr-2" />
+                        Save Changes
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </div>
+
+              {/* Data Management Section */}
+              <div className="bg-card p-8 border border-border rounded-lg hover:shadow-lg transition-all duration-200">
+                <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center space-x-3">
+                  <Database className="h-6 w-6" />
+                  <span>Data Management</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-muted/20 p-6 border border-border rounded-lg">
+                    <h3 className="text-foreground font-semibold mb-4 flex items-center space-x-2">
+                      <Download className="h-5 w-5 text-blue-500" />
+                      <span>Export Data</span>
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">Download your data in various formats</p>
+                    <div className="space-y-3">
+                      <Button variant="outline" className="w-full border-border text-foreground hover:bg-muted">
+                        Export as CSV
+                      </Button>
+                      <Button variant="outline" className="w-full border-border text-foreground hover:bg-muted">
+                        Export as JSON
+                      </Button>
+                      <Button variant="outline" className="w-full border-border text-foreground hover:bg-muted">
+                        Export as PDF
+                      </Button>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-muted/20 p-6 border border-border rounded-lg">
+                    <h3 className="text-foreground font-semibold mb-4 flex items-center space-x-2">
+                      <Upload className="h-5 w-5 text-green-500" />
+                      <span>Import Data</span>
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">Import data from external sources</p>
+                    <div className="space-y-3">
+                      <Button variant="outline" className="w-full border-border text-foreground hover:bg-muted">
+                        Import CSV
+                      </Button>
+                      <Button variant="outline" className="w-full border-border text-foreground hover:bg-muted">
+                        Import JSON
+                      </Button>
+                      <Button variant="outline" className="w-full border-border text-foreground hover:bg-muted">
+                        Bulk Import
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            {/* Display Settings */}
+            <TabsContent value="display" className="space-y-8">
+              <div className="bg-card p-8 border border-border rounded-lg hover:shadow-lg transition-all duration-200">
+                <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center space-x-3">
+                  <Palette className="h-6 w-6" />
+                  <span>Display Preferences</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <GlassSelect
+                    label="Theme"
+                    value={preferences.theme}
+                    onChange={(value) => setPreferences({ ...preferences, theme: value as 'light' | 'dark' | 'system' })}
+                    icon={preferences.theme === 'light' ? Sun : preferences.theme === 'dark' ? Moon : Monitor}
+                    options={[
+                      { value: 'light', label: 'Light Theme' },
+                      { value: 'dark', label: 'Dark Theme' },
+                      { value: 'system', label: 'System Default' }
+                    ]}
+                  />
+                  <GlassSelect
+                    label="Language"
+                    value={profile.language}
+                    onChange={(value) => setProfile({ ...profile, language: value })}
+                    icon={Languages}
+                    options={[
+                      { value: 'en-US', label: 'English (US)' },
+                      { value: 'en-GB', label: 'English (UK)' },
+                      { value: 'es-ES', label: 'Spanish' },
+                      { value: 'fr-FR', label: 'French' },
+                      { value: 'de-DE', label: 'German' }
+                    ]}
+                  />
+                  <GlassSelect
+                    label="Date Format"
+                    value={preferences.dateFormat}
+                    onChange={(value) => setPreferences({ ...preferences, dateFormat: value })}
+                    icon={Clock}
+                    options={[
+                      { value: 'MM/DD/YYYY', label: 'MM/DD/YYYY' },
+                      { value: 'DD/MM/YYYY', label: 'DD/MM/YYYY' },
+                      { value: 'YYYY-MM-DD', label: 'YYYY-MM-DD' }
+                    ]}
+                  />
+                  <GlassSelect
+                    label="Default Dashboard"
+                    value={preferences.defaultDashboard}
+                    onChange={(value) => setPreferences({ ...preferences, defaultDashboard: value })}
+                    icon={Monitor}
+                    options={[
+                      { value: 'overview', label: 'Overview Dashboard' },
+                      { value: 'companies', label: 'Companies Directory' },
+                      { value: 'map', label: 'Global Map' }
+                    ]}
+                  />
+                  <GlassSelect
+                    label="Items Per Page"
+                    value={preferences.itemsPerPage.toString()}
+                    onChange={(value) => setPreferences({ ...preferences, itemsPerPage: parseInt(value) })}
+                    icon={Info}
+                    options={[
+                      { value: '10', label: '10 items' },
+                      { value: '25', label: '25 items' },
+                      { value: '50', label: '50 items' },
+                      { value: '100', label: '100 items' }
+                    ]}
+                  />
+                  <GlassSelect
+                    label="Number Format"
+                    value={preferences.numberFormat}
+                    onChange={(value) => setPreferences({ ...preferences, numberFormat: value })}
+                    icon={Globe}
+                    options={[
+                      { value: 'US', label: 'US (1,234.56)' },
+                      { value: 'EU', label: 'EU (1.234,56)' },
+                      { value: 'IN', label: 'IN (1,23,456.78)' }
+                    ]}
+                  />
+                </div>
+                <div className="flex justify-end mt-8">
+                  <Button 
+                    onClick={() => handleSave('preferences')} 
+                    disabled={loading}
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
+                  >
+                    {loading ? (
+                      <>
+                        <RefreshCw className="h-5 w-5 mr-2 animate-spin" />
+                        Saving...
+                      </>
+                    ) : (
+                      <>
+                        <Save className="h-5 w-5 mr-2" />
+                        Save Changes
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </div>
+            </TabsContent>
+
+            {/* Advanced Settings */}
+            <TabsContent value="advanced" className="space-y-8">
+              {/* System Information */}
+              <div className="bg-card p-8 border border-border rounded-lg hover:shadow-lg transition-all duration-200">
+                <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center space-x-3">
+                  <Info className="h-6 w-6" />
+                  <span>System Information</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <div className="bg-muted/20 p-4 border border-border rounded-lg">
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Platform Version:</span>
+                        <Badge className="bg-blue-500/20 text-blue-600 dark:text-blue-300 border border-blue-400/30">v1.2.3</Badge>
+                      </div>
+                    </div>
+                    <div className="bg-muted/20 p-4 border border-border rounded-lg">
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Database Version:</span>
+                        <Badge className="bg-purple-500/20 text-purple-600 dark:text-purple-300 border border-purple-400/30">PostgreSQL 14.2</Badge>
+                      </div>
+                    </div>
+                    <div className="bg-muted/20 p-4 border border-border rounded-lg">
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">API Status:</span>
+                        <Badge className="bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 border border-emerald-400/30">Online</Badge>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="bg-muted/20 p-4 border border-border rounded-lg">
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Storage Used:</span>
+                        <span className="text-foreground font-medium">2.4 GB / 10 GB</span>
+                      </div>
+                    </div>
+                    <div className="bg-muted/20 p-4 border border-border rounded-lg">
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Active Users:</span>
+                        <span className="text-foreground font-medium">127</span>
+                      </div>
+                    </div>
+                    <div className="bg-muted/20 p-4 border border-border rounded-lg">
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Uptime:</span>
+                        <span className="text-foreground font-medium">99.9%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Danger Zone */}
+              <div className="bg-red-50 dark:bg-red-950 p-8 border border-red-200 dark:border-red-800 rounded-lg hover:shadow-lg transition-all duration-200">
+                <h2 className="text-2xl font-bold text-red-700 dark:text-red-300 mb-6 flex items-center space-x-3">
+                  <AlertTriangle className="h-6 w-6" />
+                  <span>Danger Zone</span>
+                </h2>
+                <div className="space-y-6">
+                  <div className="bg-red-50 dark:bg-red-950 p-6 border border-red-200 dark:border-red-800 rounded-lg">
+                    <h3 className="text-red-800 dark:text-red-200 font-semibold mb-2">Delete Account</h3>
+                    <p className="text-red-700 dark:text-red-300 text-sm mb-4">
+                      Permanently delete your account and all associated data. This action cannot be undone.
+                    </p>
+                    <Button 
+                      variant="destructive"
+                      className="bg-red-600 hover:bg-red-700 text-white"
+                    >
+                      <Trash2 className="h-4 w-4 mr-2" />
+                      Delete Account
+                    </Button>
+                  </div>
+                  
+                  <div className="bg-orange-50 dark:bg-orange-950 p-6 border border-orange-200 dark:border-orange-800 rounded-lg">
+                    <h3 className="text-orange-800 dark:text-orange-200 font-semibold mb-2">Clear All Data</h3>
+                    <p className="text-orange-700 dark:text-orange-300 text-sm mb-4">
+                      Remove all data from your account while keeping the account active.
+                    </p>
+                    <Button 
+                      variant="outline"
+                      className="bg-orange-600 hover:bg-orange-700 text-white border-orange-600 hover:border-orange-700"
+                    >
+                      <Database className="h-4 w-4 mr-2" />
+                      Clear Data
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
       </div>
     </div>
   )

@@ -196,7 +196,7 @@ export function CompanyDirectory() {
           {filteredAndSortedCompanies.map((company) => (
             <Link
               key={company.company_id}
-              href={`/company/${company.company_id}`}
+              href={`/companies/${company.company_id}`}
               className="block"
             >
               <div className="grid grid-cols-7 gap-4 p-3 rounded-lg border hover:bg-gray-50 transition-colors">

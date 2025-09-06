@@ -10,12 +10,23 @@ interface CompanyOverviewProps {
     company_name: string
     description?: string
     business_overview?: string
+    website_url?: string
+    founded_year?: number
+    headquarters?: string
+    revenue_usd?: number
+    employees?: number
+    sector?: string
+    industry?: string
+    country?: string
+    is_public?: boolean
+    stock_exchange?: string
+    market_cap_usd?: number
   }
   overview?: {
     enhanced_overview?: string
     business_overview?: string
     source?: string
-  }
+  } | null
 }
 
 export function CompanyOverviewCard({ company, overview }: CompanyOverviewProps) {

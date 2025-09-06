@@ -9,6 +9,12 @@ export interface KPIData {
   avgRecoveryRate: number | null;
   countriesCovered: number;
   lastUpdated: string;
+  // Additional properties for KPI cards
+  hazardousPercentage: number;
+  dataCoveragePercentage: number;
+  companiesWithRecentData: number;
+  topPerformingSector: string;
+  topSectorRecoveryRate: number;
 }
 
 interface KPIContextType {
