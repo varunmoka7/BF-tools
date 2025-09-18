@@ -3,6 +3,7 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet';
 import { Icon } from 'leaflet';
+import { useRouter } from 'next/navigation';
 import 'leaflet/dist/leaflet.css';
 import { Company, CountryData, MapView } from '@/types/map';
 
@@ -150,11 +151,12 @@ const CountryMarker = React.memo(({ country, onClick }: {
 
 CountryMarker.displayName = 'CountryMarker';
 
-const CompanyMarker = React.memo(({ company, onCompanyClick, onHover, onHoverEnd }: {
+const CompanyMarker = React.memo(({ company, onCompanyClick, onHover, onHoverEnd, onViewDetails }: {
   company: Company;
   onCompanyClick: (company: Company) => void;
   onHover: (company: Company) => void;
   onHoverEnd: () => void;
+  onViewDetails: (company: Company) => void;
 }) => {
   const markerSize = useMemo(() => {
     if (company.employees < 10000) return 'small';
@@ -179,7 +181,7 @@ const CompanyMarker = React.memo(({ company, onCompanyClick, onHover, onHoverEnd
           <p className="text-gray-600">Employees: {company.employees.toLocaleString()}</p>
           <p className="text-gray-500 text-sm">{company.coordinates.address}</p>
           <button
-            onClick={() => onCompanyClick(company)}
+            onClick={() => onViewDetails(company)}
             className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
           >
             View Details
@@ -193,6 +195,7 @@ const CompanyMarker = React.memo(({ company, onCompanyClick, onHover, onHoverEnd
 CompanyMarker.displayName = 'CompanyMarker';
 
 export default React.memo(function GlobalWasteMap({ companies, onCompanySelect }: GlobalWasteMapProps) {
+  const router = useRouter();
   const [mapView, setMapView] = useState<MapView>({ type: 'country', zoomLevel: 4 });
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [hoveredCompany, setHoveredCompany] = useState<Company | null>(null);
@@ -238,6 +241,10 @@ export default React.memo(function GlobalWasteMap({ companies, onCompanySelect }
     onCompanySelect?.(company);
   }, [onCompanySelect]);
 
+  const handleViewDetails = useCallback((company: Company) => {
+    router.push(`/companies/${company.id}`);
+  }, [router]);
+
   const resetToCountryView = useCallback(() => {
     setSelectedCountry(null);
     setMapView({ type: 'country', zoomLevel: 4 });
@@ -252,7 +259,7 @@ export default React.memo(function GlobalWasteMap({ companies, onCompanySelect }
   }, []);
 
   return (
-    <div className="w-full h-full">
+    <div className="relative w-full h-full">
       {/* Map Controls */}
       <div className="absolute top-4 left-4 z-10 bg-white rounded-lg shadow-lg p-4">
         <div className="flex flex-col gap-3">
@@ -316,6 +323,7 @@ export default React.memo(function GlobalWasteMap({ companies, onCompanySelect }
                 onCompanyClick={handleCompanyClick}
                 onHover={handleCompanyHover}
                 onHoverEnd={handleCompanyHoverEnd}
+                onViewDetails={handleViewDetails}
               />
             ))}
           </>

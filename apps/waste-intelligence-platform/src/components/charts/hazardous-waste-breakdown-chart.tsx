@@ -17,20 +17,27 @@ const COLORS = {
 }
 
 export function HazardousWasteBreakdownChart() {
+  console.log('🔥🔥 HazardousWasteBreakdownChart COMPONENT MOUNTING!')
   const [data, setData] = useState<HazardousBreakdownData[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
+  console.log('🔥 HazardousWasteBreakdownChart render state:', { data, loading, error })
+
   useEffect(() => {
+    console.log('🔥 HazardousWasteBreakdownChart useEffect triggered!')
     const fetchHazardousBreakdown = async () => {
+      console.log('🔥 HazardousWasteBreakdownChart fetchHazardousBreakdown starting...')
       try {
         const response = await fetch('/api/charts/hazardous-breakdown')
         if (!response.ok) {
           throw new Error('Failed to fetch hazardous breakdown data')
         }
         const result = await response.json()
+        console.log('🔥 HazardousWasteBreakdownChart API response:', result)
         if (result.success) {
           setData(result.data)
+          console.log('🔥 HazardousWasteBreakdownChart data set:', result.data)
         } else {
           throw new Error(result.error || 'Failed to load hazardous breakdown')
         }

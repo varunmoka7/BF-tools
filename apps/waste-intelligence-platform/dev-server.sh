@@ -49,12 +49,26 @@ check_resources() {
 # Function to start development server with monitoring
 start_dev_server() {
     echo "🚀 Starting Next.js development server..."
-    
+
     # Set environment variables for optimal performance
     export NODE_OPTIONS="--max-old-space-size=4096"
     export NEXT_TELEMETRY_DISABLED=1
-    
+
+    # Ensure we're in the correct directory
+    if [[ ! -f "package.json" ]]; then
+        echo "❌ package.json not found. Make sure you're in the app directory."
+        exit 1
+    fi
+
+    # Final port check before starting
+    if lsof -Pi :3000 -sTCP:LISTEN -t >/dev/null 2>&1; then
+        echo "❌ Port 3000 is still occupied. Cleaning up..."
+        lsof -ti:3000 | xargs kill -9 2>/dev/null || true
+        sleep 2
+    fi
+
     # Start the development server
+    echo "✅ Starting Next.js on port 3000..."
     npm run dev
 }
 

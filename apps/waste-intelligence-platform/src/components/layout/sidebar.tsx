@@ -4,11 +4,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 import { cn } from '@/lib/utils'
-import { 
-  BarChart3, 
-  Globe, 
-  Building2, 
-  Settings,
+import {
+  BarChart3,
+  Globe,
+  Building2,
   Recycle
 } from 'lucide-react'
 
@@ -16,7 +15,6 @@ const navigation = [
   { name: 'Dashboard', href: '/', icon: BarChart3 },
   { name: 'Global Map', href: '/map', icon: Globe },
   { name: 'Companies', href: '/companies', icon: Building2 },
-  { name: 'Settings', href: '/settings', icon: Settings },
 ]
 
 export function Sidebar() {

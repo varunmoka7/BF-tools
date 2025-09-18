@@ -15,9 +15,9 @@ const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 // Input validation and sanitization
 function validateRequest(request: NextRequest): { valid: boolean; error?: string } {
   const userAgent = request.headers.get('user-agent');
-  
-  // Basic security checks
-  if (!userAgent || userAgent.includes('bot')) {
+
+  // Basic security checks - relaxed for development
+  if (!userAgent) {
     return { valid: false, error: 'Invalid user agent' };
   }
   

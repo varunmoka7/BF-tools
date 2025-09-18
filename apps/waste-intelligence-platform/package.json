@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NEXT_TELEMETRY_DISABLED=1 NODE_OPTIONS='--max-old-space-size=4096' next dev",
+    "dev": "NEXT_TELEMETRY_DISABLED=1 NODE_OPTIONS='--max-old-space-size=4096' next dev --port 3000",
     "dev:safe": "./dev-server.sh",
     "dev:clean": "./dev-server.sh --clean",
     "monitor": "./monitor-server.sh",

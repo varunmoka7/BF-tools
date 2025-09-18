@@ -1,14 +1,21 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-if (!supabaseUrl) {
-  throw new Error('Missing NEXT_PUBLIC_SUPABASE_URL environment variable')
+let supabaseClient: SupabaseClient | null = null
+
+if (supabaseUrl && supabaseAnonKey) {
+  supabaseClient = createClient(supabaseUrl, supabaseAnonKey)
+} else if (process.env.NODE_ENV !== 'production') {
+  console.warn(
+    'Supabase environment variables are missing. Falling back to local mock data for API routes.'
+  )
 }
 
-if (!supabaseAnonKey) {
-  throw new Error('Missing NEXT_PUBLIC_SUPABASE_ANON_KEY environment variable')
-}
+export const supabase = supabaseClient
+export const isSupabaseConfigured = Boolean(supabaseClient)
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export function getSupabaseClient(): SupabaseClient | null {
+  return supabaseClient
+}

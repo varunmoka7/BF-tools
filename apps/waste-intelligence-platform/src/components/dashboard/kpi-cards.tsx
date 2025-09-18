@@ -5,11 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { formatNumber } from '@/lib/utils'
 import { useKPI } from '@/contexts/kpi-context'
 import { 
-  TrendingUp, 
   Building2, 
   Globe,
   CheckCircle,
-  Users,
   Trash2,
   AlertTriangle,
   Database,
@@ -24,27 +22,32 @@ const KPICard = React.memo(({ title, value, icon: Icon, trend, trendColor, index
   trendColor: string;
   index: number;
 }) => (
-  <div 
-    className="glass-card hover-lift p-6 bg-card border border-border rounded-2xl group cursor-pointer transition-all duration-300"
+  <div
+    className="relative rounded-2xl border border-border/70 bg-background p-6 group transition-transform duration-200 hover:-translate-y-1 hover:shadow-modern"
     style={{ animationDelay: `${index * 0.1}s` }}
   >
-    <div className="flex flex-row items-center justify-between mb-4">
-      <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-        {title}
-      </h3>
-      <div className="p-2 rounded-xl bg-gradient-primary group-hover:scale-110 transition-transform duration-300">
-        <Icon className="h-5 w-5 text-white" />
+    <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/70 via-primary/20 to-primary/60 opacity-80 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" aria-hidden="true" />
+    <div className="relative flex flex-col h-full">
+      <div className="flex flex-row items-start justify-between mb-6">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground/80">
+            {title}
+          </p>
+        </div>
+        <div className="p-2.5 rounded-xl bg-gradient-primary shadow-sm text-white transition-transform duration-200 group-hover:scale-110">
+          <Icon className="h-5 w-5" />
+        </div>
+      </div>
+      <div className="flex-1 space-y-4">
+        <div className="text-3xl font-bold text-foreground animate-count tracking-tight">
+          {value}
+        </div>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted/30 border border-border/60 text-sm font-medium text-muted-foreground">
+          <span className={`h-2 w-2 rounded-full ${trendColor.replace('text', 'bg')}`} aria-hidden="true" />
+          <span className="leading-none">{trend}</span>
+        </div>
       </div>
     </div>
-    <div className="space-y-2">
-      <div className="text-3xl font-bold text-foreground animate-count">
-        {value}
-      </div>
-      <div className={`text-sm flex items-center ${trendColor.replace('text-', 'text-white/')}`}>
-        <span className="text-muted-foreground">{trend}</span>
-      </div>
-    </div>
-    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
   </div>
 ))
 

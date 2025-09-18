@@ -149,7 +149,8 @@
 
 /* Leaflet map styles */
 .leaflet-container {
-  height: 400px;
+  height: 100%;
+  min-height: 400px;
   width: 100%;
 }
 

@@ -119,11 +119,13 @@ export function CompaniesProvider({ children }: { children: ReactNode }) {
       }
       
       const companiesData: Company[] = await response.json()
-      
-      console.log('Companies data loaded:', {
+
+      console.log('🏢 CompaniesContext: Data loaded successfully:', {
         count: companiesData.length,
         firstCompany: companiesData[0],
-        sample: companiesData.slice(0, 3)
+        sample: companiesData.slice(0, 3),
+        loading: false,
+        error: null
       })
       
       setCompanies(companiesData)

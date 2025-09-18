@@ -2,7 +2,31 @@ import { NextResponse } from 'next/server'
 import { promises as fs } from 'fs'
 import path from 'path'
 
+const CACHE_KEY = '__hazardous_breakdown_cache__'
+const CACHE_TTL = 1000 * 60 * 10 // 10 minutes
+
+type HazardousCache = {
+  timestamp: number
+  payload: {
+    success: true
+    data: Array<{ name: string; value: number; percentage: number }>
+  }
+}
+
+function getCache(): HazardousCache | undefined {
+  return (globalThis as any)[CACHE_KEY]
+}
+
+function setCache(entry: HazardousCache) {
+  ;(globalThis as any)[CACHE_KEY] = entry
+}
+
 export async function GET() {
+  const cached = getCache()
+  if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
+    return NextResponse.json(cached.payload)
+  }
+
   try {
     // Read the waste metrics data
     const wasteMetricsPath = path.join(process.cwd(), '../../data/structured/waste-metrics.json')
@@ -68,10 +92,17 @@ export async function GET() {
       }
     ].filter(item => item.value > 0)
 
-    return NextResponse.json({
-      success: true,
+    const payload = {
+      success: true as const,
       data: breakdownData
+    }
+
+    setCache({
+      timestamp: Date.now(),
+      payload
     })
+
+    return NextResponse.json(payload)
   } catch (error) {
     console.error('Hazardous breakdown data error:', error)
     return NextResponse.json({

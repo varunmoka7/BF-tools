@@ -1,60 +1,67 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useMemo } from 'react'
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
+import { useCompanies } from '@/contexts/companies-context'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
-// Fallback data for error states
-const FALLBACK_CHART_DATA = {
-  labels: ['France', 'Germany', 'Switzerland', 'Italy', 'Luxembourg', 'Austria', 'Belgium'],
-  datasets: [
-    {
-      label: 'Number of Companies',
-      data: [82, 78, 66, 56, 16, 14, 13],
-      backgroundColor: 'rgba(59, 130, 246, 0.8)',
-      borderColor: 'rgba(59, 130, 246, 1)',
-      borderWidth: 1,
-      yAxisID: 'y',
-    }
-  ]
-}
+const FALLBACK_LABELS = ['France', 'Germany', 'Switzerland', 'Italy', 'Luxembourg', 'Austria', 'Belgium']
+const FALLBACK_COUNTS = [82, 78, 66, 56, 16, 14, 13]
 
 export const CountryCoverageChart = React.memo(() => {
-  const [chartData, setChartData] = useState(FALLBACK_CHART_DATA)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const { companies, loading, error } = useCompanies()
 
-  useEffect(() => {
-    const fetchChartData = async () => {
-      try {
-        setLoading(true)
-        setError(null)
-        
-        const response = await fetch('/api/charts/country-coverage')
-        const result = await response.json()
-        
-        if (result.success) {
-          setChartData(result.data)
-          console.log('Country coverage chart data loaded:', result.data)
-        } else {
-          console.error('Failed to fetch country coverage data:', result.error)
-          setError(result.error || 'Failed to load chart data')
-        }
-      } catch (error) {
-        console.error('Error fetching country coverage data:', error)
-        setError('Network error while loading chart data')
-      } finally {
-        setLoading(false)
+  const chartData = useMemo(() => {
+    if (!companies || companies.length === 0) {
+      return {
+        labels: FALLBACK_LABELS,
+        datasets: [
+          {
+            label: 'Number of Companies',
+            data: FALLBACK_COUNTS,
+            backgroundColor: 'rgba(59, 130, 246, 0.8)',
+            borderColor: 'rgba(59, 130, 246, 1)',
+            borderWidth: 1,
+            borderRadius: 6,
+            yAxisID: 'y',
+          }
+        ]
       }
     }
 
-    fetchChartData()
-  }, [])
+    const counts = companies.reduce((acc, company) => {
+      acc[company.country] = (acc[company.country] || 0) + 1
+      return acc
+    }, {} as Record<string, number>)
 
-  // Memoize chart options to prevent unnecessary re-renders
-  const options = React.useMemo(() => ({
+    const sorted = Object.entries(counts)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 10)
+
+    const labels = sorted.map(([country]) => country)
+    const data = sorted.map(([, count]) => count)
+
+    return {
+      labels,
+      datasets: [
+        {
+          label: 'Number of Companies',
+          data,
+          backgroundColor: 'rgba(59, 130, 246, 0.85)',
+          borderColor: 'rgba(37, 99, 235, 1)',
+          borderWidth: 1,
+          borderRadius: 6,
+          hoverBackgroundColor: 'rgba(59, 130, 246, 1)',
+          hoverBorderColor: 'rgba(37, 99, 235, 1)',
+          yAxisID: 'y',
+        }
+      ]
+    }
+  }, [companies])
+
+  const options = useMemo(() => ({
     responsive: true,
     maintainAspectRatio: false,
     interaction: {
