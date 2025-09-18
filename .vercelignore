@@ -1,0 +1,51 @@
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage
+*.tsbuildinfo
+
+# Next.js
+.next
+out
+build
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache
+.cache
+.swc
+.turbo
+
+# Logs
+logs
+*.log
+
+# Backend files (not needed for frontend deployment)
+backend/
+scripts/
+*.db
+*.sqlite
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Development files
+dev-server.sh
+monitor-server.sh
+process-manager.sh
+infrastructure-status.sh
+
+# OS files
+.DS_Store
+Thumbs.db
