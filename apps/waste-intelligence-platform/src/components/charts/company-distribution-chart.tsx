@@ -35,7 +35,7 @@ interface CompanySizeDatum {
   avgEmployees: number
 }
 
-const CategoryTick = ({ x, y, payload }: Parameters<NonNullable<XAxisProps['tick']>>[0]) => {
+const CategoryTick = ({ x, y, payload }: any) => {
   const lines = String(payload.value).split('\n')
 
   return (

@@ -118,7 +118,7 @@ export const CountryCoverageChart = React.memo(() => {
             stroke="#1d4ed8"
             strokeWidth={1.5}
             radius={[0, 10, 10, 0]}
-            background={{ fill: '#f3f4f6', radius: [0, 10, 10, 0] }}
+            background={{ fill: '#f3f4f6' }}
           />
         </BarChart>
       </ResponsiveContainer>

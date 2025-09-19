@@ -144,7 +144,7 @@ class CompanyEnrichmentService {
         return {
           ...apiData,
           description: apiData.description || scrapedData.description,
-          website: apiData.website || scrapedData.website,
+          website: apiData.website || scrapedData.website || null,
           ceo: scrapedData.ceo,
           revenue: scrapedData.revenue,
           linkedin: scrapedData.linkedin,
@@ -164,10 +164,10 @@ class CompanyEnrichmentService {
       return {
         description: scrapedData.description,
         industry: scrapedData.industry || 'Business Services',
-        founded: scrapedData.founded,
-        website: scrapedData.website,
-        headquarters: scrapedData.headquarters,
-        size: scrapedData.employees,
+        founded: scrapedData.founded || null,
+        website: scrapedData.website || null,
+        headquarters: scrapedData.headquarters || null,
+        size: scrapedData.employees || null,
         source: scrapedData.source,
         confidence: scrapedData.confidence,
         ceo: scrapedData.ceo,
