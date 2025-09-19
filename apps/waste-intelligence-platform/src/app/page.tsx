@@ -5,7 +5,7 @@ import { ChartsSection } from '@/components/charts/charts-section'
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-8 min-w-0">
         <DashboardHeader />
         
         <div className="mt-8 space-y-8">

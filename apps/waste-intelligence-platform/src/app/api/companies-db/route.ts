@@ -1,24 +1,36 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
-// Initialize Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+// Force route to be dynamic
+export const dynamic = 'force-dynamic'
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables')
+function getSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return null
+  }
+
+  return createClient(supabaseUrl, supabaseAnonKey)
 }
-
-const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 export async function GET(request: NextRequest) {
   try {
+    const supabase = getSupabaseClient()
+
+    if (!supabase) {
+      return NextResponse.json({
+        error: 'Database connection not available'
+      }, { status: 503 })
+    }
+
     const searchParams = request.nextUrl.searchParams
     const country = searchParams.get('country')
     const sector = searchParams.get('sector')
     const search = searchParams.get('search')
     const limit = parseInt(searchParams.get('limit') || '100')
-    
+
     // Build the query
     let query = supabase
       .from('companies')
@@ -107,8 +119,16 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
+    const supabase = getSupabaseClient()
+
+    if (!supabase) {
+      return NextResponse.json({
+        error: 'Database connection not available'
+      }, { status: 503 })
+    }
+
     const body = await request.json()
-    
+
     // Validate required fields
     if (!body.company_name || !body.country || !body.sector || !body.industry) {
       return NextResponse.json(
@@ -116,7 +136,7 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
-    
+
     // Insert new company
     const { data, error } = await supabase
       .from('companies')

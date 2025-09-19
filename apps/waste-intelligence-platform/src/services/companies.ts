@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabase'
+import { getSupabaseClient } from '@/lib/supabase'
 import { Company, CompanyMetric, WasteStream } from '@/types/waste'
 
 /**
@@ -6,6 +6,12 @@ import { Company, CompanyMetric, WasteStream } from '@/types/waste'
  */
 export async function getAllCompanies(): Promise<Company[]> {
   try {
+    const supabase = getSupabaseClient()
+
+    if (!supabase) {
+      throw new Error('Database connection not available')
+    }
+
     const { data, error } = await supabase
       .from('companies')
       .select('*')
@@ -28,6 +34,12 @@ export async function getAllCompanies(): Promise<Company[]> {
  */
 export async function getCompanyById(companyId: number): Promise<Company | null> {
   try {
+    const supabase = getSupabaseClient()
+
+    if (!supabase) {
+      throw new Error('Database connection not available')
+    }
+
     // First try to get from companies table
     const { data: company, error: companyError } = await supabase
       .from('companies')
@@ -52,6 +64,12 @@ export async function getCompanyById(companyId: number): Promise<Company | null>
  */
 export async function getCompanyMetrics(companyId: number): Promise<CompanyMetric | null> {
   try {
+    const supabase = getSupabaseClient()
+
+    if (!supabase) {
+      throw new Error('Database connection not available')
+    }
+
     // Try company_metrics table first
     const { data: metrics, error: metricsError } = await supabase
       .from('company_metrics')
@@ -119,6 +137,12 @@ export async function getCompanyMetrics(companyId: number): Promise<CompanyMetri
  */
 export async function testConnection(): Promise<boolean> {
   try {
+    const supabase = getSupabaseClient()
+
+    if (!supabase) {
+      return false
+    }
+
     const { data, error } = await supabase
       .from('companies')
       .select('count')

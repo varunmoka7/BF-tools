@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { getSupabaseClient } from '@/lib/supabase'
 
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams
-    
+
     // Extract query parameters
     const page = parseInt(searchParams.get('page') || '1')
     const limit = parseInt(searchParams.get('limit') || '20')
@@ -13,6 +13,16 @@ export async function GET(request: NextRequest) {
     const sector = searchParams.get('sector') || ''
     const sortBy = searchParams.get('sortBy') || 'company_name'
     const sortOrder = searchParams.get('sortOrder') || 'asc'
+
+    // Get Supabase client
+    const supabase = getSupabaseClient();
+
+    if (!supabase) {
+      return NextResponse.json({
+        success: false,
+        error: 'Database connection not available'
+      }, { status: 503 });
+    }
 
     // Build query
     let query = supabase

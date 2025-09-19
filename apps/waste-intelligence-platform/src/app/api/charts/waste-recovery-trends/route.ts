@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { getSupabaseClient } from '@/lib/supabase'
 import { promises as fs } from 'fs'
 import path from 'path'
 
@@ -17,6 +17,16 @@ export async function GET() {
         companyToSector.set(company.id, company.sector)
       }
     })
+
+    // Get Supabase client
+    const supabase = getSupabaseClient()
+
+    if (!supabase) {
+      return NextResponse.json({
+        success: false,
+        error: 'Database connection not available'
+      }, { status: 503 })
+    }
 
     // Fetch waste metrics from Supabase database
     const { data: wasteMetrics, error } = await supabase

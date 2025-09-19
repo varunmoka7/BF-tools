@@ -1,8 +1,18 @@
 import { NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { getSupabaseClient } from '@/lib/supabase'
 
 export async function GET() {
   try {
+    // Get Supabase client
+    const supabase = getSupabaseClient();
+
+    if (!supabase) {
+      return NextResponse.json({
+        success: false,
+        error: 'Database connection not available'
+      }, { status: 503 });
+    }
+
     // Get companies data for summary
     const { data: companies, error } = await supabase
       .from('companies')

@@ -1,0 +1,329 @@
+[dotenv@17.2.2] injecting env (16) from .env.local -- tip: ⚙️  override existing env vars with { override: true }
+🚀 Starting batch company enrichment...
+⚡ Rate limit: 1 call per 12 seconds
+📊 Max companies per run: 100
+📋 Found 50 companies to enrich
+
+[1/50] Processing: Infrastrutture Wireless Italiane SpA
+🔍 Searching for: Infrastrutture Wireless Italiane SpA
+❌ Error enriching Infrastrutture Wireless Italiane SpA: fetch is not a function
+📝 Using fallback description for Infrastrutture Wireless Italiane SpA
+💾 Updated Infrastrutture Wireless Italiane SpA in database
+
+[2/50] Processing: Eni SpA
+🔍 Searching for: Eni SpA
+❌ Error enriching Eni SpA: fetch is not a function
+📝 Using fallback description for Eni SpA
+💾 Updated Eni SpA in database
+
+[3/50] Processing: Heidelberg Materials AG
+🔍 Searching for: Heidelberg Materials AG
+❌ Error enriching Heidelberg Materials AG: fetch is not a function
+📝 Using fallback description for Heidelberg Materials AG
+💾 Updated Heidelberg Materials AG in database
+
+[4/50] Processing: IONOS Group SE
+🔍 Searching for: IONOS Group SE
+❌ Error enriching IONOS Group SE: fetch is not a function
+📝 Using fallback description for IONOS Group SE
+💾 Updated IONOS Group SE in database
+
+[5/50] Processing: Infineon Technologies AG
+🔍 Searching for: Infineon Technologies AG
+❌ Error enriching Infineon Technologies AG: fetch is not a function
+📝 Using fallback description for Infineon Technologies AG
+💾 Updated Infineon Technologies AG in database
+
+[6/50] Processing: Ayvens SA
+🔍 Searching for: Ayvens SA
+❌ Error enriching Ayvens SA: fetch is not a function
+📝 Using fallback description for Ayvens SA
+💾 Updated Ayvens SA in database
+
+[7/50] Processing: Dassault Systemes SE
+🔍 Searching for: Dassault Systemes SE
+❌ Error enriching Dassault Systemes SE: fetch is not a function
+📝 Using fallback description for Dassault Systemes SE
+💾 Updated Dassault Systemes SE in database
+
+[8/50] Processing: Deutsche Telekom AG
+🔍 Searching for: Deutsche Telekom AG
+❌ Error enriching Deutsche Telekom AG: fetch is not a function
+📝 Using fallback description for Deutsche Telekom AG
+💾 Updated Deutsche Telekom AG in database
+
+[9/50] Processing: Davide Campari Milano NV
+🔍 Searching for: Davide Campari Milano NV
+❌ Error enriching Davide Campari Milano NV: fetch is not a function
+📝 Using fallback description for Davide Campari Milano NV
+💾 Updated Davide Campari Milano NV in database
+
+[10/50] Processing: Novartis AG
+🔍 Searching for: Novartis AG
+❌ Error enriching Novartis AG: fetch is not a function
+📝 Using fallback description for Novartis AG
+💾 Updated Novartis AG in database
+
+📊 Progress: 10/50 companies processed
+✅ Enriched: 0 | 📝 Generated: 10 | ❌ Failed: 0
+
+[11/50] Processing: Leonardo SpA
+🔍 Searching for: Leonardo SpA
+❌ Error enriching Leonardo SpA: fetch is not a function
+📝 Using fallback description for Leonardo SpA
+💾 Updated Leonardo SpA in database
+
+[12/50] Processing: Ariston Holding NV
+🔍 Searching for: Ariston Holding NV
+❌ Error enriching Ariston Holding NV: fetch is not a function
+📝 Using fallback description for Ariston Holding NV
+💾 Updated Ariston Holding NV in database
+
+[13/50] Processing: Ternium SA
+🔍 Searching for: Ternium SA
+❌ Error enriching Ternium SA: fetch is not a function
+📝 Using fallback description for Ternium SA
+💾 Updated Ternium SA in database
+
+[14/50] Processing: Thales SA
+🔍 Searching for: Thales SA
+❌ Error enriching Thales SA: fetch is not a function
+📝 Using fallback description for Thales SA
+💾 Updated Thales SA in database
+
+[15/50] Processing: Atos SE
+🔍 Searching for: Atos SE
+❌ Error enriching Atos SE: fetch is not a function
+📝 Using fallback description for Atos SE
+💾 Updated Atos SE in database
+
+[16/50] Processing: Mercedes-Benz Group AG
+🔍 Searching for: Mercedes-Benz Group AG
+❌ Error enriching Mercedes-Benz Group AG: fetch is not a function
+📝 Using fallback description for Mercedes-Benz Group AG
+💾 Updated Mercedes-Benz Group AG in database
+
+[17/50] Processing: Raiffeisen Bank International AG
+🔍 Searching for: Raiffeisen Bank International AG
+❌ Error enriching Raiffeisen Bank International AG: fetch is not a function
+📝 Using fallback description for Raiffeisen Bank International AG
+💾 Updated Raiffeisen Bank International AG in database
+
+[18/50] Processing: Nestle SA
+🔍 Searching for: Nestle SA
+❌ Error enriching Nestle SA: fetch is not a function
+📝 Using fallback description for Nestle SA
+💾 Updated Nestle SA in database
+
+[19/50] Processing: Credit Agricole SA
+🔍 Searching for: Credit Agricole SA
+❌ Error enriching Credit Agricole SA: fetch is not a function
+📝 Using fallback description for Credit Agricole SA
+💾 Updated Credit Agricole SA in database
+
+[20/50] Processing: Abb Ltd
+🔍 Searching for: Abb Ltd
+❌ Error enriching Abb Ltd: fetch is not a function
+📝 Using fallback description for Abb Ltd
+💾 Updated Abb Ltd in database
+
+📊 Progress: 20/50 companies processed
+✅ Enriched: 0 | 📝 Generated: 20 | ❌ Failed: 0
+
+[21/50] Processing: Compagnie De l'odet SE
+🔍 Searching for: Compagnie De l'odet SE
+❌ Error enriching Compagnie De l'odet SE: fetch is not a function
+📝 Using fallback description for Compagnie De l'odet SE
+💾 Updated Compagnie De l'odet SE in database
+
+[22/50] Processing: Sika AG
+🔍 Searching for: Sika AG
+❌ Error enriching Sika AG: fetch is not a function
+📝 Using fallback description for Sika AG
+💾 Updated Sika AG in database
+
+[23/50] Processing: Covivio SA
+🔍 Searching for: Covivio SA
+❌ Error enriching Covivio SA: fetch is not a function
+📝 Using fallback description for Covivio SA
+💾 Updated Covivio SA in database
+
+[24/50] Processing: Wacker Chemie AG
+🔍 Searching for: Wacker Chemie AG
+❌ Error enriching Wacker Chemie AG: fetch is not a function
+📝 Using fallback description for Wacker Chemie AG
+💾 Updated Wacker Chemie AG in database
+
+[25/50] Processing: VAT Group AG
+🔍 Searching for: VAT Group AG
+❌ Error enriching VAT Group AG: fetch is not a function
+📝 Using fallback description for VAT Group AG
+💾 Updated VAT Group AG in database
+
+[26/50] Processing: Aurubis AG
+🔍 Searching for: Aurubis AG
+❌ Error enriching Aurubis AG: fetch is not a function
+📝 Using fallback description for Aurubis AG
+💾 Updated Aurubis AG in database
+
+[27/50] Processing: LVMH Moet Hennessy Louis Vuitton SE
+🔍 Searching for: LVMH Moet Hennessy Louis Vuitton SE
+❌ Error enriching LVMH Moet Hennessy Louis Vuitton SE: fetch is not a function
+📝 Using fallback description for LVMH Moet Hennessy Louis Vuitton SE
+💾 Updated LVMH Moet Hennessy Louis Vuitton SE in database
+
+[28/50] Processing: Kion Group AG
+🔍 Searching for: Kion Group AG
+❌ Error enriching Kion Group AG: fetch is not a function
+📝 Using fallback description for Kion Group AG
+💾 Updated Kion Group AG in database
+
+[29/50] Processing: Societe BIC SA
+🔍 Searching for: Societe BIC SA
+❌ Error enriching Societe BIC SA: fetch is not a function
+📝 Using fallback description for Societe BIC SA
+💾 Updated Societe BIC SA in database
+
+[30/50] Processing: Ermenegildo Zegna NV
+🔍 Searching for: Ermenegildo Zegna NV
+❌ Error enriching Ermenegildo Zegna NV: fetch is not a function
+📝 Using fallback description for Ermenegildo Zegna NV
+💾 Updated Ermenegildo Zegna NV in database
+
+📊 Progress: 30/50 companies processed
+✅ Enriched: 0 | 📝 Generated: 30 | ❌ Failed: 0
+
+[31/50] Processing: Sopra Steria Group SA
+🔍 Searching for: Sopra Steria Group SA
+❌ Error enriching Sopra Steria Group SA: fetch is not a function
+📝 Using fallback description for Sopra Steria Group SA
+💾 Updated Sopra Steria Group SA in database
+
+[32/50] Processing: FinecoBank Banca Fineco SpA
+🔍 Searching for: FinecoBank Banca Fineco SpA
+❌ Error enriching FinecoBank Banca Fineco SpA: fetch is not a function
+📝 Using fallback description for FinecoBank Banca Fineco SpA
+💾 Updated FinecoBank Banca Fineco SpA in database
+
+[33/50] Processing: Legrand SA
+🔍 Searching for: Legrand SA
+❌ Error enriching Legrand SA: fetch is not a function
+📝 Using fallback description for Legrand SA
+💾 Updated Legrand SA in database
+
+[34/50] Processing: Publicis Groupe SA
+🔍 Searching for: Publicis Groupe SA
+❌ Error enriching Publicis Groupe SA: fetch is not a function
+📝 Using fallback description for Publicis Groupe SA
+💾 Updated Publicis Groupe SA in database
+
+[35/50] Processing: Sartorius Stedim Biotech SA
+🔍 Searching for: Sartorius Stedim Biotech SA
+❌ Error enriching Sartorius Stedim Biotech SA: fetch is not a function
+📝 Using fallback description for Sartorius Stedim Biotech SA
+💾 Updated Sartorius Stedim Biotech SA in database
+
+[36/50] Processing: Credito Emiliano SpA
+🔍 Searching for: Credito Emiliano SpA
+❌ Error enriching Credito Emiliano SpA: fetch is not a function
+📝 Using fallback description for Credito Emiliano SpA
+💾 Updated Credito Emiliano SpA in database
+
+[37/50] Processing: Banque Cantonale Vaudoise
+🔍 Searching for: Banque Cantonale Vaudoise
+❌ Error enriching Banque Cantonale Vaudoise: fetch is not a function
+📝 Using fallback description for Banque Cantonale Vaudoise
+💾 Updated Banque Cantonale Vaudoise in database
+
+[38/50] Processing: Puma SE
+🔍 Searching for: Puma SE
+❌ Error enriching Puma SE: fetch is not a function
+📝 Using fallback description for Puma SE
+💾 Updated Puma SE in database
+
+[39/50] Processing: Compagnie de Saint Gobain SA
+🔍 Searching for: Compagnie de Saint Gobain SA
+❌ Error enriching Compagnie de Saint Gobain SA: fetch is not a function
+📝 Using fallback description for Compagnie de Saint Gobain SA
+💾 Updated Compagnie de Saint Gobain SA in database
+
+[40/50] Processing: Continental AG
+🔍 Searching for: Continental AG
+❌ Error enriching Continental AG: fetch is not a function
+📝 Using fallback description for Continental AG
+💾 Updated Continental AG in database
+
+📊 Progress: 40/50 companies processed
+✅ Enriched: 0 | 📝 Generated: 40 | ❌ Failed: 0
+
+[41/50] Processing: Stratec Se
+🔍 Searching for: Stratec Se
+❌ Error enriching Stratec Se: fetch is not a function
+📝 Using fallback description for Stratec Se
+💾 Updated Stratec Se in database
+
+[42/50] Processing: OMV AG
+🔍 Searching for: OMV AG
+❌ Error enriching OMV AG: fetch is not a function
+📝 Using fallback description for OMV AG
+💾 Updated OMV AG in database
+
+[43/50] Processing: Engie SA
+🔍 Searching for: Engie SA
+❌ Error enriching Engie SA: fetch is not a function
+📝 Using fallback description for Engie SA
+💾 Updated Engie SA in database
+
+[44/50] Processing: Saipem SpA
+🔍 Searching for: Saipem SpA
+❌ Error enriching Saipem SpA: fetch is not a function
+📝 Using fallback description for Saipem SpA
+💾 Updated Saipem SpA in database
+
+[45/50] Processing: Reply SpA
+🔍 Searching for: Reply SpA
+❌ Error enriching Reply SpA: fetch is not a function
+📝 Using fallback description for Reply SpA
+💾 Updated Reply SpA in database
+
+[46/50] Processing: Swisscom AG
+🔍 Searching for: Swisscom AG
+❌ Error enriching Swisscom AG: fetch is not a function
+📝 Using fallback description for Swisscom AG
+💾 Updated Swisscom AG in database
+
+[47/50] Processing: Eurofins Scientific SE
+🔍 Searching for: Eurofins Scientific SE
+❌ Error enriching Eurofins Scientific SE: fetch is not a function
+📝 Using fallback description for Eurofins Scientific SE
+💾 Updated Eurofins Scientific SE in database
+
+[48/50] Processing: Cembra Money Bank AG
+🔍 Searching for: Cembra Money Bank AG
+❌ Error enriching Cembra Money Bank AG: fetch is not a function
+📝 Using fallback description for Cembra Money Bank AG
+💾 Updated Cembra Money Bank AG in database
+
+[49/50] Processing: European Investment Bank
+🔍 Searching for: European Investment Bank
+❌ Error enriching European Investment Bank: fetch is not a function
+📝 Using fallback description for European Investment Bank
+💾 Updated European Investment Bank in database
+
+[50/50] Processing: Eutelsat Communications SA
+🔍 Searching for: Eutelsat Communications SA
+❌ Error enriching Eutelsat Communications SA: fetch is not a function
+📝 Using fallback description for Eutelsat Communications SA
+💾 Updated Eutelsat Communications SA in database
+
+📊 Progress: 50/50 companies processed
+✅ Enriched: 0 | 📝 Generated: 50 | ❌ Failed: 0
+
+🎉 Batch enrichment complete!
+📊 Final Stats:
+   ✅ Successfully enriched: 0
+   📝 Generated descriptions: 50
+   ❌ Failed updates: 0
+   📈 Total processed: 50
+
+✅ Batch enrichment script completed

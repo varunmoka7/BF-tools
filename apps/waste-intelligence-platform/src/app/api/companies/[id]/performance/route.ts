@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getSupabaseClient } from '@/lib/supabase';
 
 export async function GET(
   request: NextRequest,
@@ -7,6 +7,16 @@ export async function GET(
 ) {
   try {
     const companyId = params.id;
+
+    // Get Supabase client
+    const supabase = getSupabaseClient();
+
+    if (!supabase) {
+      return NextResponse.json({
+        success: false,
+        error: 'Database connection not available'
+      }, { status: 503 });
+    }
 
     // Get performance data
     const { data: template, error } = await supabase

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getSupabaseClient } from '@/lib/supabase';
 
 export async function POST(
   request: NextRequest,
@@ -8,6 +8,16 @@ export async function POST(
   try {
     const companyId = params.id;
     const { force_sync = false } = await request.json();
+
+    // Get Supabase client
+    const supabase = getSupabaseClient();
+
+    if (!supabase) {
+      return NextResponse.json({
+        success: false,
+        error: 'Database connection not available'
+      }, { status: 503 });
+    }
 
     // Get master company data
     const { data: company, error: companyError } = await supabase

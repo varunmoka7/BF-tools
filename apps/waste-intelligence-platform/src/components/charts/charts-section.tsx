@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 import { CompanyDistributionChart } from './company-distribution-chart'
 import { SectorBreakdownChart } from './sector-breakdown-chart'
 import { CountryCoverageChart } from './country-coverage-chart'
@@ -9,11 +10,19 @@ import { WasteRecoveryDistributionChart } from './waste-recovery-distribution-ch
 import { HazardousWasteBreakdownChart } from './hazardous-waste-breakdown-chart'
 
 const analyticsCardBase =
-  'relative overflow-hidden rounded-3xl border border-border/70 bg-card/95 shadow-sm transition-shadow duration-300 hover:shadow-lg'
+  'relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm transition-shadow duration-300 hover:shadow-lg'
 
-function AnalyticsCard({ title, children }: { title: string; children: ReactNode }) {
+function AnalyticsCard({
+  title,
+  children,
+  className
+}: {
+  title: string
+  children: ReactNode
+  className?: string
+}) {
   return (
-    <Card className={analyticsCardBase}>
+    <Card className={cn(analyticsCardBase, className)}>
       <div
         className="pointer-events-none absolute inset-0 rounded-[26px] border border-white/5"
         aria-hidden="true"
@@ -27,8 +36,8 @@ function AnalyticsCard({ title, children }: { title: string; children: ReactNode
           {title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="relative z-10 pt-6 pb-6">
-        <div className="rounded-2xl border border-border/50 bg-background/80 p-4">
+      <CardContent className="relative z-10 flex flex-1 flex-col px-6 pb-6 pt-4">
+        <div className="flex h-full flex-col rounded-2xl bg-background/90 p-4 sm:p-6">
           {children}
         </div>
       </CardContent>
@@ -38,27 +47,37 @@ function AnalyticsCard({ title, children }: { title: string; children: ReactNode
 
 export function ChartsSection() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      {/* Waste Recovery Performance Distribution - Real Data from 325 Companies */}
-      <WasteRecoveryDistributionChart />
+    <div className="grid auto-rows-[minmax(360px,_auto)] gap-8 lg:grid-cols-12 min-w-0">
+      <div className="lg:col-span-12">
+        {/* Waste Recovery Performance Distribution - Real Data from 325 Companies */}
+        <WasteRecoveryDistributionChart />
+      </div>
 
-      {/* Hazardous vs Non-Hazardous Breakdown */}
-      <AnalyticsCard title="Hazardous vs Non-Hazardous Breakdown">
+      <AnalyticsCard
+        title="Hazardous vs Non-Hazardous Breakdown"
+        className="lg:col-span-6 xl:col-span-4"
+      >
         <HazardousWasteBreakdownChart />
       </AnalyticsCard>
 
-      {/* Company Distribution by Sector */}
-      <AnalyticsCard title="Company Distribution by Sector">
+      <AnalyticsCard
+        title="Company Distribution by Sector"
+        className="lg:col-span-6 xl:col-span-4"
+      >
         <SectorBreakdownChart />
       </AnalyticsCard>
 
-      {/* Company Distribution by Country */}
-      <AnalyticsCard title="Company Distribution by Country">
+      <AnalyticsCard
+        title="Company Distribution by Country"
+        className="lg:col-span-12 xl:col-span-6"
+      >
         <CountryCoverageChart />
       </AnalyticsCard>
 
-      {/* Company Size Analysis */}
-      <AnalyticsCard title="Company Size Analysis">
+      <AnalyticsCard
+        title="Company Size Analysis"
+        className="lg:col-span-12 xl:col-span-6"
+      >
         <CompanyDistributionChart />
       </AnalyticsCard>
     </div>
