@@ -19,11 +19,7 @@ export default function CompanyNavigation({ currentCompanyId, currentCompanyName
   const [currentIndex, setCurrentIndex] = useState<number>(-1);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchCompanies();
-  }, []);
-
-  const fetchCompanies = async () => {
+  const fetchCompanies = React.useCallback(async () => {
     try {
       setLoading(true);
       const response = await fetch('/api/companies');
@@ -42,7 +38,11 @@ export default function CompanyNavigation({ currentCompanyId, currentCompanyName
     } finally {
       setLoading(false);
     }
-  };
+  }, [currentCompanyId]);
+
+  useEffect(() => {
+    fetchCompanies();
+  }, [fetchCompanies]);
 
   const getPreviousCompany = () => {
     if (currentIndex > 0) {

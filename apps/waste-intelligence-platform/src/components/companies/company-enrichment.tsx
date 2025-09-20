@@ -26,12 +26,7 @@ export function CompanyEnrichment({
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
 
-  // Check if company needs enrichment
-  useEffect(() => {
-    checkEnrichmentStatus()
-  }, [companyId])
-
-  const checkEnrichmentStatus = async () => {
+  const checkEnrichmentStatus = React.useCallback(async () => {
     try {
       const response = await fetch(`/api/companies/${companyId}/enrich`)
       if (response.ok) {
@@ -43,7 +38,12 @@ export function CompanyEnrichment({
     } catch (err) {
       console.error('Failed to check enrichment status:', err)
     }
-  }
+  }, [companyId])
+
+  // Check if company needs enrichment
+  useEffect(() => {
+    checkEnrichmentStatus()
+  }, [companyId, checkEnrichmentStatus])
 
   const enrichCompany = async () => {
     setLoading(true)

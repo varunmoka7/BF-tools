@@ -62,7 +62,7 @@ export function ChartsSection() {
 
       <AnalyticsCard
         title="Company Distribution by Sector"
-        className="lg:col-span-6 xl:col-span-4"
+        className="lg:col-span-6 xl:col-span-4 min-h-[420px]"
       >
         <SectorBreakdownChart />
       </AnalyticsCard>

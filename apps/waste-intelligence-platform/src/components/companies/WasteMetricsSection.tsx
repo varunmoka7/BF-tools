@@ -14,13 +14,7 @@ export default function WasteMetricsSection({ companyId, wasteManagement }: Wast
   const [metrics, setMetrics] = useState(wasteManagement);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (!wasteManagement) {
-      fetchWasteMetrics();
-    }
-  }, [companyId, wasteManagement]);
-
-  const fetchWasteMetrics = async () => {
+  const fetchWasteMetrics = React.useCallback(async () => {
     try {
       setLoading(true);
       const response = await fetch(`/api/companies/${companyId}/waste-metrics`);
@@ -34,7 +28,13 @@ export default function WasteMetricsSection({ companyId, wasteManagement }: Wast
     } finally {
       setLoading(false);
     }
-  };
+  }, [companyId]);
+
+  useEffect(() => {
+    if (!wasteManagement) {
+      fetchWasteMetrics();
+    }
+  }, [companyId, wasteManagement, fetchWasteMetrics]);
 
   const formatNumber = (num?: number) => {
     if (num === null || num === undefined) return 'N/A';

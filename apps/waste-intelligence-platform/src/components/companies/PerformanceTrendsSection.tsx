@@ -13,13 +13,7 @@ export default function PerformanceTrendsSection({ companyId, performance }: Per
   const [data, setData] = useState(performance);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (!performance) {
-      fetchPerformanceData();
-    }
-  }, [companyId, performance]);
-
-  const fetchPerformanceData = async () => {
+  const fetchPerformanceData = React.useCallback(async () => {
     try {
       setLoading(true);
       const response = await fetch(`/api/companies/${companyId}/performance`);
@@ -33,7 +27,13 @@ export default function PerformanceTrendsSection({ companyId, performance }: Per
     } finally {
       setLoading(false);
     }
-  };
+  }, [companyId]);
+
+  useEffect(() => {
+    if (!performance) {
+      fetchPerformanceData();
+    }
+  }, [companyId, performance, fetchPerformanceData]);
 
   const formatNumber = (num?: number) => {
     if (num === null || num === undefined) return 'N/A';

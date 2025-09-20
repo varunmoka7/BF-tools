@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useMemo } from 'react'
+import React, { useMemo, useCallback } from 'react'
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip } from 'recharts'
 import { useCompanies } from '@/contexts/companies-context'
 
@@ -69,6 +69,61 @@ export const SectorBreakdownChart = React.memo(() => {
     }))
   }, [companies])
 
+  const renderSectorLabel = useCallback(
+    ({
+      cx,
+      cy,
+      midAngle,
+      outerRadius,
+      index
+    }: {
+      cx: number
+      cy: number
+      midAngle: number
+      outerRadius: number | string
+      index: number
+    }) => {
+      const entry = sectorData[index]
+
+      if (!entry || typeof outerRadius !== 'number') {
+        return null
+      }
+
+      if (entry.percentage < 4) {
+        return null
+      }
+
+      const RADIAN = Math.PI / 180
+      const radius = outerRadius + 18
+      const x = cx + radius * Math.cos(-midAngle * RADIAN)
+      const y = cy + radius * Math.sin(-midAngle * RADIAN)
+
+      return (
+        <text
+          x={x}
+          y={y}
+          fill="#0f172a"
+          textAnchor={x > cx ? 'start' : 'end'}
+          dominantBaseline="middle"
+          fontSize={12}
+          fontWeight={600}
+        >
+          {entry.name}
+          <tspan
+            x={x}
+            dy={14}
+            fontSize={11}
+            fontWeight={500}
+            fill="#475569"
+          >
+            {`${entry.percentage.toFixed(1)}%`}
+          </tspan>
+        </text>
+      )
+    },
+    [sectorData]
+  )
+
   if (loading) {
     return (
       <div className="flex h-full min-h-[320px] items-center justify-center">
@@ -86,9 +141,9 @@ export const SectorBreakdownChart = React.memo(() => {
   }
 
   return (
-    <div className="flex h-full min-h-[360px] flex-col gap-8 lg:flex-row lg:items-center">
-      <div className="mx-auto flex w-full min-w-[260px] max-w-[320px] flex-shrink-0 items-center justify-center lg:mx-0">
-        <ResponsiveContainer width="100%" height={260}>
+    <div className="flex h-full min-h-[360px] flex-col gap-6 lg:flex-row lg:items-start lg:gap-8">
+      <div className="mx-auto flex w-full min-w-[240px] max-w-[320px] flex-shrink-0 items-center justify-center lg:mx-0">
+        <ResponsiveContainer width="100%" height={252}>
           <PieChart>
             <Pie
               data={sectorData}
@@ -101,6 +156,7 @@ export const SectorBreakdownChart = React.memo(() => {
               stroke="#1f2937"
               strokeWidth={2}
               labelLine={false}
+              label={renderSectorLabel}
             >
               {sectorData.map((entry, index) => (
                 <Cell
@@ -126,14 +182,17 @@ export const SectorBreakdownChart = React.memo(() => {
           </PieChart>
         </ResponsiveContainer>
       </div>
-      <div className="flex flex-1 flex-col justify-center">
-        <div className="grid grid-cols-1 gap-2 text-xs sm:grid-cols-2 xl:grid-cols-1" style={{ minWidth: '180px' }}>
+      <div className="flex w-full flex-1 items-center lg:items-start">
+        <div className="grid w-full max-w-xl grid-cols-2 gap-x-4 gap-y-2 text-[11px] sm:grid-cols-3 lg:max-h-[260px] lg:max-w-none lg:grid-cols-1 lg:overflow-y-auto lg:pr-2">
           {sectorData.map((entry, index) => {
             const color = SECTOR_COLORS[index % SECTOR_COLORS.length]
             return (
-              <div key={entry.name} className="flex items-center gap-2 leading-tight">
+              <div
+                key={entry.name}
+                className="flex min-w-[150px] items-center gap-2 leading-tight text-slate-700"
+              >
                 <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full" style={{ backgroundColor: color }} />
-                <span className="text-[11px] font-medium text-slate-700">
+                <span className="text-[11px] font-medium">
                   {entry.name}
                   <span className="ml-1 text-slate-500">({entry.percentage.toFixed(1)}%)</span>
                 </span>
