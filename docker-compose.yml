@@ -1,0 +1,300 @@
+# =============================================================================
+# Docker Compose Configuration for Waste Intelligence Platform
+# Complete development and production-ready stack with security
+# =============================================================================
+
+version: '3.8'
+
+services:
+  # =============================================================================
+  # APPLICATION SERVICES
+  # =============================================================================
+
+  # Main application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    container_name: waste-intelligence-app
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORT=3000
+      - DATABASE_URL=${DATABASE_URL}
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - JWT_SECRET=${JWT_SECRET}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    volumes:
+      - app_logs:/app/logs
+      - app_uploads:/app/uploads
+    networks:
+      - waste-intelligence-network
+    healthcheck:
+      test: ["CMD", "node", "scripts/health-check.js"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /app/.next/cache
+    user: "1001:1001"
+
+  # =============================================================================
+  # DATABASE SERVICES
+  # =============================================================================
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: waste-intelligence-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-waste_intelligence}
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_INITDB_ARGS=--auth-host=scram-sha-256
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/src/database/init:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    networks:
+      - waste-intelligence-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-waste_intelligence}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    security_opt:
+      - no-new-privileges:true
+    command: >
+      postgres
+      -c max_connections=200
+      -c shared_buffers=256MB
+      -c effective_cache_size=1GB
+      -c maintenance_work_mem=64MB
+      -c checkpoint_completion_target=0.9
+      -c wal_buffers=16MB
+      -c default_statistics_target=100
+      -c random_page_cost=1.1
+      -c effective_io_concurrency=200
+      -c work_mem=4MB
+      -c min_wal_size=1GB
+      -c max_wal_size=4GB
+      -c ssl=on
+      -c ssl_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+      -c ssl_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+
+  # =============================================================================
+  # CACHE SERVICES
+  # =============================================================================
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: waste-intelligence-redis
+    restart: unless-stopped
+    command: >
+      redis-server
+      --requirepass ${REDIS_PASSWORD}
+      --appendonly yes
+      --appendfsync everysec
+      --maxmemory 512mb
+      --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    networks:
+      - waste-intelligence-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    security_opt:
+      - no-new-privileges:true
+
+  # =============================================================================
+  # MONITORING SERVICES
+  # =============================================================================
+
+  # Security Monitoring
+  security-monitor:
+    build:
+      context: .
+      dockerfile: Dockerfile.monitoring
+    container_name: waste-intelligence-security-monitor
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - DATABASE_URL=${DATABASE_URL}
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - MONITORING_INTERVAL=60000
+      - ALERT_THRESHOLD_FAILED_LOGINS=${ALERT_THRESHOLD_FAILED_LOGINS:-10}
+      - ALERT_THRESHOLD_UNUSUAL_ACTIVITY=${ALERT_THRESHOLD_UNUSUAL_ACTIVITY:-50}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - monitoring_logs:/app/logs
+    networks:
+      - waste-intelligence-network
+    command: ["node", "scripts/security-monitoring.js"]
+    security_opt:
+      - no-new-privileges:true
+
+  # Prometheus Metrics
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: waste-intelligence-prometheus
+    restart: unless-stopped
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    networks:
+      - waste-intelligence-network
+    security_opt:
+      - no-new-privileges:true
+
+  # Grafana Dashboard
+  grafana:
+    image: grafana/grafana:latest
+    container_name: waste-intelligence-grafana
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin123}
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_SECURITY_DISABLE_GRAVATAR=true
+      - GF_ANALYTICS_REPORTING_ENABLED=false
+      - GF_ANALYTICS_CHECK_FOR_UPDATES=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    ports:
+      - "${GRAFANA_PORT:-3001}:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - waste-intelligence-network
+    security_opt:
+      - no-new-privileges:true
+
+  # =============================================================================
+  # REVERSE PROXY & LOAD BALANCER
+  # =============================================================================
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: waste-intelligence-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - app
+    networks:
+      - waste-intelligence-network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+
+  # =============================================================================
+  # BACKUP SERVICES
+  # =============================================================================
+
+  # Database Backup
+  db-backup:
+    image: postgres:15-alpine
+    container_name: waste-intelligence-backup
+    restart: "no"
+    environment:
+      - PGUSER=${POSTGRES_USER:-postgres}
+      - PGPASSWORD=${POSTGRES_PASSWORD}
+      - PGDATABASE=${POSTGRES_DB:-waste_intelligence}
+      - PGHOST=postgres
+      - BACKUP_SCHEDULE=${BACKUP_SCHEDULE:-0 2 * * *}
+    volumes:
+      - ./scripts/backup.sh:/backup.sh:ro
+      - backups:/backups
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - waste-intelligence-network
+    profiles:
+      - backup
+    command: ["sh", "/backup.sh"]
+    security_opt:
+      - no-new-privileges:true
+
+# =============================================================================
+# NETWORK CONFIGURATION
+# =============================================================================
+networks:
+  waste-intelligence-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+# =============================================================================
+# VOLUME CONFIGURATION
+# =============================================================================
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  app_logs:
+    driver: local
+  app_uploads:
+    driver: local
+  monitoring_logs:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+  nginx_logs:
+    driver: local
+  backups:
+    driver: local

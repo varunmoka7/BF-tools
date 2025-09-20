@@ -1,0 +1,389 @@
+name: 🛡️ Security CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    # Run security scans daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+env:
+  NODE_VERSION: '18.x'
+  PNPM_VERSION: '8.x'
+
+jobs:
+  # ===============================================
+  # SECURITY SCANNING
+  # ===============================================
+  security-scan:
+    name: 🔍 Security Vulnerability Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔄 Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🛡️ Run npm audit
+        run: |
+          npm audit --audit-level=high --json > audit-results.json || true
+          npm audit --audit-level=high
+
+      - name: 🔐 Run Snyk Security Scan
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high --json > snyk-results.json
+
+      - name: 📊 Dependency Check
+        uses: dependency-check/Dependency-Check_Action@main
+        with:
+          project: 'waste-intelligence-platform'
+          path: '.'
+          format: 'ALL'
+          args: >
+            --enableRetired
+            --enableExperimental
+            --failOnCVSS 7
+
+      - name: 📋 Upload Security Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: security-reports
+          path: |
+            audit-results.json
+            snyk-results.json
+            reports/
+
+  # ===============================================
+  # STATIC CODE ANALYSIS
+  # ===============================================
+  static-analysis:
+    name: 🔬 Static Code Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔄 Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🧹 ESLint Security Rules
+        run: |
+          npx eslint . --ext .ts,.tsx,.js,.jsx \
+            --config .eslintrc-security.js \
+            --format json \
+            --output-file eslint-security.json || true
+
+      - name: 🔍 TypeScript Security Check
+        run: |
+          cd apps/waste-intelligence-platform
+          npx tsc --noEmit --strict
+
+      - name: 🕵️ CodeQL Analysis
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript
+
+      - name: 🔎 Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+
+      - name: 📊 SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  # ===============================================
+  # AUTHENTICATION TESTS
+  # ===============================================
+  auth-tests:
+    name: 🔐 Authentication System Tests
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: waste_intelligence_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: 🔄 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🗄️ Setup Test Database
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/waste_intelligence_test
+        run: |
+          npm run setup:test-db
+          npm run migrate:auth
+
+      - name: 🧪 Run Authentication Unit Tests
+        env:
+          NODE_ENV: test
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/waste_intelligence_test
+          JWT_SECRET: test-jwt-secret-for-testing-only
+        run: |
+          npm run test:auth:unit
+
+      - name: 🔗 Run Authentication Integration Tests
+        env:
+          NODE_ENV: test
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/waste_intelligence_test
+          JWT_SECRET: test-jwt-secret-for-testing-only
+        run: |
+          npm run test:auth:integration
+
+      - name: 🛡️ Run Security Tests
+        env:
+          NODE_ENV: test
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/waste_intelligence_test
+        run: |
+          npm run test:security
+
+      - name: 📊 Upload Test Coverage
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage/lcov.info
+          flags: auth-tests
+
+  # ===============================================
+  # END-TO-END SECURITY TESTS
+  # ===============================================
+  e2e-security:
+    name: 🎭 End-to-End Security Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔄 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🚀 Start Test Environment
+        run: |
+          npm run build
+          npm run start:test &
+          sleep 30
+
+      - name: 🎭 Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: 🔐 Run Authentication E2E Tests
+        run: npx playwright test auth --project=chromium
+
+      - name: 🛡️ Run Security E2E Tests
+        run: npx playwright test security --project=chromium
+
+      - name: 📊 Upload E2E Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-security-reports
+          path: |
+            playwright-report/
+            test-results/
+
+  # ===============================================
+  # PENETRATION TESTING
+  # ===============================================
+  penetration-test:
+    name: 🥷 Automated Penetration Testing
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || contains(github.event.pull_request.labels.*.name, 'security-test')
+    steps:
+      - name: 🔄 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🚀 Start Application
+        run: |
+          npm ci
+          npm run build
+          npm start &
+          sleep 30
+
+      - name: 🥷 OWASP ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.10.0
+        with:
+          target: 'http://localhost:3000'
+          rules_file_name: '.zap/rules.tsv'
+          cmd_options: '-a'
+
+      - name: 🔍 Nuclei Security Scan
+        uses: projectdiscovery/nuclei-action@main
+        with:
+          target: 'http://localhost:3000'
+          templates: 'cves,vulnerabilities,misconfiguration'
+
+      - name: 📊 Upload Penetration Test Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: penetration-test-reports
+          path: |
+            report_html.html
+            nuclei-results.json
+
+  # ===============================================
+  # BUILD & DEPLOY
+  # ===============================================
+  build-and-deploy:
+    name: 🚀 Build & Deploy
+    runs-on: ubuntu-latest
+    needs: [security-scan, static-analysis, auth-tests]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment: production
+
+    steps:
+      - name: 🔄 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🏗️ Build Application
+        env:
+          NODE_ENV: production
+        run: |
+          npm run build
+          npm run build:backend
+
+      - name: 🔐 Security Configuration Check
+        run: |
+          node scripts/security-config-check.js
+
+      - name: 🐳 Build Docker Image
+        run: |
+          docker build -t waste-intelligence:${{ github.sha }} .
+          docker tag waste-intelligence:${{ github.sha }} waste-intelligence:latest
+
+      - name: 🛡️ Container Security Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'waste-intelligence:${{ github.sha }}'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: 📊 Upload Container Scan Results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+      - name: 🚀 Deploy to Staging
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          npx vercel --token $VERCEL_TOKEN --prod
+
+      - name: 🧪 Post-Deploy Security Verification
+        run: |
+          npm run test:security:staging
+
+      - name: 📈 Update Security Dashboard
+        env:
+          SECURITY_WEBHOOK: ${{ secrets.SECURITY_WEBHOOK }}
+        run: |
+          curl -X POST $SECURITY_WEBHOOK \
+            -H "Content-Type: application/json" \
+            -d '{
+              "deployment": "production",
+              "commit": "${{ github.sha }}",
+              "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'",
+              "security_status": "passed"
+            }'
+
+  # ===============================================
+  # SECURITY MONITORING
+  # ===============================================
+  security-monitoring:
+    name: 📊 Security Monitoring
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [security-scan, static-analysis, auth-tests, e2e-security]
+    steps:
+      - name: 📋 Download Security Reports
+        uses: actions/download-artifact@v4
+        with:
+          name: security-reports
+          path: ./security-reports
+
+      - name: 📊 Generate Security Summary
+        run: |
+          node scripts/security-summary.js
+
+      - name: 🚨 Check Security Thresholds
+        run: |
+          node scripts/security-threshold-check.js
+
+      - name: 📧 Send Security Report
+        if: github.event_name == 'schedule'
+        env:
+          SECURITY_EMAIL: ${{ secrets.SECURITY_EMAIL }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+        run: |
+          node scripts/send-security-report.js
+
+  # ===============================================
+  # CLEANUP
+  # ===============================================
+  cleanup:
+    name: 🧹 Cleanup
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [build-and-deploy]
+    steps:
+      - name: 🗑️ Clean up test environments
+        run: |
+          echo "Cleaning up test resources..."
+          # Add cleanup logic here

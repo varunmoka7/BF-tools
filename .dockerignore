@@ -1,0 +1,142 @@
+# =============================================================================
+# Docker ignore file for Waste Intelligence Platform
+# Optimized for security and build performance
+# =============================================================================
+
+# Development files
+.env
+.env.*
+!.env.example
+!.env.security.example
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+.circleci
+
+# Build artifacts
+.next
+out
+dist
+build
+coverage
+.nyc_output
+
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Testing
+test
+tests
+__tests__
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+jest.config.js
+playwright.config.ts
+cypress
+e2e
+
+# IDE and editors
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Cache directories
+.npm
+.yarn
+.cache
+.parcel-cache
+.next/cache
+
+# Documentation
+docs
+*.md
+!README.md
+
+# Development tools
+.eslintrc.*
+.prettierrc.*
+.editorconfig
+
+# Security files (sensitive)
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+credentials/
+secrets/
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+
+# Temporary files
+tmp
+temp
+.tmp
+
+# Development scripts
+dev.sh
+start-dev.sh
+monitor-server.sh
+process-manager.sh
+
+# Local development
+.vercel
+.turbo
+
+# Platform specific
+.swc
+.swm
+.terraform
+
+# Large files that shouldn't be in container
+*.zip
+*.tar.gz
+*.rar
+*.dmg
+*.iso
